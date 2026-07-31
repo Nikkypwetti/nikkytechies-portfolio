@@ -6,7 +6,13 @@ export function Logo() {
       href="/"
       className="text-xl font-bold tracking-tight transition-opacity hover:opacity-80"
     >
-      Nikky<span className="text-blue-600">Techies</span>
+      <span className="text-foreground">
+        Nikky
+      </span>
+
+      <span className="text-primary">
+        Techies
+      </span>
     </Link>
   );
 }
