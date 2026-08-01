@@ -67,6 +67,24 @@ gallery: [
     "AI-powered qualification",
   ],
 
+  stats: [
+  {
+    value: 80,
+    suffix: "%",
+    label: "Less Manual Work",
+  },
+  {
+    value: 10,
+    suffix: "+ hrs",
+    label: "Saved Per Week",
+  },
+  {
+    value: 5,
+    suffix: " min",
+    label: "Average Response Time",
+  },
+],
+
   before: [
   "Manual lead qualification",
   "Copying data between spreadsheets",

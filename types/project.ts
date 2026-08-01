@@ -27,6 +27,12 @@ export interface Project {
 
   metrics: string[];
 
+  stats: {
+    value: number;
+    suffix?: string;
+    label: string;
+  }[];
+
   before: string[];
 
   after: string[];

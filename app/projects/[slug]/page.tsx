@@ -12,6 +12,7 @@ import { ProjectGallery } from "@/components/projects/case-study/project-gallery
 import { ProjectMetrics } from "@/components/projects/case-study/project-metrics";
 import { ProjectBeforeAfter } from "@/components/projects/case-study/project-before-after";
 import { ProjectWorkflow } from "@/components/projects/case-study/project-workflow";
+import { ProjectStatistics } from "@/components/projects/case-study/project-statistics";
 
 
 type Props = {
@@ -47,10 +48,12 @@ export default async function ProjectPage({ params }: Props) {
 
       <ProjectMetrics metrics={project.metrics} />
 
+      <ProjectStatistics stats={project.stats} />
+
       <ProjectBeforeAfter before={project.before} after={project.after} />
 
       <ProjectGallery gallery={project.gallery} />
-      
+
     </main>
   );
 }
