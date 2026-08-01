@@ -19,9 +19,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-8 max-w-3xl text-xl text-muted-foreground">
-            I design CRM systems, AI-powered workflows, and scalable business
-            operations using Airtable, Notion, HubSpot, Make.com, n8n, Zapier,
-            and modern AI APIs.
+            I design Airtable CRMs, Notion workspaces, and AI-powered automation systems that help businesses eliminate repetitive work, improve operations, and scale efficiently using Make.com, n8n, HubSpot, and modern APIs.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">

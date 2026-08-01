@@ -3,79 +3,128 @@ import { technologies } from "./technologies";
 
 export const projects: Project[] = [
   {
-    slug: "growagency-crm-ai-pipeline",
+  slug: "growagency-crm-ai-pipeline",
 
-    title: "GrowAgency CRM + AI Pipeline",
+  title: "GrowAgency CRM + AI Pipeline",
 
-    year: "2026",
+  year: "2026",
 
-    type: "Portfolio Project",
+  type: "Portfolio Project",
 
-    description:
-      "Designed an AI-powered CRM that automated lead qualification, meeting summaries, and pipeline management.",
+  description:
+    "Designed an AI-powered CRM that automates lead capture, qualification, and follow-up using Airtable, HubSpot, Make.com, Groq AI, and Slack.",
 
-    technologies: [
-      technologies.airtable,
-      technologies.make,
-      technologies.hubspot,
-      technologies.groq,
-    ],
+  problem:
+    "Sales teams manually copied leads between forms, spreadsheets, and CRM systems, causing delays and inconsistent follow-up.",
 
-    metrics: [
-      "Reduced manual work by 80%",
-      "Saved 10+ hours/week",
-      "Automated CRM updates",
-    ],
-  },
+  solution:
+    "Built an automated pipeline that captures leads, enriches them with AI, assigns a qualification score, recommends services, notifies Slack, and stores everything in Airtable and HubSpot.",
 
-  {
-    slug: "coachpro-notion-os",
+  architecture: [
+    "Lead submits Typeform",
+    "Make.com receives webhook",
+    "Groq AI qualifies the lead",
+    "Airtable stores CRM record",
+    "HubSpot creates contact",
+    "Slack notifies the sales team",
+  ],
 
-    title: "CoachPro Notion OS",
+  results: [
+    "Saved approximately 10 hours per week",
+    "Reduced manual work by about 80%",
+    "Standardized lead qualification",
+    "Improved response speed",
+  ],
 
-    year: "2026",
+  technologies: [
+    technologies.airtable,
+    technologies.make,
+    technologies.hubspot,
+    technologies.groq,
+    technologies.slack,
+  ],
 
-    type: "Practice Project",
+  metrics: [
+    "80% less manual work",
+    "10+ hours saved weekly",
+    "AI-powered qualification",
+  ],
 
-    description:
-      "Created a client workspace for coaching businesses with dashboards, SOPs, and task management.",
+  heroImage: "/images/projects/growagency-cover.png",
+}
 
-    technologies: [
-      technologies.notion,
-      technologies.zapier,
-      technologies.googleSheets,
-    ],
+//   {
+//     slug: "coachpro-notion-os",
 
-    metrics: [
-      "Centralized operations",
-      "Improved client onboarding",
-      "Automated reminders",
-    ],
-  },
+//     title: "CoachPro Notion OS",
 
-  {
-    slug: "hubspot-clientflow",
+//     year: "2026",
 
-    title: "HubSpot ClientFlow CRM",
+//     type: "Practice Project",
 
-    year: "2026",
+//     description:
+//       "Created a client workspace for coaching businesses with dashboards, SOPs, and task management.",
 
-    type: "Practice Project",
+//       problem:
+//   "Growing agencies were spending hours manually qualifying leads and updating CRM records.",
 
-    description:
-      "Built automated lead nurturing workflows with HubSpot, AI summaries, and sales pipeline tracking.",
+// solution:
+//   "Designed an Airtable CRM integrated with Make.com, HubSpot, Groq AI, and Slack to automate lead qualification and pipeline management.",
 
-    technologies: [
-      technologies.hubspot,
-      technologies.make,
-      technologies.slack,
-      technologies.claude,
-    ],
+// results: [
+//   "Reduced manual work by 80%",
+//   "Saved approximately 10 hours each week",
+//   "Improved lead response consistency",
+// ],
 
-    metrics: [
-      "Automated follow-up emails",
-      "AI lead scoring",
-      "Sales pipeline dashboard",
-    ],
-  },
+//     technologies: [
+//       technologies.notion,
+//       technologies.zapier,
+//       technologies.googleSheets,
+//     ],
+
+//     metrics: [
+//       "Centralized operations",
+//       "Improved client onboarding",
+//       "Automated reminders",
+//     ],
+//   },
+
+//   {
+//     slug: "hubspot-clientflow",
+
+//     title: "HubSpot ClientFlow CRM",
+
+//     year: "2026",
+
+//     type: "Practice Project",
+
+//     description:
+//       "Built automated lead nurturing workflows with HubSpot, AI summaries, and sales pipeline tracking.",
+
+//       problem:
+//   "Growing agencies were spending hours manually qualifying leads and updating CRM records.",
+
+// solution:
+//   "Designed an Airtable CRM integrated with Make.com, HubSpot, Groq AI, and Slack to automate lead qualification and pipeline management.",
+
+// results: [
+//   "Reduced manual work by 80%",
+//   "Saved approximately 10 hours each week",
+//   "Improved lead response consistency",
+// ],
+
+//     technologies: [
+//       technologies.hubspot,
+//       technologies.make,
+//       technologies.slack,
+//       technologies.claude,
+//     ],
+
+//     metrics: [
+//       "Automated follow-up emails",
+//       "AI lead scoring",
+//       "Sales pipeline dashboard",
+//     ],
+//   },
 ];
