@@ -1,10 +1,6 @@
-export type Technology = {
-  id: string;
-  name: string;
-  color: string;
-};
+import type { Technology } from "@/types/technology";
 
-export const technologies = {
+export const technologies: Record<string, Technology> ={
   airtable: {
     id: "airtable",
     name: "Airtable",

@@ -1,19 +1,12 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { TechBadge } from "./tech-badge";
-import type { Technology } from "@/data/technologies";
+import { TechBadge } from "./tech-badge"; 
+import type { Project } from "@/types/project";
+
 
 type ProjectCardProps = {
-  project: {
-    slug: string;
-    title: string;
-    year: string;
-    type: string;
-    description: string;
-    technologies: Technology[];
-    metrics: string[];
-  };
+  project: Project;
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {

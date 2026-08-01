@@ -1,6 +1,7 @@
+import type { Project } from "@/types/project";
 import { technologies } from "./technologies";
 
-export const projects = [
+export const projects: Project[] = [
   {
     slug: "growagency-crm-ai-pipeline",
 
