@@ -11,7 +11,9 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="group rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+  <article
+  className="group rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-primary/30"
+>
       <div className="mb-6 flex items-center justify-between">
         <span className="text-sm font-medium text-primary">
           {project.type}
@@ -22,8 +24,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </span>
       </div>
 
-      <h3 className="text-2xl font-semibold">
-        {project.title}
+      <h3 className="text-2xl font-semibold transition-colors group-hover:text-primary">
+          {project.title}
       </h3>
 
       <p className="mt-4 text-muted-foreground">

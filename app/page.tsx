@@ -1,15 +1,13 @@
 import { Hero } from "@/components/home/hero";
+import { About } from "@/components/home/about/about";
 import { FeaturedProjects } from "@/components/home/featured-projects";
-import { Services } from "@/components/home/services/services";
 
 export default function Home() {
   return (
     <>
       <Hero />
-
+      <About />
       <FeaturedProjects />
-
-      <Services />
     </>
   );
 }
