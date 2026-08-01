@@ -38,6 +38,14 @@ export const projects: Project[] = [
   "Slack",
 ],
 
+
+gallery: [
+  "/images/projects/growagency/airtable.png",
+  "/images/projects/growagency/make.png",
+  "/images/projects/growagency/hubspot.png",
+  "/images/projects/growagency/slack.png",
+],
+
   results: [
     "Saved approximately 10 hours per week",
     "Reduced manual work by about 80%",

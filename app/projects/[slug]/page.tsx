@@ -49,7 +49,8 @@ export default async function ProjectPage({ params }: Props) {
 
       <ProjectBeforeAfter before={project.before} after={project.after} />
 
-      <ProjectGallery />
+      <ProjectGallery gallery={project.gallery} />
+      
     </main>
   );
 }

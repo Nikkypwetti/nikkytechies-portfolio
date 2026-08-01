@@ -19,6 +19,8 @@ export interface Project {
 
   workflow: string[];
 
+  gallery: string[];
+
   results: string[];
 
   technologies: Technology[];
