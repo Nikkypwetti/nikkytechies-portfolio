@@ -9,7 +9,7 @@ export const projects: Project[] = [
 
   year: "2026",
 
-  type: "Portfolio Project",
+  type: "Portfolio",
 
   description:
     "Designed an AI-powered CRM that automates lead capture, qualification, and follow-up using Airtable, HubSpot, Make.com, Groq AI, and Slack.",
@@ -51,80 +51,5 @@ export const projects: Project[] = [
   ],
 
   heroImage: "/images/projects/growagency-cover.png",
-}
-
-//   {
-//     slug: "coachpro-notion-os",
-
-//     title: "CoachPro Notion OS",
-
-//     year: "2026",
-
-//     type: "Practice Project",
-
-//     description:
-//       "Created a client workspace for coaching businesses with dashboards, SOPs, and task management.",
-
-//       problem:
-//   "Growing agencies were spending hours manually qualifying leads and updating CRM records.",
-
-// solution:
-//   "Designed an Airtable CRM integrated with Make.com, HubSpot, Groq AI, and Slack to automate lead qualification and pipeline management.",
-
-// results: [
-//   "Reduced manual work by 80%",
-//   "Saved approximately 10 hours each week",
-//   "Improved lead response consistency",
-// ],
-
-//     technologies: [
-//       technologies.notion,
-//       technologies.zapier,
-//       technologies.googleSheets,
-//     ],
-
-//     metrics: [
-//       "Centralized operations",
-//       "Improved client onboarding",
-//       "Automated reminders",
-//     ],
-//   },
-
-//   {
-//     slug: "hubspot-clientflow",
-
-//     title: "HubSpot ClientFlow CRM",
-
-//     year: "2026",
-
-//     type: "Practice Project",
-
-//     description:
-//       "Built automated lead nurturing workflows with HubSpot, AI summaries, and sales pipeline tracking.",
-
-//       problem:
-//   "Growing agencies were spending hours manually qualifying leads and updating CRM records.",
-
-// solution:
-//   "Designed an Airtable CRM integrated with Make.com, HubSpot, Groq AI, and Slack to automate lead qualification and pipeline management.",
-
-// results: [
-//   "Reduced manual work by 80%",
-//   "Saved approximately 10 hours each week",
-//   "Improved lead response consistency",
-// ],
-
-//     technologies: [
-//       technologies.hubspot,
-//       technologies.make,
-//       technologies.slack,
-//       technologies.claude,
-//     ],
-
-//     metrics: [
-//       "Automated follow-up emails",
-//       "AI lead scoring",
-//       "Sales pipeline dashboard",
-//     ],
-//   },
+},
 ];

@@ -1,4 +1,4 @@
-import { Technology } from "@/data/technologies";
+import type { Technology } from "@/types/technology";
 import { TechnologyIcon } from "./technology-icon";
 
 type Props = {

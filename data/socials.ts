@@ -1,5 +1,5 @@
 import {
-  Github,
+  GitHub,
   Linkedin,
   Mail,
 } from "lucide-react";
@@ -10,7 +10,7 @@ export const socials = [
 
     href: "https://github.com/Nikkypwetti",
 
-    icon: Github,
+    icon: GitHub,
   },
 
   {
