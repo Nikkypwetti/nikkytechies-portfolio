@@ -29,6 +29,15 @@ export const projects: Project[] = [
     "Slack notifies the sales team",
   ],
 
+  workflow: [
+  "Lead Form",
+  "Make.com",
+  "Groq AI",
+  "Airtable CRM",
+  "HubSpot",
+  "Slack",
+],
+
   results: [
     "Saved approximately 10 hours per week",
     "Reduced manual work by about 80%",
@@ -49,6 +58,20 @@ export const projects: Project[] = [
     "10+ hours saved weekly",
     "AI-powered qualification",
   ],
+
+  before: [
+  "Manual lead qualification",
+  "Copying data between spreadsheets",
+  "No centralized CRM",
+  "Slow response times",
+],
+
+after: [
+  "AI-qualified leads",
+  "Automatic CRM updates",
+  "Slack notifications",
+  "80% less manual work",
+],
 
   heroImage: "/images/projects/growagency-cover.png",
 },

@@ -10,6 +10,9 @@ import { ProjectTechStack } from "@/components/projects/case-study/project-tech-
 import { ProjectResults } from "@/components/projects/case-study/project-results";
 import { ProjectGallery } from "@/components/projects/case-study/project-gallery";
 import { ProjectMetrics } from "@/components/projects/case-study/project-metrics";
+import { ProjectBeforeAfter } from "@/components/projects/case-study/project-before-after";
+import { ProjectWorkflow } from "@/components/projects/case-study/project-workflow";
+
 
 type Props = {
   params: Promise<{
@@ -34,6 +37,8 @@ export default async function ProjectPage({ params }: Props) {
 
       <ProjectSolution solution={project.solution} />
 
+      <ProjectWorkflow workflow={project.workflow} />
+
       <ProjectArchitecture architecture={project.architecture} />
 
       <ProjectTechStack technologies={project.technologies} />
@@ -41,6 +46,8 @@ export default async function ProjectPage({ params }: Props) {
       <ProjectResults results={project.results} />
 
       <ProjectMetrics metrics={project.metrics} />
+
+      <ProjectBeforeAfter before={project.before} after={project.after} />
 
       <ProjectGallery />
     </main>

@@ -17,15 +17,22 @@ export interface Project {
 
   architecture: string[];
 
+  workflow: string[];
+
   results: string[];
 
   technologies: Technology[];
 
   metrics: string[];
 
+  before: string[];
+
+  after: string[];
+
   heroImage?: string;
 
   github?: string;
 
   demo?: string;
+
 }
