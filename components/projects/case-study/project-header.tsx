@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Calendar, FolderGit2 } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 
 import type { Project } from "@/types/project";
 
@@ -7,38 +9,87 @@ type Props = {
   project: Project;
 };
 
-export function ProjectHeader({ project }: Props) {
+export function ProjectHeader({
+  project,
+}: Props) {
   return (
     <header className="space-y-10">
+
       <Link
-        href="/#projects"
-        className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+        href="/"
+        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
       >
         <ArrowLeft className="size-4" />
         Back to Portfolio
       </Link>
 
       <div className="space-y-6">
-        <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <FolderGit2 className="size-4" />
-            {project.type}
-          </div>
 
-          <div className="flex items-center gap-2">
-            <Calendar className="size-4" />
+        <div className="flex flex-wrap gap-3">
+
+          <span className="rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+            {project.type}
+          </span>
+
+          <span className="rounded-full border px-4 py-1 text-sm">
             {project.year}
-          </div>
+          </span>
+
         </div>
 
-        <h1 className="max-w-4xl text-5xl font-bold tracking-tight md:text-6xl">
+        <h1 className="text-5xl font-bold tracking-tight md:text-6xl">
           {project.title}
         </h1>
 
-        <p className="max-w-3xl text-xl leading-8 text-muted-foreground">
+        <p className="max-w-3xl text-xl text-muted-foreground">
           {project.description}
         </p>
+
+        <div className="flex flex-wrap gap-4">
+
+          {project.demo && (
+            <Link
+              href={project.demo}
+              target="_blank"
+            >
+              <button className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-primary-foreground">
+                Live Demo
+                <ExternalLink className="size-4" />
+              </button>
+            </Link>
+          )}
+
+          {project.github && (
+            <Link
+              href={project.github}
+              target="_blank"
+            >
+              <button className="inline-flex items-center gap-2 rounded-lg border px-5 py-3">
+                GitHub
+                <SiGithub className="size-4" />
+              </button>
+            </Link>
+          )}
+
+        </div>
+
       </div>
+
+      {project.heroImage && (
+        <div className="overflow-hidden rounded-3xl border shadow-xl">
+
+          <Image
+            src={project.heroImage}
+            alt={project.title}
+            width={1400}
+            height={800}
+            className="w-full object-cover"
+            priority
+          />
+
+        </div>
+      )}
+
     </header>
   );
 }

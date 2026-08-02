@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -11,9 +12,24 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
+<Link href={`/projects/${project.slug}`}>
   <article
-  className="group rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-primary/30"
->
+    className="group rounded-2xl border bg-card transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-2xl"
+  >
+      {project.heroImage && (
+  <div className="relative mb-6 overflow-hidden rounded-xl">
+    <Image
+      src={project.heroImage}
+      alt={project.title}
+      width={1200}
+      height={700}
+      className="aspect-video w-full object-cover transition duration-500 group-hover:scale-105"
+    />
+
+    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+  </div>
+)}
+
       <div className="mb-6 flex items-center justify-between">
         <span className="text-sm font-medium text-primary">
           {project.type}
@@ -24,11 +40,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </span>
       </div>
 
-      <h3 className="text-2xl font-semibold transition-colors group-hover:text-primary">
+      <h3 className="text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-primary">
           {project.title}
       </h3>
 
-      <p className="mt-4 text-muted-foreground">
+      <p className="mt-5 leading-7 text-muted-foreground">
         {project.description}
       </p>
 
@@ -41,24 +57,23 @@ export function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </div>
 
-      <ul className="mt-6 space-y-2">
+      <ul className="mt-6 space-y-3">
         {project.metrics.map((metric) => (
-          <li
-            key={metric}
-            className="text-sm text-muted-foreground"
-          >
-            ✓ {metric}
-          </li>
-        ))}
-      </ul>
+    <li
+      key={metric}
+      className="flex items-center gap-2 text-sm text-muted-foreground"
+    >
+      <span className="text-primary">✓</span>
+      {metric}
+    </li>
+  ))}
+</ul>
 
-      <Link
-        href={`/projects/${project.slug}`}
-        className="mt-8 inline-flex items-center gap-2 font-medium text-primary"
-      >
-        View Case Study
-        <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-      </Link>
+     <div className="mt-8 inline-flex items-center gap-2 font-medium text-primary">
+  View Case Study
+  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+  </div>
     </article>
+  </Link>
   );
 }

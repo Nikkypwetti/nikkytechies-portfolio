@@ -84,4 +84,11 @@ export const technologies: Record<string, Technology> ={
     color: "#611F69",
     category: "Communication",
   },
+
+  gmail: {
+  id: "gmail",
+  name: "Gmail",
+  color: "#EA4335",
+  category: "Communication",
+},
 };

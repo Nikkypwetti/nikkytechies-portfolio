@@ -19,16 +19,16 @@ export function Services() {
           />
         </FadeIn>
 
-        <FadeIn delay={0.2}>
-          <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard
-                key={service.title}
-                {...service}
-              />
-            ))}
-          </div>
-        </FadeIn>
+         <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+  {services.map((service, index) => (
+    <FadeIn
+      key={service.title}
+      delay={index * 0.08}
+    >
+      <ServiceCard {...service} />
+    </FadeIn>
+  ))}
+</div>
 
       </Container>
     </Section>

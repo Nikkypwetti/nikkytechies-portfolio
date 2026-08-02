@@ -1,10 +1,7 @@
 import Link from "next/link";
-import {
-  Mail,
-  Github,
-  Linkedin,
-  Calendar,
-} from "lucide-react";
+
+import { Mail, Calendar, Link as LinkIcon } from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 
 import { FadeIn } from "@/components/animations/fade-in";
 import { Container } from "@/components/shared/container";
@@ -31,11 +28,11 @@ export function Contact() {
 
               <div className="flex items-center gap-4">
                 <Mail className="size-6 text-primary" />
-                <span>your@email.com</span>
+                <span>olanike.nikkytechies@proton.me</span>
               </div>
 
               <div className="flex items-center gap-4">
-                <Github className="size-6 text-primary" />
+                <SiGithub size={20} />
                 <Link
                   href="https://github.com/Nikkypwetti"
                   target="_blank"
@@ -46,7 +43,7 @@ export function Contact() {
               </div>
 
               <div className="flex items-center gap-4">
-                <Linkedin className="size-6 text-primary" />
+                <LinkIcon className="h-5 w-5" />
                 <Link
                   href="https://linkedin.com/in/ganiyu-basirat"
                   target="_blank"

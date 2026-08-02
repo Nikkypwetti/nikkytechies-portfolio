@@ -10,7 +10,8 @@ export function ServiceCard({
   icon: Icon,
 }: Props) {
   return (
-    <article className="group rounded-2xl border bg-card p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-xl">
+    <article className=" rounded-2xl border bg-card p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-2xl"
+>
       <div className="mb-6 inline-flex rounded-xl bg-primary/10 p-4 text-primary">
         <Icon className="size-8" />
       </div>

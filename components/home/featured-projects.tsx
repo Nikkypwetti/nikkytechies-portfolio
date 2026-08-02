@@ -18,16 +18,16 @@ export function FeaturedProjects() {
           />
         </FadeIn>
 
-        <FadeIn delay={0.2}>
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
-            {projects.map((project) => (
-              <ProjectCard
-                key={project.slug}
-                project={project}
-              />
-            ))}
-          </div>
-        </FadeIn>
+       <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          {projects.map((project, index) => (
+          <FadeIn
+            key={project.slug}
+            delay={index * 0.08}
+          >
+            <ProjectCard project={project} />
+          </FadeIn>
+         ))}
+        </div>
 
       </Container>
     </Section>

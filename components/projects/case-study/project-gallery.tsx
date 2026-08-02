@@ -1,7 +1,11 @@
 import Image from "next/image";
 
 type Props = {
-  gallery: string[];
+  gallery: {
+    image: string;
+    title: string;
+    description: string;
+  }[];
 };
 
 export function ProjectGallery({
@@ -9,30 +13,40 @@ export function ProjectGallery({
 }: Props) {
   return (
     <section className="space-y-8">
-      <h2 className="text-3xl font-bold">
-        Project Gallery
-      </h2>
+      <div>
+        <h2 className="text-3xl font-bold">
+          Project Gallery
+        </h2>
 
-      <div className="grid gap-8 md:grid-cols-2">
-        {gallery.map((image, index) => (
-          <div
-            key={image}
-            className="overflow-hidden rounded-2xl border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+        <p className="mt-2 text-muted-foreground">
+          Screenshots from the completed automation system.
+        </p>
+      </div>
+
+      <div className="grid gap-8">
+        {gallery.map((item) => (
+          <article
+            key={item.image}
+            className="overflow-hidden rounded-3xl border bg-card transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
           >
             <Image
-              src={image}
-              alt={`Screenshot ${index + 1}`}
-              width={1200}
-              height={700}
-              className="aspect-video w-full object-cover"
+              src={item.image}
+              alt={item.title}
+              width={1600}
+              height={900}
+              className="w-full object-cover"
             />
 
-            <div className="border-t p-4">
-              <p className="font-medium">
-                Screenshot {index + 1}
+            <div className="space-y-2 border-t p-6">
+              <h3 className="text-xl font-semibold">
+                {item.title}
+              </h3>
+
+              <p className="text-muted-foreground">
+                {item.description}
               </p>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>

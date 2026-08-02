@@ -9,10 +9,14 @@ import { ProjectArchitecture } from "@/components/projects/case-study/project-ar
 import { ProjectTechStack } from "@/components/projects/case-study/project-tech-stack";
 import { ProjectResults } from "@/components/projects/case-study/project-results";
 import { ProjectGallery } from "@/components/projects/case-study/project-gallery";
-import { ProjectMetrics } from "@/components/projects/case-study/project-metrics";
+import { ProjectImpact } from "@/components/projects/case-study/project-impact";
 import { ProjectBeforeAfter } from "@/components/projects/case-study/project-before-after";
 import { ProjectWorkflow } from "@/components/projects/case-study/project-workflow";
-import { ProjectStatistics } from "@/components/projects/case-study/project-statistics";
+import { ProjectOverview } from "@/components/projects/case-study/project-overview";
+import { ProjectNavigation } from "@/components/projects/case-study/project-navigation";
+import { FadeIn } from "@/components/animations/fade-in";
+import { ProjectAutomation } from "@/components/projects/case-study/project-automation";
+
 
 
 type Props = {
@@ -31,29 +35,71 @@ export default async function ProjectPage({ params }: Props) {
   }
 
   return (
-    <main className="mx-auto max-w-5xl space-y-20 px-6 py-20">
-      <ProjectHeader project={project} />
+  <main className="mx-auto max-w-6xl space-y-28 px-6 py-24">
 
-      <ProjectProblem problem={project.problem} />
+  <ProjectHeader project={project} />
 
-      <ProjectSolution solution={project.solution} />
+  <FadeIn>
+    <ProjectOverview overview={project.overview} />
+  </FadeIn>
 
-      <ProjectWorkflow workflow={project.workflow} />
+  <FadeIn delay={0.05}>
+    <ProjectProblem problem={project.problem} />
+  </FadeIn>
 
-      <ProjectArchitecture architecture={project.architecture} />
+  <FadeIn delay={0.10}>
+    <ProjectBeforeAfter
+      before={project.before}
+      after={project.after}
+    />
+  </FadeIn>
 
-      <ProjectTechStack technologies={project.technologies} />
+  <FadeIn delay={0.15}>
+    <ProjectSolution solution={project.solution} />
+  </FadeIn>
 
-      <ProjectResults results={project.results} />
+  <FadeIn delay={0.25}>
+    <ProjectAutomation
+      automation={project.automation}
+    />
+  </FadeIn>
 
-      <ProjectMetrics metrics={project.metrics} />
+  <FadeIn delay={0.20}>
+    <ProjectWorkflow workflow={project.workflow} />
+  </FadeIn>
 
-      <ProjectStatistics stats={project.stats} />
+  <FadeIn delay={0.30}>
+    <ProjectArchitecture architecture={project.architecture} />
+  </FadeIn>
 
-      <ProjectBeforeAfter before={project.before} after={project.after} />
+  <FadeIn delay={0.30}>
+    <ProjectTechStack
+      technologies={project.technologies}
+    />
+  </FadeIn>
 
-      <ProjectGallery gallery={project.gallery} />
+  <FadeIn delay={0.35}>
+    <ProjectImpact
+      stats={project.stats}
+      metrics={project.metrics}
+    />
+  </FadeIn>
 
-    </main>
+  <FadeIn delay={0.40}>
+    <ProjectResults results={project.results} />
+  </FadeIn>
+
+  <FadeIn delay={0.40}>
+    <ProjectGallery gallery={project.gallery} />
+  </FadeIn>
+
+  <FadeIn delay={0.45}>
+    <ProjectNavigation
+      currentProject={project}
+      projects={projects}
+    />
+  </FadeIn>
+
+</main>
   );
 }

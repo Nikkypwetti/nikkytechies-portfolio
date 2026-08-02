@@ -9,7 +9,15 @@ export interface Project {
 
   type: string;
 
+  category:
+  | "CRM"
+  | "Automation"
+  | "AI"
+  | "Notion";
+
   description: string;
+
+  overview: string[];
 
   problem: string;
 
@@ -19,7 +27,25 @@ export interface Project {
 
   workflow: string[];
 
-  gallery: string[];
+  automation: {
+  title: string;
+  description: string;
+  icon:
+    | "form"
+    | "sheet"
+    | "bot"
+    | "database"
+    | "crm"
+    | "workspace"
+    | "slack"
+    | "email";
+  }[];
+
+  gallery: {
+    image: string;
+    title: string;
+    description: string;
+  }[];
 
   results: string[];
 
@@ -38,6 +64,8 @@ export interface Project {
   after: string[];
 
   heroImage?: string;
+
+  automationImage: string;
 
   github?: string;
 

@@ -1,5 +1,6 @@
 import { TechBadge } from "../tech-badge";
 import type { Technology } from "@/types/technology";
+import { FadeIn } from "@/components/animations/fade-in";
 
 type Props = {
   technologies: Technology[];
@@ -14,14 +15,14 @@ export function ProjectTechStack({
         Technology Stack
       </h2>
 
-      <div className="flex flex-wrap gap-3">
-        {technologies.map((tech) => (
-          <TechBadge
-            key={tech.id}
-            tech={tech}
-          />
-        ))}
-      </div>
+      {technologies.map((tech, index) => (
+  <FadeIn
+    key={tech.id}
+    delay={index * 0.04}
+  >
+    <TechBadge tech={tech} />
+  </FadeIn>
+))}
     </section>
   );
 }

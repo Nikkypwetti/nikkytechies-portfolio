@@ -1,11 +1,14 @@
 import {
   Database,
   Workflow,
- Bot,
+  Bot,
   Sheet,
   MessageSquare,
   BrainCircuit,
+  Mail,
 } from "lucide-react";
+
+
 
 type Props = {
   id: string;
@@ -48,6 +51,9 @@ export function TechnologyIcon({ id }: Props) {
 
     case "slack":
       return <MessageSquare className="h-4 w-4 text-pink-500" />;
+
+    case "gmail":
+      return <Mail className="h-4 w-4 text-red-500" />;
 
     default:
       return null;
