@@ -48,28 +48,28 @@ export function ProjectHeader({
         <div className="flex flex-wrap gap-4">
 
           {project.demo && (
-            <Link
-              href={project.demo}
-              target="_blank"
-            >
-              <button className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-primary-foreground">
-                Live Demo
-                <ExternalLink className="size-4" />
-              </button>
-            </Link>
-          )}
+  <a
+    href={project.demo}
+    target="_blank"
+    rel="noreferrer"
+    className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-primary-foreground"
+  >
+    Live Demo
+    <ExternalLink className="size-4" />
+  </a>
+)}
 
-          {project.github && (
-            <Link
-              href={project.github}
-              target="_blank"
-            >
-              <button className="inline-flex items-center gap-2 rounded-lg border px-5 py-3">
-                GitHub
-                <SiGithub className="size-4" />
-              </button>
-            </Link>
-          )}
+{project.github && (
+  <a
+    href={project.github}
+    target="_blank"
+    rel="noreferrer"
+    className="inline-flex items-center gap-2 rounded-lg border px-5 py-3"
+  >
+    GitHub
+    <SiGithub className="size-4" />
+  </a>
+)}
 
         </div>
 

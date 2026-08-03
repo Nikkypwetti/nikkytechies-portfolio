@@ -20,7 +20,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nikkytechies.com"), // Change when you have your final domain
+ metadataBase: new URL(
+  "https://nikkytechies-portfolio.vercel.app"
+),
 
   title: {
     default: siteConfig.name,

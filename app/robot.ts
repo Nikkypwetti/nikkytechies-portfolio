@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
     },
 
-    sitemap: "https://nikkytechies.com/sitemap.xml",
+    sitemap: "https://nikkytechies-portfolio.vercel.app/sitemap.xml",
   };
 }
