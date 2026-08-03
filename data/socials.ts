@@ -1,31 +1,21 @@
-import {
-  GitHub,
-  Linkedin,
-  Mail,
-} from "lucide-react";
+import { SiGithub } from "react-icons/si";
+import { CiLinkedin } from "react-icons/ci";
+import { Mail } from "lucide-react";
 
 export const socials = [
   {
     label: "GitHub",
-
     href: "https://github.com/Nikkypwetti",
-
-    icon: GitHub,
+    icon: SiGithub,
   },
-
   {
     label: "LinkedIn",
-
     href: "https://linkedin.com/in/ganiyu-basirat-308ab9403",
-
-    icon: Linkedin,
+    icon: CiLinkedin,
   },
-
   {
     label: "Email",
-
     href: "mailto:olanike.nikkytechies@proton.me",
-
     icon: Mail,
   },
 ];

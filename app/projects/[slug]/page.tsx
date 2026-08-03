@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { projects } from "@/data/projects";
@@ -102,4 +103,42 @@ export default async function ProjectPage({ params }: Props) {
 
 </main>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
+  const { slug } = await params;
+
+  const project = projects.find(
+    (project) => project.slug === slug
+  );
+
+  if (!project) {
+    return {
+      title: "Project Not Found | Nikky Techies",
+    };
+  }
+
+  return {
+    title: `${project.title} | Nikky Techies`,
+    description: project.description,
+
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      images: project.heroImage
+        ? [project.heroImage]
+        : [],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
+      images: project.heroImage
+        ? [project.heroImage]
+        : [],
+    },
+  };
 }

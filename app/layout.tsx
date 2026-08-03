@@ -3,9 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/layout/theme-provider";
+import { siteConfig } from "@/data/site";
+
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { siteConfig } from "@/data/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,21 +19,82 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nikkytechies.com"), // Change when you have your final domain
+
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
+
   description: siteConfig.description,
-  metadataBase: siteConfig.url
-    ? new URL(siteConfig.url)
-    : undefined,
+
+  keywords: [
+    "Airtable",
+    "Notion",
+    "Make.com",
+    "n8n",
+    "HubSpot",
+    "Zapier",
+    "Workflow Automation",
+    "CRM",
+    "AI Automation",
+    "Business Systems",
+    "Portfolio",
+  ],
+
+  authors: [
+    {
+      name: "Nikky Techies",
+    },
+  ],
+
+  creator: "Nikky Techies",
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://nikkytechies.com",
+    siteName: "Nikky Techies",
+
+    title: siteConfig.name,
+
+    description: siteConfig.description,
+
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Nikky Techies Portfolio",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title: siteConfig.name,
+
+    description: siteConfig.description,
+
+    images: ["/og-image.png"],
+  },
+
+  icons: {
+  icon: [
+    { url: "/favicon.ico" },
+    { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+  ],
+  apple: "/apple-touch-icon.png",
+},
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html
       lang="en"
@@ -40,14 +102,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body className="min-h-screen bg-background font-sans antialiased">
-        <ThemeProvider>
-          <Navbar />
+  <ThemeProvider>
+    <Navbar />
 
-          {children}
+    <main>{children}</main>
 
-          <Footer />
-        </ThemeProvider>
-      </body>
+    <Footer />
+  </ThemeProvider>
+</body>
     </html>
   );
 }

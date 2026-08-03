@@ -11,9 +11,7 @@ export const projects: Project[] = [
 
   type: "Portfolio",
 
-  type: "Portfolio",
-
-category: "CRM",
+   category: "CRM",
 
   description:
     "Designed an AI-powered CRM that automates lead capture, qualification, and follow-up using Airtable, HubSpot, Make.com, Groq AI, and Slack.",
@@ -179,8 +177,6 @@ after: [
   title: "Client Onboarding Automation System",
 
   year: "2026",
-
-  type: "Portfolio",
 
   type: "Portfolio",
 
