@@ -183,75 +183,120 @@ after: [
   category: "Automation",
 
   description:
-    "Designed an automated client onboarding system that creates CRM records, generates Notion workspaces, assigns project tasks, and keeps both the internal team and clients informed automatically.",
+    "Built a professional client onboarding system that turns approved Airtable requests into linked projects, package-specific tasks, AI-generated Notion workspaces, welcome emails, and internal Slack notifications.",
 
   overview: [
-    "Designed a complete client operating system for agencies.",
-    "Automatically creates new client records.",
-    "Generates dedicated Notion project workspaces.",
-    "Assigns onboarding tasks automatically.",
-    "Keeps internal teams and clients informed through automated notifications.",
+    "Built a complete client onboarding operating system for agencies.",
+    "Processes approved onboarding requests from Airtable automatically.",
+    "Creates projects linked to the correct client and service package.",
+    "Generates project tasks dynamically from reusable task templates.",
+    "Uses AI to create personalized workspace content.",
+    "Creates and populates dedicated Notion client workspaces.",
+    "Keeps clients and internal teams informed automatically.",
   ],
 
   problem:
-    "Client onboarding was handled manually using emails, spreadsheets, and separate project tools, leading to inconsistent processes, duplicated work, and delayed project kickoff.",
+    "Client onboarding was handled manually using emails, spreadsheets, and separate project tools, leading to inconsistent processes, duplicated work, manually created tasks, scattered documentation, and delayed project kickoff.",
 
   solution:
-    "Built an automation pipeline using Airtable, Notion, Make.com, Gmail, and Slack that instantly creates CRM records, generates project workspaces, assigns tasks, and sends onboarding notifications.",
+    "Built a scalable onboarding pipeline using Airtable, Make.com, Make AI Toolkit, Notion, Gmail, and Slack. The system watches approved onboarding requests, retrieves the linked client and package, creates the project, generates package-specific tasks, produces structured workspace content with AI, creates the Notion workspace, synchronizes the workspace URL back to Airtable, and sends automated notifications.",
 
   architecture: [
-    "Client signs agreement",
-    "Make.com automation starts",
-    "Create Airtable client record",
-    "Generate Notion workspace",
-    "Create onboarding tasks",
-    "Assign internal team",
-    "Send Slack notification",
-    "Send client welcome email",
+    "Approve the onboarding request in Airtable",
+    "Watch the Ready for Onboarding view",
+    "Mark the request as Processing",
+    "Retrieve the linked client record",
+    "Retrieve the selected package record",
+    "Create and link the Airtable project",
+    "Link the project back to the onboarding request",
+    "Search active task templates for the selected package",
+    "Create project tasks with calculated due dates",
+    "Aggregate all created task records",
+    "Generate structured workspace content with AI",
+    "Parse the AI response into JSON fields",
+    "Create the Notion client workspace",
+    "Append the AI-generated workspace content",
+    "Update the Airtable project with the Notion URL",
+    "Send the client welcome email",
+    "Send the internal Slack notification",
+    "Mark the onboarding request as Completed",
   ],
 
   workflow: [
-    "Agreement Signed",
-    "Make.com",
-    "Airtable CRM",
+    "Approved Request",
+    "Airtable Trigger",
+    "Request Processing",
+    "Client Lookup",
+    "Package Lookup",
+    "Project Creation",
+    "Task Template Search",
+    "Dynamic Task Creation",
+    "Task Aggregation",
+    "AI Content Generator",
+    "JSON Parser",
     "Notion Workspace",
-    "Task Assignment",
-    "Slack",
+    "Airtable Sync",
     "Gmail",
+    "Slack",
+    "Completed",
   ],
 
   automation: [
-  {
-    title: "Agreement",
-    description: "Client signs proposal",
-    icon: "form",
-  },
-  {
-    title: "Make.com",
-    description: "Workflow starts",
-    icon: "bot",
-  },
-  {
-    title: "Airtable",
-    description: "Creates client record",
-    icon: "database",
-  },
-  {
-    title: "Notion",
-    description: "Creates workspace",
-    icon: "workspace",
-  },
-  {
-    title: "Slack",
-    description: "Team notified",
-    icon: "slack",
-  },
-  {
-    title: "Email",
-    description: "Welcome email sent",
-    icon: "email",
-  },
-],
+    {
+      title: "Approved Request",
+      description:
+        "Airtable detects an approved request in the Ready for Onboarding view.",
+      icon: "form",
+    },
+    {
+      title: "Client & Package",
+      description:
+        "The workflow retrieves the linked client and selected package records.",
+      icon: "database",
+    },
+    {
+      title: "Project Creation",
+      description:
+        "A new Airtable project is created and linked to the original request.",
+      icon: "database",
+    },
+    {
+      title: "Dynamic Tasks",
+      description:
+        "Package-specific task templates are converted into project tasks.",
+      icon: "database",
+    },
+    {
+      title: "AI Generator",
+      description:
+        "Make AI Toolkit creates structured, personalized workspace content.",
+      icon: "bot",
+    },
+    {
+      title: "Notion Workspace",
+      description:
+        "A dedicated workspace is created and populated with AI-generated content.",
+      icon: "workspace",
+    },
+    {
+      title: "Airtable Sync",
+      description:
+        "The workspace URL is saved and the project status changes to In Progress.",
+      icon: "database",
+    },
+    {
+      title: "Notifications",
+      description:
+        "Gmail welcomes the client and Slack alerts the internal delivery team.",
+      icon: "email",
+    },
+    {
+      title: "Completed",
+      description:
+        "The onboarding request is marked Completed after every step succeeds.",
+      icon: "form",
+    },
+  ],
 
   heroImage:
     "/images/projects/client-portal/hero.png",
@@ -264,58 +309,59 @@ after: [
       image:
         "/images/projects/client-portal/airtable-dashboard.png",
 
-      title: "Client CRM Dashboard",
+      title: "Client Operations Dashboard",
 
       description:
-        "Airtable dashboard showing every client, onboarding status, assigned manager, project phase, and delivery progress.",
+        "Airtable dashboard showing clients, onboarding requests, automation status, linked projects, project phases, tasks, and delivery progress.",
     },
 
     {
       image:
         "/images/projects/client-portal/notion-workspace.png",
 
-      title: "Generated Notion Workspace",
+      title: "AI-Generated Notion Workspace",
 
       description:
-        "Automatically created project workspace containing documentation, milestones, meeting notes, and deliverables.",
+        "Automatically created workspace containing a personalized welcome message, project overview, objectives, deliverables, milestones, communication plan, and kickoff checklist.",
     },
 
     {
       image:
         "/images/projects/client-portal/make-workflow.png",
 
-      title: "Automation Workflow",
+      title: "Professional Onboarding Workflow",
 
       description:
-        "Complete Make.com workflow responsible for creating CRM records, project workspaces, notifications, and onboarding tasks.",
+        "Complete Make.com scenario responsible for request processing, record lookups, project creation, dynamic task generation, AI content generation, Notion workspace creation, synchronization, and notifications.",
     },
 
     {
       image:
         "/images/projects/client-portal/client-portal.png",
 
-      title: "Client Portal",
+      title: "Client Project Workspace",
 
       description:
-        "Client-facing workspace providing project visibility, documentation, files, and progress updates.",
+        "Client-facing Notion workspace providing centralized project information, deliverables, milestones, communication guidance, and onboarding actions.",
     },
 
     {
       image:
         "/images/projects/client-portal/slack-notification.png",
 
-      title: "Slack Notification",
+      title: "Slack Team Notification",
 
       description:
-        "Automatic Slack notification informing the delivery team that a new client has completed onboarding.",
+        "Automatic Slack notification informing the internal team that client onboarding has completed and providing the project and workspace details.",
     },
   ],
 
   results: [
     "Reduced onboarding time by approximately 85%",
-    "Centralized all client information",
-    "Improved project visibility",
-    "Reduced missed deadlines",
+    "Centralized client and project documentation",
+    "Created package-specific project tasks automatically",
+    "Improved visibility across onboarding and delivery",
+    "Reduced repetitive administrative work",
   ],
 
   technologies: [
@@ -329,7 +375,7 @@ after: [
   metrics: [
     "85% faster onboarding",
     "100% centralized documentation",
-    "Automatic task creation",
+    "Dynamic package-based task creation",
   ],
 
   stats: [
@@ -344,7 +390,7 @@ after: [
       label: "Centralized Documentation",
     },
     {
-      value: 7,
+      value: 18,
       suffix: " steps",
       label: "Automated Workflow",
     },
@@ -352,16 +398,19 @@ after: [
 
   before: [
     "Manual client onboarding",
-    "Project files scattered",
-    "Repeated status requests",
-    "Tasks created manually",
+    "Project information stored across separate tools",
+    "Tasks created individually for every project",
+    "Workspaces prepared manually",
+    "Repeated client and team updates",
   ],
 
   after: [
-    "Automatic onboarding",
-    "Centralized workspace",
-    "Real-time project tracking",
-    "Automatic notifications",
+    "Approved requests processed automatically",
+    "Projects linked to clients and packages",
+    "Tasks generated dynamically from templates",
+    "AI-generated Notion workspaces",
+    "Real-time Airtable project synchronization",
+    "Automatic Gmail and Slack notifications",
   ],
 
   github:
