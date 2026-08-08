@@ -20,9 +20,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
- metadataBase: new URL(
-  "https://nikkytechies-portfolio.vercel.app"
-),
+  metadataBase: new URL(
+    "https://nikkytechies-portfolio.vercel.app"
+  ),
 
   title: {
     default: siteConfig.name,
@@ -56,11 +56,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://nikkytechies.com",
+    url: "https://nikkytechies-portfolio.vercel.app",
     siteName: "Nikky Techies",
-
     title: siteConfig.name,
-
     description: siteConfig.description,
 
     images: [
@@ -75,22 +73,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-
     title: siteConfig.name,
-
     description: siteConfig.description,
-
     images: ["/og-image.png"],
   },
-
-  icons: {
-  icon: [
-    { url: "/favicon.ico" },
-    { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-    { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-  ],
-  apple: "/apple-touch-icon.png",
-},
 };
 
 export default function RootLayout({
@@ -104,16 +90,22 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body className="min-h-screen bg-background font-sans antialiased">
-  <ThemeProvider>
-    <Navbar />
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
 
-    <main>{children}</main>
+          <main>{children}</main>
 
-    <Footer />
-    <SpeedInsights />
-  </ThemeProvider>
-</body>
+          <Footer />
+
+          <SpeedInsights />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

@@ -45,7 +45,7 @@ export function ProjectAutomation({
   return (
     <section className="space-y-8">
       <div>
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-2xl font-semibold tracking-tight">
           Automation Flow
         </h2>
 
@@ -61,7 +61,7 @@ export function ProjectAutomation({
 
           return (
             <div
-              key={step.title}
+              key={`${step.title}-${step.icon}-${index}`}
               className="flex items-center gap-4"
             >
               <div className="w-48 rounded-2xl border bg-card p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-xl">
@@ -77,7 +77,7 @@ export function ProjectAutomation({
               </div>
 
               {index !== automation.length - 1 && (
-                <ArrowRight className="hidden lg:block text-muted-foreground" />
+                <ArrowRight className="hidden text-muted-foreground lg:block" />
               )}
             </div>
           );

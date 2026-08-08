@@ -432,67 +432,94 @@ after: [
   category: "AI",
 
   description:
-    "An AI workflow that converts meeting recordings into structured summaries, extracts action items, updates the CRM automatically, and notifies the team.",
+    "Built an AI-powered meeting intelligence workflow that analyzes client meeting notes from Notion, generates structured insights with Groq AI, logs meeting history in HubSpot, updates active Airtable projects, creates follow-up tasks, and notifies the internal team through Slack.",
 
   overview: [
-    "Automatically processes meeting transcripts using AI.",
-    "Generates structured meeting summaries.",
-    "Extracts action items and decisions.",
-    "Updates Airtable CRM records automatically.",
-    "Creates follow-up tasks inside Notion.",
+    "Monitors new client meeting notes created in Notion.",
+    "Retrieves the existing Airtable project and linked client automatically.",
+    "Uses Groq AI to analyze meeting notes and return structured JSON.",
+    "Extracts meeting summary, sentiment, next action, key topics, buying signals, concerns, and follow-up timing.",
+    "Logs the meeting against the existing HubSpot contact and Closed Won deal.",
+    "Updates the active Airtable project with the latest meeting context.",
+    "Creates a follow-up task automatically and links it to the correct project phase.",
+    "Sends a structured meeting summary to the internal team through Slack.",
+    "Tracks processing, synchronization, completion, and failures inside Notion.",
   ],
 
   problem:
-    "Teams spent hours manually writing meeting notes, creating tasks, and updating CRM records after every client call.",
+    "After client meetings, project information had to be manually summarized, copied into CRM records, converted into follow-up tasks, and shared with the delivery team. This created repetitive administrative work and increased the risk of missing important actions, concerns, or client decisions.",
 
   solution:
-    "Built an AI-powered workflow that summarizes meetings, extracts decisions and tasks, updates Airtable, creates Notion tasks, and sends Slack notifications.",
+    "Built a Make.com automation that watches a Notion Sales Meeting Notes database, retrieves the linked Airtable project and client, analyzes the raw meeting notes with Groq AI, parses the response into structured data, saves the AI insights back to Notion, creates a HubSpot meeting note, updates the existing Airtable project, resolves the correct project phase, creates a follow-up task, sends a Slack summary, and marks the meeting synchronization as completed.",
 
   architecture: [
-    "Meeting recording",
-    "Transcript generated",
-    "n8n automation",
-    "Groq AI summarizes conversation",
-    "Extract action items",
-    "Update Airtable CRM",
-    "Create Notion tasks",
-    "Slack notification",
+    "Watch new Sales Meeting Notes in Notion",
+    "Validate that the meeting is ready for processing",
+    "Mark the meeting as Processing",
+    "Retrieve the existing Airtable project",
+    "Retrieve the client linked to the project",
+    "Analyze meeting notes with Groq AI",
+    "Parse the structured JSON response",
+    "Save AI meeting insights back to Notion",
+    "Create a HubSpot note linked to the existing contact and Closed Won deal",
+    "Update the existing Airtable project",
+    "Resolve the project's linked Project Phase record",
+    "Create a follow-up task linked to the project and phase",
+    "Send the meeting summary to Slack",
+    "Mark the Notion meeting as Completed and synced",
   ],
 
   workflow: [
-    "Meeting Ends",
-    "Transcript",
+    "Notion Meeting Notes",
+    "Validation",
+    "Airtable Project",
+    "Airtable Client",
     "Groq AI",
-    "Airtable",
-    "Notion",
+    "JSON Parser",
+    "Notion AI Results",
+    "HubSpot Note",
+    "Airtable Project Update",
+    "Project Phase Lookup",
+    "Follow-up Task",
     "Slack",
+    "Sync Complete",
   ],
 
   automation: [
   {
-    title: "HubSpot",
-    description: "Deal updated",
-    icon: "crm",
+    title: "Notion Trigger",
+    description: "New client meeting notes trigger the workflow",
+    icon: "workspace",
   },
   {
-    title: "Make.com",
-    description: "Automation triggered",
+    title: "Airtable Lookup",
+    description: "Existing project and client context retrieved",
+    icon: "database",
+  },
+  {
+    title: "Groq AI",
+    description: "Meeting notes analyzed into structured insights",
     icon: "bot",
   },
   {
-    title: "Airtable",
-    description: "Invoice record created",
+    title: "HubSpot",
+    description: "Meeting note added to existing CRM records",
+    icon: "crm",
+  },
+  {
+    title: "Airtable Update",
+    description: "Project updated and follow-up task created",
     icon: "database",
   },
   {
     title: "Slack",
-    description: "Finance notified",
+    description: "Structured meeting summary sent to the team",
     icon: "slack",
   },
   {
-    title: "Email",
-    description: "Invoice delivered",
-    icon: "email",
+    title: "Notion Sync",
+    description: "Meeting marked completed and synchronized",
+    icon: "workspace",
   },
 ],
 
@@ -506,79 +533,125 @@ after: [
     {
       image:
         "/images/projects/meeting-ai/workflow.png",
-      title: "n8n Workflow",
-      description:
-        "Automation that processes transcripts, summarizes meetings and updates business systems.",
-    },
 
-    {
-      image:
-        "/images/projects/meeting-ai/airtable.png",
-      title: "Airtable CRM",
+      title: "AI Meeting Automation Workflow",
+
       description:
-        "CRM updated automatically with meeting summaries and follow-up information.",
+        "Complete Make.com scenario connecting Notion, Airtable, Groq AI, HubSpot, and Slack with processing status tracking and error handling.",
     },
 
     {
       image:
         "/images/projects/meeting-ai/notion.png",
-      title: "Notion Tasks",
+
+      title: "Sales Meeting Notes",
+
       description:
-        "AI-generated action items automatically become project tasks.",
+        "Notion database used to capture raw client meeting notes and store AI-generated summaries, sentiment, next actions, topics, buying signals, concerns, follow-up dates, and synchronization status.",
+    },
+
+    {
+      image:
+        "/images/projects/meeting-ai/airtable.png",
+
+      title: "Automated Project Updates",
+
+      description:
+        "Existing Airtable projects are updated automatically with the latest meeting summary, client sentiment, next action, and meeting date.",
+    },
+
+    {
+      image:
+        "/images/projects/meeting-ai/hubspot.png",
+
+      title: "HubSpot Meeting History",
+
+      description:
+        "AI-generated meeting intelligence is logged as a HubSpot note associated with the existing client contact and Closed Won deal.",
+    },
+
+    {
+      image:
+        "/images/projects/meeting-ai/task.png",
+
+      title: "Automatic Follow-up Tasks",
+
+      description:
+        "The workflow resolves the project's linked phase and creates a follow-up task with the AI-generated next action and calculated due date.",
+    },
+
+    {
+      image:
+        "/images/projects/meeting-ai/slack.png",
+
+      title: "Slack Meeting Summary",
+
+      description:
+        "The delivery team receives an automated summary containing the client, project, sentiment, key topics, concerns, next action, and follow-up date.",
     },
   ],
 
   results: [
-    "Reduced meeting documentation time by 90%",
-    "Automatic CRM updates",
-    "Action items never missed",
-    "Consistent meeting documentation",
+    "Removed repetitive meeting-summary and project-update work",
+    "Centralized AI-generated meeting intelligence in Notion",
+    "Automatically logged client meeting history in HubSpot",
+    "Kept active Airtable projects synchronized with meeting outcomes",
+    "Created follow-up tasks automatically from AI next actions",
+    "Improved visibility for the internal team through Slack summaries",
+    "Added processing and failure tracking for more reliable automation",
   ],
 
   technologies: [
-    technologies.n8n,
+    technologies.make,
     technologies.groq,
     technologies.airtable,
     technologies.notion,
+    technologies.hubspot,
     technologies.slack,
   ],
 
   metrics: [
-    "90% less manual documentation",
-    "Automatic CRM updates",
-    "AI-generated meeting summaries",
+    "14-step automated workflow",
+    "7 structured AI meeting insights",
+    "4 business systems synchronized",
   ],
 
   stats: [
     {
-      value: 90,
-      suffix: "%",
-      label: "Less Documentation",
+      value: 14,
+      suffix: " steps",
+      label: "Automated Workflow",
     },
     {
-      value: 100,
-      suffix: "%",
-      label: "Meeting Coverage",
+      value: 7,
+      suffix: " insights",
+      label: "AI Fields Extracted",
     },
     {
-      value: 5,
-      suffix: " min",
-      label: "Average Processing Time",
+      value: 4,
+      suffix: " systems",
+      label: "Systems Synchronized",
     },
   ],
 
   before: [
-    "Manual note taking",
-    "Forgotten action items",
-    "CRM updated later",
-    "Scattered meeting records",
+    "Meeting notes reviewed manually",
+    "Project records updated manually after calls",
+    "Follow-up actions created manually",
+    "Meeting context scattered across different tools",
+    "Internal teams depended on manual meeting updates",
+    "Automation failures were difficult to track",
   ],
 
   after: [
-    "AI-generated summaries",
-    "Automatic CRM updates",
-    "Instant task creation",
-    "Centralized meeting history",
+    "AI-generated structured meeting summaries",
+    "Automatic Airtable project updates",
+    "Automatic HubSpot meeting history",
+    "AI-generated follow-up task creation",
+    "Automatic project phase resolution",
+    "Instant Slack meeting summaries",
+    "Centralized Notion meeting intelligence",
+    "Processing and error status tracking",
   ],
 
   github:
