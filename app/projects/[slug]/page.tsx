@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }: Props) {
     />
   </FadeIn>
 
-  <FadeIn delay={0.40}>
+  {/* <FadeIn delay={0.40}>
     <ProjectResults results={project.results} />
   </FadeIn>
 
@@ -99,7 +99,19 @@ export default async function ProjectPage({ params }: Props) {
       currentProject={project}
       projects={projects}
     />
-  </FadeIn>
+  </FadeIn> */}
+  <FadeIn delay={0.40}>
+  <ProjectResults results={project.results} />
+</FadeIn>
+
+<ProjectGallery gallery={project.gallery} />
+
+<FadeIn delay={0.45}>
+  <ProjectNavigation
+    currentProject={project}
+    projects={projects}
+  />
+</FadeIn>
 
 </main>
   );

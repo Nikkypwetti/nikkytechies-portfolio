@@ -421,6 +421,206 @@ after: [
 },
 
 {
+  slug: "business-operations-client-project-system",
+
+  title: "Business Operations & Client Delivery System",
+
+  year: "2026",
+
+  type: "Portfolio",
+
+  category: "Operations",
+
+  description:
+    "Designed a centralized operations system for managing clients, projects, tasks, deadlines, SOPs, documentation and client delivery across Notion and Airtable, with structured dashboards and dedicated client workspaces.",
+
+  overview: [
+    "Designed a centralized business operating system for managing client delivery.",
+    "Organized projects, clients, tasks, deadlines, priorities and project status.",
+    "Created structured dashboards for monitoring active and completed work.",
+    "Built dedicated client workspaces for project communication and delivery.",
+    "Centralized meeting notes, project updates, files and deliverables.",
+    "Documented repeatable project kickoff, onboarding and delivery processes.",
+    "Created reusable project structures to support consistent project execution.",
+  ],
+
+  problem:
+    "Client information, tasks, deadlines, project updates, files and documentation can easily become scattered across spreadsheets, emails, documents and messaging tools. This makes it difficult to understand project status, track responsibilities and maintain a consistent client delivery process.",
+
+  solution:
+    "Designed a connected operations system using Notion and Airtable. The system centralizes projects, clients, tasks, deadlines, priorities, documentation and project progress while providing structured client workspaces for project status, deliverables, meeting notes and updates. SOPs and reusable project processes help standardize client onboarding, project kickoff and delivery.",
+
+  architecture: [
+    "Centralize client records",
+    "Create and track projects",
+    "Link projects to the correct clients",
+    "Organize tasks by project",
+    "Track task priorities and deadlines",
+    "Monitor project status and progress",
+    "Use structured project delivery phases",
+    "Create dedicated client project workspaces",
+    "Centralize meeting notes and project updates",
+    "Organize files and project deliverables",
+    "Document project kickoff procedures",
+    "Document client onboarding procedures",
+    "Document project delivery procedures",
+  ],
+
+  workflow: [
+    "Client",
+    "Project",
+    "Tasks",
+    "Priority",
+    "Deadline",
+    "Project Status",
+    "Client Workspace",
+    "Meeting Notes",
+    "Deliverables",
+    "SOP Library",
+    "Project Tracking",
+  ],
+
+  automation: [
+    {
+      title: "Client Records",
+      description:
+        "Client information and project relationships are centralized.",
+      icon: "database",
+    },
+    {
+      title: "Project Tracking",
+      description:
+        "Projects are organized by status, priority, deadline and progress.",
+      icon: "workspace",
+    },
+    {
+      title: "Task Coordination",
+      description:
+        "Tasks are linked to projects and tracked by deadline and priority.",
+      icon: "form",
+    },
+    {
+      title: "Client Workspace",
+      description:
+        "Each client has a structured workspace for project delivery.",
+      icon: "workspace",
+    },
+    {
+      title: "Documentation",
+      description:
+        "Meeting notes, updates, files and deliverables are centralized.",
+      icon: "sheet",
+    },
+    {
+      title: "SOP Library",
+      description:
+        "Kickoff, onboarding and project delivery processes are documented.",
+      icon: "sheet",
+    },
+  ],
+
+  heroImage:
+    "/images/projects/business-os/hero.png",
+
+  automationImage:
+    "/images/projects/business-os/workspace.png",
+
+  gallery: [
+  {
+    image: "/images/projects/business-os/dashboard.png",
+    title: "Business Operations Dashboard",
+    description:
+      "Centralized workspace for accessing projects, CRM information, documentation, team resources and client delivery systems.",
+  },
+  {
+    image: "/images/projects/business-os/projects.png",
+    title: "Project Tracking System",
+    description:
+      "Projects are tracked by client, status, priority, start date, deadline, tasks and overall progress.",
+  },
+  {
+    image: "/images/projects/business-os/tasks.png",
+    title: "Task & Deadline Coordination",
+    description:
+      "Centralized task tracking helps organize responsibilities, priorities, due dates and project-related work.",
+  },
+  {
+    image: "/images/projects/business-os/client-workspace.png",
+    title: "Client Project Workspace",
+    description:
+      "Client-facing workspace centralizing project status, tasks, deliverables, meeting notes, files, updates and communication.",
+  },
+  {
+    image: "/images/projects/business-os/sop-library.png",
+    title: "SOP & Process Library",
+    description:
+      "Documented repeatable processes for project kickoff, client onboarding and project delivery to support consistent execution.",
+  },
+],
+
+  results: [
+    "Centralized client and project information",
+    "Improved visibility into project status and deadlines",
+    "Structured task and priority tracking",
+    "Centralized project documentation and meeting notes",
+    "Created dedicated client delivery workspaces",
+    "Documented repeatable operating procedures",
+    "Standardized project coordination and handoff",
+  ],
+
+  technologies: [
+    technologies.airtable,
+    technologies.notion,
+  ],
+
+  metrics: [
+    "Centralized project operations",
+    "Structured task & deadline tracking",
+    "Documented project processes",
+  ],
+
+  stats: [
+    {
+      value: 1,
+      suffix: " hub",
+      label: "Operations System",
+    },
+    {
+      value: 6,
+      suffix: " areas",
+      label: "Operations Managed",
+    },
+    {
+      value: 3,
+      suffix: " SOPs",
+      label: "Core Processes",
+    },
+  ],
+
+  before: [
+    "Client information scattered across different tools",
+    "Tasks and deadlines difficult to monitor",
+    "Project documentation stored separately",
+    "Limited project status visibility",
+    "Project processes repeated without documented procedures",
+  ],
+
+  after: [
+    "Centralized client operations",
+    "Structured project and task tracking",
+    "Clear deadlines and priorities",
+    "Dedicated client project workspaces",
+    "Organized documentation and meeting notes",
+    "Documented kickoff, onboarding and delivery procedures",
+    "Clear project status and delivery visibility",
+  ],
+
+  github: "",
+
+  demo: "",
+},
+
+{
   slug: "ai-meeting-notes-crm-sync",
 
   title: "AI Meeting Notes & CRM Sync",

@@ -1,47 +1,47 @@
 import {
-  Bot,
-  BrainCircuit,
+  ClipboardList,
+  Users,
   Database,
+  FileText,
   LayoutDashboard,
-  Boxes,
   Workflow,
 } from "lucide-react";
 
 export const skills = [
   {
-    title: "Automation Systems",
+    title: "Project Coordination",
     description:
-      "Designing end-to-end workflows that eliminate repetitive business tasks.",
-    icon: Workflow,
+      "Organizing projects, tasks, priorities, deadlines, status updates and follow-up actions to keep work moving.",
+    icon: ClipboardList,
   },
   {
-    title: "Airtable CRM",
+    title: "Client Onboarding & Delivery",
     description:
-      "Building custom CRM systems for sales, operations and project management.",
+      "Coordinating client onboarding, project setup, communication, deliverables and handoff processes.",
+    icon: Users,
+  },
+  {
+    title: "CRM & Data Operations",
+    description:
+      "Managing structured client, lead and project information using Airtable, HubSpot and connected business systems.",
     icon: Database,
   },
   {
-    title: "AI Integrations",
+    title: "SOP & Documentation",
     description:
-      "Using AI for lead qualification, meeting summaries and intelligent automation.",
-    icon: BrainCircuit,
+      "Creating clear SOPs, project documentation, meeting notes and repeatable processes for consistent execution.",
+    icon: FileText,
   },
   {
-    title: "Notion Systems",
+    title: "Notion & Workspace Systems",
     description:
-      "Creating organized workspaces for documentation, SOPs and project management.",
+      "Building organized workspaces for project management, client portals, documentation, tasks and knowledge management.",
     icon: LayoutDashboard,
   },
   {
-    title: "Business Operations",
+    title: "Workflow & AI Automation",
     description:
-      "Connecting business tools into one centralized operating system.",
-    icon: Boxes,
-  },
-  {
-    title: "Workflow Automation",
-    description:
-      "Building automations with Make.com, n8n and Zapier.",
-    icon: Bot,
+      "Building automated workflows with Make.com, n8n, Zapier and AI to reduce repetitive administrative work.",
+    icon: Workflow,
   },
 ];

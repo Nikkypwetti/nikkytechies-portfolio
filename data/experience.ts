@@ -1,12 +1,12 @@
 export const experience = [
   {
-    company: "Freelance",
+    company: "Freelance & Portfolio Projects",
 
-    role: "Automation Systems Builder",
+    role: "Operations, CRM & Automation Systems Builder",
 
     period: "2025 – Present",
 
     description:
-      "Designing Airtable CRMs, AI-powered workflows, Notion workspaces and business automation systems using Make.com, n8n and modern APIs.",
+      "Designing client onboarding systems, project tracking workflows, Airtable CRMs, Notion workspaces, SOP documentation and AI-powered automations using Make.com, n8n, HubSpot and modern APIs.",
   },
 ];

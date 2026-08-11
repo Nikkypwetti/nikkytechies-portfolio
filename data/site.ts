@@ -10,7 +10,7 @@ export const siteConfig = {
 
   author: "Ganiyu Basirat Olanike",
 
-  email: "olanike.nikkytechies@proton.me",
+  email: "olanike.basirat30@gmail.com",
 
   location: "Lagos, Nigeria",
 

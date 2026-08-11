@@ -13,7 +13,9 @@ export interface Project {
   | "CRM"
   | "Automation"
   | "AI"
-  | "Notion";
+  | "Notion"
+  | "Operations";
+
 
   description: string;
 

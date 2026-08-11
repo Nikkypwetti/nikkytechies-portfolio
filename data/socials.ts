@@ -15,7 +15,7 @@ export const socials = [
   },
   {
     label: "Email",
-    href: "mailto:olanike.nikkytechies@proton.me",
+    href: "mailto:olanike.basirat30@gmail.com",
     icon: Mail,
   },
 ];

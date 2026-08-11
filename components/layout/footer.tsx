@@ -7,31 +7,31 @@ export function Footer() {
     <footer className="border-t bg-muted/20">
       <Container>
         <div className="grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-4">
-          
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link
               href="/"
               className="text-xl font-bold tracking-tight"
             >
-              NikkyTechies
+              <span className="text-foreground">Nikky</span>
+              <span className="text-primary">Techies</span>
             </Link>
 
             <p className="mt-4 max-w-md text-sm leading-6 text-muted-foreground">
-              Building Airtable, Notion, CRM, automation and AI-powered
-              systems that help businesses replace repetitive manual work
-              with scalable workflows.
+              Supporting organized client operations, project coordination,
+              CRM workflows and business automation through structured systems
+              built with Airtable, Notion, HubSpot, Make.com, n8n and AI.
             </p>
 
             <Link
               href="/contact"
               className="mt-5 inline-flex text-sm font-medium text-primary hover:underline"
             >
-              Let&apos;s build a system →
+              Let&apos;s work together →
             </Link>
           </div>
 
-          {/* Quick Links */}
+          {/* Navigation */}
           <div>
             <h3 className="mb-4 text-sm font-semibold">
               Navigation
@@ -53,6 +53,13 @@ export function Footer() {
               </Link>
 
               <Link
+                href="/about"
+                className="transition-colors hover:text-foreground"
+              >
+                About
+              </Link>
+
+              <Link
                 href="/resume"
                 className="transition-colors hover:text-foreground"
               >
@@ -68,18 +75,19 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Operations */}
           <div>
             <h3 className="mb-4 text-sm font-semibold">
-              What I Build
+              What I Support
             </h3>
 
             <div className="flex flex-col gap-3 text-sm text-muted-foreground">
-              <span>Airtable CRM Systems</span>
-              <span>Notion Workspaces</span>
-              <span>Business Automation</span>
-              <span>AI Workflows</span>
-              <span>CRM Integrations</span>
+              <span>Project Coordination</span>
+              <span>Client Onboarding</span>
+              <span>Task & Deadline Tracking</span>
+              <span>CRM Operations</span>
+              <span>SOP Documentation</span>
+              <span>Workflow Automation</span>
             </div>
           </div>
         </div>
@@ -91,7 +99,7 @@ export function Footer() {
           </p>
 
           <p>
-            Built with Next.js, TypeScript & Tailwind CSS.
+            Operations • Project Coordination • CRM • Automation
           </p>
         </div>
       </Container>

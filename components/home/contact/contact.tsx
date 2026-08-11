@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Mail, Calendar, Link as LinkIcon } from "lucide-react";
+import { Mail, Link as LinkIcon } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 
 import { FadeIn } from "@/components/animations/fade-in";
@@ -16,26 +16,32 @@ export function Contact() {
         <FadeIn>
           <SectionHeading
             eyebrow="Contact"
-            title="Let's Build Something Amazing Together"
-            description="Whether you need an Airtable CRM, AI workflow, Notion workspace, or business automation, I'd love to hear about your project."
+            title="Let's Work Together"
+            description="I'm available for remote operations, project coordination, CRM, business systems and automation opportunities."
           />
         </FadeIn>
 
         <div className="mt-16 grid gap-10 lg:grid-cols-2">
-
           <FadeIn delay={0.2}>
             <div className="space-y-6">
-
               <div className="flex items-center gap-4">
                 <Mail className="size-6 text-primary" />
-                <span>olanike.nikkytechies@proton.me</span>
+
+                <Link
+                  href="mailto:olanike.basirat30@gmail.com"
+                  className="hover:text-primary"
+                >
+                  olanike.basirat30@gmail.com
+                </Link>
               </div>
 
               <div className="flex items-center gap-4">
                 <SiGithub size={20} />
+
                 <Link
                   href="https://github.com/Nikkypwetti"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-primary"
                 >
                   github.com/Nikkypwetti
@@ -44,40 +50,39 @@ export function Contact() {
 
               <div className="flex items-center gap-4">
                 <LinkIcon className="h-5 w-5" />
+
                 <Link
-                  href="https://linkedin.com/in/ganiyu-basirat"
+                  href="https://www.linkedin.com/in/ganiyu-basirat-308ab9403"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-primary"
                 >
-                  linkedin.com/in/ganiyu-basirat
+                  linkedin.com/in/ganiyu-basirat-308ab9403
                 </Link>
               </div>
-
             </div>
           </FadeIn>
 
           <FadeIn delay={0.4}>
             <div className="rounded-2xl border bg-card p-8">
-
               <h3 className="text-2xl font-semibold">
-                Ready to automate your business?
+                Need help organizing your operations or workflows?
               </h3>
 
-              <p className="mt-4 text-muted-foreground">
-                Book a discovery call and let's discuss how automation can
-                save your team hours every week.
+              <p className="mt-4 leading-7 text-muted-foreground">
+                I&apos;m available for remote operations, project coordination,
+                CRM support and automation opportunities. Feel free to reach
+                out to discuss how I can support your team.
               </p>
 
-             <Link href="mailto:olanike.nikkytechies@proton.me">
+              <Link href="mailto:olanike.basirat30@gmail.com">
                 <Button size="lg" className="mt-8 w-full">
-                  <Calendar className="mr-2 size-5" />
-                  Book a Discovery Call
+                  <Mail className="mr-2 size-5" />
+                  Email Me
                 </Button>
               </Link>
-
             </div>
           </FadeIn>
-
         </div>
       </Container>
     </Section>

@@ -9,43 +9,38 @@ export function ResumeCTA() {
   return (
     <Section>
       <Container>
-
         <FadeIn>
           <div className="rounded-3xl border bg-card px-8 py-16 text-center">
-
             <h2 className="text-4xl font-bold">
-              Let's Build Your Next Automation System
+              Looking for Operations, Project or Automation Support?
             </h2>
 
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              I'm available for Airtable, Notion, AI workflow and business automation projects.
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+              I&apos;m available for remote operations, project coordination,
+              CRM support and workflow automation opportunities.
             </p>
 
-            <div className="mt-10 flex justify-center gap-4">
-
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg">
                   Contact Me
                 </Button>
               </Link>
 
-               <a
-  href="/resume/ganiyu-basirat-resume.pdf"
-  download
->
-  <Button
-    size="lg"
-    variant="outline"
-  >
-    Download Resume
-  </Button>
-</a>
-
+              <a
+                href="/resume/ganiyu-basirat-resume.pdf"
+                download
+              >
+                <Button
+                  size="lg"
+                  variant="outline"
+                >
+                  Download Resume
+                </Button>
+              </a>
             </div>
-
           </div>
         </FadeIn>
-
       </Container>
     </Section>
   );

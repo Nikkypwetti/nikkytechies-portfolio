@@ -7,10 +7,8 @@ export function ResumeSummary() {
   return (
     <Section>
       <Container>
-
         <FadeIn>
           <div className="max-w-4xl">
-
             <h2 className="text-3xl font-bold">
               Professional Summary
             </h2>
@@ -18,10 +16,8 @@ export function ResumeSummary() {
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
               {profile.summary}
             </p>
-
           </div>
         </FadeIn>
-
       </Container>
     </Section>
   );
