@@ -2,174 +2,6 @@ import type { Project } from "@/types/project";
 import { technologies } from "./technologies";
 
 export const projects: Project[] = [
-  {
-  slug: "growagency-crm-ai-pipeline",
-
-  title: "GrowAgency CRM + AI Pipeline",
-
-  year: "2026",
-
-  type: "Portfolio",
-
-   category: "CRM",
-
-  description:
-    "Designed an AI-powered CRM that automates lead capture, qualification, and follow-up using Airtable, HubSpot, Make.com, Groq AI, and Slack.",
-
-  overview: [
-    "Built an AI-powered CRM automation that removes manual lead processing.",
-    "Integrated Google Sheets, Make.com, Groq AI, Airtable, Slack and Gmail.",
-    "Automatically qualifies every lead using AI scoring.",
-    "Routes leads based on priority and business rules.",
-    "Provides a real-time dashboard for sales visibility.",
- ],
-
-  problem:
-    "Sales teams manually copied leads between forms, spreadsheets, and CRM systems, causing delays and inconsistent follow-up.",
-
-  solution:
-    "Built an automated pipeline that captures leads, enriches them with AI, assigns a qualification score, recommends services, notifies Slack, and stores everything in Airtable and HubSpot.",
-
-  architecture: [
-  "Google Form submission",
-  "Google Sheets trigger starts the automation",
-  "Create Airtable CRM record",
-  "Clean and normalize lead data",
-  "Groq AI analyzes the lead",
-  "Generate AI score, pain point, package recommendation and next action",
-  "Update Airtable with AI insights",
-  "Router checks AI qualification status",
-  "Hot Lead → Slack notification",
-  "Qualified → Slack notification",
-  "Needs Discovery → Slack notification",
-  "Not Fit → Email follow-up",
-],
-
- workflow: [
-  "Google Form",
-  "Google Sheets",
-  "Make.com",
-  "Groq AI",
-  "Airtable CRM",
-  "Slack & Email",
-],
-
-automation: [
-  {
-    title: "Google Form",
-    description: "Lead submits request",
-    icon: "form",
-  },
-  {
-    title: "Google Sheets",
-    description: "Trigger starts",
-    icon: "sheet",
-  },
-  {
-    title: "Make.com",
-    description: "Automation runs",
-    icon: "bot",
-  },
-  {
-    title: "Groq AI",
-    description: "Scores the lead",
-    icon: "bot",
-  },
-  {
-    title: "Airtable",
-    description: "Updates CRM",
-    icon: "database",
-  },
-  {
-    title: "Slack",
-    description: "Sales notified",
-    icon: "slack",
-  },
-],
-
-
-heroImage: "/images/projects/growagency/hero.png",
-
-automationImage:
-"/images/projects/growagency/make-workflow.png",
-
-gallery: [
-  {
-    image: "/images/projects/growagency/dashboard.png",
-    title: "Airtable CRM Dashboard",
-    description:
-      "Real-time dashboard showing AI scores, lead status, sales pipeline and CRM metrics.",
-  },
-
-  {
-    image: "/images/projects/growagency/make-workflow.png",
-    title: "Make.com Automation",
-    description:
-      "Complete automation that receives leads, processes them with AI, updates Airtable and routes notifications.",
-  },
-
-  {
-    image: "/images/projects/growagency/slack-alert.png",
-    title: "Slack Notification",
-    description:
-      "Automatic notification sent to the sales team whenever a qualified lead is detected.",
-  },
-],
-
-  results: [
-    "Saved approximately 10 hours per week",
-    "Reduced manual work by about 80%",
-    "Standardized lead qualification",
-    "Improved response speed",
-  ],
-
-  technologies: [
-    technologies.airtable,
-    technologies.make,
-    technologies.hubspot,
-    technologies.groq,
-    technologies.slack,
-  ],
-
-  metrics: [
-    "80% less manual work",
-    "10+ hours saved weekly",
-    "AI-powered qualification",
-  ],
-
-  stats: [
-  {
-    value: 80,
-    suffix: "%",
-    label: "Less Manual Work",
-  },
-  {
-    value: 10,
-    suffix: "+ hrs",
-    label: "Saved Per Week",
-  },
-  {
-    value: 5,
-    suffix: " min",
-    label: "Average Response Time",
-  },
-],
-
-  before: [
-  "Manual lead qualification",
-  "Copying data between spreadsheets",
-  "No centralized CRM",
-  "Slow response times",
-],
-
-after: [
-  "AI-qualified leads",
-  "Automatic CRM updates",
-  "Slack notifications",
-  "80% less manual work",
-],
-
-},
 
 {
   slug: "client-onboarding-automation",
@@ -357,12 +189,13 @@ after: [
   ],
 
   results: [
-    "Reduced onboarding time by approximately 85%",
-    "Centralized client and project documentation",
-    "Created package-specific project tasks automatically",
-    "Improved visibility across onboarding and delivery",
-    "Reduced repetitive administrative work",
-  ],
+  "Created projects automatically from approved onboarding requests",
+  "Generated package-specific project tasks from reusable templates",
+  "Centralized client and project documentation",
+  "Created dedicated Notion client workspaces automatically",
+  "Synchronized project and workspace information back to Airtable",
+  "Automated client and internal team notifications",
+],
 
   technologies: [
     technologies.airtable,
@@ -373,28 +206,28 @@ after: [
   ],
 
   metrics: [
-    "85% faster onboarding",
-    "100% centralized documentation",
-    "Dynamic package-based task creation",
-  ],
+  "18-step automated workflow",
+  "5 service packages supported",
+  "Package-based task generation",
+],
 
-  stats: [
-    {
-      value: 85,
-      suffix: "%",
-      label: "Faster Onboarding",
-    },
-    {
-      value: 100,
-      suffix: "%",
-      label: "Centralized Documentation",
-    },
-    {
-      value: 18,
-      suffix: " steps",
-      label: "Automated Workflow",
-    },
-  ],
+stats: [
+  {
+    value: 18,
+    suffix: " steps",
+    label: "Automated Workflow",
+  },
+  {
+    value: 5,
+    suffix: " packages",
+    label: "Service Packages",
+  },
+  {
+    value: 4,
+    suffix: " systems",
+    label: "Core Systems Connected",
+  },
+],
 
   before: [
     "Manual client onboarding",
@@ -413,11 +246,8 @@ after: [
     "Automatic Gmail and Slack notifications",
   ],
 
-  github:
-    "https://github.com/yourusername/client-onboarding-automation",
-
-  demo:
-    "https://your-demo-link.com",
+  github: "",
+  demo: "",
 },
 
 {
@@ -854,10 +684,235 @@ after: [
     "Processing and error status tracking",
   ],
 
-  github:
-    "https://github.com/yourusername/ai-meeting-sync",
+  github: "",
+  demo: "",
+},
 
-  demo:
-    "https://your-demo-link.com",
+{
+  slug: "growagency-crm-ai-pipeline",
+
+  title: "GrowAgency CRM + AI Pipeline",
+
+  year: "2026",
+
+  type: "Portfolio",
+
+  category: "CRM",
+
+  description:
+    "Built a two-workflow AI-powered lead operations system that captures leads from Google Sheets, qualifies them with Groq AI, stores structured CRM records in Airtable, and automatically routes follow-up actions through Slack, Gmail, Google Calendar, and task creation workflows using n8n.",
+
+  overview: [
+    "Built a two-workflow lead operations system for lead capture, AI qualification, CRM management and follow-up.",
+    "Workflow 1 captures new leads from Google Sheets and sends them to Groq AI for analysis.",
+    "Parses the AI response and creates structured lead records automatically in Airtable.",
+    "Workflow 2 searches CRM records and routes leads based on qualification status.",
+    "Automates Slack notifications, Gmail follow-ups, calendar events and follow-up tasks.",
+    "Keeps lead qualification, follow-up actions and CRM status synchronized in Airtable.",
+  ],
+
+  problem:
+    "Lead processing required manually reviewing submissions, deciding which leads needed attention, updating CRM records, creating follow-up activities and notifying the team across separate tools. This made lead handling repetitive and made it harder to maintain a consistent follow-up process.",
+
+  solution:
+    "Built two connected n8n workflows. The first workflow captures new lead submissions from Google Sheets, sends the lead information to Groq AI for qualification, parses the structured AI response and creates the lead record in Airtable. The second workflow runs on a schedule, searches Airtable for leads requiring action, loops through the records, routes each lead by qualification status and automatically triggers the appropriate Slack notification, Gmail follow-up, Google Calendar event, follow-up task and Airtable update.",
+
+  architecture: [
+    "Lead submits information through the lead intake process",
+    "Google Sheets stores the new lead submission",
+    "Workflow 1 starts from the Google Sheets trigger",
+    "Lead information is sent to Groq AI through an HTTP request",
+    "Groq AI analyzes the lead information",
+    "AI generates structured lead qualification insights",
+    "JavaScript parses and prepares the AI response",
+    "Airtable CRM record is created with the lead information and AI results",
+    "Workflow 2 runs on a scheduled trigger",
+    "Airtable records requiring follow-up are searched",
+    "Records are processed through a loop",
+    "Switch logic routes leads by qualification status",
+    "Hot Lead → Slack notification and follow-up actions",
+    "Qualified → Slack notification and follow-up actions",
+    "Needs Discovery → Slack notification and follow-up actions",
+    "Nurture → Gmail follow-up",
+    "Not Fit → Gmail follow-up",
+    "Google Calendar events are created where follow-up is required",
+    "Follow-up tasks are created for actionable leads",
+    "Airtable records are updated after each action",
+  ],
+
+  workflow: [
+    "Google Sheets",
+    "n8n Workflow 1",
+    "Groq AI",
+    "JavaScript",
+    "Airtable CRM",
+    "Scheduled Processing",
+    "n8n Workflow 2",
+    "Lead Status Routing",
+    "Slack",
+    "Gmail",
+    "Google Calendar",
+    "Google Tasks",
+    "Airtable Update",
+  ],
+
+  automation: [
+    {
+      title: "Lead Intake",
+      description:
+        "Google Sheets detects a new lead submission and starts the first workflow.",
+      icon: "sheet",
+    },
+    {
+      title: "AI Qualification",
+      description:
+        "Groq AI analyzes the lead and generates structured qualification insights.",
+      icon: "bot",
+    },
+    {
+      title: "CRM Creation",
+      description:
+        "JavaScript prepares the AI output and creates the structured lead record in Airtable.",
+      icon: "database",
+    },
+    {
+      title: "Scheduled Processing",
+      description:
+        "The second workflow runs on a schedule and searches Airtable for leads requiring follow-up.",
+      icon: "bot",
+    },
+    {
+      title: "Lead Routing",
+      description:
+        "Switch logic routes Hot Lead, Qualified, Needs Discovery, Nurture and Not Fit leads into different actions.",
+      icon: "form",
+    },
+    {
+      title: "Slack Alerts",
+      description:
+        "Hot, qualified and discovery leads trigger structured internal Slack notifications.",
+      icon: "slack",
+    },
+    {
+      title: "Follow-up Actions",
+      description:
+        "Google Calendar events and follow-up tasks are created when the lead requires action.",
+      icon: "form",
+    },
+    {
+      title: "Email Follow-up",
+      description:
+        "Gmail handles email-based follow-up for nurture and not-fit lead routes.",
+      icon: "email",
+    },
+    {
+      title: "CRM Update",
+      description:
+        "Airtable is updated after the follow-up action so the CRM reflects the latest lead status.",
+      icon: "database",
+    },
+  ],
+
+  heroImage:
+    "/images/projects/growagency/hero.png",
+
+  automationImage:
+    "/images/projects/growagency/workflow-2.png",
+
+  gallery: [
+  {
+    image: "/images/projects/growagency/dashboard.png",
+    title: "Airtable CRM Dashboard",
+    description:
+      "Centralized CRM dashboard showing lead records, AI qualification results, lead status, follow-up information and sales pipeline visibility.",
+  },
+  {
+    image: "/images/projects/growagency/workflow-1.png",
+    title: "Workflow 1 — Lead Intake & AI Qualification",
+    description:
+      "New Google Sheets submissions are sent to Groq AI for qualification, processed with JavaScript and converted into structured Airtable CRM records.",
+  },
+  {
+    image: "/images/projects/growagency/workflow-2.png",
+    title: "Workflow 2 — Lead Routing & Follow-up",
+    description:
+      "A scheduled n8n workflow searches Airtable, processes leads through qualification-based routing and triggers Slack, Gmail, calendar, task and CRM update actions.",
+  },
+  {
+    image: "/images/projects/growagency/slack-alert.png",
+    title: "Slack Lead Notification",
+    description:
+      "Automatic Slack notifications provide the team with lead qualification and follow-up information when a lead requires attention.",
+  },
+],
+
+  results: [
+    "Automated lead intake from Google Sheets into Airtable CRM",
+    "Standardized AI-assisted lead qualification using Groq AI",
+    "Created rule-based routing for five lead qualification outcomes",
+    "Automated Slack notifications for actionable leads",
+    "Created calendar events and follow-up tasks automatically",
+    "Automated email follow-up for selected lead outcomes",
+    "Kept CRM records synchronized with follow-up actions",
+    "Reduced repetitive lead-processing and administrative steps",
+  ],
+
+  technologies: [
+    technologies.googleSheets,
+    technologies.n8n,
+    technologies.groq,
+    technologies.airtable,
+    technologies.slack,
+    technologies.gmail,
+  ],
+
+  metrics: [
+    "2 connected n8n workflows",
+    "5 qualification routes",
+    "AI-powered lead qualification",
+  ],
+
+  stats: [
+    {
+      value: 2,
+      suffix: " workflows",
+      label: "Connected Automations",
+    },
+    {
+      value: 5,
+      suffix: " routes",
+      label: "Lead Outcomes",
+    },
+    {
+      value: 8,
+      suffix: " tools",
+      label: "Systems Used",
+    },
+  ],
+
+  before: [
+    "Lead submissions reviewed manually",
+    "Manual lead qualification",
+    "CRM records created manually",
+    "Follow-up decisions handled individually",
+    "Calendar follow-ups created manually",
+    "Team notifications sent manually",
+    "Lead status updates spread across separate tools",
+  ],
+
+  after: [
+    "Automatic lead intake",
+    "AI-assisted lead qualification",
+    "Automatic Airtable CRM record creation",
+    "Five rule-based qualification routes",
+    "Automatic Slack notifications",
+    "Automatic Gmail follow-up",
+    "Automatic calendar events and follow-up tasks",
+    "CRM records updated after follow-up actions",
+  ],
+
+  github: "",
+
+  demo: "",
 },
 ];
