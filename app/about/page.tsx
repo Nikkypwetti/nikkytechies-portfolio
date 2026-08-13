@@ -10,7 +10,7 @@ import { AboutCTA } from "@/components/about/about-cta";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn more about Nikky Techies and how I design Airtable, Notion and AI automation systems.",
+    "Learn about Ganiyu Basirat Olanike and my work across operations, revenue operations, project coordination, CRM systems, client onboarding, documentation and workflow automation.",
 };
 
 export default function AboutPage() {

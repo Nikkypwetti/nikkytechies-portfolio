@@ -13,7 +13,7 @@ export function Hero() {
         <div className="max-w-4xl">
           <FadeIn>
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-              Operations • Project Coordination • Automation
+              Operations • RevOps • Project Coordination • CRM & Automation
             </p>
           </FadeIn>
 

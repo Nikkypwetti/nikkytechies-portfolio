@@ -12,20 +12,20 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Nikky Techies for Airtable, Notion, CRM, n8n, Make.com, Zapier, and AI automation projects.",
+    "Contact Ganiyu Basirat Olanike for remote Operations, Revenue Operations, Project Coordination, CRM, Sales Operations and Business Systems opportunities.",
 };
 
 const contactLinks = [
   {
     label: "Email",
-    value: "olanike.nikkytechies@proton.me",
-    href: "mailto:olanike.nikkytechies@proton.me",
+    value: "olanike.basirat30@gmail.com",
+    href: "mailto:olanike.basirat30@gmail.com",
     icon: Mail,
   },
   {
     label: "LinkedIn",
-    value: "Ganiyu Basirat",
-    href: "https://linkedin.com/in/ganiyu-basirat-308ab9403",
+    value: "Ganiyu Basirat Olanike",
+    href: "https://www.linkedin.com/in/ganiyu-basirat-308ab9403",
     icon: CiLinkedin,
   },
   {
@@ -48,14 +48,20 @@ export default function ContactPage() {
               </p>
 
               <h1 className="text-5xl font-bold tracking-tight md:text-7xl">
-                Let&apos;s Build a Better Business System
+                Let&apos;s Connect
               </h1>
 
               <p className="mt-8 max-w-3xl text-xl leading-relaxed text-muted-foreground">
-                Tell me about the manual process, disconnected tools, or
-                automation problem you want to solve. I&apos;m available for
-                Airtable, Notion, Make.com, n8n, Zapier, HubSpot, and AI
-                workflow projects.
+                I&apos;m open to remote opportunities in Operations, Revenue
+                Operations, Project Coordination, CRM Administration, Sales
+                Operations and Business Systems.
+              </p>
+
+              <p className="mt-4 max-w-3xl text-lg leading-8 text-muted-foreground">
+                I work with tools such as Airtable, Notion, HubSpot, ClickUp,
+                Make.com, n8n, Zapier, Google Workspace and Slack to support
+                client operations, CRM workflows, project delivery, reporting,
+                documentation and workflow automation.
               </p>
             </div>
           </FadeIn>
@@ -63,27 +69,36 @@ export default function ContactPage() {
           <div className="mt-16 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <FadeIn delay={0.15}>
               <div className="rounded-3xl border bg-card p-8 md:p-10">
-                <h2 className="text-3xl font-bold">Start a Conversation</h2>
+                <h2 className="text-3xl font-bold">
+                  Open to Remote Opportunities
+                </h2>
 
                 <p className="mt-4 leading-7 text-muted-foreground">
-                  Email me with a brief description of your business, the
-                  workflow you want to improve, the tools you currently use,
-                  and your expected timeline.
+                  I&apos;m interested in opportunities where I can support
+                  project coordination, CRM operations, client onboarding,
+                  sales processes, reporting, documentation, task management
+                  and day-to-day business operations.
+                </p>
+
+                <p className="mt-4 leading-7 text-muted-foreground">
+                  If my experience and projects match what your team is looking
+                  for, feel free to reach out by email or connect with me on
+                  LinkedIn.
                 </p>
 
                 <a
-                  href="mailto:olanike.nikkytechies@proton.me?subject=Automation%20Project%20Inquiry"
+                  href="mailto:olanike.basirat30@gmail.com?subject=Operations%20or%20RevOps%20Opportunity"
                   className="mt-8 inline-block"
                 >
                   <Button size="lg">
                     <Mail className="mr-2 size-4" />
-                    Send Project Inquiry
+                    Contact Me
                   </Button>
                 </a>
 
                 <div className="mt-10 flex items-center gap-3 text-sm text-muted-foreground">
                   <MapPin className="size-5 text-primary" />
-                  Ikorodu, Lagos, Nigeria · Available remotely
+                  Lagos, Nigeria · Available for remote opportunities
                 </div>
               </div>
             </FadeIn>
@@ -93,7 +108,10 @@ export default function ContactPage() {
                 const Icon = item.icon;
 
                 return (
-                  <FadeIn key={item.label} delay={0.2 + index * 0.08}>
+                  <FadeIn
+                    key={item.label}
+                    delay={0.2 + index * 0.08}
+                  >
                     <Link
                       href={item.href}
                       target={
@@ -101,7 +119,7 @@ export default function ContactPage() {
                       }
                       rel={
                         item.href.startsWith("http")
-                          ? "noreferrer"
+                          ? "noopener noreferrer"
                           : undefined
                       }
                       className="group flex items-center gap-5 rounded-2xl border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"

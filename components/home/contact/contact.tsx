@@ -16,8 +16,8 @@ export function Contact() {
         <FadeIn>
           <SectionHeading
             eyebrow="Contact"
-            title="Let's Work Together"
-            description="I'm available for remote operations, project coordination, CRM, business systems and automation opportunities."
+            title="Let's Connect"
+            description="I'm open to remote opportunities in Operations, RevOps, Project Coordination, CRM, Sales Operations, Business Systems and workflow automation."
           />
         </FadeIn>
 
@@ -66,19 +66,19 @@ export function Contact() {
           <FadeIn delay={0.4}>
             <div className="rounded-2xl border bg-card p-8">
               <h3 className="text-2xl font-semibold">
-                Need help organizing your operations or workflows?
+                Looking for support across operations or RevOps?
               </h3>
 
               <p className="mt-4 leading-7 text-muted-foreground">
-                I&apos;m available for remote operations, project coordination,
-                CRM support and automation opportunities. Feel free to reach
-                out to discuss how I can support your team.
+                I&apos;m interested in remote roles where I can support project
+                coordination, CRM operations, client onboarding, sales
+                processes, reporting, documentation and workflow automation.
               </p>
 
-              <Link href="mailto:olanike.basirat30@gmail.com">
+              <Link href="/contact">
                 <Button size="lg" className="mt-8 w-full">
                   <Mail className="mr-2 size-5" />
-                  Email Me
+                  Get in Touch
                 </Button>
               </Link>
             </div>

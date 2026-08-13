@@ -1,47 +1,47 @@
 import {
-  Bot,
+  ClipboardList,
   Database,
+  Users,
+  FileText,
+  BarChart3,
   Workflow,
-  NotebookPen,
-  Building2,
-  PlugZap,
 } from "lucide-react";
 
 export const services = [
   {
-    title: "Airtable CRM Development",
+    title: "Project Coordination",
     description:
-      "Design scalable Airtable databases, CRMs, dashboards, and internal tools tailored to your business.",
+      "Organize projects, tasks, deadlines, priorities, dependencies and team follow-ups to keep client delivery moving.",
+    icon: ClipboardList,
+  },
+  {
+    title: "CRM & Revenue Operations",
+    description:
+      "Support lead pipelines, CRM data, lifecycle stages, follow-up processes and sales operations using tools such as Airtable and HubSpot.",
     icon: Database,
   },
   {
-    title: "AI Workflow Automation",
+    title: "Client Onboarding & Delivery",
     description:
-      "Automate repetitive business processes using AI, LLMs, and custom automation pipelines.",
-    icon: Bot,
+      "Build structured onboarding workflows that coordinate client information, project setup, tasks, communication and delivery milestones.",
+    icon: Users,
   },
   {
-    title: "Make.com & n8n Automation",
+    title: "SOP & Process Documentation",
     description:
-      "Build powerful no-code and low-code workflows connecting your business applications.",
+      "Document repeatable workflows, responsibilities, project procedures and operating processes so teams can work consistently.",
+    icon: FileText,
+  },
+  {
+    title: "Reporting & Data Operations",
+    description:
+      "Organize CRM and operational data into dashboards and reports that improve visibility into projects, pipelines, tasks and performance.",
+    icon: BarChart3,
+  },
+  {
+    title: "Workflow & AI Automation",
+    description:
+      "Connect business tools and automate repetitive processes using Make.com, n8n, Zapier, Airtable, Notion and AI workflows.",
     icon: Workflow,
-  },
-  {
-    title: "Notion Workspace Design",
-    description:
-      "Create organized workspaces for project management, SOPs, CRM, and documentation.",
-    icon: NotebookPen,
-  },
-  {
-    title: "HubSpot CRM Setup",
-    description:
-      "Configure pipelines, automations, lead scoring, and customer lifecycle management.",
-    icon: Building2,
-  },
-  {
-    title: "API Integrations",
-    description:
-      "Connect Airtable, Notion, HubSpot, Slack, OpenAI, Stripe, Google Workspace, and more.",
-    icon: PlugZap,
   },
 ];

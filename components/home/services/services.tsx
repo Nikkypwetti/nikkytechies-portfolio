@@ -10,26 +10,24 @@ export function Services() {
   return (
     <Section id="services">
       <Container>
-
         <FadeIn>
           <SectionHeading
-            eyebrow="Services"
-            title="Automation Systems That Help Businesses Scale"
-            description="I design modern business systems that reduce manual work, improve visibility, and streamline operations."
+            eyebrow="Core Capabilities"
+            title="Operations, RevOps & Business Systems"
+            description="I support organized client delivery, CRM operations, project coordination, reporting, documentation and workflow automation."
           />
         </FadeIn>
 
-         <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-  {services.map((service, index) => (
-    <FadeIn
-      key={service.title}
-      delay={index * 0.08}
-    >
-      <ServiceCard {...service} />
-    </FadeIn>
-  ))}
-</div>
-
+        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {services.map((service, index) => (
+            <FadeIn
+              key={service.title}
+              delay={index * 0.08}
+            >
+              <ServiceCard {...service} />
+            </FadeIn>
+          ))}
+        </div>
       </Container>
     </Section>
   );

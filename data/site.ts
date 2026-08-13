@@ -1,10 +1,10 @@
 export const siteConfig = {
   name: "NikkyTechies",
 
-  title: "Business Systems Builder",
+  title: "Operations, RevOps & Business Systems Portfolio",
 
   description:
-    "Helping businesses streamline operations using Airtable, Notion, AI and workflow automation.",
+    "Portfolio of Ganiyu Basirat Olanike — Operations, Revenue Operations, Project Coordination, CRM and Business Systems professional with hands-on experience in Airtable, Notion, HubSpot, ClickUp, Make.com, n8n and workflow automation.",
 
   url: "https://nikkytechies-portfolio.vercel.app",
 
@@ -17,5 +17,5 @@ export const siteConfig = {
   github: "https://github.com/Nikkypwetti",
 
   linkedin:
-    "https://linkedin.com/in/ganiyu-basirat-308ab9403",
+    "https://www.linkedin.com/in/ganiyu-basirat-308ab9403",
 };
