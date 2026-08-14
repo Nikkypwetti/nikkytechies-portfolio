@@ -69,12 +69,12 @@ creator: "Ganiyu Basirat Olanike",
     description: siteConfig.description,
 
     images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Ganiyu Basirat Olanike — Operations, RevOps and Business Systems Portfolio",
-      },
+    {
+    url: "/og-revops-operations.png",
+    width: 1731,
+    height: 909,
+    alt: "Ganiyu Basirat Olanike — Operations, RevOps and Business Systems Portfolio",
+    },
     ],
   },
 
@@ -82,7 +82,7 @@ creator: "Ganiyu Basirat Olanike",
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: ["/og-image.png"],
+    images: ["/og-revops-operations.png"],
   },
 };
 
