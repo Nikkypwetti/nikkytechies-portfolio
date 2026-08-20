@@ -1,12 +1,23 @@
 import { technologies } from "@/data/technologies";
 
-const techStack = Object.values(technologies);
+const techStack = [
+  technologies.airtable,
+  technologies.hubspot,
+  technologies.notion,
+  technologies.googleSheets,
+  technologies.make,
+  technologies.n8n,
+  technologies.zapier,
+  technologies.groq,
+  technologies.slack,
+  technologies.gmail,
+];
 
 export function TechStack() {
   return (
     <div className="mt-16">
       <p className="mb-6 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-        Technologies I Work With
+        Core Platforms & Tools
       </p>
 
       <div className="flex flex-wrap gap-3">

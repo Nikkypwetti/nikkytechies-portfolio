@@ -9,26 +9,21 @@ export function FeaturedProjects() {
   return (
     <Section>
       <Container>
-
         <FadeIn>
           <SectionHeading
-            eyebrow="Portfolio"
-            title="Featured Projects"
-            description="A selection of systems and automation solutions I've designed while learning and practicing real-world business workflows."
+            eyebrow="Portfolio Evidence"
+            title="Selected Business Systems Case Studies"
+            description="Self-directed case studies built around realistic operations, CRM, client delivery and AI workflow problems, with measurable scope and implementation evidence."
           />
         </FadeIn>
 
-       <div className="mt-12 grid gap-8 lg:grid-cols-2">
+        <div className="mt-12 grid gap-8 lg:grid-cols-2">
           {projects.map((project, index) => (
-          <FadeIn
-            key={project.slug}
-            delay={index * 0.08}
-          >
-            <ProjectCard project={project} />
-          </FadeIn>
-         ))}
+            <FadeIn key={project.slug} delay={index * 0.08}>
+              <ProjectCard project={project} />
+            </FadeIn>
+          ))}
         </div>
-
       </Container>
     </Section>
   );

@@ -1,31 +1,38 @@
 const operationsSkills = [
+  "Revenue Operations",
+  "Sales Operations",
+  "CRM Administration",
+  "Pipeline Management",
+  "Account Management",
+  "Customer Operations",
   "Project Coordination",
   "Client Onboarding",
   "Task & Deadline Tracking",
+  "Executive Operations",
+  "Reporting & Dashboards",
+  "CRM Data Quality",
   "SOP Documentation",
-  "Client Communication",
-  "Meeting Follow-up",
-  "CRM Operations",
   "Process Improvement",
+  "Workflow Automation",
 ];
 
 export function OperationsSkills() {
   return (
     <section className="py-20 md:py-28">
       <div className="mx-auto w-full max-w-7xl px-6 md:px-8 lg:px-10">
-        <div className="max-w-3xl">
+        <div className="max-w-4xl">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
-            Operations Skills
+            Business & Revenue Operations Skills
           </p>
 
           <h2 className="text-3xl font-bold tracking-tight md:text-5xl">
-            Supporting Organized Client & Project Delivery
+            Supporting the full path from customer data to project delivery
           </h2>
 
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            Alongside automation, I build and manage structured workflows
-            for client onboarding, project coordination, task tracking,
-            documentation, follow-ups and day-to-day operations.
+            I can support the operational work behind sales, CRM, customers,
+            projects and delivery — from clean records and follow-up to
+            reporting, documentation, task coordination and automation.
           </p>
         </div>
 

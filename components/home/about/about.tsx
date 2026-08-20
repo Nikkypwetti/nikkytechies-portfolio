@@ -3,15 +3,22 @@ import { Section } from "@/components/shared/section";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { FadeIn } from "@/components/animations/fade-in";
 
+const highlights = [
+  { value: "7+", label: "Years Professional Experience" },
+  { value: "4", label: "Business Systems Case Studies" },
+  { value: "18", label: "Steps in Onboarding Workflow" },
+  { value: "5", label: "Lead Qualification Routes" },
+];
+
 export function About() {
   return (
     <Section id="about">
       <Container>
         <FadeIn>
           <SectionHeading
-            eyebrow="About Me"
-            title="I build systems that keep client work organized and moving."
-            description="I combine operations, project coordination, CRM systems and automation to help teams manage work more clearly and efficiently."
+            eyebrow="Professional Snapshot"
+            title="Business experience backed by hands-on systems work."
+            description="My background combines customer-facing sales, executive administration and practical work across CRM, RevOps, project operations, reporting and automation."
           />
         </FadeIn>
 
@@ -19,68 +26,36 @@ export function About() {
           <FadeIn delay={0.2}>
             <div className="space-y-6">
               <p className="text-lg leading-8 text-muted-foreground">
-                I focus on operations, project coordination and business
-                systems that help teams manage clients, projects, tasks,
-                deadlines and documentation in one organized workflow.
+                I worked as a Sales Account Manager, managing customer
+                relationships, sales enquiries, account information and
+                follow-up. Before that, I supported senior leadership as an
+                Executive Secretary, coordinating schedules, correspondence,
+                documentation and day-to-day priorities.
               </p>
 
               <p className="text-lg leading-8 text-muted-foreground">
-                I build Airtable CRMs, Notion workspaces, client onboarding
-                systems, project tracking workflows and AI-powered
-                automations using Make.com, n8n, HubSpot, Zapier and modern
-                APIs.
+                I now combine that operational experience with hands-on work in
+                HubSpot, Airtable, Notion, ClickUp, Google Sheets, n8n,
+                Make.com and related systems to structure pipelines, projects,
+                client onboarding, reporting and business workflows.
               </p>
 
               <p className="text-lg leading-8 text-muted-foreground">
-                My projects include client onboarding, task and deadline
-                management, SOP documentation, meeting follow-up, CRM
-                operations and automated workflows that reduce repetitive
-                administrative work.
+                My portfolio case studies are self-directed projects designed
+                around realistic business problems, with clear workflow logic,
+                measurable scope, documentation and implementation evidence.
               </p>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.4}>
             <div className="grid grid-cols-2 gap-6">
-              <div className="rounded-2xl border bg-card p-6">
-                <h3 className="text-4xl font-bold text-primary">
-                  4
-                </h3>
-
-                <p className="mt-2 text-muted-foreground">
-                  Featured Case Studies
-                </p>
-              </div>
-
-              <div className="rounded-2xl border bg-card p-6">
-                <h3 className="text-4xl font-bold text-primary">
-                  8+
-                </h3>
-
-                <p className="mt-2 text-muted-foreground">
-                  Platforms Used
-                </p>
-              </div>
-
-              <div className="rounded-2xl border bg-card p-6">
-                <h3 className="text-4xl font-bold text-primary">
-                  Ops
-                </h3>
-
-                <p className="mt-2 text-muted-foreground">
-                  Project Coordination
-                </p>
-              </div>
-
-              <div className="rounded-2xl border bg-card p-6">
-                <h3 className="text-4xl font-bold text-primary">
-                  AI
-                </h3>
-
-                <p className="mt-2 text-muted-foreground">
-                  Workflow Automation
-                </p>
-              </div>
+              {highlights.map((item) => (
+                <div key={item.label} className="rounded-2xl border bg-card p-6">
+                  <h3 className="text-4xl font-bold text-primary">{item.value}</h3>
+                  <p className="mt-2 text-muted-foreground">{item.label}</p>
+                </div>
+              ))}
             </div>
           </FadeIn>
         </div>

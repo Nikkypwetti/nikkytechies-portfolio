@@ -4,7 +4,7 @@ export const siteConfig = {
   title: "Operations, RevOps & Business Systems Portfolio",
 
   description:
-    "Portfolio of Ganiyu Basirat Olanike — Operations, Revenue Operations, Project Coordination, CRM and Business Systems professional with hands-on experience in Airtable, Notion, HubSpot, ClickUp, Make.com, n8n and workflow automation.",
+    "Portfolio of Ganiyu Basirat Olanike — an Operations, Revenue Operations and Business Systems professional with 7+ years of experience across sales account management and executive administration, plus hands-on CRM, project coordination, reporting, data quality and workflow automation projects.",
 
   url: "https://nikkytechies-portfolio.vercel.app",
 
