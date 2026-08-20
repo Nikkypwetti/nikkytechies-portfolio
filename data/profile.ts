@@ -3,13 +3,13 @@ export const profile = {
 
   brand: "NikkyTechies",
 
-  role: "Operations & Project Coordination | CRM & Automation Support",
+  role: "Operations, RevOps & Business Systems | CRM | Sales Operations | AI Automation",
 
   tagline:
-    "Organizing Client Operations, Project Workflows & Business Automation",
+    "Connecting customer operations, revenue systems, project delivery, data and automation",
 
   summary:
-    "I support organized client and project delivery through onboarding coordination, task and deadline tracking, SOP documentation, CRM operations, meeting follow-up and workflow automation using Airtable, Notion, HubSpot, Make.com and n8n.",
+    "Operations, Revenue Operations and Business Systems professional with 7+ years of experience spanning sales account management and executive administration, supported by hands-on experience in CRM operations, project coordination, client onboarding, reporting, data quality and workflow automation. Experienced in maintaining customer relationships, coordinating executive and operational activities, organizing sales and CRM processes, documenting SOPs, tracking projects and building connected business systems. Technical toolkit includes HubSpot, Airtable, Notion, ClickUp, Google Workspace, Google Sheets, Microsoft Excel, Slack, n8n, Make.com, Zapier, AI integrations, APIs, Git and Linux.",
 
   location: "Lagos, Nigeria",
 
