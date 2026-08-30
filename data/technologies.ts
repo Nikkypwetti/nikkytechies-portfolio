@@ -91,4 +91,25 @@ export const technologies: Record<string, Technology> ={
   color: "#EA4335",
   category: "Communication",
 },
+  postgresql: {
+    id: "postgresql",
+    name: "PostgreSQL",
+    color: "#336791",
+    category: "Database",
+  },
+
+  powerbi: {
+    id: "powerbi",
+    name: "Power BI",
+    color: "#F2C811",
+    category: "Analytics",
+  },
+
+  docker: {
+    id: "docker",
+    name: "Docker",
+    color: "#2496ED",
+    category: "Infrastructure",
+  },
+
 };

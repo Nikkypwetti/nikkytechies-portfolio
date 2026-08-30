@@ -3,6 +3,257 @@ import { technologies } from "./technologies";
 
 export const projects: Project[] = [
 
+
+{
+  slug: "ai-revenue-intelligence-reporting-agent",
+
+  title: "AI Revenue Intelligence & Reporting Agent",
+
+  year: "2026",
+
+  type: "Portfolio",
+
+  category: "Operations",
+
+  description:
+    "Built a governed revenue intelligence system that turns manager questions into validated KPI requests, executes only approved parameterized SQL through read-only PostgreSQL access, and delivers auditable insights across Slack, web forms, REST API, and Power BI.",
+
+  overview: [
+    "Built a governed self-service reporting system for Revenue Operations and business managers.",
+    "Accepts natural-language reporting questions through Slack, a manager form, and REST API.",
+    "Uses AI only for structured intent interpretation rather than unrestricted SQL generation.",
+    "Validates requested metrics, dimensions, filters, and reporting context against an approved KPI catalogue.",
+    "Maps approved requests to controlled SQL templates with safe runtime parameters.",
+    "Executes reporting queries through a least-privilege read-only PostgreSQL credential.",
+    "Routes approved results into management summaries, channel responses, Power BI reporting, and a traceable audit trail.",
+    "Centralizes error classification, recovery, escalation, alerting, and dead-letter handling.",
+  ],
+
+  problem:
+    "Revenue and operations managers often need quick answers about revenue, pipeline, sales performance, deal stages, and lead sources. Manual reporting creates delays, while unrestricted AI-to-database approaches can introduce inconsistent KPI definitions, unsupported filters, arbitrary SQL execution, weak access controls, and poor auditability.",
+
+  solution:
+    "Designed a governed reporting architecture in n8n where AI interprets a manager's request into structured intent, deterministic controls authorize the requested KPI and filters, an approved query resolver selects a predefined parameterized SQL template, and PostgreSQL permissions enforce the final data-access boundary. Results are validated, summarized, delivered through Slack, Form, or API, and logged with request and correlation identifiers for operational traceability.",
+
+  architecture: [
+    "Manager request received through Slack, Form, or REST API",
+    "Normalize request into a common reporting contract",
+    "Create request and correlation context",
+    "Write initial request audit event",
+    "Interpret natural-language intent using structured AI output",
+    "Resolve requested metric against the governed KPI catalogue",
+    "Validate metric, filters, dimensions, dates, and reporting rules",
+    "Resolve an approved query key",
+    "Load the approved parameterized SQL template",
+    "Build deterministic runtime query parameters",
+    "Execute through the read-only PostgreSQL reporting role",
+    "Validate database results before presentation",
+    "Analyze and route the approved report",
+    "Generate a management-facing summary",
+    "Deliver through Slack, Form, or API",
+    "Write success and lifecycle audit events",
+    "Route operational failures into the centralized error-handling workflow",
+  ],
+
+  workflow: [
+    "Manager Request",
+    "Request Gateway",
+    "Normalize & Validate",
+    "Request Context",
+    "AI Intent Parser",
+    "KPI Catalogue",
+    "Governance Validation",
+    "Approved Query Resolver",
+    "Runtime Parameters",
+    "Approved SQL Template",
+    "Read-Only PostgreSQL",
+    "Result Validation",
+    "Management Analysis",
+    "Report Router",
+    "Slack / Form / API",
+    "Audit Trail",
+  ],
+
+  automation: [
+    {
+      title: "Manager Request",
+      description:
+        "Managers submit reporting questions through Slack, an authenticated web form, or REST API.",
+      icon: "form",
+    },
+    {
+      title: "AI Intent Parser",
+      description:
+        "AI converts the natural-language question into structured reporting intent without generating executable SQL.",
+      icon: "bot",
+    },
+    {
+      title: "KPI Governance",
+      description:
+        "Deterministic controls validate requested metrics, filters, dimensions, reporting dates, and approved query mappings.",
+      icon: "database",
+    },
+    {
+      title: "Approved Query",
+      description:
+        "The workflow resolves an approved SQL template and builds parameterized runtime values instead of accepting arbitrary database queries.",
+      icon: "database",
+    },
+    {
+      title: "PostgreSQL Boundary",
+      description:
+        "A dedicated read-only reporting credential executes approved queries while control and audit operations use separate permission boundaries.",
+      icon: "database",
+    },
+    {
+      title: "Management Reporting",
+      description:
+        "Validated results are analyzed and transformed into clear management-facing reporting outputs.",
+      icon: "bot",
+    },
+    {
+      title: "Multi-Channel Delivery",
+      description:
+        "Approved reports are delivered through Slack, the manager form, or API response depending on the originating channel.",
+      icon: "slack",
+    },
+    {
+      title: "Audit & Reliability",
+      description:
+        "Request IDs, correlation IDs, lifecycle events, centralized error handling, recovery, escalation, and dead-letter logging provide traceability.",
+      icon: "database",
+    },
+  ],
+
+  heroImage:
+    "/images/projects/revenue-intelligence/revint-system-architecture.png",
+
+  automationImage:
+    "/images/projects/revenue-intelligence/revint-system-architecture.png",
+
+  gallery: [
+    {
+      image:
+        "/images/projects/revenue-intelligence/revint-system-architecture.png",
+      title: "Governed Revenue Intelligence Architecture",
+      description:
+        "Recruiter-facing architecture showing manager request channels, structured AI interpretation, KPI governance, approved query execution, PostgreSQL security boundaries, reporting delivery, auditing, and centralized error handling.",
+    },
+    {
+      image:
+        "/images/projects/revenue-intelligence/revint-02-approved-api-report.png",
+      title: "Approved API Revenue Report",
+      description:
+        "Successful governed API request returning closed-won revenue of 20,500 across two closed-won deals after passing reporting authorization and query controls.",
+    },
+    {
+      image:
+        "/images/projects/revenue-intelligence/revint-03-safe-rejection.png",
+      title: "Safe Unsupported-Request Rejection",
+      description:
+        "Unsupported reporting intent is rejected safely rather than being converted into unrestricted SQL or an unauthorized database operation.",
+    },
+    {
+      image:
+        "/images/projects/revenue-intelligence/revint-08-powerbi-dashboard.png",
+      title: "Revenue Intelligence Power BI Dashboard",
+      description:
+        "Management dashboard presenting closed-won revenue, open pipeline, closed-won deals, win rate, sales-rep pipeline, lead-source revenue, deal stages, and open opportunities.",
+    },
+    {
+      image:
+        "/images/projects/revenue-intelligence/revint-09-audit-traceability.png",
+      title: "Request Audit Traceability",
+      description:
+        "A single manager request traced across request received, intent parsed, governance approved, and delivery succeeded events using consistent request and correlation identifiers.",
+    },
+    {
+      image:
+        "/images/projects/revenue-intelligence/revint-10-error-handler.png",
+      title: "Centralized Error Handler",
+      description:
+        "Dedicated n8n reliability workflow handling error normalization, incident identification, classification, recovery decisions, escalation, alerting, dead-letter persistence, and final auditing.",
+    },
+  ],
+
+  results: [
+    "Created governed self-service revenue reporting across Slack, web form, and REST API channels",
+    "Separated AI intent interpretation from query authorization and privileged database execution",
+    "Implemented a governed catalogue covering 12 revenue and pipeline KPI definitions",
+    "Restricted report execution to approved parameterized SQL templates",
+    "Enforced least-privilege PostgreSQL access through a dedicated read-only reporting role",
+    "Safely rejected unsupported and unauthorized reporting requests",
+    "Built Power BI reporting for revenue, pipeline, win rate, deal stages, lead sources, sales reps, and open opportunities",
+    "Added request and correlation IDs for end-to-end operational traceability",
+    "Implemented centralized error classification, recovery, escalation, alerting, and dead-letter handling",
+    "Published sanitized n8n workflow exports and verified implementation evidence in GitHub",
+  ],
+
+  technologies: [
+    technologies.n8n,
+    technologies.postgresql,
+    technologies.powerbi,
+    technologies.docker,
+    technologies.groq,
+    technologies.slack,
+  ],
+
+  metrics: [
+    "12 governed KPI definitions",
+    "3 manager request channels",
+    "3 published core n8n workflows",
+    "20,500 verified closed-won revenue",
+    "55,000 verified open pipeline",
+    "60.0% verified current-quarter win rate",
+  ],
+
+  stats: [
+    {
+      value: 12,
+      suffix: " KPIs",
+      label: "Governed Metrics",
+    },
+    {
+      value: 3,
+      suffix: " channels",
+      label: "Manager Interfaces",
+    },
+    {
+      value: 3,
+      suffix: " workflows",
+      label: "Published Core Workflows",
+    },
+  ],
+
+  before: [
+    "Managers depend on manual or ad-hoc revenue reporting",
+    "KPI definitions can vary between requests",
+    "Natural-language reporting can create unsafe AI-to-database patterns",
+    "Unsupported filters may reach reporting logic without clear governance",
+    "Database privileges may be broader than reporting requires",
+    "Operational failures are difficult to trace across workflows",
+    "Reporting evidence is scattered across separate tools",
+  ],
+
+  after: [
+    "Managers can request governed reports through three channels",
+    "KPI definitions are controlled through a reporting catalogue",
+    "AI interprets intent but cannot authorize or execute arbitrary SQL",
+    "Only approved query templates and validated parameters reach PostgreSQL",
+    "Read-only database permissions enforce the final reporting boundary",
+    "Request and correlation IDs provide end-to-end audit traceability",
+    "Power BI provides reusable management reporting views",
+    "Centralized error handling supports recovery, escalation, alerting, and dead-letter workflows",
+  ],
+
+  github:
+    "https://github.com/Nikkypwetti/ai-revenue-intelligence-agent",
+
+  demo: "",
+},
+
+
+
 {
   slug: "client-onboarding-automation",
 
