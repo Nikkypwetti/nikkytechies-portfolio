@@ -15,13 +15,23 @@ export default function ProjectsPage() {
   const [category, setCategory] = useState("All");
 
   const filteredProjects = useMemo(() => {
+    const normalizedQuery = search.trim().toLowerCase();
+
     return projects.filter((project) => {
-      const matchesCategory = category === "All" || project.category === category;
-      const query = search.toLowerCase();
+      const searchableContent = [
+        project.title,
+        project.description,
+        project.category,
+        project.type,
+        ...project.technologies.map((tech) => tech.name),
+      ]
+        .join(" ")
+        .toLowerCase();
+
+      const matchesCategory =
+        category === "All" || searchableContent.includes(category.toLowerCase());
       const matchesSearch =
-        project.title.toLowerCase().includes(query) ||
-        project.description.toLowerCase().includes(query) ||
-        project.technologies.some((tech) => tech.name.toLowerCase().includes(query));
+        normalizedQuery.length === 0 || searchableContent.includes(normalizedQuery);
       return matchesCategory && matchesSearch;
     });
   }, [search, category]);
@@ -42,7 +52,7 @@ export default function ProjectsPage() {
             <div className="mt-12 space-y-6">
               <ProjectSearch value={search} onChange={setSearch} />
               <ProjectFilter selected={category} onSelect={setCategory} />
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm font-medium text-muted-foreground" aria-live="polite">
                 Showing {filteredProjects.length} project{filteredProjects.length !== 1 ? "s" : ""}
               </p>
             </div>
@@ -58,9 +68,19 @@ export default function ProjectsPage() {
 
           {filteredProjects.length === 0 && (
             <FadeIn>
-              <div className="mt-20 rounded-2xl border bg-card p-12 text-center">
+              <div className="mt-16 rounded-3xl border border-dashed bg-card p-12 text-center">
                 <h3 className="text-2xl font-semibold">No projects found</h3>
                 <p className="mt-3 text-muted-foreground">Try another keyword or choose a different category.</p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSearch("");
+                    setCategory("All");
+                  }}
+                  className="mt-6 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
+                >
+                  Clear filters
+                </button>
               </div>
             </FadeIn>
           )}
