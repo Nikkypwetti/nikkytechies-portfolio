@@ -130,6 +130,7 @@
   }
   body {
     min-height: 100vh;
+    overflow-x: clip;
     background-image:
       linear-gradient(to right, color-mix(in oklab, var(--border) 34%, transparent) 1px, transparent 1px),
       linear-gradient(to bottom, color-mix(in oklab, var(--border) 24%, transparent) 1px, transparent 1px);
