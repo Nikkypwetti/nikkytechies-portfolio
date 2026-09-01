@@ -1,5 +1,6 @@
 const filters = [
   "All",
+  "Operations",
   "CRM",
   "Automation",
   "AI",
@@ -16,12 +17,14 @@ export function ProjectFilter({
   onSelect,
 }: Props) {
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-3" role="group" aria-label="Filter projects by capability">
 
       {filters.map((filter) => (
         <button
           key={filter}
+          type="button"
           onClick={() => onSelect(filter)}
+          aria-pressed={selected === filter}
           className={`rounded-full border px-5 py-2 text-sm font-medium transition-all duration-300 ${
             selected === filter
               ? "bg-primary text-primary-foreground shadow-md"
