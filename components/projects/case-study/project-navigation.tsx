@@ -36,6 +36,8 @@ export function ProjectNavigation({
           {previous && (
             <Link
               href={`/projects/${previous.slug}`}
+              scroll
+              prefetch
               className="group flex h-full flex-col rounded-2xl border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
             >
               <span className="mb-3 inline-flex items-center gap-2 text-sm text-muted-foreground">
@@ -54,6 +56,8 @@ export function ProjectNavigation({
 
         <Link
           href="/projects"
+          scroll
+          prefetch
           className="group flex h-full flex-col items-center justify-center rounded-2xl border bg-card p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
         >
           <Grid2x2 className="mb-3 size-8 text-primary" />
@@ -69,6 +73,8 @@ export function ProjectNavigation({
           {next && (
             <Link
               href={`/projects/${next.slug}`}
+              scroll
+              prefetch
               className="group flex h-full flex-col rounded-2xl border bg-card p-6 text-right transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
             >
               <span className="mb-3 inline-flex items-center justify-end gap-2 text-sm text-muted-foreground">

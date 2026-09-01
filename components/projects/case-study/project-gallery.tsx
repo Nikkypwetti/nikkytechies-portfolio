@@ -34,6 +34,8 @@ export function ProjectGallery({
               alt={item.title}
               width={1600}
               height={900}
+              loading="lazy"
+              sizes="(min-width: 1152px) 1080px, calc(100vw - 48px)"
               className="w-full object-cover"
             />
 

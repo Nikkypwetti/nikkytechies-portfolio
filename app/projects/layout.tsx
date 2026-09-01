@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { ProjectScrollManager } from "@/components/projects/project-scroll-manager";
 
 export const metadata: Metadata = {
   title: "Projects & Case Studies",
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsLayout({ children }: { children: ReactNode }) {
-  return children;
+  return (
+    <>
+      <ProjectScrollManager />
+      {children}
+    </>
+  );
 }
