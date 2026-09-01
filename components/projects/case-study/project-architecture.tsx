@@ -15,13 +15,13 @@ export function ProjectArchitecture({
         {architecture.map((step, index) => (
           <div
             key={step}
-            className="flex gap-5"
+            className="flex min-w-0 items-start gap-4"
           >
-            <div className="flex size-10 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground">
+            <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground">
               {index + 1}
             </div>
 
-            <div className="rounded-xl border p-5 flex-1">
+            <div className="min-w-0 flex-1 break-words rounded-xl border bg-card p-5 leading-7">
               {step}
             </div>
           </div>
