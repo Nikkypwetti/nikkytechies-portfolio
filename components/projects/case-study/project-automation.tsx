@@ -1,5 +1,4 @@
 import {
-  ArrowRight,
   FileSpreadsheet,
   Bot,
   Database,
@@ -55,34 +54,34 @@ export function ProjectAutomation({
         </p>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-4">
+      <ol className="grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {automation.map((step, index) => {
           const Icon = icons[step.icon];
 
           return (
-            <div
+            <li
               key={`${step.title}-${step.icon}-${index}`}
-              className="flex items-center gap-4"
+              className="min-w-0 rounded-2xl border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
             >
-              <div className="w-48 rounded-2xl border bg-card p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-xl">
-                <Icon className="mx-auto mb-4 size-8 text-primary" />
+              <div className="flex items-start gap-4">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                  {index + 1}
+                </span>
 
-                <h3 className="font-semibold">
-                  {step.title}
-                </h3>
+                <div className="min-w-0">
+                  <Icon className="mb-4 size-8 text-primary" />
 
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {step.description}
-                </p>
+                  <h3 className="break-words font-semibold">{step.title}</h3>
+
+                  <p className="mt-2 break-words text-sm leading-6 text-muted-foreground">
+                    {step.description}
+                  </p>
+                </div>
               </div>
-
-              {index !== automation.length - 1 && (
-                <ArrowRight className="hidden text-muted-foreground lg:block" />
-              )}
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ol>
     </section>
   );
 }
