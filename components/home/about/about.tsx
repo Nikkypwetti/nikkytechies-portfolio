@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/animations/fade-in";
 
 const highlights = [
   { value: "7+", label: "Years Professional Experience" },
-  { value: "4", label: "Business Systems Case Studies" },
+  { value: "5", label: "Business Systems Case Studies" },
   { value: "18", label: "Steps in Onboarding Workflow" },
   { value: "5", label: "Lead Qualification Routes" },
 ];
