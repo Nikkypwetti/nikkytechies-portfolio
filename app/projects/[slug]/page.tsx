@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { projects } from "@/data/projects";
+import { applyProjectEvidenceOverride } from "@/data/project-evidence-overrides";
 
 import { ProjectHeader } from "@/components/projects/case-study/project-header";
 import { ProjectProblem } from "@/components/projects/case-study/project-problem";
@@ -20,8 +21,6 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { ProjectAutomation } from "@/components/projects/case-study/project-automation";
 import { ProjectScrollToTop } from "@/components/projects/project-scroll-to-top";
 
-
-
 type Props = {
   params: Promise<{
     slug: string;
@@ -31,97 +30,70 @@ type Props = {
 export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
 
-  const project = projects.find((p) => p.slug === slug);
+  const baseProject = projects.find((p) => p.slug === slug);
 
-  if (!project) {
+  if (!baseProject) {
     notFound();
   }
 
+  const project = applyProjectEvidenceOverride(baseProject);
+
   return (
-  <main className="mx-auto max-w-6xl space-y-28 px-6 py-24">
+    <main className="mx-auto max-w-6xl space-y-28 px-6 py-24">
+      <ProjectScrollToTop />
 
-  <ProjectScrollToTop />
+      <ProjectHeader project={project} />
 
-  <ProjectHeader project={project} />
+      <FadeIn delay={0.02}>
+        <ProjectPlatforms platforms={project.platforms} status={project.status} />
+      </FadeIn>
 
-  <FadeIn delay={0.02}>
-    <ProjectPlatforms platforms={project.platforms} status={project.status} />
-  </FadeIn>
+      <FadeIn>
+        <ProjectOverview overview={project.overview} />
+      </FadeIn>
 
-  <FadeIn>
-    <ProjectOverview overview={project.overview} />
-  </FadeIn>
+      <FadeIn delay={0.05}>
+        <ProjectProblem problem={project.problem} />
+      </FadeIn>
 
-  <FadeIn delay={0.05}>
-    <ProjectProblem problem={project.problem} />
-  </FadeIn>
+      <FadeIn delay={0.10}>
+        <ProjectBeforeAfter before={project.before} after={project.after} />
+      </FadeIn>
 
-  <FadeIn delay={0.10}>
-    <ProjectBeforeAfter
-      before={project.before}
-      after={project.after}
-    />
-  </FadeIn>
+      <FadeIn delay={0.15}>
+        <ProjectSolution solution={project.solution} />
+      </FadeIn>
 
-  <FadeIn delay={0.15}>
-    <ProjectSolution solution={project.solution} />
-  </FadeIn>
+      <FadeIn delay={0.25}>
+        <ProjectAutomation automation={project.automation} />
+      </FadeIn>
 
-  <FadeIn delay={0.25}>
-    <ProjectAutomation
-      automation={project.automation}
-    />
-  </FadeIn>
+      <FadeIn delay={0.20}>
+        <ProjectWorkflow workflow={project.workflow} />
+      </FadeIn>
 
-  <FadeIn delay={0.20}>
-    <ProjectWorkflow workflow={project.workflow} />
-  </FadeIn>
+      <FadeIn delay={0.30}>
+        <ProjectArchitecture architecture={project.architecture} />
+      </FadeIn>
 
-  <FadeIn delay={0.30}>
-    <ProjectArchitecture architecture={project.architecture} />
-  </FadeIn>
+      <FadeIn delay={0.30}>
+        <ProjectTechStack technologies={project.technologies} />
+      </FadeIn>
 
-  <FadeIn delay={0.30}>
-    <ProjectTechStack
-      technologies={project.technologies}
-    />
-  </FadeIn>
+      <FadeIn delay={0.35}>
+        <ProjectImpact stats={project.stats} metrics={project.metrics} />
+      </FadeIn>
 
-  <FadeIn delay={0.35}>
-    <ProjectImpact
-      stats={project.stats}
-      metrics={project.metrics}
-    />
-  </FadeIn>
+      <FadeIn delay={0.40}>
+        <ProjectResults results={project.results} />
+      </FadeIn>
 
-  {/* <FadeIn delay={0.40}>
-    <ProjectResults results={project.results} />
-  </FadeIn>
+      <ProjectGallery gallery={project.gallery} />
 
-  <FadeIn delay={0.40}>
-    <ProjectGallery gallery={project.gallery} />
-  </FadeIn>
-
-  <FadeIn delay={0.45}>
-    <ProjectNavigation
-      currentProject={project}
-      projects={projects}
-    />
-  </FadeIn> */}
-  <FadeIn delay={0.40}>
-  <ProjectResults results={project.results} />
-</FadeIn>
-
-<ProjectGallery gallery={project.gallery} />
-
-<FadeIn delay={0.45}>
-  <ProjectNavigation
-    currentProject={project}
-    projects={projects}
-  />
-</FadeIn>
-
-</main>
+      <FadeIn delay={0.45}>
+        <ProjectNavigation currentProject={project} projects={projects} />
+      </FadeIn>
+    </main>
   );
 }
 
@@ -130,15 +102,15 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   const { slug } = await params;
 
-  const project = projects.find(
-    (project) => project.slug === slug
-  );
+  const baseProject = projects.find((project) => project.slug === slug);
 
-  if (!project) {
+  if (!baseProject) {
     return {
       title: "Project Not Found | Nikky Techies",
     };
   }
+
+  const project = applyProjectEvidenceOverride(baseProject);
 
   return {
     title: `${project.title} | Nikky Techies`,
@@ -147,18 +119,14 @@ export async function generateMetadata({
     openGraph: {
       title: project.title,
       description: project.description,
-      images: project.heroImage
-        ? [project.heroImage]
-        : [],
+      images: project.heroImage ? [project.heroImage] : [],
     },
 
     twitter: {
       card: "summary_large_image",
       title: project.title,
       description: project.description,
-      images: project.heroImage
-        ? [project.heroImage]
-        : [],
+      images: project.heroImage ? [project.heroImage] : [],
     },
   };
 }
