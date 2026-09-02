@@ -1,10 +1,12 @@
 const filters = [
   "All",
+  "Revenue Operations",
   "Operations",
   "CRM",
+  "Business Systems",
+  "Reporting",
   "Automation",
   "AI",
-  "Notion",
 ] as const;
 
 type Props = {
@@ -12,13 +14,13 @@ type Props = {
   onSelect: (value: string) => void;
 };
 
-export function ProjectFilter({
-  selected,
-  onSelect,
-}: Props) {
+export function ProjectFilter({ selected, onSelect }: Props) {
   return (
-    <div className="flex flex-wrap gap-3" role="group" aria-label="Filter projects by capability">
-
+    <div
+      className="flex flex-wrap gap-3"
+      role="group"
+      aria-label="Filter projects by capability"
+    >
       {filters.map((filter) => (
         <button
           key={filter}
@@ -34,7 +36,6 @@ export function ProjectFilter({
           {filter}
         </button>
       ))}
-
     </div>
   );
 }

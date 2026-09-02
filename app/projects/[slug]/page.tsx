@@ -14,9 +14,11 @@ import { ProjectImpact } from "@/components/projects/case-study/project-impact";
 import { ProjectBeforeAfter } from "@/components/projects/case-study/project-before-after";
 import { ProjectWorkflow } from "@/components/projects/case-study/project-workflow";
 import { ProjectOverview } from "@/components/projects/case-study/project-overview";
+import { ProjectPlatforms } from "@/components/projects/case-study/project-platforms";
 import { ProjectNavigation } from "@/components/projects/case-study/project-navigation";
 import { FadeIn } from "@/components/animations/fade-in";
 import { ProjectAutomation } from "@/components/projects/case-study/project-automation";
+import { ProjectScrollToTop } from "@/components/projects/project-scroll-to-top";
 
 
 
@@ -38,7 +40,13 @@ export default async function ProjectPage({ params }: Props) {
   return (
   <main className="mx-auto max-w-6xl space-y-28 px-6 py-24">
 
+  <ProjectScrollToTop />
+
   <ProjectHeader project={project} />
+
+  <FadeIn delay={0.02}>
+    <ProjectPlatforms platforms={project.platforms} status={project.status} />
+  </FadeIn>
 
   <FadeIn>
     <ProjectOverview overview={project.overview} />
