@@ -16,6 +16,7 @@ export default function ProjectsPage() {
 
   const filteredProjects = useMemo(() => {
     const normalizedQuery = search.trim().toLowerCase();
+    const normalizedCategory = category.toLowerCase();
 
     return projects.filter((project) => {
       const searchableContent = [
@@ -23,15 +24,29 @@ export default function ProjectsPage() {
         project.description,
         project.category,
         project.type,
+        project.status ?? "",
+        ...(project.platforms ?? []),
+        project.problem,
+        project.solution,
+        ...project.overview,
+        ...project.architecture,
+        ...project.workflow,
+        ...project.results,
+        ...project.metrics,
+        ...project.before,
+        ...project.after,
+        ...project.automation.flatMap((step) => [step.title, step.description]),
         ...project.technologies.map((tech) => tech.name),
       ]
         .join(" ")
         .toLowerCase();
 
       const matchesCategory =
-        category === "All" || searchableContent.includes(category.toLowerCase());
+        category === "All" || searchableContent.includes(normalizedCategory);
+
       const matchesSearch =
         normalizedQuery.length === 0 || searchableContent.includes(normalizedQuery);
+
       return matchesCategory && matchesSearch;
     });
   }, [search, category]);
@@ -44,7 +59,7 @@ export default function ProjectsPage() {
             <SectionHeading
               eyebrow="Portfolio Evidence"
               title="Projects & Case Studies"
-              description="Self-directed business systems projects covering CRM, Revenue Operations, client onboarding, project delivery, reporting and AI workflow automation — documented from business problem through implementation and results."
+              description="Self-directed business systems projects across Revenue Operations, CRM, project delivery, reporting, data quality and workflow automation — documented from business problem through implementation and verified evidence."
             />
           </FadeIn>
 
@@ -70,7 +85,9 @@ export default function ProjectsPage() {
             <FadeIn>
               <div className="mt-16 rounded-3xl border border-dashed bg-card p-12 text-center">
                 <h3 className="text-2xl font-semibold">No projects found</h3>
-                <p className="mt-3 text-muted-foreground">Try another keyword or choose a different category.</p>
+                <p className="mt-3 text-muted-foreground">
+                  Try another keyword or choose a different capability.
+                </p>
                 <button
                   type="button"
                   onClick={() => {

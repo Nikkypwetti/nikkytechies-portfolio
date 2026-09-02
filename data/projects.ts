@@ -3,6 +3,215 @@ import { technologies } from "./technologies";
 
 export const projects: Project[] = [
 
+{
+  slug: "revenue-intelligence-production-simulation",
+  title: "Revenue Intelligence Production Simulation — Lumora Cloud",
+  year: "2026",
+  type: "Portfolio",
+  category: "Revenue Operations",
+
+  description:
+    "Built a production-style Revenue Operations intelligence simulation for the fictional B2B SaaS company Lumora Cloud, connecting CRM, marketing, billing and planning data to governed reporting, resilient n8n orchestration and Power BI executive dashboards.",
+
+  overview: [
+    "Designed a production-style Revenue Operations and Business Systems environment for a fictional B2B SaaS company.",
+    "Synchronized 10 CRM, marketing, billing and planning entities through reusable incremental n8n workflows.",
+    "Used composite checkpoints based on source_updated_at plus primary key so syncs can resume safely and replay idempotently.",
+    "Separated source read, ingestion write, transformation, reporting read and governance permissions with dedicated PostgreSQL roles.",
+    "Connected the reporting layer to the governed AI Revenue Intelligence Agent for manager questions through Slack, Form and REST API.",
+    "Built three Power BI pages for executive revenue, pipeline performance and Revenue Operations health.",
+    "Lumora Cloud is fictional and all figures shown are verified simulation outputs rather than client results.",
+  ],
+
+  problem:
+    "Revenue teams often rely on disconnected CRM, billing, marketing and planning data. That fragmentation can create stale pipeline views, inconsistent reporting, weak data quality, repeated manual exports and risky automation patterns that are difficult to recover when a sync fails.",
+
+  solution:
+    "Built a controlled production simulation with separate source-system and warehouse databases, incremental composite-cursor synchronization, checkpoint ownership, idempotent upserts, failure recovery, transactional reporting refresh, least-privilege PostgreSQL roles and a governed management-reporting layer. Power BI consumes a governed reporting snapshot rather than raw operational tables.",
+
+  architecture: [
+    "Lumora CRM, marketing, billing and planning source systems",
+    "Read-only source-system access",
+    "n8n incremental multi-entity synchronization",
+    "Composite cursor: source_updated_at plus primary key",
+    "Owner-aware checkpoints and recovery controls",
+    "PostgreSQL raw ingestion layer",
+    "Fixed transactional reporting transformation",
+    "Governed reporting schema",
+    "AI Revenue Intelligence manager-request layer",
+    "Slack, authenticated Form and REST API delivery",
+    "Power BI executive and Revenue Operations dashboards",
+  ],
+
+  workflow: [
+    "Source Systems",
+    "Approved Entity Batch",
+    "Load Composite Checkpoint",
+    "Claim Checkpoint",
+    "Extract Changed Rows",
+    "Idempotent Raw Upsert",
+    "Advance or Release Checkpoint",
+    "Verify Batch Completion",
+    "Refresh Reporting Once",
+    "Reporting RO Verification",
+    "Governed Revenue Intelligence",
+    "Power BI / Slack / Form / API",
+  ],
+
+  automation: [
+    {
+      title: "Multi-Entity Orchestrator",
+      description:
+        "A parent n8n workflow processes an approved batch of 10 source entities and waits for each reusable worker execution to complete.",
+      icon: "workspace",
+    },
+    {
+      title: "Composite Checkpoint",
+      description:
+        "Each entity tracks source_updated_at plus its primary key so equal-timestamp records are processed deterministically.",
+      icon: "database",
+    },
+    {
+      title: "Read-Only Extraction",
+      description:
+        "Dedicated source credentials can read approved operational schemas but cannot modify the simulated source systems.",
+      icon: "database",
+    },
+    {
+      title: "Idempotent Upsert",
+      description:
+        "Changed records are written to raw warehouse tables before the authoritative checkpoint can advance.",
+      icon: "database",
+    },
+    {
+      title: "Failure Recovery",
+      description:
+        "Checkpoint ownership, run metadata and recovery logic prevent abandoned running states and support deterministic replay.",
+      icon: "workspace",
+    },
+    {
+      title: "Reporting Refresh",
+      description:
+        "A fixed SECURITY DEFINER transformation procedure refreshes governed reporting without granting broad table-write privileges to n8n.",
+      icon: "database",
+    },
+    {
+      title: "Governed AI Reporting",
+      description:
+        "AI interprets manager intent while deterministic controls authorize metrics and approved SQL templates.",
+      icon: "bot",
+    },
+    {
+      title: "Power BI Management View",
+      description:
+        "Three dashboard pages convert the governed reporting snapshot into executive, pipeline and operations-health views.",
+      icon: "sheet",
+    },
+  ],
+
+  heroImage:
+    "/images/projects/lumora/01-executive-revenue-overview.png",
+
+  automationImage:
+    "/images/projects/lumora/02-pipeline-sales-performance.png",
+
+  gallery: [
+    {
+      image: "/images/projects/lumora/01-executive-revenue-overview.png",
+      title: "Executive Revenue Overview",
+      description:
+        "Power BI executive view showing simulated Closed Won Revenue of $3.31M, Open Pipeline of $2.90M, 190 open deals and a 54.9% win rate.",
+    },
+    {
+      image: "/images/projects/lumora/02-pipeline-sales-performance.png",
+      title: "Pipeline & Sales Performance",
+      description:
+        "Pipeline analysis by stage, sales representative and expected close month, with 45 stale open deals identified for action.",
+    },
+    {
+      image: "/images/projects/lumora/03-revenue-operations-health.png",
+      title: "Revenue Operations Health",
+      description:
+        "Operational health dashboard surfacing 45 stale deals, 114 overdue follow-ups, 72 SLA breaches and 185 closed-lost deals.",
+    },
+  ],
+
+  results: [
+    "Generalized one production callable entity worker across 10 approved source entities",
+    "Verified full multi-entity orchestration with all checkpoints released and no active runs remaining",
+    "Kept source read, ingestion write, transformation and reporting-read permissions separated",
+    "Preserved reporting consistency with a single refresh after the full entity batch",
+    "Connected governed reporting to Slack, Form and REST API manager-request channels",
+    "Built three Power BI pages from the governed reporting snapshot",
+    "Published six canonical n8n workflow exports with a clean secret-pattern scan",
+    "Documented the simulation explicitly so verified figures are not presented as client outcomes",
+  ],
+
+  technologies: [
+    technologies.n8n,
+    technologies.postgresql,
+    technologies.powerbi,
+    technologies.docker,
+    technologies.groq,
+    technologies.slack,
+  ],
+
+  metrics: [
+    "10 source entities synchronized",
+    "600 simulated deals",
+    "$3.31M simulated closed-won revenue",
+    "$2.90M simulated open pipeline",
+    "190 simulated open deals",
+    "54.9% simulated win rate",
+    "45 stale open deals identified",
+    "114 overdue follow-ups identified",
+    "72 SLA breaches identified",
+  ],
+
+  stats: [
+    {
+      value: 10,
+      suffix: " entities",
+      label: "Incremental Source Sync",
+    },
+    {
+      value: 600,
+      suffix: " deals",
+      label: "Simulated Revenue Dataset",
+    },
+    {
+      value: 3,
+      suffix: " pages",
+      label: "Power BI Dashboard",
+    },
+  ],
+
+  before: [
+    "Revenue data split across CRM, marketing, billing and planning systems",
+    "Manual or disconnected management reporting",
+    "No reusable incremental sync contract across source entities",
+    "Weak recovery when an ingestion run fails after claiming work",
+    "Broad database permissions can blur source, ingestion and reporting responsibilities",
+    "Operational risks such as stale deals and overdue follow-ups are hard to prioritize",
+  ],
+
+  after: [
+    "10 source entities processed through a reusable governed sync design",
+    "Composite checkpoints support safe incremental extraction and deterministic replay",
+    "Raw persistence is verified before checkpoint advancement",
+    "Failure recovery releases abandoned ownership and preserves authoritative cursors",
+    "Least-privilege PostgreSQL roles separate operational responsibilities",
+    "Governed reporting feeds manager requests and Power BI decision views",
+    "Revenue Operations health metrics expose stale pipeline, overdue follow-ups and SLA breaches",
+  ],
+
+  github:
+    "https://github.com/Nikkypwetti/lumora-revenue-intelligence-simulation",
+
+  demo: "",
+},
+
+
 
 {
   slug: "ai-revenue-intelligence-reporting-agent",
@@ -497,6 +706,159 @@ stats: [
     "Automatic Gmail and Slack notifications",
   ],
 
+  github: "",
+  demo: "",
+},
+
+{
+  slug: "clickup-operations-growops-agency",
+  title: "ClickUp Operations Build — GrowOps Agency",
+  year: "2026",
+  type: "Portfolio Build",
+  status: "In Progress",
+  category: "Business Systems",
+
+  platforms: ["ClickUp", "HubSpot", "n8n", "Slack", "Notion"],
+
+  description:
+    "In-progress operations-system simulation for a 12-person B2B services agency, designing ClickUp as the source of truth for work execution while HubSpot remains the CRM source of truth. The integration layer is being built with n8n.",
+
+  overview: [
+    "Designing a full ClickUp workspace for the fictional GrowOps Agency, a 12-person B2B services team.",
+    "Separating revenue/customer relationship data in HubSpot from delivery execution in ClickUp.",
+    "Planning four operational Spaces: Sales, Delivery, Account Management and Operations.",
+    "Designing 12 Lists with team-specific statuses, custom fields, saved views and management visibility.",
+    "Building automation handoffs with n8n rather than Make.com.",
+    "Documenting SOPs, adoption guidance, rollout planning and automation architecture as part of the operating-system build.",
+    "This project is in progress; scope figures below describe the designed build target unless explicitly marked verified later.",
+  ],
+
+  problem:
+    "GrowOps Agency is modeled as a B2B services team managing client work across WhatsApp, spreadsheets and email. That creates fragmented task ownership, weak project visibility, repeated onboarding work, inconsistent status tracking and no single operating view for leadership.",
+
+  solution:
+    "Design a connected ClickUp operating system with separate Spaces for Sales, Delivery, Account Management and Operations. HubSpot remains the source of truth for customer relationships, ClickUp becomes the source of truth for work execution, and n8n handles governed handoffs such as Closed Won to delivery-project creation, delivery completion back to CRM, and Slack team notifications.",
+
+  architecture: [
+    "HubSpot: CRM source of truth for leads, deals, contacts and customer history",
+    "n8n: integration and automation orchestration layer",
+    "ClickUp Sales Space: structured sales execution tasks and handoffs",
+    "ClickUp Delivery Space: client projects, templates, deadlines and work execution",
+    "ClickUp Account Management Space: client health, renewals and follow-up",
+    "ClickUp Operations Space: SOPs, company-wide tasks and operating controls",
+    "Notion: supporting documentation and adoption materials",
+    "Slack: internal status and handoff notifications",
+    "Client guest view: limited project-progress visibility without internal-data exposure",
+  ],
+
+  workflow: [
+    "HubSpot Qualified Lead",
+    "n8n Handoff",
+    "ClickUp Sales Task",
+    "HubSpot Closed Won",
+    "n8n Delivery Provisioning",
+    "ClickUp Client Project",
+    "Template Tasks",
+    "Delivery Execution",
+    "Status / Capacity Tracking",
+    "Delivered",
+    "n8n CRM Update",
+    "HubSpot Post-Delivery Follow-up",
+    "Slack Notifications",
+  ],
+
+  automation: [
+    {
+      title: "Qualified Lead Handoff",
+      description:
+        "Design target: when a lead reaches the approved HubSpot qualification point, n8n creates the required ClickUp sales action with owner and due date.",
+      icon: "crm",
+    },
+    {
+      title: "Closed Won → Delivery",
+      description:
+        "Design target: a Closed Won deal triggers n8n to create the client-delivery project and standardized delivery tasks in ClickUp.",
+      icon: "database",
+    },
+    {
+      title: "Delivery → CRM",
+      description:
+        "Design target: delivery completion updates HubSpot with the delivery event and creates the post-delivery testimonial follow-up task.",
+      icon: "crm",
+    },
+    {
+      title: "Status Notifications",
+      description:
+        "Relevant operational status changes send structured Slack notifications so teams see handoffs without relying on manual messages.",
+      icon: "slack",
+    },
+    {
+      title: "Renewal Handoff",
+      description:
+        "Planned n8n automation creates the renewal action in ClickUp from the governed HubSpot renewal date and account ownership.",
+      icon: "workspace",
+    },
+    {
+      title: "Adoption Controls",
+      description:
+        "SOPs, day-in-the-life guidance, status definitions, rollout planning and weekly adoption tracking support consistent team usage.",
+      icon: "sheet",
+    },
+  ],
+
+  gallery: [],
+
+  results: [
+    "In progress — workspace architecture and operating model are being built as a portfolio simulation",
+    "Target scope: 4 ClickUp Spaces and 12 structured Lists",
+    "Target scope: custom status workflows and saved operational views by team",
+    "Target scope: 8 n8n automation handoffs across CRM, delivery and notifications",
+    "Target scope: 3 management dashboards for pipeline, delivery and operational visibility",
+    "Target scope: SOP library, rollout plan and adoption toolkit",
+    "Target scope: guest-safe client project visibility",
+    "Outcome metrics such as onboarding-time reduction will be published only after the workflow is actually built and verified",
+  ],
+
+  technologies: [
+    technologies.n8n,
+    technologies.slack,
+    technologies.notion,
+  ],
+
+  metrics: [
+    "4 ClickUp Spaces planned",
+    "12 operational Lists planned",
+    "8 n8n automations planned",
+    "3 management dashboards planned",
+    "3 SOPs planned",
+    "12-person B2B agency simulation",
+  ],
+
+  stats: [
+    { value: 4, suffix: " spaces", label: "ClickUp Architecture" },
+    { value: 12, suffix: " lists", label: "Operational Structure" },
+    { value: 8, suffix: " automations", label: "n8n Design Target" },
+  ],
+
+  before: [
+    "Client work split across WhatsApp, spreadsheets and email",
+    "No single view of delivery status or team ownership",
+    "Onboarding repeated manually for each new client",
+    "Sales and delivery handoffs depend on people remembering the next step",
+    "Project capacity and overdue work are difficult to see",
+    "Operating procedures and status definitions are not centralized",
+  ],
+
+  after: [
+    "Planned: ClickUp becomes the structured work-execution system",
+    "Planned: HubSpot remains the customer and revenue source of truth",
+    "Planned: n8n connects the CRM-to-delivery handoff without duplicate entry",
+    "Planned: management dashboards expose workload, project status and risk",
+    "Planned: reusable templates standardize onboarding and delivery",
+    "Planned: SOPs and adoption controls support consistent team usage",
+  ],
+
+  automationImage: "",
   github: "",
   demo: "",
 },

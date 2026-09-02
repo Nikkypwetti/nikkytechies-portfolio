@@ -1,0 +1,18 @@
+"use client";
+
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+
+export function ProjectScrollToTop() {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    });
+
+    return () => cancelAnimationFrame(frame);
+  }, [pathname]);
+
+  return null;
+}

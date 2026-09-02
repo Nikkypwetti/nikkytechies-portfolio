@@ -9,12 +9,19 @@ export interface Project {
 
   type: string;
 
+  status?: "Completed" | "In Progress" | "Planned";
+
+  platforms?: string[];
+
   category:
   | "CRM"
   | "Automation"
   | "AI"
   | "Notion"
-  | "Operations";
+  | "Operations"
+  | "Revenue Operations"
+  | "Business Systems"
+  | "Reporting";
 
 
   description: string;
