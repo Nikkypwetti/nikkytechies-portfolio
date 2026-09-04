@@ -37,7 +37,6 @@ export function ResumeExperience() {
 
                   <div className="text-sm text-muted-foreground md:text-right">
                     <p>{item.period}</p>
-                    <p>{item.location}</p>
                   </div>
                 </div>
 
