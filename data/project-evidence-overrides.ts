@@ -85,6 +85,34 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
       },
       {
         image:
+          "/images/projects/revenue-intelligence/revint-14-intake-intent-governed-query.png",
+        title: "Request Intake, Intent & Governed Query Resolution",
+        description:
+          "Detailed n8n workflow evidence showing manager request intake across supported channels, request normalization and validation, AI-assisted intent parsing, KPI catalogue resolution, governance checks, and approved query execution paths.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/revint-15-analysis-summary-presentation.png",
+        title: "Analysis, Management Summary & Presentation Routing",
+        description:
+          "Detailed n8n workflow evidence showing business-analysis validation, management-summary generation, report-presentation resolution, and governed routing into KPI card, chart, and table presentation paths.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/revint-16-artifact-delivery-routing.png",
+        title: "Report Artifact Assembly & Delivery Routing",
+        description:
+          "Detailed n8n workflow evidence showing approved report-artifact assembly, Power BI and chart context validation, delivery-route resolution, and controlled Slack, API, form, and manual-preview delivery paths.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/revint-17-multichannel-delivery-audit.png",
+        title: "Multi-Channel Delivery & Audit",
+        description:
+          "Detailed n8n workflow evidence showing validated Slack, API, and form delivery branches with destination checks, payload validation, success and rejection handling, and delivery audit logging.",
+      },
+      {
+        image:
           "/images/projects/revenue-intelligence/revint-02-approved-api-report.png",
         title: "Approved API Revenue Report",
         description:
