@@ -5,10 +5,11 @@ export const experience = [
     period: "Aug 2022 - Dec 2025",
     location: "Ogbomosho North, Oyo State, Nigeria",
     achievements: [
-      "Managed customer accounts and maintained ongoing relationships to support satisfaction, retention and revenue-generating sales activity.",
-      "Identified customer needs, recommended appropriate solutions and supported opportunities from initial enquiry through purchase and follow-up.",
-      "Maintained accurate customer and account information and coordinated follow-up activities across day-to-day sales operations.",
-      "Handled customer enquiries and concerns while maintaining clear, professional communication throughout the customer relationship.",
+      "Managed ongoing client accounts and maintained consistent communication throughout the sales and customer relationship process.",
+      "Identified customer needs and business opportunities, helping match clients with appropriate products and solutions.",
+      "Coordinated customer inquiries, sales follow-ups and account-related requests to maintain continuity across active relationships.",
+      "Maintained organized customer and account information to support accurate communication and follow-up.",
+      "Worked across customer relationship management, sales coordination and account follow-through, building a strong foundation in Sales Operations and customer lifecycle management.",
     ],
   },
   {
@@ -17,10 +18,12 @@ export const experience = [
     period: "Feb 2018 - Dec 2021",
     location: "Ikorodu, Lagos State, Nigeria",
     achievements: [
-      "Provided executive and administrative support to senior leadership, coordinating schedules, correspondence, meetings and day-to-day priorities.",
-      "Organized documentation, records and operational information to support efficient follow-up and decision-making.",
-      "Coordinated meetings, communications and action items while maintaining visibility into deadlines and outstanding tasks.",
-      "Supported structured administrative workflows and communication between executives and internal or external stakeholders.",
+      "Provided administrative and operational support to senior executives, helping coordinate day-to-day priorities, schedules, correspondence and business activities.",
+      "Coordinated meetings, appointments and schedules while tracking priorities and ensuring important activities received appropriate follow-up.",
+      "Managed business correspondence and documentation, maintaining organized records and supporting efficient information flow.",
+      "Communicated with internal and external stakeholders on behalf of management and followed up on outstanding requests and actions.",
+      "Supported daily office operations by coordinating administrative activities, organizing information and helping maintain consistent workflows.",
+      "Developed strong experience in executive support, documentation, stakeholder communication, scheduling, prioritization and operational coordination.",
     ],
   },
 ];
