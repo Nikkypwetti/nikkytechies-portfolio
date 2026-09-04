@@ -5,8 +5,8 @@ type ProjectEvidenceOverride = Pick<
   "heroImage" | "automationImage" | "gallery"
 >;
 
-const REVINT_MAIN_ORCHESTRATOR =
-  "https://raw.githubusercontent.com/Nikkypwetti/ai-revenue-intelligence-agent/main/docs/images/revint-01-main-orchestrator.png";
+const REVINT_EVIDENCE_BASE =
+  "https://raw.githubusercontent.com/Nikkypwetti/ai-revenue-intelligence-agent/main/docs/images";
 
 const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
   "revenue-intelligence-production-simulation": {
@@ -73,13 +73,15 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
   "ai-revenue-intelligence-reporting-agent": {
     heroImage:
       "/images/projects/revenue-intelligence/revint-system-architecture.png",
-    automationImage: REVINT_MAIN_ORCHESTRATOR,
+    automationImage:
+      "/images/projects/revenue-intelligence/revint-01-main-orchestrator-overview.webp",
     gallery: [
       {
-        image: REVINT_MAIN_ORCHESTRATOR,
-        title: "REVINT-01 — Main Manager Request Orchestrator",
+        image:
+          "/images/projects/revenue-intelligence/revint-01-main-orchestrator-overview.webp",
+        title: "REVINT-01 — Full Manager Request Orchestrator",
         description:
-          "The original main n8n workflow for the AI Revenue Intelligence & Reporting Agent. It receives normalized manager requests, creates request and correlation context, interprets structured intent, applies deterministic KPI and query controls, executes approved reporting through read-only PostgreSQL access, validates results, routes the management response, and records the audit trail.",
+          "Full-canvas view of the original REVINT-01 n8n workflow, showing the complete governed request path from manager intake through request context, AI intent interpretation, deterministic KPI and query controls, read-only PostgreSQL execution, result validation, multi-channel delivery, and lifecycle auditing.",
       },
       {
         image:
@@ -94,6 +96,30 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
         title: "Safe Unsupported-Request Rejection",
         description:
           "Unsupported reporting intent is rejected safely rather than being converted into unrestricted SQL or an unauthorized database operation.",
+      },
+      {
+        image: `${REVINT_EVIDENCE_BASE}/revint-04-postgres-security.png`,
+        title: "PostgreSQL Security Boundary",
+        description:
+          "Verified least-privilege PostgreSQL controls separating reporting, control, and privileged database responsibilities so approved reporting executes through the intended read-only boundary.",
+      },
+      {
+        image: `${REVINT_EVIDENCE_BASE}/revint-05-kpi-catalogue.png`,
+        title: "Governed KPI Catalogue",
+        description:
+          "Evidence of the governed KPI catalogue used to resolve approved metrics and prevent unsupported reporting requests from becoming arbitrary database queries.",
+      },
+      {
+        image: `${REVINT_EVIDENCE_BASE}/revint-06-slack-report.png`,
+        title: "Slack Manager Report",
+        description:
+          "Manager-facing Slack delivery showing an approved Revenue Intelligence request returned through the governed reporting workflow.",
+      },
+      {
+        image: `${REVINT_EVIDENCE_BASE}/revint-07-form-report.png`,
+        title: "Manager Form Report",
+        description:
+          "Authenticated manager-form result demonstrating a second request channel using the same governed Revenue Intelligence orchestration and bounded reporting contract.",
       },
       {
         image:
