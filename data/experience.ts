@@ -3,7 +3,6 @@ export const experience = [
     role: "Sales Account Manager",
     company: "A2Z COMMUNICATION",
     period: "Aug 2022 - Dec 2025",
-    location: "Ogbomosho North, Oyo State, Nigeria",
     achievements: [
       "Managed ongoing client accounts and maintained consistent communication throughout the sales and customer relationship process.",
       "Identified customer needs and business opportunities, helping match clients with appropriate products and solutions.",
@@ -16,7 +15,6 @@ export const experience = [
     role: "Executive Secretary",
     company: "Rehanot Steels Limited",
     period: "Feb 2018 - Dec 2021",
-    location: "Ikorodu, Lagos State, Nigeria",
     achievements: [
       "Provided administrative and operational support to senior executives, helping coordinate day-to-day priorities, schedules, correspondence and business activities.",
       "Coordinated meetings, appointments and schedules while tracking priorities and ensuring important activities received appropriate follow-up.",
