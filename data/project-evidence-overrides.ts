@@ -79,7 +79,7 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
       {
         image:
           "/images/projects/revenue-intelligence/revint-01-main-orchestrator-overview.webp",
-        title: "REVINT-01 — Full Manager Request Orchestrator",
+        title: "Main n8n Revenue Intelligence Workflow",
         description:
           "Full-canvas view of the original REVINT-01 n8n workflow, showing the complete governed request path from manager intake through request context, AI intent interpretation, deterministic KPI and query controls, read-only PostgreSQL execution, result validation, multi-channel delivery, and lifecycle auditing.",
       },
