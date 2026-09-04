@@ -124,6 +124,13 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
           "Verified approved-query execution design using a fixed, parameterized SQL template for Closed Won Revenue. Only approved parameters are accepted, the query reads from the reporting layer, and the template is versioned, bounded, and governed instead of AI-generated at runtime.",
       },
       {
+        image:
+          "/images/projects/revenue-intelligence/revint-13-retry-fallback.png",
+        title: "Controlled Retry, Dead-Letter & Escalation",
+        description:
+          "Verified controlled reliability behavior for retryable failures. The system logs the error, retries with backoff, exhausts the retry budget after three attempts, records a dead-letter event, sends an alert, and escalates the incident for follow-up instead of silently failing.",
+      },
+      {
         image: `${REVINT_EVIDENCE_BASE}/revint-06-slack-report.png`,
         title: "Slack Manager Report",
         description:
