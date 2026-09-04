@@ -104,6 +104,13 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
           "Verified least-privilege PostgreSQL controls separating reporting, control, and privileged database responsibilities so approved reporting executes through the intended read-only boundary.",
       },
       {
+        image:
+          "/images/projects/revenue-intelligence/revint-11-postgres-schema.png",
+        title: "PostgreSQL Reporting & Governance Schema",
+        description:
+          "Verified database structure separating control, reporting, and audit responsibilities. The reporting layer uses a fact-and-dimension model for deals, accounts, sales representatives, and lead sources, while dedicated control and audit tables support governed query execution, request tracking, error handling, and traceability.",
+      },
+      {
         image: `${REVINT_EVIDENCE_BASE}/revint-05-kpi-catalogue.png`,
         title: "Governed KPI Catalogue",
         description:
