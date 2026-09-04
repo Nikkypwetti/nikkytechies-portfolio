@@ -5,6 +5,9 @@ type ProjectEvidenceOverride = Pick<
   "heroImage" | "automationImage" | "gallery"
 >;
 
+const REVINT_MAIN_ORCHESTRATOR =
+  "https://raw.githubusercontent.com/Nikkypwetti/ai-revenue-intelligence-agent/main/docs/images/revint-01-main-orchestrator.png";
+
 const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
   "revenue-intelligence-production-simulation": {
     heroImage: "/images/projects/lumora/04-manager-request-orchestrator.png",
@@ -70,14 +73,13 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
   "ai-revenue-intelligence-reporting-agent": {
     heroImage:
       "/images/projects/revenue-intelligence/revint-system-architecture.png",
-    automationImage:
-      "/images/projects/lumora/04-manager-request-orchestrator.png",
+    automationImage: REVINT_MAIN_ORCHESTRATOR,
     gallery: [
       {
-        image: "/images/projects/lumora/04-manager-request-orchestrator.png",
-        title: "Main n8n Workflow — Manager Request Orchestrator",
+        image: REVINT_MAIN_ORCHESTRATOR,
+        title: "REVINT-01 — Main Manager Request Orchestrator",
         description:
-          "The main Revenue Intelligence workflow that receives normalized manager requests, creates request and correlation context, interprets structured intent, applies deterministic KPI and query controls, executes approved reporting through read-only PostgreSQL access, validates results, routes the management response, and records the audit trail.",
+          "The original main n8n workflow for the AI Revenue Intelligence & Reporting Agent. It receives normalized manager requests, creates request and correlation context, interprets structured intent, applies deterministic KPI and query controls, executes approved reporting through read-only PostgreSQL access, validates results, routes the management response, and records the audit trail.",
       },
       {
         image:
