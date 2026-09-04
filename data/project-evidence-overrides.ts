@@ -66,6 +66,56 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
       },
     ],
   },
+
+  "ai-revenue-intelligence-reporting-agent": {
+    heroImage:
+      "/images/projects/revenue-intelligence/revint-system-architecture.png",
+    automationImage:
+      "/images/projects/lumora/04-manager-request-orchestrator.png",
+    gallery: [
+      {
+        image: "/images/projects/lumora/04-manager-request-orchestrator.png",
+        title: "Main n8n Workflow — Manager Request Orchestrator",
+        description:
+          "The main Revenue Intelligence workflow that receives normalized manager requests, creates request and correlation context, interprets structured intent, applies deterministic KPI and query controls, executes approved reporting through read-only PostgreSQL access, validates results, routes the management response, and records the audit trail.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/revint-02-approved-api-report.png",
+        title: "Approved API Revenue Report",
+        description:
+          "Successful governed API request returning closed-won revenue of 20,500 across two closed-won deals after passing reporting authorization and query controls.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/revint-03-safe-rejection.png",
+        title: "Safe Unsupported-Request Rejection",
+        description:
+          "Unsupported reporting intent is rejected safely rather than being converted into unrestricted SQL or an unauthorized database operation.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/revint-08-powerbi-dashboard.png",
+        title: "Revenue Intelligence Power BI Dashboard",
+        description:
+          "Management dashboard presenting closed-won revenue, open pipeline, closed-won deals, win rate, sales-rep pipeline, lead-source revenue, deal stages, and open opportunities.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/revint-09-audit-traceability.png",
+        title: "Request Audit Traceability",
+        description:
+          "A single manager request traced across request received, intent parsed, governance approved, and delivery succeeded events using consistent request and correlation identifiers.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/revint-10-error-handler.png",
+        title: "Centralized Error Handler",
+        description:
+          "Dedicated n8n reliability workflow handling error normalization, incident identification, classification, recovery decisions, escalation, alerting, dead-letter persistence, and final auditing.",
+      },
+    ],
+  },
 };
 
 export function applyProjectEvidenceOverride(project: Project): Project {
