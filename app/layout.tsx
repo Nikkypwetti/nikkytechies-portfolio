@@ -11,6 +11,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
+const socialPreviewImage =
+  "https://nikkytechies-portfolio.vercel.app/og-revops-operations.png?v=20260906";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://nikkytechies-portfolio.vercel.app"),
   title: { default: siteConfig.title, template: `%s | ${siteConfig.name}` },
@@ -57,10 +60,11 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/og-revops-operations.png",
+        url: socialPreviewImage,
         width: 1731,
         height: 909,
         alt: "Ganiyu Basirat Olanike — Operations, RevOps and Business Systems Portfolio",
+        type: "image/png",
       },
     ],
   },
@@ -68,7 +72,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: ["/og-revops-operations.png"],
+    images: [socialPreviewImage],
   },
 };
 
