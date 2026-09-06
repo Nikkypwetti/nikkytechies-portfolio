@@ -1,4 +1,4 @@
-import { projects } from "@/data/projects";
+import { allProjects as projects } from "@/data/all-projects";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
 import { SectionHeading } from "@/components/shared/section-heading";
@@ -6,9 +6,9 @@ import { ProjectCard } from "@/components/projects/project-card";
 import { FadeIn } from "@/components/animations/fade-in";
 
 const featuredSlugs = [
+  "hubspot-clientflow-crm",
   "revenue-intelligence-production-simulation",
-  "ai-revenue-intelligence-reporting-agent",
-  "business-operations-client-project-system",
+  "clickup-operations-growops-agency",
   "client-onboarding-automation",
 ];
 

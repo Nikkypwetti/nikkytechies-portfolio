@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { projects } from "@/data/projects";
+import { allProjects as projects } from "@/data/all-projects";
 import { applyProjectEvidenceOverride } from "@/data/project-evidence-overrides";
 
 import { ProjectHeader } from "@/components/projects/case-study/project-header";

@@ -8,18 +8,18 @@ type Props = {
   }[];
 };
 
-export function ProjectGallery({
-  gallery,
-}: Props) {
+export function ProjectGallery({ gallery }: Props) {
+  if (gallery.length === 0) {
+    return null;
+  }
+
   return (
     <section className="space-y-8">
       <div>
-        <h2 className="text-3xl font-bold">
-          Project Gallery
-        </h2>
+        <h2 className="text-3xl font-bold">Project Gallery</h2>
 
         <p className="mt-2 text-muted-foreground">
-          Screenshots from the completed automation system.
+          Screenshots and implementation evidence from the project.
         </p>
       </div>
 
@@ -40,13 +40,9 @@ export function ProjectGallery({
             />
 
             <div className="space-y-2 border-t p-6">
-              <h3 className="text-xl font-semibold">
-                {item.title}
-              </h3>
+              <h3 className="text-xl font-semibold">{item.title}</h3>
 
-              <p className="text-muted-foreground">
-                {item.description}
-              </p>
+              <p className="text-muted-foreground">{item.description}</p>
             </div>
           </article>
         ))}

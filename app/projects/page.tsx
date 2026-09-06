@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { projects } from "@/data/projects";
+import { allProjects as projects } from "@/data/all-projects";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
 import { SectionHeading } from "@/components/shared/section-heading";

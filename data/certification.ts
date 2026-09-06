@@ -1,10 +1,10 @@
 export const certifications = [
   {
-    title: "Airtable Certification",
+    title: "Airtable Builder Certification",
 
     issuer: "Airtable",
 
-    status: "In Progress",
+    status: "Completed",
   },
 
   {
