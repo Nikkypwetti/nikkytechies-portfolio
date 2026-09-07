@@ -99,7 +99,44 @@ export const hubspotProject: Project = {
     },
   ],
 
-  gallery: [],
+  gallery: [
+    {
+      image: "/images/projects/hubspot-clientflow/04-sales-dashboard.webp",
+      title: "HubSpot Sales & Revenue Dashboard",
+      description:
+        "HubSpot reporting dashboard showing deal counts, closed-deal value by owner, deal status mix, sales-funnel progression, and average time to close for the portfolio test dataset.",
+    },
+    {
+      image: "/images/projects/hubspot-clientflow/01-proposal-follow-up.webp",
+      title: "Proposal Follow-Up Sequence",
+      description:
+        "Workflow evidence showing a 3-business-day delay, branch logic for deals still at Proposal Sent, and creation of a scheduled call follow-up task.",
+    },
+    {
+      image: "/images/projects/hubspot-clientflow/02-overdue-deal-alert.webp",
+      title: "Overdue Deal Alert Workflow",
+      description:
+        "Workflow evidence enrolling open deals whose close date is before today while excluding Closed Won and Closed Lost, then creating an overdue follow-up task assigned to the deal owner.",
+    },
+    {
+      image: "/images/projects/hubspot-clientflow/03-contact-record.webp",
+      title: "Contact, Company & Deal Association",
+      description:
+        "HubSpot contact record used to verify CRM associations, activity context, company linkage, and visibility into an associated deal in the ClientFlow test setup.",
+    },
+    {
+      image: "/images/projects/hubspot-clientflow/06-contact-database.webp",
+      title: "Structured HubSpot Contact Database",
+      description:
+        "Contact view demonstrating standardized CRM records with names, emails, phone numbers, job titles, ownership/activity filters, and saved contact views.",
+    },
+    {
+      image: "/images/projects/hubspot-clientflow/05-make-automation.webp",
+      title: "ClientFlow CRM Integration in Make.com",
+      description:
+        "Make.com scenario connecting Google Sheets, HubSpot contact and deal creation, Gmail, HubSpot task creation, Slack notification, and a final Google Sheets update.",
+    },
+  ],
 
   results: [
     "Configured 2 HubSpot sales workflows",
@@ -149,6 +186,6 @@ export const hubspotProject: Project = {
     "Record associations and workflow behavior were tested and corrected",
   ],
 
-  automationImage: "",
+  automationImage: "/images/projects/hubspot-clientflow/01-proposal-follow-up.webp",
   demo: "",
 };
