@@ -7,8 +7,8 @@ import { allProjects } from "@/data/all-projects";
 const highlights = [
   { value: "7+", label: "Years Professional Experience" },
   { value: String(allProjects.length), label: "Portfolio Case Studies" },
-  { value: "18", label: "Steps in Onboarding Workflow" },
-  { value: "5", label: "Lead Qualification Routes" },
+  { value: "10+", label: "Platforms & Tools Across Portfolio" },
+  { value: "4", label: "Core Areas: CRM • RevOps • Operations • Business Systems" },
 ];
 
 export function About() {
@@ -18,8 +18,8 @@ export function About() {
         <FadeIn>
           <SectionHeading
             eyebrow="Professional Snapshot"
-            title="Business experience backed by hands-on systems work."
-            description="My background combines customer-facing sales, executive administration and practical work across CRM, RevOps, project operations, reporting and automation."
+            title="Operations experience backed by hands-on CRM, RevOps and Business Systems work."
+            description="My background combines customer-facing sales, executive administration and hands-on work across CRM, Revenue Operations, Business Systems, reporting and workflow automation."
           />
         </FadeIn>
 
