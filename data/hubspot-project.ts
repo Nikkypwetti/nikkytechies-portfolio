@@ -8,43 +8,49 @@ export const hubspotProject: Project = {
   type: "Portfolio",
   status: "Completed",
   category: "CRM",
-  platforms: ["HubSpot Sales Hub", "Deals", "Workflows", "Tasks", "Reporting"],
+  platforms: ["HubSpot Sales Hub", "Make.com", "Slack", "Gmail", "Google Sheets", "Deals", "Workflows", "Reporting"],
 
   description:
-    "Configured a HubSpot Sales Hub CRM workflow and reporting system for lead ownership, deal creation, task follow-up, pipeline visibility and revenue reporting.",
+    "Configured a HubSpot Sales Hub CRM and connected lead-processing workflow for contact, company and deal management, sales follow-up, pipeline visibility, notifications and revenue reporting.",
 
   overview: [
-    "Configured 2 HubSpot workflows covering lead status, ownership, deal creation, task creation and follow-up.",
+    "Configured 3 HubSpot workflows covering lead status, ownership, deal creation, proposal follow-up and overdue-deal follow-up.",
     "Built 8 reports covering pipeline, forecasting, deal stages, ownership, outcomes, tasks and revenue visibility.",
-    "Structured deal, task and follow-up visibility to support consistent sales operations.",
+    "Connected Google Sheets, HubSpot, Gmail and Slack through Make.com for lead processing and internal follow-up visibility.",
+    "Structured contact, company and deal records to support clearer CRM associations and pipeline management.",
     "Resolved CRM record-association and workflow issues during testing and configuration.",
   ],
 
   problem:
-    "Sales follow-up becomes difficult when lead ownership, deal creation, tasks and reporting are handled inconsistently. The project focused on creating a clearer CRM operating flow so lead activity, next actions and pipeline reporting could be managed from one system.",
+    "Sales follow-up becomes difficult when lead ownership, deal creation, tasks, record associations and reporting are handled inconsistently. The project focused on creating a clearer CRM operating flow so lead activity, next actions, pipeline movement and reporting could be managed from one connected process.",
 
   solution:
-    "Configured HubSpot Sales Hub around a structured lead-to-deal process. Workflows update lead status and ownership, create the required deal and task records, support proposal follow-up, and provide internal visibility. Reporting was organized around pipeline, forecasting, stages, ownership, outcomes, tasks and revenue.",
+    "Configured HubSpot Sales Hub around a structured lead-to-deal process. HubSpot workflows update lead status and ownership, create or associate deal and task records, support proposal and overdue follow-up, and provide internal visibility. A Make.com scenario connects Google Sheets, HubSpot, Gmail and Slack for lead processing, while reporting is organized around pipeline, forecasting, stages, ownership, outcomes, tasks and revenue.",
 
   architecture: [
-    "HubSpot contact and lead records",
+    "Google Sheets lead intake",
+    "Make.com integration workflow",
+    "HubSpot contact and company records",
     "Lead status and ownership rules",
     "Deal pipeline and deal stages",
     "Task creation and follow-up",
-    "Workflow automation",
-    "Internal sales visibility",
+    "HubSpot workflow automation",
+    "Gmail welcome email",
+    "Slack internal lead notification",
     "Pipeline and forecast reporting",
     "Revenue and outcome reporting",
   ],
 
   workflow: [
-    "Lead enters HubSpot",
-    "Update lead status",
-    "Assign record owner",
+    "Lead enters the intake process",
+    "Create or update HubSpot contact",
     "Create or associate deal",
+    "Update lead status and ownership",
+    "Send welcome email",
     "Create follow-up task",
-    "Notify internal owner",
+    "Notify internal team in Slack",
     "Track proposal-stage follow-up",
+    "Flag overdue open deals",
     "Update pipeline and reporting views",
   ],
 
@@ -52,7 +58,7 @@ export const hubspotProject: Project = {
     {
       title: "Lead Intake",
       description:
-        "New lead activity enters a structured HubSpot process so status, ownership and next actions remain visible.",
+        "New lead activity enters a structured CRM process so contact data, status, ownership and next actions remain visible.",
       icon: "crm",
     },
     {
@@ -82,13 +88,19 @@ export const hubspotProject: Project = {
     {
       title: "Internal Notification",
       description:
-        "Internal notifications support timely awareness of assigned sales actions.",
+        "Slack notifications confirm lead processing and surface the required follow-up action to the internal team.",
       icon: "slack",
     },
     {
       title: "Proposal Follow-up",
       description:
-        "A second workflow supports follow-up when deals remain at the proposal stage.",
+        "A workflow supports follow-up when deals remain at the Proposal Sent stage after the configured delay.",
+      icon: "crm",
+    },
+    {
+      title: "Overdue Deal Follow-up",
+      description:
+        "Open deals past their close date are identified while Closed Won and Closed Lost deals are excluded, then an overdue follow-up task is created.",
       icon: "crm",
     },
     {
@@ -99,12 +111,20 @@ export const hubspotProject: Project = {
     },
   ],
 
+  heroImage: "/images/projects/hubspot-clientflow/04-sales-dashboard.webp",
+
   gallery: [
     {
       image: "/images/projects/hubspot-clientflow/04-sales-dashboard.webp",
       title: "HubSpot Sales & Revenue Dashboard",
       description:
         "HubSpot reporting dashboard showing deal counts, closed-deal value by owner, deal status mix, sales-funnel progression, and average time to close for the portfolio test dataset.",
+    },
+    {
+      image: "/images/projects/hubspot-clientflow/09-deal-pipeline-board.webp",
+      title: "HubSpot Deal Pipeline Board",
+      description:
+        "Pipeline view showing New Lead, Discovery Call Scheduled, Proposal Sent, Negotiating, Deal Won and Deal Lost stages with deal value, ownership, close-date context and saved sales views.",
     },
     {
       image: "/images/projects/hubspot-clientflow/01-proposal-follow-up.webp",
@@ -131,6 +151,18 @@ export const hubspotProject: Project = {
         "Contact view demonstrating standardized CRM records with names, emails, phone numbers, job titles, ownership/activity filters, and saved contact views.",
     },
     {
+      image: "/images/projects/hubspot-clientflow/08-company-database.webp",
+      title: "Structured HubSpot Company Database",
+      description:
+        "Company records view demonstrating standardized account records, ownership, create dates, recent activity and saved company views used alongside contacts and deals.",
+    },
+    {
+      image: "/images/projects/hubspot-clientflow/07-slack-lead-notification.webp",
+      title: "Slack Lead Processing Notification",
+      description:
+        "Internal Slack confirmation showing a processed lead, HubSpot contact creation or update, associated deal creation, welcome-email delivery and a clear 24-hour follow-up action.",
+    },
+    {
       image: "/images/projects/hubspot-clientflow/05-make-automation.webp",
       title: "ClientFlow CRM Integration in Make.com",
       description:
@@ -139,9 +171,10 @@ export const hubspotProject: Project = {
   ],
 
   results: [
-    "Configured 2 HubSpot sales workflows",
+    "Configured 3 HubSpot sales workflows",
     "Built 8 pipeline, forecast, task, ownership, outcome and revenue reports",
-    "Structured lead ownership, deal creation and follow-up visibility",
+    "Structured contact, company, deal and follow-up visibility",
+    "Connected Google Sheets, HubSpot, Gmail and Slack through Make.com",
     "Resolved CRM record-association and workflow configuration issues",
     "Documented a repeatable CRM operating flow for sales follow-up",
   ],
@@ -149,14 +182,14 @@ export const hubspotProject: Project = {
   technologies: [technologies.hubspot],
 
   metrics: [
-    "2 HubSpot workflows configured",
+    "3 HubSpot workflows configured",
     "8 HubSpot reports built",
     "Lead-to-deal follow-up process structured",
   ],
 
   stats: [
     {
-      value: 2,
+      value: 3,
       suffix: " workflows",
       label: "HubSpot Automation",
     },
@@ -175,15 +208,18 @@ export const hubspotProject: Project = {
   before: [
     "Lead ownership and follow-up are difficult to track consistently",
     "Deal creation and task management can depend on manual action",
+    "Contact, company and deal associations can become inconsistent",
     "Pipeline and activity reporting are fragmented",
-    "Record-association issues can reduce CRM reliability",
+    "Internal teams may lack a clear confirmation that new leads were processed",
   ],
 
   after: [
     "Lead status, ownership and next actions follow a structured CRM process",
+    "Contact, company and deal records are organized around a connected sales flow",
     "Deal and task creation support consistent sales follow-up",
+    "Proposal-stage and overdue-deal follow-up are handled with workflow logic",
     "Eight reports provide clearer pipeline and revenue visibility",
-    "Record associations and workflow behavior were tested and corrected",
+    "Slack notifications provide internal confirmation and a clear next action after lead processing",
   ],
 
   automationImage: "/images/projects/hubspot-clientflow/01-proposal-follow-up.webp",

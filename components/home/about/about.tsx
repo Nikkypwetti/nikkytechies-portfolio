@@ -2,10 +2,11 @@ import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { FadeIn } from "@/components/animations/fade-in";
+import { allProjects } from "@/data/all-projects";
 
 const highlights = [
   { value: "7+", label: "Years Professional Experience" },
-  { value: "5", label: "Business Systems Case Studies" },
+  { value: String(allProjects.length), label: "Portfolio Case Studies" },
   { value: "18", label: "Steps in Onboarding Workflow" },
   { value: "5", label: "Lead Qualification Routes" },
 ];
