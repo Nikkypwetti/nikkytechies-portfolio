@@ -13,13 +13,13 @@ export const skills = [
   {
     title: "Revenue & Sales Operations",
     description:
-      "Supporting lead management, customer journeys, pipeline processes, account follow-up, sales activity and revenue operations workflows.",
+      "Supporting lead management, ownership, lifecycle stages, opportunity pipelines, forecasting, account follow-up and revenue operations workflows.",
     icon: TrendingUp,
   },
   {
     title: "CRM & Data Operations",
     description:
-      "Managing customer, lead and project records, lifecycle stages, data quality, pipeline information and reporting using HubSpot and Airtable.",
+      "Managing Salesforce and HubSpot CRM records, lifecycle stages, permissions, duplicate controls, data quality, pipeline information and reporting.",
     icon: Database,
   },
   {
@@ -37,7 +37,7 @@ export const skills = [
   {
     title: "Reporting & Analytics",
     description:
-      "Using spreadsheets, dashboards, data validation, CRM reporting and KPI tracking to improve visibility into sales and operational performance.",
+      "Using CRM reports, dashboards, pipeline aging, weighted forecasts, spreadsheets, data validation and KPI tracking to improve operational visibility.",
     icon: BarChart3,
   },
   {
