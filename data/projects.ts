@@ -19,7 +19,7 @@ export const projects: Project[] = [
   category: "Revenue Operations",
 
   description:
-    "Built a hands-on Salesforce Admin + Revenue Operations system for a simulated B2B SaaS company, covering inbound lead capture, n8n integration, capacity-aware routing, lifecycle automation, opportunity governance, security, reporting and UAT.",
+    "Built a hands-on Salesforce CRM and Business Systems implementation for Revenue Operations (RevOps) and Sales Operations in a simulated B2B SaaS environment, covering inbound lead capture, n8n integration, capacity-aware Lead Routing, lifecycle automation, opportunity governance, security, reporting and UAT.",
 
   overview: [
     "Built in Salesforce Developer Edition using live configuration, test users and test data.",
