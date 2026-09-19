@@ -86,24 +86,6 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
           "AsterNova Lead Data Quality Report identifies incomplete test records requiring cleanup, including a missing Phone and a missing Lead Source.",
       },
       {
-        image: "/images/projects/asternova/14-lead-data-quality-clean.webp",
-        title: "Lead Data Quality — Cleanup Validated",
-        description:
-          "After correcting the flagged test records, the same data-quality report returns zero results, demonstrating an identify → correct → revalidate control loop.",
-      },
-      {
-        image: "/images/projects/asternova/15-lead-conversion-report.webp",
-        title: "Lead Conversion Report",
-        description:
-          "Salesforce report separating converted and unconverted test Leads while preserving Lead Source, Converted Date, Lead Status, and owner context. Counts are test data, not a business conversion rate.",
-      },
-      {
-        image: "/images/projects/asternova/16-pipeline-aging-report.webp",
-        title: "Pipeline Aging Report",
-        description:
-          "Open AsterNova Opportunities grouped by Stage and Opportunity Owner with standard Opportunity Age visible for aging review; the report shows six open test Opportunities totaling $65K.",
-      },
-      {
         image: "/images/projects/asternova/17-sales-forecast-report.webp",
         title: "Probability-Weighted Sales Forecast",
         description:
