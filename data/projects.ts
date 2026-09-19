@@ -184,7 +184,8 @@ export const projects: Project[] = [
     "AsterNova-only reports and dashboard reconcile to the underlying test data",
   ],
 
-  automationImage: "",
+  heroImage: "/images/projects/asternova/01-dashboard-overview.webp",
+  automationImage: "/images/projects/asternova/03-n8n-inbound-workflow.webp",
   github: "",
   demo: "",
 },
