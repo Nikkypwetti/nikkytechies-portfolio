@@ -74,10 +74,52 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
           "Private Salesforce security model with management visibility through the sales role hierarchy while lower-level users remain restricted.",
       },
       {
-        image: "/images/projects/asternova/11-uat-test-matrix.webp",
-        title: "Structured UAT Matrix",
+        image: "/images/projects/asternova/12-duplicate-warning.webp",
+        title: "Lead Duplicate Warning",
         description:
-          "Structured UAT documentation covering routing, capacity, automation, permissions, security, and reporting with live tests separated from Flow Debug validation.",
+          "Salesforce exact-email Matching Rule and Duplicate Rule surface Similar Records Exist before a duplicate Lead is saved, giving the user a controlled review path.",
+      },
+      {
+        image: "/images/projects/asternova/13-lead-data-quality-before.webp",
+        title: "Lead Data Quality — Issues Identified",
+        description:
+          "AsterNova Lead Data Quality Report identifies incomplete test records requiring cleanup, including a missing Phone and a missing Lead Source.",
+      },
+      {
+        image: "/images/projects/asternova/14-lead-data-quality-clean.webp",
+        title: "Lead Data Quality — Cleanup Validated",
+        description:
+          "After correcting the flagged test records, the same data-quality report returns zero results, demonstrating an identify → correct → revalidate control loop.",
+      },
+      {
+        image: "/images/projects/asternova/15-lead-conversion-report.webp",
+        title: "Lead Conversion Report",
+        description:
+          "Salesforce report separating converted and unconverted test Leads while preserving Lead Source, Converted Date, Lead Status, and owner context. Counts are test data, not a business conversion rate.",
+      },
+      {
+        image: "/images/projects/asternova/16-pipeline-aging-report.webp",
+        title: "Pipeline Aging Report",
+        description:
+          "Open AsterNova Opportunities grouped by Stage and Opportunity Owner with standard Opportunity Age visible for aging review; the report shows six open test Opportunities totaling $65K.",
+      },
+      {
+        image: "/images/projects/asternova/17-sales-forecast-report.webp",
+        title: "Probability-Weighted Sales Forecast",
+        description:
+          "Forecast report groups open Opportunities by Close Month and owner and uses Amount × Probability to produce $23K simulated Expected Revenue from a $65K simulated open pipeline.",
+      },
+      {
+        image: "/images/projects/asternova/18-rep-performance-report.webp",
+        title: "Rep Performance Report",
+        description:
+          "Opportunity report grouped by owner and stage across open, Closed Won, and Closed Lost test records, providing rep-level pipeline and outcome visibility without presenting simulated values as real sales performance.",
+      },
+      {
+        image: "/images/projects/asternova/11-uat-test-matrix.webp",
+        title: "Original Structured UAT Matrix",
+        description:
+          "Original 24-scenario UAT matrix captured during implementation. The documented test register was later expanded to 41 passed scenarios: 37 live tests and 4 Salesforce Flow Debug validations.",
       },
     ],
   },
