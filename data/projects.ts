@@ -4,6 +4,193 @@ import { technologies } from "./technologies";
 export const projects: Project[] = [
 
 {
+  slug: "asternova-salesforce-revops-system",
+  title: "AsterNova Salesforce Revenue Operations System",
+  year: "2026",
+  type: "Portfolio",
+  status: "Completed",
+  platforms: [
+    "Salesforce Sales Cloud",
+    "n8n",
+    "Google Forms",
+    "Google Sheets",
+    "Web-to-Lead",
+  ],
+  category: "Revenue Operations",
+
+  description:
+    "Built a hands-on Salesforce Admin + Revenue Operations system for a simulated B2B SaaS company, covering inbound lead capture, n8n integration, capacity-aware routing, lifecycle automation, opportunity governance, security, reporting and UAT.",
+
+  overview: [
+    "Built in Salesforce Developer Edition using live configuration, test users and test data.",
+    "Connected two inbound channels: a production-style HTML Web-to-Lead form and a Google Form → Google Sheets → n8n → Salesforce workflow.",
+    "Kept routing, capacity, lifecycle, validation, permissions and opportunity governance centralized in Salesforce instead of duplicating CRM logic in n8n.",
+    "Implemented capacity-aware territory routing, enterprise qualification, inbound-queue fallback, Nurture and Qualified lifecycle automation, proposal controls, Closed Won handoff and Closed Lost governance.",
+    "Validated the original build with 24 documented UAT scenarios, then completed additional live integration and lifecycle tests.",
+  ],
+
+  problem:
+    "AsterNova needed a controlled CRM operating model for multi-source inbound leads, territory and capacity-based ownership, enterprise eligibility, qualification handoff, opportunity-stage governance, least-privilege sales access and management reporting. The system also needed safe fallback behavior when no rep was eligible and an auditable way to integrate external forms without moving core business logic outside Salesforce.",
+
+  solution:
+    "Configured Salesforce Sales Cloud with custom fields, a private sharing model, role hierarchy, profiles, additive permission sets, validation rules, record-triggered and autolaunched Flows, capacity-aware Lead routing, Lead conversion field mapping, proposal follow-up, Closed Won onboarding, Closed Lost controls, six management reports and a reconciled Sales & Revenue Operations dashboard. Added Google Forms, Google Sheets and n8n as an external intake layer while keeping Salesforce as the system of record.",
+
+  architecture: [
+    "Production-style HTML form → Salesforce Web-to-Lead",
+    "Google Form → Google Sheets → n8n validation and normalization → Salesforce Web-to-Lead",
+    "Salesforce Lead → Enterprise or Standard routing decision",
+    "Eligibility checks: active, available, has capacity, territory match and enterprise qualification",
+    "Least-loaded eligible rep assignment with AsterNova Inbound Queue fallback",
+    "Lead lifecycle: New → Working → Qualified / Nurture / Disqualified",
+    "Qualified → Account + Contact + Opportunity through Salesforce standard conversion",
+    "Opportunity lifecycle: Discovery → Technical Review → Proposal Sent → Negotiation → Closed Won / Closed Lost",
+    "Private sharing + role hierarchy + profiles + permission sets",
+    "Reports and dashboard filtered to the AsterNova Opportunity Record Type",
+  ],
+
+  workflow: [
+    "Inbound Lead Capture",
+    "Validate and Normalize External Data",
+    "Create Salesforce Lead",
+    "Evaluate Territory, Availability and Capacity",
+    "Assign Eligible Rep or Inbound Queue",
+    "Work Lead",
+    "Nurture Follow-Up or Qualified Conversion",
+    "Create Account, Contact and Opportunity",
+    "Progress Opportunity",
+    "Proposal Follow-Up and High-Value Escalation",
+    "Closed Won Onboarding or Closed Lost Governance",
+    "Report and Review",
+  ],
+
+  automation: [
+    {
+      title: "Capacity-Aware Lead Routing",
+      description:
+        "Routes Enterprise and Standard Leads using territory, availability, capacity and enterprise-qualification checks, selecting the least-loaded eligible rep and falling back to the inbound queue.",
+      icon: "crm",
+    },
+    {
+      title: "Active Lead Capacity Maintenance",
+      description:
+        "Recalculates current and previous owners when Lead ownership or lifecycle changes affect active workload.",
+      icon: "database",
+    },
+    {
+      title: "External Lead Intake",
+      description:
+        "Google Forms and Google Sheets feed n8n, which prevents reprocessing, validates required data, normalizes fields and submits Leads to Salesforce Web-to-Lead.",
+      icon: "form",
+    },
+    {
+      title: "Nurture Follow-Up",
+      description:
+        "When a Lead enters Nurture, Salesforce stamps a 30-day follow-up date and creates an owner-assigned re-engagement task.",
+      icon: "crm",
+    },
+    {
+      title: "Qualified Conversion Prep",
+      description:
+        "When a Lead enters Qualified, Salesforce creates a high-priority conversion task while preserving human control over Account and Contact matching.",
+      icon: "crm",
+    },
+    {
+      title: "Proposal Follow-Up",
+      description:
+        "A scheduled path checks Proposal Sent deals after three days, creates a follow-up task and escalates high-value opportunities to the owner's manager.",
+      icon: "workspace",
+    },
+    {
+      title: "Closed Won Handoff",
+      description:
+        "Stamps Won Date and creates structured onboarding tasks for the Opportunity owner and assigned Customer Success Owner.",
+      icon: "workspace",
+    },
+    {
+      title: "Closed Lost Governance",
+      description:
+        "Requires Lost Reason and automatically stamps Lost Date for structured loss analysis.",
+      icon: "database",
+    },
+  ],
+
+  gallery: [],
+
+  results: [
+    "Completed 24 documented UAT scenarios with 24 passed and 0 failed in the original test matrix",
+    "Validated 20 original scenarios live and 4 scheduled-path scenarios with Salesforce Flow Debug",
+    "Proved both eligible-rep assignment and inbound-queue fallback",
+    "Verified user-to-queue, queue-to-user and lifecycle-driven capacity recalculation",
+    "Connected Google Forms, Google Sheets and n8n to Salesforce with validation and sync-status tracking",
+    "Validated direct website Web-to-Lead intake and Account Executive routing",
+    "Mapped Lead Primary Need into the converted Opportunity",
+    "Verified Nurture follow-up, Qualified conversion prep, Closed Won handoff and Closed Lost date stamping",
+    "Confirmed manager visibility and lower-role restrictions under private sharing",
+    "Reconciled $40K Discovery plus $25K Proposal Sent to $65K simulated open pipeline",
+  ],
+
+  technologies: [
+    technologies.salesforce,
+    technologies.n8n,
+    technologies.googleForms,
+    technologies.googleSheets,
+  ],
+
+  metrics: [
+    "24 documented UAT scenarios passed",
+    "20 live + 4 Flow Debug tests in the original UAT matrix",
+    "2 inbound Lead capture channels validated",
+    "$65K simulated open pipeline reconciled",
+    "$75K simulated Closed Won revenue reporting",
+    "6 AsterNova management reports",
+  ],
+
+  stats: [
+    {
+      value: 24,
+      suffix: " UAT",
+      label: "Documented Scenarios Passed",
+    },
+    {
+      value: 2,
+      suffix: " channels",
+      label: "Inbound Lead Capture",
+    },
+    {
+      value: 6,
+      suffix: " reports",
+      label: "Sales & RevOps Reporting",
+    },
+  ],
+
+  before: [
+    "Inbound Lead handling depended on manual entry or disconnected intake sources",
+    "No capacity-aware routing model for balancing eligible sales reps",
+    "No explicit enterprise qualification or queue fallback behavior",
+    "Qualification context could be lost between Lead and Opportunity",
+    "Late-stage opportunities could advance without required commercial data",
+    "Sales and manager permissions were not yet structured around least privilege",
+    "Pipeline reporting could be contaminated by unrelated Salesforce sample data",
+  ],
+
+  after: [
+    "Two tested inbound channels feed Salesforce while CRM logic remains centralized",
+    "Enterprise and Standard Leads route by eligibility, territory and active workload",
+    "No-eligible-rep scenarios fall back safely to the AsterNova Inbound Queue",
+    "Nurture and Qualified lifecycle paths create controlled follow-up work",
+    "Primary Need survives Lead conversion into the Opportunity",
+    "Proposal, Closed Won and Closed Lost stages have explicit validation and automation controls",
+    "Private sharing, role hierarchy and additive permission sets enforce least privilege",
+    "AsterNova-only reports and dashboard reconcile to the underlying test data",
+  ],
+
+  automationImage: "",
+  github: "",
+  demo: "",
+},
+
+
+{
   slug: "revenue-intelligence-production-simulation",
   title: "Revenue Intelligence Production Simulation — Lumora Cloud",
   year: "2026",
