@@ -112,4 +112,18 @@ export const technologies: Record<string, Technology> ={
     category: "Infrastructure",
   },
 
+  salesforce: {
+    id: "salesforce",
+    name: "Salesforce",
+    color: "#0176D3",
+    category: "CRM",
+  },
+
+  googleForms: {
+    id: "googleForms",
+    name: "Google Forms",
+    color: "#7248B9",
+    category: "Workflow",
+  },
+
 };
