@@ -36,7 +36,8 @@ export function ProjectGallery({ gallery }: Props) {
               height={900}
               loading="lazy"
               sizes="(min-width: 1152px) 1080px, calc(100vw - 48px)"
-              className="w-full object-cover"
+              unoptimized={item.image.startsWith("/")}
+              className="h-auto w-full object-contain"
             />
 
             <div className="space-y-2 border-t p-6">
