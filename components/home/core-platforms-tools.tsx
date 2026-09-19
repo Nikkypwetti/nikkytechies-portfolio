@@ -6,8 +6,8 @@ import { FadeIn } from "@/components/animations/fade-in";
 const platformGroups = [
   {
     title: "CRM & Revenue Operations",
-    tools: ["HubSpot", "CRM data governance", "Sales pipelines", "Lifecycle workflows"],
-    note: "Customer relationships, pipeline structure, follow-up and revenue operations.",
+    tools: ["Salesforce Sales Cloud", "HubSpot", "CRM data governance", "Lead routing", "Sales forecasting"],
+    note: "Customer records, lifecycle governance, pipeline structure, ownership, forecasting and revenue operations.",
   },
   {
     title: "Operations & Project Delivery",
@@ -21,8 +21,8 @@ const platformGroups = [
   },
   {
     title: "Reporting & Data",
-    tools: ["Power BI", "PostgreSQL", "Google Sheets", "Data quality controls"],
-    note: "Management reporting, operational metrics, governed datasets and decision support.",
+    tools: ["Power BI", "Salesforce Reports", "PostgreSQL", "Google Sheets", "Data quality controls"],
+    note: "Management reporting, pipeline aging, weighted forecasts, governed datasets and decision support.",
   },
   {
     title: "Collaboration & Business Tools",
