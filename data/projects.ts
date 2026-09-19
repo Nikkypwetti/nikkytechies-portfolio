@@ -204,7 +204,7 @@ export const projects: Project[] = [
 
   heroImage: "/images/projects/asternova/01-dashboard-overview.webp",
   automationImage: "/images/projects/asternova/03-n8n-inbound-workflow.webp",
-  github: "",
+  github: "https://github.com/Nikkypwetti/nikkytechies-portfolio/tree/main/docs/asternova-salesforce-revops-system",
   demo: "",
 },
 
