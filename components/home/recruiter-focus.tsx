@@ -7,8 +7,8 @@ const capabilities = [
   {
     title: "CRM & Revenue Operations",
     description:
-      "Structure lifecycle stages, pipelines, ownership, follow-up and CRM data so revenue teams can see what needs action.",
-    proof: "HubSpot • CRM governance • Sales operations",
+      "Structure lifecycle stages, pipelines, ownership, lead routing, duplicate controls and CRM data so revenue teams can see what needs action.",
+    proof: "Salesforce • HubSpot • CRM governance • Sales operations",
   },
   {
     title: "Business Systems & Operations",
@@ -19,8 +19,8 @@ const capabilities = [
   {
     title: "Reporting & Data Quality",
     description:
-      "Create reliable KPI definitions, management dashboards and data-quality controls that support faster operational decisions.",
-    proof: "Power BI • PostgreSQL • Reporting controls",
+      "Create reliable KPI definitions, CRM reports, management dashboards, pipeline-aging views, weighted forecasts and data-quality controls.",
+    proof: "Salesforce Reports • Power BI • PostgreSQL • Data quality",
   },
   {
     title: "Workflow Automation",

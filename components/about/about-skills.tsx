@@ -14,12 +14,12 @@ import { Section } from "@/components/shared/section";
 const skills = [
   {
     title: "Revenue & Sales Operations",
-    description: "Supporting lead management, pipeline processes, account follow-up, customer journeys and sales operations workflows.",
+    description: "Supporting lead management, routing, opportunity pipelines, forecasting, account follow-up and sales operations workflows.",
     icon: TrendingUp,
   },
   {
     title: "CRM & Data Operations",
-    description: "Managing structured customer, lead and project information, lifecycle stages, data quality and reporting across CRM systems.",
+    description: "Managing Salesforce and HubSpot records, lifecycle stages, permissions, duplicate controls, data quality and CRM reporting.",
     icon: Database,
   },
   {
@@ -34,7 +34,7 @@ const skills = [
   },
   {
     title: "Reporting & Process Improvement",
-    description: "Using spreadsheets, dashboards, validation and operational analysis to identify gaps and improve visibility.",
+    description: "Using CRM reports, dashboards, pipeline aging, weighted forecasts, validation and operational analysis to improve visibility.",
     icon: BarChart3,
   },
   {

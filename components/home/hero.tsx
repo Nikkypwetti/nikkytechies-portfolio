@@ -7,7 +7,7 @@ import { FadeIn } from "@/components/animations/fade-in";
 
 const focusAreas = [
   "Revenue Operations",
-  "CRM & Sales Operations",
+  "Salesforce CRM & Sales Operations",
   "Business Systems",
   "Reporting & Data Quality",
 ];
@@ -21,7 +21,7 @@ export function Hero() {
         <div className="max-w-6xl">
           <FadeIn>
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-              Ganiyu Basirat Olanike • Revenue Operations • CRM • Business Systems
+              Ganiyu Basirat Olanike • Revenue Operations • Salesforce CRM • Business Systems
             </p>
           </FadeIn>
 
@@ -33,10 +33,10 @@ export function Hero() {
 
           <FadeIn delay={0.3}>
             <p className="mt-8 max-w-4xl text-xl leading-8 text-muted-foreground">
-              Operations and Revenue Operations professional working across CRM,
-              sales processes, project delivery, data quality, reporting and workflow
-              automation — supported by 7+ years across sales account management and
-              executive administration.
+              Operations and Revenue Operations professional working across Salesforce
+              and HubSpot CRM, sales processes, project delivery, CRM governance, data
+              quality, reporting and workflow automation — supported by 7+ years across
+              sales account management and executive administration.
             </p>
           </FadeIn>
 

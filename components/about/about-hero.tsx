@@ -22,8 +22,8 @@ export function AboutHero() {
           <p className="mt-8 max-w-4xl text-xl leading-relaxed text-muted-foreground">
             I combine 7+ years of professional experience across sales account
             management and executive administration with hands-on work in
-            Revenue Operations, CRM, project coordination, reporting,
-            documentation and AI-enabled workflow automation.
+            Revenue Operations, Salesforce and HubSpot CRM, project coordination,
+            reporting, CRM governance, documentation and AI-enabled workflow automation.
           </p>
         </FadeIn>
       </Container>
