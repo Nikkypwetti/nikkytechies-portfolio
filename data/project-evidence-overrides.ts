@@ -9,6 +9,79 @@ const REVINT_EVIDENCE_BASE =
   "https://raw.githubusercontent.com/Nikkypwetti/ai-revenue-intelligence-agent/main/docs/images";
 
 const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
+  "asternova-salesforce-revops-system": {
+    heroImage: "/images/projects/asternova/01-dashboard-overview.webp",
+    automationImage: "/images/projects/asternova/03-n8n-inbound-workflow.webp",
+    gallery: [
+      {
+        image: "/images/projects/asternova/01-dashboard-overview.webp",
+        title: "AsterNova Sales & Revenue Operations Dashboard",
+        description:
+          "Salesforce dashboard using AsterNova-only reporting filters, showing $65K simulated open pipeline, $75K simulated Closed Won revenue, one high-value open deal, stage distribution, and owner coverage.",
+      },
+      {
+        image: "/images/projects/asternova/02-lead-routing-flow.webp",
+        title: "Capacity-Aware Lead Routing",
+        description:
+          "Capacity-aware Salesforce Lead routing that matches eligible reps by territory, availability, capacity, and enterprise qualification, then falls back to an inbound queue when no eligible owner is available.",
+      },
+      {
+        image: "/images/projects/asternova/03-n8n-inbound-workflow.webp",
+        title: "Google Sheets → Salesforce Intake Workflow",
+        description:
+          "Production-style n8n Lead intake workflow connecting Google Forms and Google Sheets to Salesforce with duplicate-processing protection, validation, transformation, success tracking, and error handling.",
+      },
+      {
+        image: "/images/projects/asternova/04-routed-enterprise-lead.webp",
+        title: "Automatically Routed Enterprise Lead",
+        description:
+          "Enterprise Lead captured through the external intake integration, mapped with source and qualification data, and automatically routed to the eligible AsterNova Account Executive.",
+      },
+      {
+        image: "/images/projects/asternova/05-nurture-follow-up-task.webp",
+        title: "Nurture Follow-Up Task",
+        description:
+          "Nurture lifecycle automation creates an owner-assigned re-engagement task with a 30-day follow-up due date when a Lead enters Nurture.",
+      },
+      {
+        image: "/images/projects/asternova/06-qualified-conversion-opportunity.webp",
+        title: "Qualified Lead Conversion",
+        description:
+          "Qualified Lead conversion uses an owner-assigned conversion task and Salesforce standard conversion to create downstream sales records while carrying Primary Need into the new Opportunity.",
+      },
+      {
+        image: "/images/projects/asternova/07-proposal-follow-up-flow.webp",
+        title: "Proposal Follow-Up & Manager Escalation",
+        description:
+          "Scheduled Salesforce proposal follow-up with high-value manager escalation, validated using Salesforce Flow Debug.",
+      },
+      {
+        image: "/images/projects/asternova/08-closed-won-onboarding-handoff.webp",
+        title: "Closed Won Onboarding Handoff",
+        description:
+          "Closed Won automation creates a structured Sales-to-Customer-Success handoff through owner and Customer Success tasks.",
+      },
+      {
+        image: "/images/projects/asternova/09-closed-lost-governance.webp",
+        title: "Closed Lost Governance",
+        description:
+          "Closed Lost governance automatically captures Lost Date while enforcing Lost Reason for structured pipeline-loss analysis.",
+      },
+      {
+        image: "/images/projects/asternova/10-role-hierarchy.webp",
+        title: "Private Sharing & Role Hierarchy",
+        description:
+          "Private Salesforce security model with management visibility through the sales role hierarchy while lower-level users remain restricted.",
+      },
+      {
+        image: "/images/projects/asternova/11-uat-test-matrix.webp",
+        title: "Structured UAT Matrix",
+        description:
+          "Structured UAT documentation covering routing, capacity, automation, permissions, security, and reporting with live tests separated from Flow Debug validation.",
+      },
+    ],
+  },
+
   "revenue-intelligence-production-simulation": {
     heroImage: "/images/projects/lumora/04-manager-request-orchestrator.png",
     automationImage: "/images/projects/lumora/05-multi-entity-sync-orchestrator.png",
