@@ -74,25 +74,25 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
           "Private Salesforce security model with management visibility through the sales role hierarchy while lower-level users remain restricted.",
       },
       {
-        image: "/images/projects/asternova/12-duplicate-warning.webp",
+        image: "/images/projects/asternova/12-duplicate-warning.webp?v=20260919",
         title: "Lead Duplicate Warning",
         description:
           "Salesforce exact-email Matching Rule and Duplicate Rule surface Similar Records Exist before a duplicate Lead is saved, giving the user a controlled review path.",
       },
       {
-        image: "/images/projects/asternova/13-lead-data-quality-before.webp",
+        image: "/images/projects/asternova/13-lead-data-quality-before.webp?v=20260919",
         title: "Lead Data Quality — Issues Identified",
         description:
           "AsterNova Lead Data Quality Report identifies incomplete test records requiring cleanup, including a missing Phone and a missing Lead Source.",
       },
       {
-        image: "/images/projects/asternova/17-sales-forecast-report.webp",
+        image: "/images/projects/asternova/17-sales-forecast-report.webp?v=20260919",
         title: "Probability-Weighted Sales Forecast",
         description:
           "Forecast report groups open Opportunities by Close Month and owner and uses Amount × Probability to produce $23K simulated Expected Revenue from a $65K simulated open pipeline.",
       },
       {
-        image: "/images/projects/asternova/18-rep-performance-report.webp",
+        image: "/images/projects/asternova/18-rep-performance-report.webp?v=20260919",
         title: "Rep Performance Report",
         description:
           "Opportunity report grouped by owner and stage across open, Closed Won, and Closed Lost test records, providing rep-level pipeline and outcome visibility without presenting simulated values as real sales performance.",
