@@ -6,10 +6,10 @@ import { ProjectCard } from "@/components/projects/project-card";
 import { FadeIn } from "@/components/animations/fade-in";
 
 const featuredSlugs = [
-  "hubspot-clientflow-crm",
+  "asternova-salesforce-revops-system",
   "revenue-intelligence-production-simulation",
+  "hubspot-clientflow-crm",
   "clickup-operations-growops-agency",
-  "client-onboarding-automation",
 ];
 
 export function FeaturedProjects() {
