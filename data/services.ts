@@ -17,7 +17,7 @@ export const services = [
   {
     title: "CRM & Revenue Operations",
     description:
-      "Support lead pipelines, CRM data, lifecycle stages, follow-up processes and sales operations using tools such as Airtable and HubSpot.",
+      "Support lead pipelines, CRM governance, lifecycle stages, duplicate controls, forecasting, reporting and sales operations using Salesforce, HubSpot and Airtable.",
     icon: Database,
   },
   {
@@ -35,7 +35,7 @@ export const services = [
   {
     title: "Reporting & Data Operations",
     description:
-      "Organize CRM and operational data into dashboards and reports that improve visibility into projects, pipelines, tasks and performance.",
+      "Organize CRM and operational data into dashboards, pipeline-aging views, weighted forecasts and quality reports that improve management visibility.",
     icon: BarChart3,
   },
   {
