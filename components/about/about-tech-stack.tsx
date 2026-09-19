@@ -5,8 +5,9 @@ import { technologies } from "@/data/technologies";
 import { TechBadge } from "@/components/projects/tech-badge";
 
 const techStack = [
-  technologies.airtable,
+  technologies.salesforce,
   technologies.hubspot,
+  technologies.airtable,
   technologies.notion,
   technologies.googleSheets,
   technologies.make,
@@ -30,9 +31,9 @@ export function AboutTechStack() {
               Platforms I Use Across CRM, Operations & Automation
             </h2>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              My portfolio work demonstrates practical use of CRM, workspace,
-              spreadsheet, collaboration and automation tools to connect
-              customer data, projects, communication and follow-up.
+              My portfolio work demonstrates practical use of Salesforce, HubSpot,
+              workspace, spreadsheet, collaboration and automation tools to connect
+              customer data, CRM governance, projects, communication and follow-up.
             </p>
           </div>
         </FadeIn>
