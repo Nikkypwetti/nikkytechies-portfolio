@@ -77,7 +77,7 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
         image: "/images/projects/asternova/11-uat-test-matrix.webp",
         title: "Structured UAT Matrix",
         description:
-          "Structured UAT documentation covering routing, capacity, automation, permissions, security, and reporting with live tests separated from Flow Debug validation.",
+          "Original 24-test UAT evidence covering routing, capacity, automation, permissions, security, and reporting. The formal matrix was later expanded to 41 documented scenarios: 37 live and 4 Flow Debug, all passed.",
       },
     ],
   },
