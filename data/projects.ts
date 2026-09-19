@@ -19,21 +19,21 @@ export const projects: Project[] = [
   category: "Revenue Operations",
 
   description:
-    "Built a hands-on Salesforce CRM and Business Systems implementation for Revenue Operations (RevOps) and Sales Operations in a simulated B2B SaaS environment, covering inbound lead capture, n8n integration, capacity-aware Lead Routing, lifecycle automation, opportunity governance, security, reporting and UAT.",
+    "Built a hands-on Salesforce CRM, Sales Operations and Business Systems implementation for a simulated B2B SaaS environment, covering inbound lead capture, n8n integration, capacity-aware Lead Routing, lifecycle automation, CRM governance, duplicate management, data quality, opportunity controls, forecasting, reporting, security and UAT.",
 
   overview: [
     "Built in Salesforce Developer Edition using live configuration, test users and test data.",
     "Connected two inbound channels: a production-style HTML Web-to-Lead form and a Google Form → Google Sheets → n8n → Salesforce workflow.",
     "Kept routing, capacity, lifecycle, validation, permissions and opportunity governance centralized in Salesforce instead of duplicating CRM logic in n8n.",
     "Implemented capacity-aware territory routing, enterprise qualification, inbound-queue fallback, Nurture and Qualified lifecycle automation, proposal controls, Closed Won handoff and Closed Lost governance.",
-    "Validated the original build with 24 documented UAT scenarios, then completed additional live integration and lifecycle tests.",
+    "Expanded the formal UAT matrix to 41 documented scenarios: 37 validated live and 4 scheduled-path scenarios validated with Salesforce Flow Debug.",
   ],
 
   problem:
-    "AsterNova needed a controlled CRM operating model for multi-source inbound leads, territory and capacity-based ownership, enterprise eligibility, qualification handoff, opportunity-stage governance, least-privilege sales access and management reporting. The system also needed safe fallback behavior when no rep was eligible and an auditable way to integrate external forms without moving core business logic outside Salesforce.",
+    "AsterNova needed a controlled CRM operating model for multi-source inbound leads, territory and capacity-based ownership, enterprise eligibility, qualification handoff, duplicate prevention, data-quality governance, opportunity-stage controls, least-privilege sales access and management reporting. The system also needed safe fallback behavior when no rep was eligible and an auditable way to integrate external forms without moving core business logic outside Salesforce.",
 
   solution:
-    "Configured Salesforce Sales Cloud with custom fields, a private sharing model, role hierarchy, profiles, additive permission sets, validation rules, record-triggered and autolaunched Flows, capacity-aware Lead routing, Lead conversion field mapping, proposal follow-up, Closed Won onboarding, Closed Lost controls, six management reports and a reconciled Sales & Revenue Operations dashboard. Added Google Forms, Google Sheets and n8n as an external intake layer while keeping Salesforce as the system of record.",
+    "Configured Salesforce Sales Cloud with custom fields, private sharing, role hierarchy, profiles, additive permission sets, validation rules, record-triggered and autolaunched Flows, capacity-aware Lead routing, Lead conversion field mapping, proposal follow-up, Closed Won onboarding and Closed Lost controls. Added Lead data import, exact-email duplicate governance, controlled duplicate cleanup, a data-quality remediation loop, 11 supporting reports including conversion, aging, forecast and rep-performance reporting, plus a reconciled Sales & Revenue Operations dashboard. Google Forms, Google Sheets and n8n act as an external intake layer while Salesforce remains the system of record.",
 
   architecture: [
     "Production-style HTML form → Salesforce Web-to-Lead",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     "Qualified → Account + Contact + Opportunity through Salesforce standard conversion",
     "Opportunity lifecycle: Discovery → Technical Review → Proposal Sent → Negotiation → Closed Won / Closed Lost",
     "Private sharing + role hierarchy + profiles + permission sets",
-    "Reports and dashboard filtered to the AsterNova Opportunity Record Type",
+    "Governed reporting layer: pipeline, data quality, Lead conversion, Opportunity aging, weighted forecast, rep performance and dashboard views",
   ],
 
   workflow: [
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     "Progress Opportunity",
     "Proposal Follow-Up and High-Value Escalation",
     "Closed Won Onboarding or Closed Lost Governance",
-    "Report and Review",
+    "Review Data Quality, Forecast, Pipeline Aging and Rep Performance",
   ],
 
   automation: [
@@ -117,16 +117,21 @@ export const projects: Project[] = [
   gallery: [],
 
   results: [
-    "Completed 24 documented UAT scenarios with 24 passed and 0 failed in the original test matrix",
-    "Validated 20 original scenarios live and 4 scheduled-path scenarios with Salesforce Flow Debug",
+    "Completed 41 documented UAT scenarios with 41 passed and 0 failed",
+    "Validated 37 scenarios live and 4 scheduled-path scenarios with Salesforce Flow Debug",
     "Proved both eligible-rep assignment and inbound-queue fallback",
     "Verified user-to-queue, queue-to-user and lifecycle-driven capacity recalculation",
     "Connected Google Forms, Google Sheets and n8n to Salesforce with validation and sync-status tracking",
+    "Imported a controlled Lead dataset and validated exact-email duplicate detection, review and merge cleanup",
+    "Built a Lead data-quality report, corrected missing Phone and Lead Source values, and verified zero remaining flagged records",
+    "Built Lead Conversion, Pipeline Aging, Sales Forecast and Rep Performance reports",
     "Validated direct website Web-to-Lead intake and Account Executive routing",
     "Mapped Lead Primary Need into the converted Opportunity",
     "Verified Nurture follow-up, Qualified conversion prep, Closed Won handoff and Closed Lost date stamping",
     "Confirmed manager visibility and lower-role restrictions under private sharing",
     "Reconciled $40K Discovery plus $25K Proposal Sent to $65K simulated open pipeline",
+    "Validated a $23K probability-weighted Expected Revenue forecast from the simulated $65K open pipeline",
+    "Validated rep-level reporting across 14 simulated Opportunities totaling $253K, including $75K Closed Won and $113K Closed Lost",
   ],
 
   technologies: [
@@ -137,17 +142,20 @@ export const projects: Project[] = [
   ],
 
   metrics: [
-    "24 documented UAT scenarios passed",
-    "20 live + 4 Flow Debug tests in the original UAT matrix",
+    "41 documented UAT scenarios passed",
+    "37 live + 4 Flow Debug tests",
     "2 inbound Lead capture channels validated",
     "$65K simulated open pipeline reconciled",
+    "$23K simulated probability-weighted Expected Revenue",
     "$75K simulated Closed Won revenue reporting",
-    "6 AsterNova management reports",
+    "11 AsterNova supporting reports",
+    "Lead duplicate detection + merge cleanup validated",
+    "Lead data-quality cleanup validated to zero flagged records",
   ],
 
   stats: [
     {
-      value: 24,
+      value: 41,
       suffix: " UAT",
       label: "Documented Scenarios Passed",
     },
@@ -157,7 +165,7 @@ export const projects: Project[] = [
       label: "Inbound Lead Capture",
     },
     {
-      value: 6,
+      value: 11,
       suffix: " reports",
       label: "Sales & RevOps Reporting",
     },
@@ -171,6 +179,7 @@ export const projects: Project[] = [
     "Late-stage opportunities could advance without required commercial data",
     "Sales and manager permissions were not yet structured around least privilege",
     "Pipeline reporting could be contaminated by unrelated Salesforce sample data",
+    "No formal duplicate-management control or repeatable data-quality cleanup workflow",
   ],
 
   after: [
@@ -182,6 +191,9 @@ export const projects: Project[] = [
     "Proposal, Closed Won and Closed Lost stages have explicit validation and automation controls",
     "Private sharing, role hierarchy and additive permission sets enforce least privilege",
     "AsterNova-only reports and dashboard reconcile to the underlying test data",
+    "Exact-email duplicate governance supports detection, review and controlled merge cleanup",
+    "Data-quality reporting supports an identify → correct → validate workflow",
+    "Forecast, aging, conversion and rep-performance reports extend management visibility beyond the original dashboard",
   ],
 
   heroImage: "/images/projects/asternova/01-dashboard-overview.webp",
