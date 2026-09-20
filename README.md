@@ -13,9 +13,18 @@ A recruiter-focused portfolio for **Ganiyu Basirat Olanike**, combining 7+ years
 - Reporting, Dashboards & Process Improvement
 - SOP & Workflow Documentation
 - AI & Workflow Automation
+- Agent Skills & Reusable AI Workflows
 - Business Systems Integration
 
 ## Featured Case Studies
+
+### RevOps CRM Audit & Lead Qualification Agent Skill
+- Reusable Manus Agent Skill for CSV/XLSX CRM exports
+- Deterministic 100-point lead-scoring model
+- Business-rule overrides for missing timeline and low-budget qualification
+- CRM data-quality and pipeline-control audit with structured priority actions
+- Validated against 5 synthetic CRM records
+
 
 ### Client Onboarding Automation System
 - 18-step automated onboarding workflow
@@ -42,7 +51,7 @@ A recruiter-focused portfolio for **Ganiyu Basirat Olanike**, combining 7+ years
 ## Core Platforms
 
 **CRM & Business Systems:** HubSpot, Airtable, Notion, ClickUp  
-**Automation:** n8n, Make.com, Zapier, webhooks, REST APIs  
+**Automation & Agent Workflows:** n8n, Make.com, Zapier, Manus Agent Skills, webhooks, REST APIs  
 **Data & Reporting:** Google Sheets, Microsoft Excel, CRM dashboards, data validation  
 **Collaboration:** Google Workspace, Gmail, Google Calendar, Slack  
 **Technical:** Git/GitHub, Linux, JavaScript, TypeScript, Next.js, Node.js, Docker, AWS, Terraform
