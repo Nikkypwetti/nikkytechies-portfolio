@@ -21,8 +21,8 @@ const platformGroups = [
   },
   {
     title: "Reporting & Data",
-    tools: ["Power BI", "Salesforce Reports", "PostgreSQL", "Google Sheets", "Data quality controls"],
-    note: "Management reporting, pipeline aging, weighted forecasts, governed datasets and decision support.",
+    tools: ["Power BI", "DAX", "Salesforce Reports", "PostgreSQL", "Google Sheets", "Sales Forecasting", "GTM Metrics", "Data quality controls"],
+    note: "Management reporting, weighted pipeline, forecast vs target, pipeline coverage, sales velocity, stage conversion, governed datasets and decision support.",
   },
   {
     title: "Collaboration & Business Tools",
