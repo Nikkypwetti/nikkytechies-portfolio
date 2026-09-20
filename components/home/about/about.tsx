@@ -18,8 +18,8 @@ export function About() {
         <FadeIn>
           <SectionHeading
             eyebrow="Professional Snapshot"
-            title="Operations experience backed by hands-on CRM, RevOps and Business Systems work."
-            description="My background combines customer-facing sales, executive administration and hands-on work across CRM, Revenue Operations, Business Systems, reporting and workflow automation."
+            title="Operations experience backed by hands-on CRM, RevOps, Business Systems and Power BI work."
+            description="My background combines customer-facing sales, executive administration and hands-on work across CRM, Revenue Operations, Business Systems, Power BI reporting, sales forecasting and workflow automation."
           />
         </FadeIn>
 
@@ -37,9 +37,9 @@ export function About() {
               <p className="text-lg leading-8 text-muted-foreground">
                 I now combine that operational experience with hands-on work in
                 Salesforce Sales Cloud, HubSpot, Airtable, Notion, ClickUp,
-                Google Sheets, n8n, Make.com and related systems to structure
-                pipelines, CRM governance, projects, client onboarding, reporting
-                and business workflows.
+                Power BI, PostgreSQL, Google Sheets, n8n, Make.com and related
+                systems to structure pipelines, CRM governance, projects, client
+                onboarding, forecasting, reporting and business workflows.
               </p>
 
               <p className="text-lg leading-8 text-muted-foreground">
