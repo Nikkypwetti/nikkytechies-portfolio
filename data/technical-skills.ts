@@ -19,6 +19,7 @@ export const technicalSkills = [
       "CRM Reporting & Dashboards",
       "Pipeline Aging",
       "Sales Forecasting",
+      "GTM Metrics",
       "UAT / Test Validation",
       "Account Management",
     ],
@@ -41,6 +42,8 @@ export const technicalSkills = [
   {
     category: "Data & Reporting",
     items: [
+      "Power BI",
+      "DAX",
       "Google Sheets",
       "Microsoft Excel",
       "PivotTables",
@@ -49,6 +52,11 @@ export const technicalSkills = [
       "Data Validation",
       "Dashboards",
       "KPI Reporting",
+      "Weighted Pipeline",
+      "Forecast vs Target",
+      "Pipeline Coverage",
+      "Sales Velocity",
+      "Stage Conversion",
       "Foundational SQL",
     ],
   },
