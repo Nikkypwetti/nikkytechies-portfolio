@@ -4,7 +4,7 @@ export const siteConfig = {
   title: "Operations, RevOps, Salesforce CRM & Business Systems Portfolio",
 
   description:
-    "Portfolio of Ganiyu Basirat Olanike — an Operations, Revenue Operations and Business Systems professional with 7+ years of experience across sales account management and executive administration, plus hands-on Salesforce and HubSpot CRM administration, Sales Operations, reporting, data quality, CRM governance and workflow automation projects.",
+    "Portfolio of Ganiyu Basirat Olanike — an Operations, Revenue Operations and Business Systems professional with 7+ years of experience across sales account management and executive administration, plus hands-on Salesforce and HubSpot CRM administration, Sales Operations, Power BI reporting, sales forecasting, GTM metrics, data quality, CRM governance and workflow automation projects.",
 
   url: "https://nikkytechies-portfolio.vercel.app",
 
