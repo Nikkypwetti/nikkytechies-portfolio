@@ -19,8 +19,8 @@ const capabilities = [
   {
     title: "Reporting & Data Quality",
     description:
-      "Create reliable KPI definitions, CRM reports, management dashboards, pipeline-aging views, weighted forecasts and data-quality controls.",
-    proof: "Salesforce Reports • Power BI • PostgreSQL • Data quality",
+      "Create reliable KPI definitions, Power BI dashboards, pipeline-aging views, weighted pipeline, forecast vs target, pipeline coverage, sales velocity, stage conversion and data-quality controls.",
+    proof: "Power BI • DAX • Salesforce Reports • PostgreSQL • Data quality",
   },
   {
     title: "Workflow Automation",
