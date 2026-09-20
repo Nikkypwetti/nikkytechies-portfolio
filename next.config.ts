@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
         pathname:
           "/Nikkypwetti/ai-revenue-intelligence-agent/main/docs/images/**",
       },
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        pathname:
+          "/Nikkypwetti/lumora-revenue-intelligence-simulation/main/evidence/powerbi/**",
+      },
     ],
   },
 };
