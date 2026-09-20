@@ -35,7 +35,7 @@ export const services = [
   {
     title: "Reporting & Data Operations",
     description:
-      "Organize CRM and operational data into dashboards, pipeline-aging views, weighted forecasts and quality reports that improve management visibility.",
+      "Organize CRM and operational data into Power BI dashboards, pipeline-aging views, weighted pipeline, forecast-vs-target reporting, pipeline coverage, sales velocity and quality reports that improve management visibility.",
     icon: BarChart3,
   },
   {
