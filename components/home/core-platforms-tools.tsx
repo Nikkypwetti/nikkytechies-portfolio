@@ -16,8 +16,8 @@ const platformGroups = [
   },
   {
     title: "Automation & Integrations",
-    tools: ["n8n", "Make.com", "Zapier", "REST APIs", "Webhooks"],
-    note: "n8n is my primary workflow-orchestration platform; Make.com and Zapier support additional integration use cases.",
+    tools: ["n8n", "Make.com", "Zapier", "Manus Agent Skills", "REST APIs", "Webhooks"],
+    note: "n8n is my primary workflow-orchestration platform; Make.com and Zapier support integrations, while Manus Agent Skills supports reusable AI-agent workflows.",
   },
   {
     title: "Reporting & Data",
