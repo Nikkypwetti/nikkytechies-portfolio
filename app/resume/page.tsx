@@ -13,7 +13,7 @@ import { ResumeCTA } from "@/components/resume/resume-cta";
 export const metadata: Metadata = {
   title: "Resume",
   description:
-    "Master resume of Ganiyu Basirat Olanike — Operations, Revenue Operations, Salesforce and HubSpot CRM, Sales Operations, Project Coordination, Business Systems, reporting, CRM governance and AI Workflow Automation professional with 7+ years of professional experience.",
+    "Master resume of Ganiyu Basirat Olanike — Operations, Revenue Operations, Salesforce and HubSpot CRM, Sales Operations, Project Coordination, Business Systems, Power BI reporting, sales forecasting, CRM governance and workflow automation professional with 7+ years of professional experience.",
 };
 
 export default function ResumePage() {
