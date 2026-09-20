@@ -164,6 +164,13 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
         description:
           "Revenue Operations health view surfacing 45 stale simulated deals, 114 overdue follow-ups, 72 SLA breaches, and 185 closed-lost deals in the portfolio dataset.",
       },
+      {
+        image:
+          "https://raw.githubusercontent.com/Nikkypwetti/lumora-revenue-intelligence-simulation/main/evidence/powerbi/04-sales-forecasting-gtm-metrics.png",
+        title: "Power BI — Sales Forecasting & GTM Metrics",
+        description:
+          "Verified August 2026 forecasting view showing $461.1K simulated forecast against a $480K target, 96.1% forecast attainment, 1.83x pipeline coverage, 28.6% period win rate, $10.5K/day sales velocity, historical stage conversion, forecast-category pipeline and sales-rep forecasting.",
+      },
     ],
   },
 
