@@ -9,7 +9,7 @@ const focusAreas = [
   "Revenue Operations",
   "Salesforce CRM & Sales Operations",
   "Business Systems",
-  "Reporting & Data Quality",
+  "Power BI, Forecasting & GTM Metrics",
 ];
 
 export function Hero() {
@@ -35,8 +35,9 @@ export function Hero() {
             <p className="mt-8 max-w-4xl text-xl leading-8 text-muted-foreground">
               Operations and Revenue Operations professional working across Salesforce
               and HubSpot CRM, sales processes, project delivery, CRM governance, data
-              quality, reporting and workflow automation — supported by 7+ years across
-              sales account management and executive administration.
+              quality, Power BI reporting, sales forecasting, GTM metrics and workflow
+              automation — supported by 7+ years across sales account management and
+              executive administration.
             </p>
           </FadeIn>
 
