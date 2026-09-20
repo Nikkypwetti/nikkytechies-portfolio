@@ -6,10 +6,10 @@ import { ProjectCard } from "@/components/projects/project-card";
 import { FadeIn } from "@/components/animations/fade-in";
 
 const featuredSlugs = [
+  "manus-revops-crm-audit-lead-qualification",
   "asternova-salesforce-revops-system",
   "revenue-intelligence-production-simulation",
   "hubspot-clientflow-crm",
-  "clickup-operations-growops-agency",
 ];
 
 export function FeaturedProjects() {
@@ -38,10 +38,7 @@ export function FeaturedProjects() {
 
         <FadeIn delay={0.2}>
           <div className="mt-10 text-center">
-            <a
-              href="/projects"
-              className="inline-flex rounded-full border px-6 py-3 text-sm font-semibold transition hover:border-primary hover:bg-primary hover:text-primary-foreground"
-            >
+            <a href="/projects" className="inline-flex rounded-full border px-6 py-3 text-sm font-semibold transition hover:border-primary hover:bg-primary hover:text-primary-foreground">
               Explore all case studies
             </a>
           </div>

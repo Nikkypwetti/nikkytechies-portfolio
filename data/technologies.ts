@@ -126,4 +126,11 @@ export const technologies: Record<string, Technology> ={
     category: "Workflow",
   },
 
+  manus: {
+    id: "manus",
+    name: "Manus Agent Skills",
+    color: "#111111",
+    category: "AI",
+  },
+
 };
