@@ -37,7 +37,7 @@ export const skills = [
   {
     title: "Reporting & Analytics",
     description:
-      "Using CRM reports, dashboards, pipeline aging, weighted forecasts, spreadsheets, data validation and KPI tracking to improve operational visibility.",
+      "Using Power BI, DAX, CRM reports, pipeline aging, weighted pipeline, forecast-vs-target analysis, pipeline coverage, sales velocity, stage conversion and KPI tracking to improve operational visibility.",
     icon: BarChart3,
   },
   {
