@@ -225,7 +225,7 @@ export const projects: Project[] = [
     "Used composite checkpoints based on source_updated_at plus primary key so syncs can resume safely and replay idempotently.",
     "Separated source read, ingestion write, transformation, reporting read and governance permissions with dedicated PostgreSQL roles.",
     "Connected the reporting layer to the governed AI Revenue Intelligence Agent for manager questions through Slack, Form and REST API.",
-    "Built three Power BI pages for executive revenue, pipeline performance and Revenue Operations health.",
+    "Built four verified Power BI pages covering executive revenue, pipeline performance, Revenue Operations health, and Sales Forecasting & GTM Metrics.",
     "Lumora Cloud is fictional and all figures shown are verified simulation outputs rather than client results.",
   ],
 
@@ -246,7 +246,7 @@ export const projects: Project[] = [
     "Governed reporting schema",
     "AI Revenue Intelligence manager-request layer",
     "Slack, authenticated Form and REST API delivery",
-    "Power BI executive and Revenue Operations dashboards",
+    "Power BI executive, Revenue Operations, forecasting and GTM dashboards",
   ],
 
   workflow: [
@@ -310,7 +310,7 @@ export const projects: Project[] = [
     {
       title: "Power BI Management View",
       description:
-        "Three dashboard pages convert the governed reporting snapshot into executive, pipeline and operations-health views.",
+        "Four verified dashboard pages convert the governed reporting snapshot into executive, pipeline, operations-health, forecasting and GTM decision views.",
       icon: "sheet",
     },
   ],
@@ -348,7 +348,7 @@ export const projects: Project[] = [
     "Kept source read, ingestion write, transformation and reporting-read permissions separated",
     "Preserved reporting consistency with a single refresh after the full entity batch",
     "Connected governed reporting to Slack, Form and REST API manager-request channels",
-    "Built three Power BI pages from the governed reporting snapshot",
+    "Built four verified Power BI pages from the governed reporting snapshot, including Sales Forecasting & GTM Metrics",
     "Published six canonical n8n workflow exports with a clean secret-pattern scan",
     "Documented the simulation explicitly so verified figures are not presented as client outcomes",
   ],
@@ -368,7 +368,10 @@ export const projects: Project[] = [
     "$3.31M simulated closed-won revenue",
     "$2.90M simulated open pipeline",
     "190 simulated open deals",
-    "54.9% simulated win rate",
+    "54.9% simulated historical win rate",
+    "$1.35M simulated weighted open pipeline",
+    "96.1% August 2026 forecast attainment",
+    "1.83x August 2026 pipeline coverage",
     "45 stale open deals identified",
     "114 overdue follow-ups identified",
     "72 SLA breaches identified",
@@ -386,9 +389,9 @@ export const projects: Project[] = [
       label: "Simulated Revenue Dataset",
     },
     {
-      value: 3,
+      value: 4,
       suffix: " pages",
-      label: "Power BI Dashboard",
+      label: "Verified Power BI Dashboard",
     },
   ],
 
@@ -409,6 +412,7 @@ export const projects: Project[] = [
     "Least-privilege PostgreSQL roles separate operational responsibilities",
     "Governed reporting feeds manager requests and Power BI decision views",
     "Revenue Operations health metrics expose stale pipeline, overdue follow-ups and SLA breaches",
+    "Sales Forecasting & GTM metrics add weighted pipeline, forecast attainment, pipeline coverage, stage conversion and rep-level forecasting",
   ],
 
   github:
