@@ -19,30 +19,32 @@ export const projects: Project[] = [
   category: "Revenue Operations",
 
   description:
-    "Built a hands-on Salesforce CRM, Sales Operations and Revenue Operations system for a simulated B2B SaaS environment, covering inbound lead capture, CRM governance, data import, duplicate management, data quality, capacity-aware Lead Routing, lifecycle automation, opportunity governance, security, forecasting, reporting and structured UAT.",
+    "Built a Salesforce Revenue Systems, Sales Operations and CRM governance environment for a simulated B2B SaaS company, translating business requirements and GTM policy controls into capacity-aware Lead routing, lifecycle automation, opportunity governance, exception handling, escalation paths, reporting and structured User Acceptance Testing.",
 
   overview: [
     "Built in Salesforce Developer Edition using live configuration, test users and test data.",
     "Connected two inbound channels: a production-style HTML Web-to-Lead form and a Google Form → Google Sheets → n8n → Salesforce workflow.",
+    "Translated simulated business requirements into Salesforce decision rules, process maps and GTM Rules of Engagement for routing, qualification, lifecycle, opportunity stages and handoffs.",
     "Kept routing, capacity, lifecycle, validation, permissions and opportunity governance centralized in Salesforce instead of duplicating CRM logic in n8n.",
-    "Implemented capacity-aware territory routing, enterprise qualification, inbound-queue fallback, Nurture and Qualified lifecycle automation, proposal controls, Closed Won handoff and Closed Lost governance.",
-    "Added CRM governance with baseline Lead import, exact-email duplicate detection, controlled duplicate review and merge, Lead data-quality reporting, a CRM data dictionary and a sales user guide.",
+    "Implemented capacity-aware territory routing, enterprise qualification, least-loaded owner selection, inbound-queue exception handling, Nurture and Qualified lifecycle automation, proposal controls, manager escalation, Closed Won handoff and Closed Lost governance.",
+    "Added Salesforce Data Governance with baseline Lead import, exact-email duplicate detection, controlled duplicate review and merge, Lead data-quality reporting, a CRM data dictionary and a sales user guide for system adoption.",
     "Built 11 Salesforce reports covering pipeline, Closed Won revenue, losses, tasks, Lead data quality, Lead conversion, pipeline aging, probability-weighted forecast and rep performance.",
     "Expanded the formal UAT matrix to 41 passed scenarios: 37 live tests and 4 Salesforce Flow Debug validations.",
   ],
 
   problem:
-    "AsterNova needed a controlled CRM operating model for multi-source inbound leads, territory and capacity-based ownership, enterprise eligibility, qualification handoff, opportunity-stage governance, least-privilege sales access and management reporting. The system also needed safe fallback behavior when no rep was eligible and an auditable way to integrate external forms without moving core business logic outside Salesforce.",
+    "AsterNova needed a governed Revenue Systems operating model that could translate simulated business requirements into clear GTM Rules of Engagement for multi-source inbound leads, territory and capacity-based ownership, enterprise eligibility, qualification handoff, opportunity-stage governance, least-privilege sales access and management reporting. The system also needed explicit exception handling when no rep was eligible, an escalation path for high-value opportunities and auditable integration without moving core business logic outside Salesforce.",
 
   solution:
-    "Configured Salesforce Sales Cloud with custom fields, a private sharing model, role hierarchy, profiles, additive permission sets, validation rules, record-triggered and autolaunched Flows, capacity-aware Lead routing, Lead conversion field mapping, proposal follow-up, Closed Won onboarding and Closed Lost controls. Added Lead import, exact-email matching and duplicate warnings, controlled duplicate cleanup, data-quality reporting, a CRM data dictionary and a sales user guide. Built 11 supporting reports plus a reconciled Sales & Revenue Operations dashboard, while Google Forms, Google Sheets and n8n provide the external intake layer and Salesforce remains the system of record.",
+    "Mapped the Lead-to-Closed-Won process, defined decision rules and configured Salesforce Sales Cloud with custom fields, a private sharing model, role hierarchy, profiles, additive permission sets, validation rules, record-triggered and autolaunched Flows, capacity-aware Lead routing, Lead conversion field mapping, proposal follow-up, Closed Won onboarding and Closed Lost controls. Added Salesforce Data Governance through Lead import, exact-email matching and duplicate warnings, controlled duplicate cleanup and data-quality reporting. Created a CRM data dictionary, sales user guide, GTM Rules of Engagement matrix and requirements-to-UAT traceability documentation to support system adoption. Built 11 supporting reports plus a reconciled Sales & Revenue Operations dashboard, while Google Forms, Google Sheets and n8n provide the external intake layer and Salesforce remains the system of record.",
 
   architecture: [
     "Production-style HTML form → Salesforce Web-to-Lead",
     "Google Form → Google Sheets → n8n validation and normalization → Salesforce Web-to-Lead",
+    "Business requirements → process mapping → Salesforce GTM decision rules",
     "Salesforce Lead → Enterprise or Standard routing decision",
-    "Eligibility checks: active, available, has capacity, territory match and enterprise qualification",
-    "Least-loaded eligible rep assignment with AsterNova Inbound Queue fallback",
+    "Rules of Engagement checks: active, available, has capacity, territory match and enterprise qualification",
+    "Least-loaded eligible rep assignment with AsterNova Inbound Queue exception path",
     "Lead lifecycle: New → Working → Qualified / Nurture / Disqualified",
     "Lead duplicate and data-quality governance: exact-email warning → review / merge → quality cleanup",
     "Qualified → Account + Contact + Opportunity through Salesforce standard conversion",
@@ -65,6 +67,45 @@ export const projects: Project[] = [
     "Proposal Follow-Up and High-Value Escalation",
     "Closed Won Onboarding or Closed Lost Governance",
     "Report and Review",
+    "Requirements-to-UAT Traceability Review",
+  ],
+
+  governance: [
+    {
+      title: "Business Requirements & Process Mapping",
+      description:
+        "Translated the simulated B2B SaaS operating requirements into a documented Lead-to-Closed-Won process map covering intake, routing, qualification, conversion, opportunity progression, handoff and reporting.",
+    },
+    {
+      title: "GTM Policy & Rules of Engagement",
+      description:
+        "Converted simulated GTM policy into explicit Salesforce decision rules for territory, enterprise eligibility, rep availability, capacity, least-loaded assignment, qualification and stage progression.",
+    },
+    {
+      title: "Capacity-Based Routing & Exception Handling",
+      description:
+        "Routes Leads only to eligible reps with available capacity and sends no-eligible-rep cases to the AsterNova Inbound Queue so exceptions remain visible instead of being silently misrouted.",
+    },
+    {
+      title: "Escalation Path & Opportunity Controls",
+      description:
+        "Scheduled Proposal Sent follow-up creates owner tasks and escalates qualifying high-value opportunities to the owner's manager, while validation rules control required commercial data at key stages.",
+    },
+    {
+      title: "Salesforce Data Governance",
+      description:
+        "Uses controlled imports, exact-email Matching and Duplicate Rules, validation rules, role-based access, permission sets, data-quality reporting and structured duplicate review and merge.",
+    },
+    {
+      title: "User Acceptance Testing",
+      description:
+        "Maintained a formal UAT register with 41 passed scenarios: 37 validated live and 4 scheduled-path scenarios validated with Salesforce Flow Debug.",
+    },
+    {
+      title: "System Adoption & User Documentation",
+      description:
+        "Created a CRM data dictionary, sales user guide, governance matrix and requirements-to-UAT traceability artifacts so users can understand fields, ownership rules, exceptions and expected process behavior.",
+    },
   ],
 
   automation: [
@@ -140,6 +181,39 @@ export const projects: Project[] = [
     "Reconciled $40K Discovery plus $25K Proposal Sent to $65K simulated open pipeline",
     "Verified a $23K probability-weighted Expected Revenue forecast from the $65K simulated open pipeline",
     "Built 11 Salesforce reports, including Lead Conversion, Pipeline Aging, Sales Forecast and Rep Performance reporting",
+    "Documented GTM Rules of Engagement, Revenue Systems business requirements and requirements-to-UAT traceability",
+    "Created user-facing CRM documentation to support consistent system adoption and process execution",
+  ],
+
+  documentation: [
+    {
+      title: "GTM Rules of Engagement & Salesforce Governance Matrix",
+      description:
+        "Maps ownership, routing, qualification, exception, escalation, lifecycle and opportunity-stage rules to the Salesforce control that enforces each rule.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/asternova-salesforce-revops-system/gtm-rules-of-engagement.md",
+      status: "Completed",
+    },
+    {
+      title: "Revenue Systems Business Requirements",
+      description:
+        "Defines the simulated business requirements, rationale, Salesforce implementation approach, exception behavior and validation expectations for the AsterNova Revenue Systems build.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/asternova-salesforce-revops-system/revenue-systems-business-requirements.md",
+      status: "Completed",
+    },
+    {
+      title: "Requirements-to-UAT Traceability",
+      description:
+        "Connects key business requirements to implementation controls and the UAT evidence used to validate routing, governance, lifecycle, permissions and reporting behavior.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/asternova-salesforce-revops-system/uat-requirements-traceability.md",
+      status: "Completed",
+    },
+    {
+      title: "Source Attribution Reporting Extension",
+      description:
+        "Design specification for connecting Lead Source to conversion, pipeline and Closed Won reporting. This extension is documented as planned and is not presented as implemented evidence.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/asternova-salesforce-revops-system/source-attribution-reporting-design.md",
+      status: "Planned",
+    },
   ],
 
   technologies: [
@@ -187,6 +261,7 @@ export const projects: Project[] = [
     "Pipeline reporting could be contaminated by unrelated Salesforce sample data",
     "No documented duplicate-control and data-quality cleanup loop for imported Lead records",
     "No dedicated conversion, aging, weighted forecast or rep-performance reporting",
+    "Business requirements, GTM rules and test evidence were not yet connected through a formal governance and traceability layer",
   ],
 
   after: [
@@ -200,6 +275,8 @@ export const projects: Project[] = [
     "Exact-email duplicate detection, controlled merge and data-quality cleanup add CRM governance controls",
     "Lead Conversion, Pipeline Aging, Sales Forecast and Rep Performance reports extend the reporting layer",
     "AsterNova-only reports and dashboard reconcile to the underlying test data",
+    "Business requirements, Rules of Engagement, Salesforce controls and UAT evidence are documented in a traceable governance layer",
+    "CRM data dictionary and sales user guide support consistent system adoption and process execution",
   ],
 
   heroImage: "/images/projects/asternova/01-dashboard-overview.webp",
