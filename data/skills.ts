@@ -13,13 +13,13 @@ export const skills = [
   {
     title: "Revenue & Sales Operations",
     description:
-      "Supporting lead management, ownership, lifecycle stages, opportunity pipelines, forecasting, account follow-up and revenue operations workflows.",
+      "Supporting Revenue Systems, lead management, GTM Rules of Engagement, ownership, lifecycle stages, opportunity pipelines, forecasting, account follow-up and governed revenue operations workflows.",
     icon: TrendingUp,
   },
   {
     title: "CRM & Data Operations",
     description:
-      "Managing Salesforce and HubSpot CRM records, lifecycle stages, permissions, duplicate controls, data quality, pipeline information and reporting.",
+      "Managing Salesforce and HubSpot CRM records, Salesforce Data Governance, lifecycle stages, permissions, duplicate controls, data quality, system adoption, pipeline information and reporting.",
     icon: Database,
   },
   {
@@ -43,7 +43,7 @@ export const skills = [
   {
     title: "SOP & Process Documentation",
     description:
-      "Creating SOPs, workflow maps, checklists, meeting notes, handoff documentation and reusable operating processes.",
+      "Creating SOPs, process maps, business-requirements documentation, Rules of Engagement, UAT traceability, user guides, handoff documentation and reusable operating processes.",
     icon: FileText,
   },
   {
