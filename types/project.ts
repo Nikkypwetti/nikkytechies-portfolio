@@ -58,6 +58,18 @@ export interface Project {
 
   results: string[];
 
+  governance?: {
+    title: string;
+    description: string;
+  }[];
+
+  documentation?: {
+    title: string;
+    description: string;
+    href: string;
+    status?: "Completed" | "Planned";
+  }[];
+
   technologies: Technology[];
 
   metrics: string[];
