@@ -30,6 +30,7 @@ export const projects: Project[] = [
     "Added Salesforce Data Governance with baseline Lead import, exact-email duplicate detection, controlled duplicate review and merge, Lead data-quality reporting, a CRM data dictionary and a sales user guide for system adoption.",
     "Built 11 Salesforce reports covering pipeline, Closed Won revenue, losses, tasks, Lead data quality, Lead conversion, pipeline aging, probability-weighted forecast and rep performance.",
     "Expanded the formal UAT matrix to 41 passed scenarios: 37 live tests and 4 Salesforce Flow Debug validations.",
+    "Kept evidence claims deliberately bounded: this simulation demonstrates Requirements Translation/Definition rather than stakeholder Requirements Gathering; source attribution remains Planned until dedicated attribution reporting is built and validated; and the lifecycle is Lead-to-Closed-Won / Customer Success handoff rather than full Lead-to-Cash.",
   ],
 
   problem:
@@ -105,6 +106,11 @@ export const projects: Project[] = [
       title: "System Adoption & User Documentation",
       description:
         "Created a CRM data dictionary, sales user guide, governance matrix and requirements-to-UAT traceability artifacts so users can understand fields, ownership rules, exceptions and expected process behavior.",
+    },
+    {
+      title: "Scope & Evidence Boundaries",
+      description:
+        "Uses deliberate claim discipline: Requirements Translation/Definition is demonstrated instead of stakeholder Requirements Gathering; source Attribution remains Planned until dedicated Salesforce attribution reports are built and validated; and the validated lifecycle ends at Closed Won / Customer Success handoff, so a full Lead-to-Cash implementation is not claimed.",
     },
   ],
 
@@ -205,6 +211,13 @@ export const projects: Project[] = [
       description:
         "Connects key business requirements to implementation controls and the UAT evidence used to validate routing, governance, lifecycle, permissions and reporting behavior.",
       href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/asternova-salesforce-revops-system/uat-requirements-traceability.md",
+      status: "Completed",
+    },
+    {
+      title: "Scope & Evidence Boundaries",
+      description:
+        "Documents what the simulation does and does not claim, including Requirements Translation vs stakeholder Requirements Gathering, Planned source Attribution, and the boundary between Lead-to-Closed-Won handoff and full Lead-to-Cash.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/asternova-salesforce-revops-system/scope-and-evidence-boundaries.md",
       status: "Completed",
     },
     {
