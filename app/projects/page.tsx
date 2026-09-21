@@ -35,6 +35,12 @@ export default function ProjectsPage() {
         ...project.metrics,
         ...project.before,
         ...project.after,
+        ...(project.governance ?? []).flatMap((item) => [item.title, item.description]),
+        ...(project.documentation ?? []).flatMap((item) => [
+          item.title,
+          item.description,
+          item.status ?? "",
+        ]),
         ...project.automation.flatMap((step) => [step.title, step.description]),
         ...project.technologies.map((tech) => tech.name),
       ]
