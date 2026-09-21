@@ -41,6 +41,7 @@ The build treats CRM automation as governed Revenue Systems work rather than iso
 - [GTM Rules of Engagement & Salesforce Governance Matrix](./gtm-rules-of-engagement.md)
 - [Revenue Systems Business Requirements](./revenue-systems-business-requirements.md)
 - [Requirements-to-UAT Traceability](./uat-requirements-traceability.md)
+- [Scope & Evidence Boundaries](./scope-and-evidence-boundaries.md)
 - [Source Attribution Reporting Extension — Planned](./source-attribution-reporting-design.md)
 
 ## Validation
@@ -64,11 +65,15 @@ The test dataset includes:
 
 These figures are portfolio test data, not client revenue or production sales results.
 
-## Attribution & Lead-to-Cash Scope
+## Scope & Evidence Boundaries
 
-Source-attribution reporting is documented as a **planned extension** and is not presented as completed evidence yet.
+Three claims are deliberately bounded to the evidence actually demonstrated in this simulation:
 
-AsterNova currently demonstrates a governed **Lead-to-Closed-Won / Customer Success handoff** lifecycle. It does **not** claim a complete Lead-to-Cash implementation because quoting, contracting, invoicing, billing and payment collection are outside the validated project scope.
+- **Requirements Gathering:** not claimed. Because AsterNova is a simulation rather than a stakeholder-interview engagement, the demonstrated capability is **Requirements Translation/Definition** — turning simulated operating needs into process maps, decision rules, Salesforce controls and UAT coverage.
+- **Source Attribution:** **Planned**, not implemented evidence. Attribution will only be presented as completed after dedicated Salesforce source-attribution reports are built and validated.
+- **Lead-to-Cash:** not claimed. AsterNova currently demonstrates a governed **Lead-to-Closed-Won / Customer Success handoff** lifecycle. Quoting, contracting, invoicing, billing and payment collection remain outside the validated scope.
+
+This boundary is intentional so the case study distinguishes implemented evidence from planned extensions and adjacent capabilities.
 
 ## Salesforce & Revenue Systems Skills Demonstrated
 
