@@ -20,6 +20,8 @@ import { ProjectNavigation } from "@/components/projects/case-study/project-navi
 import { FadeIn } from "@/components/animations/fade-in";
 import { ProjectAutomation } from "@/components/projects/case-study/project-automation";
 import { ProjectScrollToTop } from "@/components/projects/project-scroll-to-top";
+import { ProjectGovernance } from "@/components/projects/case-study/project-governance";
+import { ProjectDocumentation } from "@/components/projects/case-study/project-documentation";
 
 type Props = {
   params: Promise<{
@@ -64,6 +66,10 @@ export default async function ProjectPage({ params }: Props) {
         <ProjectSolution solution={project.solution} />
       </FadeIn>
 
+      <FadeIn delay={0.18}>
+        <ProjectGovernance governance={project.governance} />
+      </FadeIn>
+
       <FadeIn delay={0.25}>
         <ProjectAutomation automation={project.automation} />
       </FadeIn>
@@ -77,6 +83,10 @@ export default async function ProjectPage({ params }: Props) {
       </FadeIn>
 
       <FadeIn delay={0.30}>
+        <ProjectDocumentation documentation={project.documentation} />
+      </FadeIn>
+
+      <FadeIn delay={0.32}>
         <ProjectTechStack technologies={project.technologies} />
       </FadeIn>
 
