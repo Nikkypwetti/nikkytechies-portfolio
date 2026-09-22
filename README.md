@@ -25,6 +25,7 @@ A recruiter-focused portfolio for **Ganiyu Basirat Olanike**, combining 7+ years
 - Blind-tested 16 synthetic CRM records with no embedded answer key
 - Validated 24 rule-defined CRM issues: 2 Critical, 12 High and 10 Medium
 - Qualification outcome: 5 hot_lead, 6 qualified, 2 needs_discovery, 1 nurture and 2 not_fit
+- Detailed GitHub case study: [docs/flowbridge-revops-agent.md](docs/flowbridge-revops-agent.md)
 
 ### RevOps CRM Audit & Lead Qualification Agent Skill
 - Reusable Manus Agent Skill for CSV/XLSX CRM exports
