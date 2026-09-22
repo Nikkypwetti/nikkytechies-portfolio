@@ -6,7 +6,7 @@ import { ProjectCard } from "@/components/projects/project-card";
 import { FadeIn } from "@/components/animations/fade-in";
 
 const featuredSlugs = [
-  "manus-revops-crm-audit-lead-qualification",
+  "flowbridge-revops-crm-audit-agent",
   "asternova-salesforce-revops-system",
   "revenue-intelligence-production-simulation",
   "hubspot-clientflow-crm",
