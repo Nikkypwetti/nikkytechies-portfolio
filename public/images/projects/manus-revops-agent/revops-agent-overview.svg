@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">RevOps CRM Audit and Lead Qualification Agent</title>
+  <desc id="desc">Visual workflow showing CRM export, deterministic scoring, business-rule overrides, CRM audit, and prioritized output.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e293b"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" rx="36" fill="url(#bg)"/>
+  <circle cx="1050" cy="90" r="170" fill="#2563eb" opacity=".12"/>
+  <circle cx="120" cy="650" r="210" fill="#7c3aed" opacity=".10"/>
+  <text x="72" y="88" fill="#93c5fd" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="2">MANUS AGENT SKILL</text>
+  <text x="72" y="138" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800">RevOps CRM Audit &amp; Lead Qualification</text>
+  <text x="72" y="176" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="20">Deterministic scoring + business rules + CRM data-quality checks</text>
+
+  <g transform="translate(72 240)">
+    <rect width="190" height="150" rx="22" fill="url(#card)" stroke="#475569"/>
+    <text x="24" y="42" fill="#60a5fa" font-family="Arial" font-size="16" font-weight="700">01 · INPUT</text>
+    <text x="24" y="78" fill="#f8fafc" font-family="Arial" font-size="22" font-weight="700">CRM Export</text>
+    <text x="24" y="108" fill="#cbd5e1" font-family="Arial" font-size="15">CSV / XLSX</text>
+    <text x="24" y="132" fill="#cbd5e1" font-family="Arial" font-size="15">Preserve source rows</text>
+  </g>
+
+  <g transform="translate(282 240)">
+    <rect width="190" height="150" rx="22" fill="url(#card)" stroke="#475569"/>
+    <text x="24" y="42" fill="#60a5fa" font-family="Arial" font-size="16" font-weight="700">02 · SCORE</text>
+    <text x="24" y="78" fill="#f8fafc" font-family="Arial" font-size="22" font-weight="700">100 Points</text>
+    <text x="24" y="108" fill="#cbd5e1" font-family="Arial" font-size="15">Budget · Need</text>
+    <text x="24" y="132" fill="#cbd5e1" font-family="Arial" font-size="15">Authority · Timeline</text>
+  </g>
+
+  <g transform="translate(492 240)">
+    <rect width="190" height="150" rx="22" fill="url(#card)" stroke="#475569"/>
+    <text x="24" y="42" fill="#a78bfa" font-family="Arial" font-size="16" font-weight="700">03 · OVERRIDE</text>
+    <text x="24" y="78" fill="#f8fafc" font-family="Arial" font-size="22" font-weight="700">Guardrails</text>
+    <text x="24" y="108" fill="#cbd5e1" font-family="Arial" font-size="15">Missing fields</text>
+    <text x="24" y="132" fill="#cbd5e1" font-family="Arial" font-size="15">Budget / timing rules</text>
+  </g>
+
+  <g transform="translate(702 240)">
+    <rect width="190" height="150" rx="22" fill="url(#card)" stroke="#475569"/>
+    <text x="24" y="42" fill="#34d399" font-family="Arial" font-size="16" font-weight="700">04 · AUDIT</text>
+    <text x="24" y="78" fill="#f8fafc" font-family="Arial" font-size="22" font-weight="700">CRM Health</text>
+    <text x="24" y="108" fill="#cbd5e1" font-family="Arial" font-size="15">Owner · follow-up</text>
+    <text x="24" y="132" fill="#cbd5e1" font-family="Arial" font-size="15">Staleness · data gaps</text>
+  </g>
+
+  <g transform="translate(912 240)">
+    <rect width="216" height="150" rx="22" fill="url(#card)" stroke="#475569"/>
+    <text x="24" y="42" fill="#fbbf24" font-family="Arial" font-size="16" font-weight="700">05 · OUTPUT</text>
+    <text x="24" y="78" fill="#f8fafc" font-family="Arial" font-size="22" font-weight="700">Priority Actions</text>
+    <text x="24" y="108" fill="#cbd5e1" font-family="Arial" font-size="15">Qualification summary</text>
+    <text x="24" y="132" fill="#cbd5e1" font-family="Arial" font-size="15">Pipeline + CRM findings</text>
+  </g>
+
+  <g stroke="#64748b" stroke-width="3" fill="none" opacity=".85">
+    <path d="M262 315h20"/>
+    <path d="M472 315h20"/>
+    <path d="M682 315h20"/>
+    <path d="M892 315h20"/>
+  </g>
+
+  <g transform="translate(72 448)">
+    <rect width="1056" height="164" rx="24" fill="#0b1220" stroke="#334155"/>
+    <text x="30" y="42" fill="#f8fafc" font-family="Arial" font-size="20" font-weight="700">Validation snapshot</text>
+    <g transform="translate(30 68)">
+      <rect width="220" height="64" rx="14" fill="#172554"/>
+      <text x="18" y="26" fill="#93c5fd" font-family="Arial" font-size="14">Synthetic records</text>
+      <text x="18" y="50" fill="#fff" font-family="Arial" font-size="26" font-weight="800">5 validated</text>
+    </g>
+    <g transform="translate(274 68)">
+      <rect width="220" height="64" rx="14" fill="#2e1065"/>
+      <text x="18" y="26" fill="#c4b5fd" font-family="Arial" font-size="14">Qualification states</text>
+      <text x="18" y="50" fill="#fff" font-family="Arial" font-size="26" font-weight="800">5 states</text>
+    </g>
+    <g transform="translate(518 68)">
+      <rect width="220" height="64" rx="14" fill="#052e2b"/>
+      <text x="18" y="26" fill="#6ee7b7" font-family="Arial" font-size="14">Scoring model</text>
+      <text x="18" y="50" fill="#fff" font-family="Arial" font-size="26" font-weight="800">100 points</text>
+    </g>
+    <g transform="translate(762 68)">
+      <rect width="264" height="64" rx="14" fill="#3f2b0b"/>
+      <text x="18" y="26" fill="#fde68a" font-family="Arial" font-size="14">Validated safeguards</text>
+      <text x="18" y="50" fill="#fff" font-family="Arial" font-size="26" font-weight="800">Overrides + audit</text>
+    </g>
+  </g>
+</svg>

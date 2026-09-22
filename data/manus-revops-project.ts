@@ -67,7 +67,15 @@ export const manusRevopsProject: Project = {
       icon: "workspace",
     },
   ],
-  gallery: [],
+  heroImage: "/images/projects/manus-revops-agent/revops-agent-overview.svg",
+  gallery: [
+    {
+      image: "/images/projects/manus-revops-agent/revops-agent-overview.svg",
+      title: "RevOps Agent Skill Workflow",
+      description:
+        "Visual summary of the reusable CRM-export workflow: validation, deterministic lead scoring, business-rule overrides, CRM audit and prioritized RevOps output.",
+    },
+  ],
   results: [
     "Packaged and enabled the reusable revops-crm-audit-lead-qualification Manus Skill.",
     "Validated all five synthetic test records through the installed Skill.",
@@ -100,5 +108,5 @@ export const manusRevopsProject: Project = {
     "Business-rule overrides prevent raw scores from bypassing qualification controls.",
     "CRM hygiene issues and priority actions are surfaced in a consistent RevOps report.",
   ],
-  automationImage: "",
+  automationImage: "/images/projects/manus-revops-agent/revops-agent-overview.svg",
 };

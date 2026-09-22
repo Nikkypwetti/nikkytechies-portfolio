@@ -18,12 +18,22 @@ A recruiter-focused portfolio for **Ganiyu Basirat Olanike**, combining 7+ years
 
 ## Featured Case Studies
 
+### FlowBridge RevOps CRM Audit & Lead Qualification Agent
+- Translated fictional company requirements into a lifecycle-aware RevOps Agent Skill
+- Deterministic 100-point scoring model with explicit override precedence
+- CRM validation across ownership, follow-up, deal value, stale opportunities and closed-stage controls
+- Blind-tested 16 synthetic CRM records with no embedded answer key
+- Validated 24 rule-defined CRM issues: 2 Critical, 12 High and 10 Medium
+- Qualification outcome: 5 hot_lead, 6 qualified, 2 needs_discovery, 1 nurture and 2 not_fit
+- Detailed GitHub case study: [docs/flowbridge-revops-agent.md](docs/flowbridge-revops-agent.md)
+
 ### RevOps CRM Audit & Lead Qualification Agent Skill
 - Reusable Manus Agent Skill for CSV/XLSX CRM exports
 - Deterministic 100-point lead-scoring model
 - Business-rule overrides for missing timeline and low-budget qualification
 - CRM data-quality and pipeline-control audit with structured priority actions
 - Validated against 5 synthetic CRM records
+- Added visual workflow evidence to the portfolio case study
 
 
 ### Client Onboarding Automation System
