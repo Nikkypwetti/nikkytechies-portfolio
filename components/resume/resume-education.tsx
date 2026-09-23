@@ -1,7 +1,7 @@
 import { FadeIn } from "@/components/animations/fade-in";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
-import { education } from "@/data/education";
+import { masterResume } from "@/data/master-resume";
 
 export function ResumeEducation() {
   return (
@@ -13,30 +13,38 @@ export function ResumeEducation() {
               Credentials
             </p>
             <h2 className="text-3xl font-bold">
-              Education, Certifications & Learning
+              Education & Certifications
             </h2>
           </div>
         </FadeIn>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          {education.map((item, index) => (
-            <FadeIn key={`${item.school}-${item.degree}`} delay={index * 0.06}>
+          {masterResume.education.map((item, index) => (
+            <FadeIn key={item.degree} delay={index * 0.06}>
               <div className="h-full rounded-2xl border bg-card p-8">
                 <h3 className="text-xl font-semibold">{item.degree}</h3>
-
                 <p className="mt-2 text-primary">{item.school}</p>
-
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {item.period}
-                </p>
-
-                <p className="mt-4 leading-7 text-muted-foreground">
-                  {item.description}
-                </p>
+                <p className="mt-1 text-sm text-muted-foreground">{item.period}</p>
               </div>
             </FadeIn>
           ))}
         </div>
+
+        <FadeIn delay={0.16}>
+          <div className="mt-8 rounded-2xl border bg-card p-8">
+            <h3 className="text-xl font-semibold">Certifications</h3>
+            <div className="mt-5 flex flex-wrap gap-3">
+              {masterResume.certifications.map((certification) => (
+                <span
+                  key={certification}
+                  className="rounded-full border bg-background px-4 py-2 text-sm text-muted-foreground"
+                >
+                  {certification}
+                </span>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
       </Container>
     </Section>
   );
