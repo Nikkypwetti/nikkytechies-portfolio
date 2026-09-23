@@ -4,6 +4,7 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
 import { Button } from "@/components/ui/button";
+import { masterResume } from "@/data/master-resume";
 
 export function ResumeHero() {
   return (
@@ -17,33 +18,36 @@ export function ResumeHero() {
 
         <FadeIn delay={0.15}>
           <h1 className="max-w-5xl text-5xl font-bold tracking-tight md:text-7xl">
-            Operations, RevOps & Business Systems
+            {masterResume.title}
           </h1>
         </FadeIn>
 
-        <FadeIn delay={0.3}>
+        <FadeIn delay={0.25}>
+          <p className="mt-5 max-w-5xl text-lg font-semibold leading-8 text-primary md:text-xl">
+            {masterResume.subtitle}
+          </p>
+        </FadeIn>
+
+        <FadeIn delay={0.35}>
           <p className="mt-8 max-w-4xl text-xl leading-relaxed text-muted-foreground">
-            I combine 7+ years of professional experience across sales account
-            management and executive administration with hands-on CRM,
-            project coordination, reporting, data quality, business systems and
-            AI workflow automation experience.
+            My master profile combines 7+ years of professional experience in
+            sales account management and executive/administrative operations
+            with hands-on Salesforce, HubSpot, Revenue Systems, Power BI,
+            reporting, data and workflow automation project evidence.
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.4}>
-          <p className="mt-4 max-w-4xl text-lg leading-8 text-muted-foreground">
-            My work spans HubSpot, Airtable, Notion, ClickUp, Google Workspace,
-            spreadsheets, n8n, Make.com, Zapier, AI integrations, APIs and
-            technical systems used to organize customer journeys, revenue
-            processes, projects, data and operational workflows.
-          </p>
-        </FadeIn>
-
-        <FadeIn delay={0.5}>
+        <FadeIn delay={0.45}>
           <div className="mt-10 flex flex-wrap gap-4">
             <a href="/resume/ganiyu-basirat-resume.pdf" download>
-              <Button size="lg">Download ATS Resume</Button>
+              <Button size="lg">Download Master ATS Resume</Button>
             </a>
+
+            <Link href="/projects">
+              <Button variant="outline" size="lg">
+                View Portfolio Evidence
+              </Button>
+            </Link>
 
             <Link href="/contact">
               <Button variant="outline" size="lg">
