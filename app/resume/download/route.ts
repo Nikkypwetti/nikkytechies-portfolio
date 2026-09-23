@@ -25,9 +25,9 @@ function cleanText(value: string) {
 
 function escapePdf(value: string) {
   return cleanText(value)
-    .replace(/\/g, "\\")
-    .replace(/(/g, "\(")
-    .replace(/)/g, "\)");
+    .replace(/\\/g, "\\\\")
+    .replace(/\(/g, "\\(")
+    .replace(/\)/g, "\\)");
 }
 
 function estimateWidth(text: string, size: number) {
@@ -35,7 +35,7 @@ function estimateWidth(text: string, size: number) {
 }
 
 function wrapText(text: string, size: number, maxWidth: number) {
-  const words = cleanText(text).split(/s+/).filter(Boolean);
+  const words = cleanText(text).split(/\s+/).filter(Boolean);
   const lines: string[] = [];
   let current = "";
 
