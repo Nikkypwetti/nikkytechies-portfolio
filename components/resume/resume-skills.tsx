@@ -1,7 +1,7 @@
 import { FadeIn } from "@/components/animations/fade-in";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
-import { skills } from "@/data/skills";
+import { masterResume } from "@/data/master-resume";
 
 export function ResumeSkills() {
   return (
@@ -13,35 +13,26 @@ export function ResumeSkills() {
               Competencies
             </p>
 
-            <h2 className="text-3xl font-bold">Core Business & Systems Skills</h2>
+            <h2 className="text-3xl font-bold">Core Competencies</h2>
 
             <p className="mt-4 text-muted-foreground">
-              Capabilities spanning revenue operations, CRM, project delivery,
-              executive support, analytics, documentation, automation and
-              technical systems.
+              The same recruiter-facing competencies used in my current master resume.
             </p>
           </div>
         </FadeIn>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-          {skills.map((skill, index) => {
-            const Icon = skill.icon;
-
-            return (
-              <FadeIn key={skill.title} delay={index * 0.06}>
-                <div className="h-full rounded-2xl border bg-card p-7 transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-2xl">
-                  <Icon className="mb-5 h-8 w-8 text-primary" />
-
-                  <h3 className="text-xl font-semibold">{skill.title}</h3>
-
-                  <p className="mt-4 leading-7 text-muted-foreground">
-                    {skill.description}
-                  </p>
-                </div>
-              </FadeIn>
-            );
-          })}
-        </div>
+        <FadeIn delay={0.08}>
+          <div className="mt-10 flex flex-wrap gap-3">
+            {masterResume.coreCompetencies.map((skill) => (
+              <span
+                key={skill}
+                className="rounded-full border bg-card px-4 py-2 text-sm font-medium text-muted-foreground"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </FadeIn>
       </Container>
     </Section>
   );
