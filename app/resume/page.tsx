@@ -11,9 +11,9 @@ import { ResumeEducation } from "@/components/resume/resume-education";
 import { ResumeCTA } from "@/components/resume/resume-cta";
 
 export const metadata: Metadata = {
-  title: "Resume",
+  title: "Master Resume",
   description:
-    "Master resume of Ganiyu Basirat Olanike — Operations, Revenue Operations, Salesforce and HubSpot CRM, Sales Operations, Project Coordination, Business Systems, Power BI reporting, sales forecasting, CRM governance and workflow automation professional with 7+ years of professional experience.",
+    "Master resume of Ganiyu Basirat Olanike — Operations, Revenue Operations and Business Systems professional with Salesforce and HubSpot CRM, Revenue Systems, Sales Operations, Power BI forecasting, SQL/data analysis, project coordination and workflow automation experience.",
 };
 
 export default function ResumePage() {
@@ -24,8 +24,8 @@ export default function ResumePage() {
       <ResumeImpact />
       <ResumeExperience />
       <ResumeSkills />
-      <ResumeTechnical />
       <ResumeProjects />
+      <ResumeTechnical />
       <ResumeEducation />
       <ResumeCTA />
     </main>

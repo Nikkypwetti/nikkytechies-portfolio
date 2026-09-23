@@ -1,7 +1,7 @@
 import { FadeIn } from "@/components/animations/fade-in";
 import { Container } from "@/components/shared/container";
 import { Section } from "@/components/shared/section";
-import { experience } from "@/data/experience";
+import { masterResume } from "@/data/master-resume";
 
 export function ResumeExperience() {
   return (
@@ -16,27 +16,25 @@ export function ResumeExperience() {
             <h2 className="text-3xl font-bold">Professional Experience</h2>
 
             <p className="mt-4 leading-7 text-muted-foreground">
-              Professional experience across sales account management,
-              executive administration, customer relationships and business
-              operations.
+              Employment history is kept separate from self-directed portfolio
+              projects so the scope of professional and project experience is clear.
             </p>
           </div>
         </FadeIn>
 
         <div className="mt-10 space-y-6">
-          {experience.map((item, index) => (
+          {masterResume.experience.map((item, index) => (
             <FadeIn key={`${item.company}-${item.role}`} delay={index * 0.08}>
               <article className="rounded-2xl border bg-card p-8">
                 <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
                   <div>
                     <h3 className="text-2xl font-semibold">{item.role}</h3>
-                    <p className="mt-1 font-medium text-primary">
-                      {item.company}
-                    </p>
+                    <p className="mt-1 font-medium text-primary">{item.company}</p>
                   </div>
 
                   <div className="text-sm text-muted-foreground md:text-right">
                     <p>{item.period}</p>
+                    <p>{item.workType}</p>
                   </div>
                 </div>
 
