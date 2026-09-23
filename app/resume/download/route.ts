@@ -254,7 +254,7 @@ function buildPdf() {
 export async function GET() {
   const pdf = buildPdf();
 
-  return new Response(pdf, {
+  return new Response(new Uint8Array(pdf), {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition":
