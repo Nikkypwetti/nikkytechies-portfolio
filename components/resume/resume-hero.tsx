@@ -39,7 +39,7 @@ export function ResumeHero() {
 
         <FadeIn delay={0.45}>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href="/resume/ganiyu-basirat-resume.pdf" download>
+            <a href="/resume/download" download>
               <Button size="lg">Download Master ATS Resume</Button>
             </a>
 

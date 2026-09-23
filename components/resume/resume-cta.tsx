@@ -27,7 +27,7 @@ export function ResumeCTA() {
                 <Button size="lg">Contact Me</Button>
               </Link>
 
-              <a href="/resume/ganiyu-basirat-resume.pdf" download>
+              <a href="/resume/download" download>
                 <Button size="lg" variant="outline">
                   Download ATS Resume
                 </Button>
