@@ -3,7 +3,7 @@ import { technologies } from "./technologies";
 
 export const aiBusinessOsProject: Project = {
   slug: "ai-business-os-multi-agent-operations",
-  title: "AI Business OS — Multi-Agent Revenue & Operations Automation",
+  title: "AI Business OS — Production-Hardened RevOps & Business Systems Platform",
   year: "2026",
   type: "Portfolio",
   status: "Completed",
@@ -19,137 +19,139 @@ export const aiBusinessOsProject: Project = {
     "Docker",
   ],
   category: "Business Systems",
+
   description:
-    "Built and production-hardened a local AI Business OS that coordinates Revenue Operations and Business Operations through bounded specialist agents, deterministic guardrails, human approvals, idempotency, cross-provider model fallback, audited integrations and recovery controls. The verified local production gate passes 20/20 checks.",
+    "Designed and built a 40-workflow AI-powered Revenue Operations and Business Systems platform in n8n + PostgreSQL, coordinating 8 specialist agents across CRM, client operations, project delivery, communications, customer success, finance and RevOps analytics. Production-hardened the system with human approvals, idempotency, provider fallback, bounded recovery and guarded HubSpot/Gmail/Calendar/Salesforce integrations, then passed a 20/20 local production-readiness gate.",
 
   overview: [
-    "Designed one Supervisor plus seven domain specialists covering Sales CRM, Client Operations, Project Operations, Communications, Finance & Billing, Customer Success and RevOps Analytics.",
-    "Kept execution bounded: agents plan and reason, while mutations pass through provider-neutral tool gateways, deterministic permission/risk checks, required-input validation, approval rules and business rules.",
-    "Implemented stable idempotency keys, deterministic post-action evaluation, centralized node/workflow error handling, dead-letter handling and exact-match recovery handlers instead of generic mutation replay.",
-    "Configured Groq as the primary reasoning provider with Google Gemini as the validated cross-provider fallback across all eight reasoning workflows.",
-    "Built guarded integration adapters for HubSpot, Gmail, Google Calendar, Airtable and Salesforce. HubSpot, Gmail, Google Calendar and Salesforce completed controlled staging validation with durable evidence.",
-    "Completed a deliberate local production cutover: the production profile and required HubSpot, Gmail and Google Calendar gates are enabled, while the CRM gateway still defaults to postgres_dev and optional Salesforce/Airtable writes remain disabled.",
-    "Reached PRODUCTION_READY=true with 20/20 local readiness checks while keeping the internet-facing VPS/domain/TLS deployment explicitly out of scope until hosting is available.",
+    "Owned the system architecture end to end — from event routing and specialist-agent responsibilities to CRM controls, approval policies, integration contracts, error handling, recovery and production-readiness validation.",
+    "Built a 40-workflow production bundle spanning Sales CRM, Client Operations, Project Operations, Communications, Customer Success, Finance & Billing, RevOps Analytics, monitoring, approvals, integrations and recovery.",
+    "Designed one Supervisor plus seven domain specialists so each business function has a clear operating boundary instead of relying on one unrestricted AI agent.",
+    "Created a governed execution layer where state-changing actions must pass deterministic permission, required-field, risk, approval and business-rule checks before they can change CRM, communication or operational data.",
+    "Implemented replay-safe automation using idempotency keys, durable action evidence and deterministic post-action evaluation so retries and repeated events do not silently create duplicate business side effects.",
+    "Validated Groq as the primary reasoning provider with Google Gemini as an independent fallback across all eight reasoning workflows, reducing dependence on a single AI provider.",
+    "Built and validated provider adapters for HubSpot, Salesforce, Gmail and Google Calendar; kept CRM routing provider-neutral so the system can change providers without rebuilding the entire operating model.",
+    "Completed a controlled local production cutover with PRODUCTION_READY=true and 20/20 checks while keeping public VPS/domain/TLS deployment explicitly separate until hosting is available.",
   ],
 
   problem:
-    "Operational automation becomes risky when AI can mutate CRM, communications or delivery systems without deterministic controls. The project needed to coordinate multiple business functions while preventing duplicate side effects, unsafe provider writes, silent model failures and unbounded recovery.",
+    "Revenue and operations teams often accumulate disconnected automations across CRM, email, calendars, onboarding and project delivery. That creates duplicated work, inconsistent handoffs, fragile integrations and poor visibility. Adding AI can make the risk worse if an agent can write directly to business systems, retry mutations blindly or continue after ambiguous failures. I wanted to design a reusable operating layer that could coordinate multiple business functions while keeping important actions controlled, traceable and recoverable.",
 
   solution:
-    "Built a reusable n8n + PostgreSQL operating layer where a Supervisor routes work to bounded specialist agents. Each state-changing action moves through a stable tool contract, guardrail engine, approval policy, idempotency barrier and deterministic evaluation. Provider failures are normalized centrally, recoverable operations use exact-match bounded handlers, and all reasoning agents have a distinct Gemini fallback behind Groq. Production integrations are gated independently so local production can be validated without pretending the system is already deployed to a public VPS.",
+    "I designed the project as a business operating system rather than a collection of point-to-point automations. A central Supervisor classifies each event and routes it to the right domain specialist. Specialists can reason and plan, but business mutations remain behind bounded tool gateways and deterministic guardrails. High-risk actions pause for human approval, successful mutations are protected by idempotency, results are verified before completion, and failures enter a controlled recovery path with exact-match handlers and human escalation. I also separated CRM/provider logic from the operating model, allowing PostgreSQL, HubSpot and Salesforce to sit behind the same governed execution architecture.",
 
   architecture: [
-    "Business event → normalized event envelope with correlation and idempotency keys",
-    "AGENT-00 Supervisor → routes to exactly one approved specialist",
-    "Specialist agent → bounded planning and structured decision output",
-    "MCP / internal adapter → provider-neutral tool contract",
-    "Tool Gateway → action normalization and permission boundary",
-    "SYS-02 Guardrail Engine → permissions, required inputs, risk, approval and business rules",
-    "Approved action → idempotent business mutation or provider adapter",
-    "SYS-03 Evaluation Engine → deterministic verification before COMPLETED",
-    "SYS-01 / SYS-04 / SYS-06 → normalized errors, recovery directives and exact-match bounded recovery",
-    "Audit + operational status → persistent execution, approval, evaluation, integration and recovery evidence",
+    "Business event → normalized event envelope with correlation, risk and idempotency context",
+    "Supervisor → classifies intent and routes work to the correct domain specialist",
+    "Domain specialist → produces a bounded operational decision instead of direct unrestricted mutation",
+    "Provider-neutral tool gateway → converts the decision into an approved business action contract",
+    "Guardrail engine → checks permissions, required inputs, risk, approvals and business rules",
+    "Human approval → pauses high-risk actions and resumes only the exact stored request",
+    "Idempotent action layer → executes business or provider action without duplicate replay",
+    "Deterministic evaluation → verifies the result before marking the operation completed",
+    "Recovery layer → routes technical failures through exact-match retry/repair contracts or human review",
+    "Operations status layer → exposes agent, integration, approval, recovery, error and DLQ health",
   ],
 
   workflow: [
-    "Receive Business Event",
-    "Normalize Event & Establish Correlation",
-    "Route Through Supervisor",
-    "Invoke Domain Specialist",
-    "Prepare Bounded Tool Request",
-    "Run Deterministic Guardrails",
+    "Receive & Normalize Business Event",
+    "Classify Intent, Risk & Operating Context",
+    "Route to the Correct Specialist Agent",
+    "Create a Bounded Business Action Request",
+    "Validate Permissions & Required Inputs",
+    "Apply Risk, Approval & Business Rules",
     "Pause for Human Approval When Required",
-    "Execute Idempotent Business/Provider Action",
-    "Run Deterministic Post-Action Evaluation",
-    "Persist Audit Evidence",
-    "Route Failures to Recovery or Human Review",
-    "Return Final Operational Status",
+    "Execute the Idempotent Business/Provider Action",
+    "Verify the Outcome Deterministically",
+    "Persist Audit & Operational Evidence",
+    "Recover Safely or Escalate When Evidence Is Insufficient",
+    "Return Final Business Status",
   ],
 
   automation: [
     {
-      title: "Supervisor Routing",
+      title: "Revenue & Operations Orchestration",
       description:
-        "Routes normalized business events to one bounded specialist while preserving risk, confidence, correlation and execution context.",
+        "Coordinates CRM, onboarding, project delivery, communications, customer success, finance and analytics through one governed operating model instead of disconnected automations.",
       icon: "bot",
     },
     {
-      title: "Guarded Tool Execution",
+      title: "CRM Governance & Provider Portability",
       description:
-        "Moves mutations through permission, required-input, risk, approval and business-rule checks before any state-changing action can execute.",
-      icon: "database",
-    },
-    {
-      title: "CRM Provider Gateway",
-      description:
-        "Supports provider-neutral CRM execution with PostgreSQL as the current primary route and validated HubSpot/Salesforce adapters behind explicit write gates.",
+        "Keeps CRM execution behind a provider-neutral gateway so PostgreSQL, HubSpot and Salesforce can follow the same business rules, approvals and audit controls.",
       icon: "crm",
     },
     {
-      title: "Approval-Gated Communications",
+      title: "Human-in-the-Loop Controls",
       description:
-        "Requires durable human approval before external communication and uses provider delivery evidence plus replay controls.",
-      icon: "email",
-    },
-    {
-      title: "Bounded Recovery",
-      description:
-        "Uses exact-match recovery registrations, durable failed-tool evidence, bounded attempts and fail-closed human escalation instead of blind mutation replay.",
+        "High-risk outreach and state-changing operations pause for durable approval and resume only the exact approved request rather than regenerating a new one.",
       icon: "workspace",
     },
     {
-      title: "Operational Monitoring",
+      title: "Replay-Safe Automation",
       description:
-        "Exposes read-only health and readiness evidence across agents, integrations, approvals, recovery queues, errors and DLQ state.",
+        "Uses stable idempotency keys and durable provider evidence to prevent duplicate CRM, calendar or communication side effects during retries and workflow replay.",
+      icon: "database",
+    },
+    {
+      title: "AI Provider Resilience",
+      description:
+        "Uses Groq as the primary model and a separately configured Gemini fallback across all eight reasoning agents so one provider failure does not stop the operating layer.",
+      icon: "bot",
+    },
+    {
+      title: "Operational Monitoring & Recovery",
+      description:
+        "Tracks integrations, agent health, approvals, errors, recovery jobs and DLQ state while exact-match recovery handlers prevent unsafe generic mutation replay.",
       icon: "sheet",
     },
   ],
 
   governance: [
     {
-      title: "No unrestricted agent mutation",
+      title: "Least-Privilege AI Execution",
       description:
-        "Agents do not receive raw unrestricted database mutation authority. Business changes flow through bounded gateways and deterministic guardrails.",
+        "Agents reason and recommend actions but do not receive unrestricted database or provider mutation authority. State changes remain behind bounded tool contracts.",
     },
     {
-      title: "Human approval for high-risk actions",
+      title: "Deterministic Business Controls",
       description:
-        "Approval-required operations persist their exact request and resume only from the stored approved state.",
+        "Permissions, required inputs, risk, approval rules and business rules are evaluated deterministically instead of being left to model judgment.",
     },
     {
-      title: "Replay-safe execution",
+      title: "Approval Before High-Risk Actions",
       description:
-        "Stable idempotency keys and provider evidence prevent successful mutations from being executed again when workflows are replayed.",
+        "Approval-required operations persist their request, pause safely and resume from the approved state without inventing or regenerating the action.",
     },
     {
-      title: "No generic mutation recovery",
+      title: "Idempotency & Auditability",
       description:
-        "Recovery is registered by exact policy and operation. Missing, stale or ambiguous evidence fails closed to human review.",
+        "Successful business and provider actions retain stable evidence so repeated events can reuse prior results instead of causing duplicate side effects.",
     },
     {
-      title: "Advisory-only specialist boundary",
+      title: "Fail-Closed Recovery",
       description:
-        "Finance & Billing, Customer Success and RevOps Analytics are active for reasoning but retain zero mutation authority until separate contracts are audited.",
+        "Technical recovery only runs when the exact handler, durable evidence and replay contract exist. Missing, stale or ambiguous evidence escalates to human review.",
     },
     {
-      title: "Honest deployment boundary",
+      title: "Controlled Specialist Authority",
       description:
-        "The project is documented as local production-ready, not as an internet-facing deployment. VPS, domain and TLS rollout are intentionally deferred.",
+        "Finance & Billing, Customer Success and RevOps Analytics are intentionally advisory-only until separate mutation contracts are designed and validated.",
     },
   ],
 
   gallery: [],
 
   results: [
+    "Built a 40-workflow production bundle covering core Revenue Operations and Business Operations execution, governance, integrations, monitoring and recovery.",
     "Passed the final local production-readiness validator with PRODUCTION_READY=true and 20/20 checks.",
-    "Validated eight reasoning agents with Groq primary and Google Gemini cross-provider fallback.",
-    "Validated eight exact-match autonomous recovery registrations while keeping the SYS-06 automatic schedule deliberately disabled for the future public rollout.",
-    "Kept recovery queue, unresolved error set and unresolved DLQ at zero during cutover verification.",
-    "Validated controlled staging writes for HubSpot, Salesforce, Gmail and Google Calendar with durable provider evidence and idempotency controls.",
-    "Enabled required local-production gates for HubSpot, Gmail and Google Calendar without switching the CRM gateway away from postgres_dev.",
-    "Kept optional Salesforce and Airtable permanent write gates disabled; Airtable remains constrained by its provider API billing limit.",
-    "Verified that the cutover/readiness validation itself created zero new provider deliveries and zero new integration actions.",
-    "Maintained rollback coverage with pre-cutover and compact post-cutover backups.",
+    "Validated all 8 reasoning agents with Groq primary and Google Gemini cross-provider fallback.",
+    "Validated 4 external providers — HubSpot, Salesforce, Gmail and Google Calendar — through controlled staging-write evidence and replay/idempotency checks.",
+    "Validated 8 exact-match recovery registrations for bounded retry/repair behavior instead of generic state-changing replay.",
+    "Completed the local cutover with 0 open recovery jobs, 0 unresolved errors and 0 unresolved DLQ items.",
+    "Verified that the cutover/readiness validation itself created 0 new provider deliveries and 0 new integration actions.",
+    "Kept CRM architecture provider-neutral: required local HubSpot controls are enabled while the main CRM gateway remains on postgres_dev and optional Salesforce writes remain disabled.",
+    "Maintained pre-cutover and post-cutover rollback backups, plus an isolated PostgreSQL restore proof covering 41 Business OS tables.",
   ],
 
   technologies: [
@@ -164,34 +166,37 @@ export const aiBusinessOsProject: Project = {
   ],
 
   metrics: [
+    "40 production workflows across RevOps & Business Operations",
     "20/20 local production-readiness checks passed",
-    "8 reasoning agents with cross-provider fallback",
-    "8 exact-match bounded recovery handlers",
+    "8 specialist reasoning agents with cross-provider fallback",
     "4 external integrations staging-write validated",
-    "0 open recovery, error or DLQ items at cutover",
+    "8 exact-match bounded recovery handlers",
   ],
 
   stats: [
-    { value: 20, suffix: "/20", label: "Local Production Readiness" },
-    { value: 8, suffix: " agents", label: "Reasoning Workflows" },
-    { value: 4, suffix: " integrations", label: "Staging-Write Validated" },
+    { value: 40, suffix: " workflows", label: "Production Bundle" },
+    { value: 8, suffix: " agents", label: "Specialist AI System" },
+    { value: 20, suffix: "/20", label: "Production Readiness" },
   ],
 
   before: [
-    "Business operations and provider actions could be fragmented across separate CRM, communications and delivery workflows.",
-    "AI-assisted execution needs stronger controls than prompt instructions alone.",
-    "Retries can duplicate mutations when idempotency and durable evidence are not enforced.",
-    "Provider/model failure can become a single point of failure without an independent fallback path.",
-    "Recovery can become unsafe when it blindly replays failed state-changing work.",
+    "CRM, communications, onboarding and project workflows can become disconnected as automation grows.",
+    "A single unrestricted AI agent creates unclear ownership and unnecessary mutation risk.",
+    "Point-to-point integrations make CRM/provider changes expensive and tightly coupled.",
+    "Blind retries can duplicate emails, calendar events or CRM mutations.",
+    "Single-model dependency creates an avoidable failure point for AI-assisted operations.",
+    "Failures without durable evidence are difficult to recover safely or audit afterward.",
   ],
 
   after: [
-    "One Supervisor routes work across seven bounded domain specialists.",
-    "Mutations pass through deterministic guardrails, approvals, idempotency and evaluation.",
-    "Provider adapters retain independent readiness/write gates and durable action evidence.",
-    "All eight reasoning workflows use validated Groq → Gemini fallback.",
-    "Recovery uses exact-match handlers, bounded attempts and fail-closed human escalation.",
-    "The local production gate is green at 20/20 while public VPS deployment remains explicitly deferred.",
+    "One operating layer coordinates seven business domains through clearly bounded specialist ownership.",
+    "AI reasoning is separated from deterministic business-system execution and approval controls.",
+    "CRM and external providers sit behind governed adapters instead of being hard-coded into every workflow.",
+    "Idempotency and durable provider evidence make critical automations replay-safe.",
+    "All eight reasoning agents have validated Groq → Gemini provider fallback.",
+    "Exact-match recovery handlers, DLQ and human escalation create a controlled failure path.",
+    "A live read-only control dashboard exposes agent, integration, approval and recovery health.",
+    "The system reached a verified 20/20 local production-readiness gate without overstating public/VPS deployment.",
   ],
 
   automationImage: "",
