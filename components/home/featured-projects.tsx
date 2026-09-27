@@ -6,10 +6,10 @@ import { ProjectCard } from "@/components/projects/project-card";
 import { FadeIn } from "@/components/animations/fade-in";
 
 const featuredSlugs = [
-  "flowbridge-revops-crm-audit-agent",
+  "ai-business-os-multi-agent-operations",
   "asternova-salesforce-revops-system",
   "revenue-intelligence-production-simulation",
-  "hubspot-clientflow-crm",
+  "flowbridge-revops-crm-audit-agent",
 ];
 
 export function FeaturedProjects() {
