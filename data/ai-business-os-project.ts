@@ -174,6 +174,12 @@ export const aiBusinessOsProject: Project = {
         "Reusable approval workflow that normalizes a guarded action, persists the exact approval request in PostgreSQL, returns a stable approval state and routes persistence failures through the canonical Business OS error path.",
     },
     {
+      image: "/images/projects/ai-business-os/11-approval-decision-resume.webp",
+      title: "Approval Decision & Exact Action Resume",
+      description:
+        "Published approval-resume workflow that applies a human decision, reconstructs the exact stored action, validates the approved tool dispatch, routes communications, finance and CRM actions through bounded replay paths, evaluates the result, finalizes durable state in PostgreSQL and sends failures through the canonical error path.",
+    },
+    {
       image: "/images/projects/ai-business-os/06-recovery-worker.webp",
       title: "Bounded Recovery Queue Worker",
       description:
