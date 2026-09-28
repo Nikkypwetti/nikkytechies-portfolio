@@ -140,7 +140,70 @@ export const aiBusinessOsProject: Project = {
     },
   ],
 
-  gallery: [],
+  heroImage: "/images/projects/ai-business-os/00-control-center-hero.webp",
+
+  gallery: [
+    {
+      image: "/images/projects/ai-business-os/01-control-center.webp",
+      title: "AI Business OS — Local Production Control Center",
+      description:
+        "Recruiter-facing control center showing 20/20 local production readiness, 40 governed workflows, 8 specialist AI agents, integration readiness, safety controls, recovery state and the explicit local-production deployment boundary.",
+    },
+    {
+      image: "/images/projects/ai-business-os/02-production-readiness.webp",
+      title: "20/20 Production-Readiness Validation",
+      description:
+        "Canonical production-readiness validator confirming PRODUCTION_READY=true with all 20 checks passing across workflow packaging, provider fallback, integration gates, recovery state, production configuration and deployment safeguards.",
+    },
+    {
+      image: "/images/projects/ai-business-os/03-supervisor.webp",
+      title: "Supervisor Orchestration with Cross-Provider AI Fallback",
+      description:
+        "AGENT-00 receives and validates a business event, loads authoritative configuration, routes through the Supervisor, validates the structured decision, persists the result and uses Groq as the primary model with Gemini as an independent fallback.",
+    },
+    {
+      image: "/images/projects/ai-business-os/04-crm-gateway.webp",
+      title: "Governed CRM Tool Gateway",
+      description:
+        "Provider-neutral CRM execution layer that normalizes the request, checks least-privilege permissions, separates allowed, blocked and approval-required actions, executes the approved PostgreSQL CRM path and routes runtime failures through centralized error handling.",
+    },
+    {
+      image: "/images/projects/ai-business-os/05-human-approval-gateway.webp",
+      title: "Human Approval Gateway",
+      description:
+        "Reusable approval workflow that normalizes a guarded action, persists the exact approval request in PostgreSQL, returns a stable approval state and routes persistence failures through the canonical Business OS error path.",
+    },
+    {
+      image: "/images/projects/ai-business-os/06-recovery-worker.webp",
+      title: "Bounded Recovery Queue Worker",
+      description:
+        "Recovery worker that claims due work, validates the registered recovery contract, executes only approved handlers, normalizes handler success or failure, finalizes the attempt and escalates unsupported or unresolved recovery work to human review.",
+    },
+    {
+      image: "/images/projects/ai-business-os/07-idempotent-retry.webp",
+      title: "Idempotent Tool Adapter Retry",
+      description:
+        "Exact-match retry handler that validates the technical retry contract, retries only a previously evidenced durable tool adapter operation and returns a bounded result instead of replaying arbitrary state-changing work.",
+    },
+    {
+      image: "/images/projects/ai-business-os/08-hubspot-adapter.webp",
+      title: "Governed HubSpot CRM Adapter",
+      description:
+        "HubSpot adapter with request normalization, integration gating, idempotency reuse, allowed and blocked branches, routed contact/deal operations, durable success logging and centralized provider-error handling.",
+    },
+    {
+      image: "/images/projects/ai-business-os/09-calendar-adapter.webp",
+      title: "Replay-Safe Google Calendar Integration",
+      description:
+        "Google Calendar adapter that checks prior idempotency evidence before creating an approved event, reuses prior success instead of duplicating it, enforces the write gate and routes provider failures through the Business OS error path.",
+    },
+    {
+      image: "/images/projects/ai-business-os/10-revops-analytics.webp",
+      title: "RevOps Analytics Advisory Agent",
+      description:
+        "Dedicated RevOps analytics specialist with validated structured output, Groq primary reasoning, Gemini fallback and an advisory-only authority boundary that prevents direct mutation of operational systems.",
+    },
+  ],
 
   results: [
     "Built a 40-workflow production bundle covering core Revenue Operations and Business Operations execution, governance, integrations, monitoring and recovery.",
@@ -199,5 +262,5 @@ export const aiBusinessOsProject: Project = {
     "The system reached a verified 20/20 local production-readiness gate without overstating public/VPS deployment.",
   ],
 
-  automationImage: "",
+  automationImage: "/images/projects/ai-business-os/04-crm-gateway.webp",
 };
