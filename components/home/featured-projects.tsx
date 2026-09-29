@@ -7,8 +7,8 @@ import { FadeIn } from "@/components/animations/fade-in";
 
 const featuredSlugs = [
   "ai-business-os-multi-agent-operations",
+  "ai-revenue-intelligence-reporting-agent",
   "asternova-salesforce-revops-system",
-  "revenue-intelligence-production-simulation",
   "flowbridge-revops-crm-audit-agent",
 ];
 

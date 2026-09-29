@@ -502,121 +502,162 @@ export const projects: Project[] = [
 
 {
   slug: "ai-revenue-intelligence-reporting-agent",
-
-  title: "AI Revenue Intelligence & Reporting Agent",
-
+  title: "AI Revenue Intelligence & Reporting Agent V2",
   year: "2026",
-
   type: "Portfolio",
+  status: "In Progress",
+  category: "Revenue Operations",
 
-  category: "Operations",
+  platforms: [
+    "n8n",
+    "PostgreSQL",
+    "Docker",
+    "Groq",
+    "HubSpot",
+    "Salesforce",
+    "Airtable",
+    "Gmail",
+    "Slack",
+  ],
 
   description:
-    "Built a governed revenue intelligence system that turns manager questions into validated KPI requests, executes only approved parameterized SQL through read-only PostgreSQL access, and delivers auditable insights across Slack, web forms, REST API, and Power BI.",
+    "Built and locally validated a governed AI Revenue Intelligence platform that turns manager questions into authorized KPI analysis, uses deterministic security and query controls, synchronizes CRM data through reusable adapters, delivers reports through governed channels, and exposes a read-only operations Control Center for runtime health and connector status.",
 
   overview: [
-    "Built a governed self-service reporting system for Revenue Operations and business managers.",
-    "Accepts natural-language reporting questions through Slack, a manager form, and REST API.",
-    "Uses AI only for structured intent interpretation rather than unrestricted SQL generation.",
-    "Validates requested metrics, dimensions, filters, and reporting context against an approved KPI catalogue.",
-    "Maps approved requests to controlled SQL templates with safe runtime parameters.",
-    "Executes reporting queries through a least-privilege read-only PostgreSQL credential.",
-    "Routes approved results into management summaries, channel responses, Power BI reporting, and a traceable audit trail.",
-    "Centralizes error classification, recovery, escalation, alerting, and dead-letter handling.",
+    "Re-architected the original Revenue Intelligence workflow into a reusable Agent V2 with isolated local deployment, modular sub-workflows, PostgreSQL governance and explicit security boundaries.",
+    "Implemented a governed Revenue Question Pack with 37 KPI contracts across pipeline, revenue, forecast, velocity, performance, activity/SLA, CRM quality, funnel and retention use cases.",
+    "Activated a dedicated Groq intelligence adapter for structured intent interpretation and grounded management summaries while preserving deterministic fallback when the model is unavailable or returns invalid output.",
+    "Enforced identity, role, KPI, dimension, filter and data-scope authorization before report execution, with own, department and all-business access models.",
+    "Validated governed Gmail delivery end to end, including trusted server-side recipient resolution, audit events, request/correlation traceability and healthy delivery/reporting circuits.",
+    "Validated a live read-only HubSpot source and added guarded Salesforce and Airtable Opportunity adapters that remain fail-closed until their client-specific activation checks pass.",
+    "Implemented retries, circuit breakers, dead-letter handling, observability snapshots, bounded alerts, backup/recovery controls, upgrade/rollback tooling and static CI verification.",
+    "Added a local read-only Control Center that surfaces KPI count, CRM connector state, runtime health, circuit status, failures, dead letters and observability alerts without exposing mutation controls.",
+    "Passed the complete chained local regression covering runtime isolation, database security, semantic governance, identity/RBAC, REST ingestion, scheduled intelligence, reliability, observability and deployment health.",
   ],
 
   problem:
-    "Revenue and operations managers often need quick answers about revenue, pipeline, sales performance, deal stages, and lead sources. Manual reporting creates delays, while unrestricted AI-to-database approaches can introduce inconsistent KPI definitions, unsupported filters, arbitrary SQL execution, weak access controls, and poor auditability.",
+    "Revenue and operations managers need fast answers about pipeline, revenue, sales performance, CRM quality and follow-up risk, but ad-hoc reporting and unrestricted AI-to-database patterns create inconsistent KPI definitions, weak authorization, unsafe SQL generation, fragmented CRM data, poor failure recovery and limited operational visibility.",
 
   solution:
-    "Designed a governed reporting architecture in n8n where AI interprets a manager's request into structured intent, deterministic controls authorize the requested KPI and filters, an approved query resolver selects a predefined parameterized SQL template, and PostgreSQL permissions enforce the final data-access boundary. Results are validated, summarized, delivered through Slack, Form, or API, and logged with request and correlation identifiers for operational traceability.",
+    "Built Agent V2 as a governed reporting and Revenue Systems platform. AI is limited to interpreting the business question and summarizing already-approved facts; deterministic PostgreSQL functions, KPI policies, RBAC and query templates decide what can execute. CRM adapters normalize source records into a canonical contract, reliability controls protect repeated failures, delivery adapters resolve trusted destinations server-side, and a local read-only Control Center presents operational state without creating a privileged browser administration path.",
 
   architecture: [
-    "Manager request received through Slack, Form, or REST API",
-    "Normalize request into a common reporting contract",
-    "Create request and correlation context",
-    "Write initial request audit event",
-    "Interpret natural-language intent using structured AI output",
-    "Resolve requested metric against the governed KPI catalogue",
-    "Validate metric, filters, dimensions, dates, and reporting rules",
-    "Resolve an approved query key",
-    "Load the approved parameterized SQL template",
-    "Build deterministic runtime query parameters",
-    "Execute through the read-only PostgreSQL reporting role",
-    "Validate database results before presentation",
-    "Analyze and route the approved report",
-    "Generate a management-facing summary",
-    "Deliver through Slack, Form, or API",
-    "Write success and lifecycle audit events",
-    "Route operational failures into the centralized error-handling workflow",
+    "Manager request through authenticated API, Slack, Gmail delivery path or SSO-ready manager form",
+    "Server-bound caller identity and tenant-aware principal resolution",
+    "Groq structured-intent adapter with deterministic fallback",
+    "37-KPI semantic catalogue with governed dimensions, filters, periods and data-domain readiness",
+    "RBAC and own / department / all-business data-scope authorization",
+    "Approved deterministic query templates and bounded PostgreSQL execution",
+    "Canonical CRM deal contract shared by HubSpot, Salesforce, Airtable and REST ingestion",
+    "Dedicated Reporting Reader, Connector Writer and Audit Writer database boundaries",
+    "Management-summary and KPI-card / table / chart presentation layer",
+    "Governed Gmail and Slack delivery adapters with server-side destination policy",
+    "Reliability core: bounded retry, circuit breaker, dead letter and idempotent audit handling",
+    "Observability core: component status, runtime status, alert-ready rows and snapshot history",
+    "Local read-only Control Center for runtime, connectors, KPI coverage and alert visibility",
+    "Docker-isolated Agent V2 runtime on port 5681, separated from the protected legacy n8n environment",
   ],
 
   workflow: [
-    "Manager Request",
-    "Request Gateway",
-    "Normalize & Validate",
-    "Request Context",
-    "AI Intent Parser",
-    "KPI Catalogue",
-    "Governance Validation",
-    "Approved Query Resolver",
-    "Runtime Parameters",
-    "Approved SQL Template",
-    "Read-Only PostgreSQL",
-    "Result Validation",
-    "Management Analysis",
-    "Report Router",
-    "Slack / Form / API",
-    "Audit Trail",
+    "Receive Manager Question",
+    "Bind Authenticated Principal",
+    "Interpret Structured Intent",
+    "Validate KPI / Dimension / Filter / Period",
+    "Authorize Role & Data Scope",
+    "Execute Approved Governed Metric",
+    "Build Grounded Management Summary",
+    "Create KPI Card / Table / Chart Artifact",
+    "Route API / Slack / Gmail Delivery",
+    "Write Bounded Audit Events",
+    "Observe Reliability / Circuit / Dead-Letter State",
+    "Inspect System Through Local Control Center",
+  ],
+
+  governance: [
+    {
+      title: "AI / Authorization Separation",
+      description:
+        "The model can interpret intent and summarize governed facts, but it cannot choose credentials, roles, SQL, tables, tenants, recipients or authorization outcomes.",
+    },
+    {
+      title: "37-KPI Semantic Governance",
+      description:
+        "Approved KPI definitions, dimensions, filters, formulas, periods and query mappings are resolved deterministically before any reporting query executes.",
+    },
+    {
+      title: "Least-Privilege Database Roles",
+      description:
+        "Reporting Reader, Connector Writer and Audit Writer responsibilities are separated so no runtime credential receives unrestricted reporting and governance authority.",
+    },
+    {
+      title: "Fail-Closed CRM Activation",
+      description:
+        "HubSpot, Salesforce and Airtable use reusable source-neutral contracts, explicit activation gates and connector-specific validation rather than assuming every client CRM is ready.",
+    },
+    {
+      title: "Reliability & Incident Controls",
+      description:
+        "Bounded retries, circuit breakers, dead-letter persistence, conflict-safe audit writes and alert-ready observability surfaces make failure behavior visible and recoverable.",
+    },
+    {
+      title: "Read-Only Control Center",
+      description:
+        "The local dashboard uses Reporting RO only and exposes operational state without browser-side workflow mutation, credential access, arbitrary SQL or connector-write authority.",
+    },
+    {
+      title: "Deployment Isolation & Change Control",
+      description:
+        "Agent V2 is isolated from the protected legacy n8n deployment, uses explicit deployment confirmations and is covered by static GitHub Actions verification before merge.",
+    },
   ],
 
   automation: [
     {
-      title: "Manager Request",
+      title: "Governed Manager Request",
       description:
-        "Managers submit reporting questions through Slack, an authenticated web form, or REST API.",
+        "Authenticated manager questions enter one reusable Agent Core where identity and scope are bound before AI interpretation.",
       icon: "form",
     },
     {
-      title: "AI Intent Parser",
+      title: "Groq Intent & Summary Adapter",
       description:
-        "AI converts the natural-language question into structured reporting intent without generating executable SQL.",
+        "Dedicated AI sub-workflow interprets structured reporting intent and summarizes approved facts with deterministic fallback on provider failure.",
       icon: "bot",
     },
     {
-      title: "KPI Governance",
+      title: "Semantic KPI Authorization",
       description:
-        "Deterministic controls validate requested metrics, filters, dimensions, reporting dates, and approved query mappings.",
+        "The system validates 37 approved KPIs, dimensions, filters and data readiness before resolving a deterministic query path.",
       icon: "database",
     },
     {
-      title: "Approved Query",
+      title: "CRM Source Adapters",
       description:
-        "The workflow resolves an approved SQL template and builds parameterized runtime values instead of accepting arbitrary database queries.",
-      icon: "database",
+        "HubSpot, Salesforce, Airtable and REST paths normalize source records into one canonical deal contract with governed stage mapping and cursor controls.",
+      icon: "crm",
     },
     {
-      title: "PostgreSQL Boundary",
+      title: "Governed Multi-Channel Delivery",
       description:
-        "A dedicated read-only reporting credential executes approved queries while control and audit operations use separate permission boundaries.",
-      icon: "database",
+        "Reports can return through API, Slack or Gmail while destinations and recipients remain server-controlled rather than caller- or AI-controlled.",
+      icon: "email",
     },
     {
-      title: "Management Reporting",
+      title: "Reliability & Observability",
       description:
-        "Validated results are analyzed and transformed into clear management-facing reporting outputs.",
-      icon: "bot",
+        "Retries, circuits, dead letters, runtime snapshots and bounded alerts provide operational resilience and failure visibility.",
+      icon: "workspace",
     },
     {
-      title: "Multi-Channel Delivery",
+      title: "Local Operations Control Center",
       description:
-        "Approved reports are delivered through Slack, the manager form, or API response depending on the originating channel.",
-      icon: "slack",
+        "A read-only dashboard presents business configuration, KPI coverage, connector state, component health and active alerts from governed PostgreSQL surfaces.",
+      icon: "workspace",
     },
     {
-      title: "Audit & Reliability",
+      title: "Backup / Upgrade / Rollback Tooling",
       description:
-        "Request IDs, correlation IDs, lifecycle events, centralized error handling, recovery, escalation, and dead-letter logging provide traceability.",
+        "Guarded scripts support verified backups, restore drills, PostgreSQL upgrade rehearsal, immutable-image checkpoints and rollback validation.",
       icon: "database",
     },
   ],
@@ -625,7 +666,7 @@ export const projects: Project[] = [
     "/images/projects/revenue-intelligence/revint-system-architecture.png",
 
   automationImage:
-    "/images/projects/revenue-intelligence/revint-system-architecture.png",
+    "/images/projects/revenue-intelligence/revint-01-main-orchestrator-overview.webp",
 
   gallery: [
     {
@@ -633,114 +674,151 @@ export const projects: Project[] = [
         "/images/projects/revenue-intelligence/revint-system-architecture.png",
       title: "Governed Revenue Intelligence Architecture",
       description:
-        "Recruiter-facing architecture showing manager request channels, structured AI interpretation, KPI governance, approved query execution, PostgreSQL security boundaries, reporting delivery, auditing, and centralized error handling.",
+        "Architecture showing structured AI interpretation, KPI governance, approved execution, database security boundaries, delivery, observability and centralized reliability controls.",
     },
     {
       image:
         "/images/projects/revenue-intelligence/revint-02-approved-api-report.png",
       title: "Approved API Revenue Report",
       description:
-        "Successful governed API request returning closed-won revenue of 20,500 across two closed-won deals after passing reporting authorization and query controls.",
+        "Verified governed API request returning an approved KPI result after identity, semantic and query controls.",
     },
     {
       image:
         "/images/projects/revenue-intelligence/revint-03-safe-rejection.png",
       title: "Safe Unsupported-Request Rejection",
       description:
-        "Unsupported reporting intent is rejected safely rather than being converted into unrestricted SQL or an unauthorized database operation.",
-    },
-    {
-      image:
-        "/images/projects/revenue-intelligence/revint-08-powerbi-dashboard.png",
-      title: "Revenue Intelligence Power BI Dashboard",
-      description:
-        "Management dashboard presenting closed-won revenue, open pipeline, closed-won deals, win rate, sales-rep pipeline, lead-source revenue, deal stages, and open opportunities.",
+        "Unsupported reporting intent is rejected safely rather than becoming unrestricted SQL or an unauthorized database operation.",
     },
     {
       image:
         "/images/projects/revenue-intelligence/revint-09-audit-traceability.png",
       title: "Request Audit Traceability",
       description:
-        "A single manager request traced across request received, intent parsed, governance approved, and delivery succeeded events using consistent request and correlation identifiers.",
+        "A governed request traced through request, execution and delivery stages using consistent request and correlation identifiers.",
     },
     {
       image:
         "/images/projects/revenue-intelligence/revint-10-error-handler.png",
       title: "Centralized Error Handler",
       description:
-        "Dedicated n8n reliability workflow handling error normalization, incident identification, classification, recovery decisions, escalation, alerting, dead-letter persistence, and final auditing.",
+        "Reliability workflow for error normalization, retry policy, circuit handling, dead-letter persistence, escalation and final auditing.",
     },
   ],
 
   results: [
-    "Created governed self-service revenue reporting across Slack, web form, and REST API channels",
-    "Separated AI intent interpretation from query authorization and privileged database execution",
-    "Implemented a governed catalogue covering 12 revenue and pipeline KPI definitions",
-    "Restricted report execution to approved parameterized SQL templates",
-    "Enforced least-privilege PostgreSQL access through a dedicated read-only reporting role",
-    "Safely rejected unsupported and unauthorized reporting requests",
-    "Built Power BI reporting for revenue, pipeline, win rate, deal stages, lead sources, sales reps, and open opportunities",
-    "Added request and correlation IDs for end-to-end operational traceability",
-    "Implemented centralized error classification, recovery, escalation, alerting, and dead-letter handling",
-    "Published sanitized n8n workflow exports and verified implementation evidence in GitHub",
+    "Expanded the governed reporting catalogue from the original 12 metrics to 37 KPI contracts across nine Revenue Operations packs",
+    "Validated live Groq intent interpretation and management-summary generation with deterministic fail-soft fallback",
+    "Completed a real Agent Core → governed KPI → Gmail delivery → audit → reliability end-to-end production test",
+    "Validated a live read-only HubSpot connector and documented real source-data quality exceptions rather than treating missing values as zero",
+    "Implemented guarded Salesforce and Airtable Opportunity adapters with dedicated credential boundaries and fail-closed activation",
+    "Passed the full local regression chain covering runtime isolation, database security, semantic governance, RBAC, REST ingestion, scheduled intelligence, reliability and observability",
+    "Preserved protected legacy n8n on port 5678 while Agent V2 runs in an isolated Docker deployment on port 5681",
+    "Added a read-only local Control Center for KPI coverage, connector state, component health, circuit status, dead letters and observability alerts",
+    "Added GitHub Actions static verification for connector contracts, deployment guards, JSON validity, shell syntax and secret-like committed files",
+    "Documented reusable implementation, security, CRM rollout, handover and local production-hardening procedures for future client deployments",
+  ],
+
+  documentation: [
+    {
+      title: "Revenue Question Pack V2",
+      description:
+        "Documents the 37 governed KPI contracts, reusable data domains, supported reporting modes and data-readiness rules.",
+      href: "https://github.com/Nikkypwetti/ai-revenue-intelligence-agent/blob/main/docs/revenue-question-pack-v2.md",
+      status: "Completed",
+    },
+    {
+      title: "Reusable Security Gateway",
+      description:
+        "Documents caller identity binding, SSO/service-principal boundaries, edge controls and reusable security assumptions.",
+      href: "https://github.com/Nikkypwetti/ai-revenue-intelligence-agent/blob/main/docs/security-gateway.md",
+      status: "Completed",
+    },
+    {
+      title: "Local Control Dashboard",
+      description:
+        "Documents the read-only Agent V2 operations Control Center, its data surfaces, deployment guard and public-exposure restrictions.",
+      href: "https://github.com/Nikkypwetti/ai-revenue-intelligence-agent/blob/main/docs/control-dashboard-v2.md",
+      status: "Completed",
+    },
+    {
+      title: "First Client Implementation",
+      description:
+        "Maps the reusable Agent V2 core to the real HubSpot, AsterNova Salesforce and Airtable client stack with explicit source and activation boundaries.",
+      href: "https://github.com/Nikkypwetti/ai-revenue-intelligence-agent/blob/main/docs/first-client-implementation.md",
+      status: "Completed",
+    },
+    {
+      title: "Local Production Hardening",
+      description:
+        "Covers PostgreSQL upgrade rehearsal, bounded load testing, encrypted off-device backup strategy and local production-readiness criteria.",
+      href: "https://github.com/Nikkypwetti/ai-revenue-intelligence-agent/blob/main/docs/local-production-hardening.md",
+      status: "Completed",
+    },
   ],
 
   technologies: [
     technologies.n8n,
     technologies.postgresql,
-    technologies.powerbi,
     technologies.docker,
     technologies.groq,
+    technologies.hubspot,
+    technologies.salesforce,
+    technologies.airtable,
+    technologies.gmail,
     technologies.slack,
+    technologies.powerbi,
   ],
 
   metrics: [
-    "12 governed KPI definitions",
-    "3 manager request channels",
-    "3 published core n8n workflows",
-    "20,500 verified closed-won revenue",
-    "55,000 verified open pipeline",
-    "60.0% verified current-quarter win rate",
+    "37 governed KPI contracts",
+    "Full chained local regression passed",
+    "Governed Gmail end-to-end delivery verified",
+    "Live read-only HubSpot source validated",
+    "3 reusable CRM adapter paths",
+    "2 governed AI functions: intent + summary",
+    "Local read-only operations Control Center",
   ],
 
   stats: [
     {
-      value: 12,
+      value: 37,
       suffix: " KPIs",
-      label: "Governed Metrics",
+      label: "Governed Revenue Metrics",
     },
     {
       value: 3,
-      suffix: " channels",
-      label: "Manager Interfaces",
+      suffix: " CRM paths",
+      label: "Reusable Source Adapters",
     },
     {
-      value: 3,
-      suffix: " workflows",
-      label: "Published Core Workflows",
+      value: 2,
+      suffix: " AI modes",
+      label: "Intent & Grounded Summary",
     },
   ],
 
   before: [
-    "Managers rely on manual or ad-hoc reporting when they need answers about revenue, pipeline, sales performance, and lead sources",
-    "KPI definitions can vary between requests, creating inconsistent interpretations of the same business question",
-    "Natural-language reporting can encourage unsafe AI-to-database patterns where generated SQL is trusted too broadly",
-    "Requested filters, dimensions, and reporting periods may reach reporting logic without explicit governance checks",
-    "Reporting database credentials may have broader permissions than a management-reporting workflow actually requires",
-    "Query results may be returned without a consistent validation, management-summary, or presentation layer",
-    "Operational failures are difficult to trace when request context, workflow stages, and error events are disconnected",
-    "Reporting outputs and evidence are scattered across separate tools instead of following one auditable reporting process",
+    "Manager reporting depended on ad-hoc queries, scattered dashboards or manual CRM interpretation",
+    "The original large workflow concentrated too many responsibilities in one reporting orchestration",
+    "AI-to-database designs risked arbitrary SQL, unsupported metrics and weak authorization boundaries",
+    "CRM-specific field and stage differences could leak directly into reporting logic",
+    "Missing data could be misread as zero without explicit data-readiness policy",
+    "Failures lacked a unified retry, circuit, dead-letter and observability model",
+    "Delivery destinations could become tightly coupled to workflow logic",
+    "Operational state was distributed across n8n, PostgreSQL and connector configuration with no single read-only control surface",
   ],
 
   after: [
-    "Managers submit reporting questions through Slack, an authenticated form, or REST API into one governed reporting workflow",
-    "A governed KPI catalogue standardizes 12 revenue and pipeline metric definitions and their approved query mappings",
-    "AI converts the manager's question into structured intent, while deterministic controls decide what is authorized",
-    "Only approved parameterized SQL templates with validated runtime parameters are allowed to reach PostgreSQL",
-    "A dedicated read-only PostgreSQL reporting role enforces least-privilege access at the database boundary",
-    "Approved results are validated, analyzed, summarized, and routed into management-facing reporting outputs",
-    "Request IDs, correlation IDs, lifecycle events, and centralized error handling provide end-to-end operational traceability",
-    "Power BI, Slack, form, API, and audit outputs now operate as parts of the same governed and reusable reporting system",
+    "Agent V2 separates identity, AI interpretation, semantic authorization, execution, presentation, delivery, reliability and observability into reusable governed layers",
+    "Thirty-seven KPI contracts provide one controlled semantic reporting layer across nine Revenue Operations packs",
+    "AI interprets and summarizes, while deterministic controls authorize every executable reporting path",
+    "HubSpot, Salesforce, Airtable and REST ingestion map into a shared canonical deal contract instead of CRM-specific KPI logic",
+    "Unavailable source domains and missing required data return governed unavailable or rejected states rather than invented zero values",
+    "Retries, circuit breakers, dead letters and alert-ready observability make terminal failures visible and bounded",
+    "Gmail and Slack destinations are resolved server-side through governance instead of caller or AI input",
+    "A local read-only Control Center gives one operational view of KPI coverage, connectors, component health, circuits, failures and alerts",
+    "GitHub CI and explicit deployment guards support safer reusable client implementation and handover",
   ],
 
   github:
@@ -748,6 +826,7 @@ export const projects: Project[] = [
 
   demo: "",
 },
+
 
 
 
