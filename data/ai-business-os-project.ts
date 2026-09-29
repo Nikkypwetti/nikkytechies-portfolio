@@ -21,17 +21,17 @@ export const aiBusinessOsProject: Project = {
   category: "Business Systems",
 
   description:
-    "Designed and built a 40-workflow AI-powered Revenue Operations and Business Systems platform in n8n + PostgreSQL, coordinating 8 specialist agents across CRM, client operations, project delivery, communications, customer success, finance and RevOps analytics. Production-hardened the system with human approvals, idempotency, provider fallback, bounded recovery and guarded HubSpot/Gmail/Calendar/Salesforce integrations, then passed a 20/20 local production-readiness gate.",
+    "Designed and built a reusable AI-powered Revenue Operations and Business Systems platform in n8n + PostgreSQL, coordinating 8 specialist agents across CRM, client operations, project delivery, communications, customer success, finance and RevOps analytics. The last fully verified core release contained 54 governed production workflows / 646 documented nodes and passed 21/21 agent-access security, 11/11 RBAC & tenant-isolation checks, and 22/22 local production-readiness checks.",
 
   overview: [
     "Owned the system architecture end to end — from event routing and specialist-agent responsibilities to CRM controls, approval policies, integration contracts, error handling, recovery and production-readiness validation.",
-    "Built a 40-workflow production bundle spanning Sales CRM, Client Operations, Project Operations, Communications, Customer Success, Finance & Billing, RevOps Analytics, monitoring, approvals, integrations and recovery.",
+    "Built a last fully verified core bundle of 54 governed production workflows / 646 documented nodes spanning Sales CRM, Client Operations, Project Operations, Communications, Customer Success, Finance & Billing, RevOps Analytics, security, monitoring, approvals, integrations and recovery.",
     "Designed one Supervisor plus seven domain specialists so each business function has a clear operating boundary instead of relying on one unrestricted AI agent.",
     "Created a governed execution layer where state-changing actions must pass deterministic permission, required-field, risk, approval and business-rule checks before they can change CRM, communication or operational data.",
     "Implemented replay-safe automation using idempotency keys, durable action evidence and deterministic post-action evaluation so retries and repeated events do not silently create duplicate business side effects.",
     "Validated Groq as the primary reasoning provider with Google Gemini as an independent fallback across all eight reasoning workflows, reducing dependence on a single AI provider.",
     "Built and validated provider adapters for HubSpot, Salesforce, Gmail and Google Calendar; kept CRM routing provider-neutral so the system can change providers without rebuilding the entire operating model.",
-    "Completed a controlled local production cutover with PRODUCTION_READY=true and 20/20 checks while keeping public VPS/domain/TLS deployment explicitly separate until hosting is available.",
+    "Completed a controlled local core cutover with PRODUCTION_READY=true, 21/21 agent-access security, 11/11 RBAC & tenant-isolation checks and 22/22 readiness checks while keeping public VPS/domain/TLS deployment explicitly separate until hosting is available. A self-use Sales Ops monitoring extension is currently being wired and is not represented as complete until its n8n/UI regression tests pass.",
   ],
 
   problem:
@@ -147,13 +147,13 @@ export const aiBusinessOsProject: Project = {
       image: "/images/projects/ai-business-os/01-control-center.webp",
       title: "AI Business OS — Local Production Control Center",
       description:
-        "Recruiter-facing control center showing 20/20 local production readiness, 40 governed workflows, 8 specialist AI agents, integration readiness, safety controls, recovery state and the explicit local-production deployment boundary.",
+        "Recruiter-facing control center evidence from the earlier verified release; the current documented core has since advanced to 54 governed workflows / 646 nodes, 22/22 readiness, 21/21 agent-access security and 11/11 RBAC/tenant isolation.",
     },
     {
       image: "/images/projects/ai-business-os/02-production-readiness.webp",
-      title: "20/20 Production-Readiness Validation",
+      title: "Production-Readiness Validation Evidence",
       description:
-        "Canonical production-readiness validator confirming PRODUCTION_READY=true with all 20 checks passing across workflow packaging, provider fallback, integration gates, recovery state, production configuration and deployment safeguards.",
+        "Production-readiness evidence from the local validation sequence; the latest fully verified core release reports PRODUCTION_READY=true with 22/22 readiness checks plus separate agent-access and RBAC/tenant-security validators.",
     },
     {
       image: "/images/projects/ai-business-os/03-supervisor.webp",
@@ -212,8 +212,8 @@ export const aiBusinessOsProject: Project = {
   ],
 
   results: [
-    "Built a 40-workflow production bundle covering core Revenue Operations and Business Operations execution, governance, integrations, monitoring and recovery.",
-    "Passed the final local production-readiness validator with PRODUCTION_READY=true and 20/20 checks.",
+    "Built a last fully verified core bundle of 54 governed production workflows / 646 documented nodes covering Revenue Operations and Business Operations execution, governance, integrations, security, monitoring and recovery.",
+    "Passed the last fully verified core release with PRODUCTION_READY=true, 21/21 agent-access security, 11/11 RBAC & tenant-isolation checks, and 22/22 production-readiness checks.",
     "Validated all 8 reasoning agents with Groq primary and Google Gemini cross-provider fallback.",
     "Validated 4 external providers — HubSpot, Salesforce, Gmail and Google Calendar — through controlled staging-write evidence and replay/idempotency checks.",
     "Validated 8 exact-match recovery registrations for bounded retry/repair behavior instead of generic state-changing replay.",
@@ -235,17 +235,17 @@ export const aiBusinessOsProject: Project = {
   ],
 
   metrics: [
-    "40 production workflows across RevOps & Business Operations",
-    "20/20 local production-readiness checks passed",
+    "54 governed production workflows / 646 documented nodes",
+    "22/22 local production-readiness checks passed",
     "8 specialist reasoning agents with cross-provider fallback",
     "4 external integrations staging-write validated",
     "8 exact-match bounded recovery handlers",
   ],
 
   stats: [
-    { value: 40, suffix: " workflows", label: "Production Bundle" },
+    { value: 54, suffix: " workflows", label: "Verified Core Bundle" },
     { value: 8, suffix: " agents", label: "Specialist AI System" },
-    { value: 20, suffix: "/20", label: "Production Readiness" },
+    { value: 22, suffix: "/22", label: "Production Readiness" },
   ],
 
   before: [
@@ -265,7 +265,7 @@ export const aiBusinessOsProject: Project = {
     "All eight reasoning agents have validated Groq → Gemini provider fallback.",
     "Exact-match recovery handlers, DLQ and human escalation create a controlled failure path.",
     "A live read-only control dashboard exposes agent, integration, approval and recovery health.",
-    "The system reached a verified 20/20 local production-readiness gate without overstating public/VPS deployment.",
+    "The last fully verified core release reached 22/22 local production readiness with separate 21/21 agent-access and 11/11 RBAC/tenant-security validation, without overstating public/VPS deployment.",
   ],
 
   automationImage: "/images/projects/ai-business-os/04-crm-gateway.webp",
