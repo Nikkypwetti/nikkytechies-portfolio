@@ -19,12 +19,13 @@ A recruiter-focused portfolio for **Ganiyu Basirat Olanike**, combining 7+ years
 ## Featured Case Studies
 
 ### AI Business OS — Production-Hardened RevOps & Business Systems Platform
-- 40 governed production workflows across CRM, client operations, project delivery, communications, customer success, finance and RevOps analytics
+- Last fully verified core release: **54 governed production workflows / 646 documented nodes** across CRM, client operations, project delivery, communications, customer success, finance, RevOps analytics, security, approvals, integrations and recovery
 - 8 specialist AI agents with Groq primary reasoning and Gemini cross-provider fallback
 - Human approvals, deterministic guardrails, idempotency, replay-safe provider writes and bounded recovery
 - 5 integration adapters; HubSpot, Salesforce, Gmail and Google Calendar completed controlled staging-write validation
-- Passed the local production-readiness gate with **PRODUCTION_READY=true** and **20/20 checks**
+- Passed the last fully verified core release with **21/21 agent-access security**, **11/11 RBAC/tenant isolation**, and **22/22 production-readiness checks**
 - Detailed GitHub case study: [docs/ai-business-os/README.md](docs/ai-business-os/README.md)
+- Recruiter/client evidence pack: UAT checklist, client implementation checklist, CRM owner-mapping template, monitoring dashboard specification and demo script under `docs/ai-business-os/`
 - Live case study: https://nikkytechies-portfolio.vercel.app/projects/ai-business-os-multi-agent-operations
 
 ### FlowBridge RevOps CRM Audit & Lead Qualification Agent
