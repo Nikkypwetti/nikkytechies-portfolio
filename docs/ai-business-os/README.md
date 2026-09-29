@@ -2,11 +2,11 @@
 
 ![AI Business OS Control Center](../../public/images/projects/ai-business-os/00-control-center-hero.webp)
 
-A recruiter-facing technical case study for a **40-workflow AI-powered Revenue Operations and Business Systems platform** built with n8n and PostgreSQL.
+A recruiter-facing technical case study for a reusable **AI-powered Revenue Operations and Business Systems platform** built with n8n and PostgreSQL. The last fully verified core release contained **54 governed production workflows and 646 documented nodes**.
 
 The system coordinates **8 specialist AI agents** across CRM, client operations, project delivery, communications, customer success, finance and RevOps analytics, while keeping business-system changes behind deterministic controls, human approvals, idempotency and bounded recovery.
 
-> **Deployment status:** verified **local production** only. The system passed a **20/20 production-readiness gate**. Public VPS, domain and TLS deployment are intentionally deferred.
+> **Deployment status:** verified **local production core** only. The last fully verified core release passed **21/21 agent-access security**, **11/11 RBAC/tenant isolation**, and **22/22 production-readiness checks**. A new self-use Sales Ops monitoring layer is being wired locally; its database foundation is installed, but the n8n/UI wiring is not yet presented as complete. Public VPS, domain and TLS deployment are intentionally deferred.
 
 ## Why I Built It
 
@@ -29,12 +29,15 @@ I designed the AI Business OS as a governed operating layer rather than a collec
 
 | Area | Verified proof |
 | --- | --- |
-| Production workflows | **40** |
+| Production workflows | **54** |
 | Specialist reasoning agents | **8** |
 | Recovery handlers | **8 exact-match handlers** |
 | Integration adapters | **5** |
 | Controlled staging-write validated providers | **4 — HubSpot, Salesforce, Gmail, Google Calendar** |
-| Production-readiness gate | **20/20** |
+| Production nodes | **646** documented nodes |
+| Agent-access security | **21/21** |
+| RBAC & tenant isolation | **11/11** |
+| Production-readiness gate | **22/22** |
 | Cutover incident state | **0 recovery jobs, 0 unresolved errors, 0 unresolved DLQ** |
 
 ## Architecture
@@ -131,16 +134,16 @@ The canonical local validator confirms:
 
 ```text
 PRODUCTION_READY=true
-checks=20/20
+checks=22/22
 ```
 
-![20/20 Production Readiness](../../public/images/projects/ai-business-os/02-production-readiness.webp)
+![Production Readiness Evidence](../../public/images/projects/ai-business-os/02-production-readiness.webp)
 
-The validator checks workflow packaging, cross-provider fallback, integration gates, production flags, recovery state, backup availability, PostgreSQL/Redis production configuration, task-runner configuration, auth boundaries and disk headroom.
+The validator checks workflow packaging, cross-provider fallback, integration gates, production flags, recovery state, backup availability, PostgreSQL/Redis production configuration, task-runner configuration, authentication boundaries, RBAC/tenant security and disk headroom.
 
 ## Control Center
 
-I built a read-only local control surface that exposes live system proof without displaying credentials, tokens or customer message content.
+I built a local control surface that exposes system health and human sales approvals without displaying credentials or tokens. The verified core supports sales-rep inbox and approval actions through server-side identity headers. The next self-use extension adds lead activity actions and a consolidated Sales Ops monitoring view.
 
 It shows:
 - production readiness
@@ -152,6 +155,10 @@ It shows:
 - local demonstration records
 
 ![AI Business OS Control Center](../../public/images/projects/ai-business-os/01-control-center.webp)
+
+## Sales Operations Self-Use Extension
+
+The current local extension is designed to make the Business OS useful for my own lead handling as well as client demonstrations. The database/configuration layer now includes rep activity tracking, deduplicated Sales Ops alerts, owner-mapping health, SLA monitoring, `NO_CAPACITY` detection and a config-driven `solo_operator` mode. The remaining n8n/API/Control Center wiring is intentionally documented as **in progress** until it is published and regression-tested.
 
 ## Technology Stack
 
@@ -173,6 +180,14 @@ This project is evidence of how I approach **Revenue Operations, CRM/Business Sy
 - protect provider writes from duplicate replay
 - build for approvals, failure recovery and auditability
 - validate a system before calling it production-ready
+
+## Recruiter & Client Evidence Pack
+
+- [UAT Checklist](./UAT-CHECKLIST.md)
+- [Client Implementation Checklist](./CLIENT-IMPLEMENTATION-CHECKLIST.md)
+- [CRM Owner Mapping Template](./CRM-OWNER-MAPPING-TEMPLATE.md)
+- [Monitoring Dashboard Specification](./MONITORING-DASHBOARD-SPEC.md)
+- [Recruiter / Client Demo Script](./DEMO-SCRIPT.md)
 
 ## Links
 
