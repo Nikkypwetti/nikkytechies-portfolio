@@ -28,6 +28,14 @@ A recruiter-focused portfolio for **Ganiyu Basirat Olanike**, combining 7+ years
 - Recruiter/client evidence pack: UAT checklist, client implementation checklist, CRM owner-mapping template, monitoring dashboard specification and demo script under `docs/ai-business-os/`
 - Live case study: https://nikkytechies-portfolio.vercel.app/projects/ai-business-os-multi-agent-operations
 
+### HubSpot Revenue Operations Implementation — Business OS
+- Implemented HubSpot as a governed downstream CRM projection rather than duplicating core operating logic inside the CRM
+- Validated contact create/update, approved deal creation, contact–deal association, readback and idempotent replay
+- Verified logical-owner → HubSpot-owner mapping before provider ownership assignment
+- Preserved human deal approval and fail-closed mapping behavior
+- Detailed case study: [docs/hubspot-business-os-implementation.md](docs/hubspot-business-os-implementation.md)
+- Live project route after merge: /projects/hubspot-revenue-operations-business-os
+
 ### FlowBridge RevOps CRM Audit & Lead Qualification Agent
 - Translated fictional company requirements into a lifecycle-aware RevOps Agent Skill
 - Deterministic 100-point scoring model with explicit override precedence
