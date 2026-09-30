@@ -207,20 +207,6 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
       },
       {
         image:
-          "/images/projects/revenue-intelligence/v2/revint-v2-06-groq-summary-execution.webp",
-        title: "Groq Grounded Management Summary",
-        description:
-          "Live Agent V2 AI execution showing the management-summary path operating on already-governed report facts. AI can change wording, but it cannot change the authorized KPI value.",
-      },
-      {
-        image:
-          "/images/projects/revenue-intelligence/v2/revint-v2-04-email-delivery-response.webp",
-        title: "Governed Gmail Delivery — API Confirmation",
-        description:
-          "The same $1,200 governed open-pipeline fact routed through the Gmail delivery path, with Agent V2 confirming provider delivery after the report was authorized and generated.",
-      },
-      {
-        image:
           "/images/projects/revenue-intelligence/v2/revint-v2-07-received-gmail-report.webp",
         title: "Manager Received the Governed Revenue Report",
         description:
