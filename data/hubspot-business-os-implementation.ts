@@ -3,124 +3,287 @@ import { technologies } from "./technologies";
 
 export const hubspotBusinessOsImplementation: Project = {
   slug: "hubspot-revenue-operations-business-os",
-  title: "HubSpot Revenue Operations Implementation — Business OS",
+  title: "HubSpot Revenue Operations & CRM Systems Implementation — Business OS",
   year: "2026",
   type: "Implementation Case Study",
   status: "Completed",
   category: "Revenue Operations",
-  platforms: ["HubSpot", "n8n", "PostgreSQL", "Human Approval", "CRM Integration"],
+  platforms: [
+    "HubSpot",
+    "n8n",
+    "PostgreSQL",
+    "CRM Operations",
+    "Human Approval",
+    "Incident Recovery",
+  ],
 
   description:
-    "Implemented HubSpot as a governed downstream CRM projection for the AI Business OS, validating contact and deal operations, qualification fields, verified owner mapping, human deal approval, readback and idempotent replay without hard-coding the operating model into the CRM.",
+    "Designed and validated the HubSpot CRM operating layer connected to the AI Business OS: governed lead projection, verified ownership, CRM-first rep workflow, qualification context, replay-safe writes, provider readback, incident recovery and human-controlled deal progression.",
+
+  recruiterSummary: {
+    headline:
+      "HubSpot implementation with CRM ownership, lead routing, data governance, human deal control, idempotency and production-style incident recovery.",
+    valueProposition:
+      "This case study shows that I can work beyond HubSpot configuration alone. I connected CRM administration to the wider Revenue Operations process: authoritative lead state, qualification, routing, owner mapping, rep notification, CRM projection, deal-approval governance, provider verification and failure recovery. The result is a reusable HubSpot operating pattern that keeps reps working in CRM while business rules and audit controls remain governed outside the provider.",
+    ownership: [
+      "Designed the HubSpot projection contract and kept PostgreSQL as the authoritative Business OS state rather than duplicating business policy inside provider-specific workflows.",
+      "Mapped logical sales ownership to a verified HubSpot owner before assigning records and built the CRM-first path around the rep's actual CRM workspace.",
+      "Implemented the v3 contact upsert path, qualification-property mapping, provider readback and integration action logging.",
+      "Kept material deal creation behind a human approval boundary and preserved the current clean lead in PENDING approval rather than forcing a happy-path deal.",
+      "Diagnosed and remediated two real provider failures: an HTTP-method configuration defect and a CRM schema problem caused by an incorrectly unique lead-score field.",
+      "Preserved incident and dead-letter evidence, verified the repaired contact in HubSpot and PostgreSQL, and closed the failures as RESOLVED only after successful remediation.",
+    ],
+    liveProof: [
+      "Controlled CRM-first validation projected the canonical qualified lead into HubSpot as contact 880647909565.",
+      "HubSpot readback confirmed the expected company, owner, qualification status/reason, budget, primary need, phone and lifecycle context.",
+      "PostgreSQL integration_action_log recorded the same contact ID with SUCCESS and audit action a44ae785-58bf-44cc-abcb-d11d7d42b0d3.",
+      "The numeric score of 75 remained authoritative in Business OS/PostgreSQL and in the qualification explanation after the existing HubSpot lead_score property was found to be incorrectly constrained as unique.",
+      "Executions 17060 and 17143 were captured as provider incidents, escalated into the DLQ, remediated and marked RESOLVED with the successful provider action attached.",
+      "The current clean CRM-first path intentionally stops at human deal approval; no deal was created without a sales decision.",
+    ],
+    roleFit: [
+      "HubSpot Administration",
+      "CRM Operations",
+      "Revenue Operations",
+      "Sales Operations",
+      "Revenue Systems",
+      "Business Systems",
+      "GTM Operations",
+    ],
+  },
 
   overview: [
-    "Kept PostgreSQL authoritative while HubSpot receives approved downstream CRM projections.",
-    "Validated contact create/update, deal creation, contact–deal association and provider readback through the reusable CRM projection layer.",
-    "Mapped Business OS qualification context into HubSpot properties for lead score, qualification status/reason, budget and primary-need visibility.",
-    "Resolved the logical sales owner to a verified HubSpot owner before provider writes instead of assigning an arbitrary CRM user.",
-    "Protected successful provider actions with idempotency evidence so replay reuses the prior result rather than duplicating CRM records.",
-    "Kept material deal creation behind the Business OS human-approval boundary.",
+    "Implemented HubSpot as the sales-facing CRM projection while PostgreSQL remains the authoritative Business OS state.",
+    "Connected the CRM-first sales path from canonical lead qualification and routing through verified HubSpot owner mapping, contact projection, provider readback and rep work context.",
+    "Mapped qualification status, qualification reason, budget confirmation, budget range, primary need and need details into HubSpot for practical sales visibility.",
+    "Kept the numeric lead score authoritative in PostgreSQL after discovering that the existing HubSpot lead_score property had been configured as unique and therefore could not safely represent repeated scores.",
+    "Protected successful provider writes with stable idempotency evidence so a retry can reuse or reconcile the same business operation rather than creating duplicate CRM state.",
+    "Kept material deal creation behind the Business OS human-approval boundary; the current clean lead remains a protected pending commercial decision.",
+    "Validated production-style failure handling by preserving provider errors in incident and dead-letter records, correcting the root causes, verifying the repaired CRM write and closing the incidents without deleting history.",
   ],
 
   problem:
-    "A CRM integration becomes brittle when qualification, routing, ownership and approval logic are duplicated inside provider-specific workflows. That also increases the risk of wrong-owner assignments and duplicate records during retries. The goal was to connect HubSpot without turning it into the source of truth for the Business OS operating model.",
+    "A HubSpot implementation becomes fragile when qualification, routing, ownership, approval and recovery logic are scattered across provider-specific workflows. That creates wrong-owner risk, duplicate writes, inconsistent CRM fields and weak auditability. The goal was to make HubSpot useful as the rep workspace while keeping the underlying Revenue Operations policy reusable, governed and recoverable.",
 
   solution:
-    "Used the provider-neutral Business OS CRM projection layer to translate approved internal state into HubSpot contact and deal operations. Logical sales ownership is resolved against a verified owner mapping before write execution, provider results are read back and logged, and stable idempotency evidence prevents duplicate replay. This keeps the client-specific HubSpot configuration replaceable while the core Revenue Operations policy remains reusable.",
+    "I implemented HubSpot behind the Business OS provider-neutral CRM projection layer. Canonical lead state is qualified and routed before provider execution, the logical sales identity is resolved to a verified HubSpot owner, the contact is upserted through a bounded provider action, the response is normalized and written to the integration audit ledger, and material deal creation remains human-controlled. When the provider failed, the same architecture preserved the incident, allowed root-cause remediation and supported a controlled retry against the same canonical lead.",
 
   architecture: [
-    "Lead intake and qualification in Business OS",
-    "Capacity-aware logical sales owner",
-    "Human decision for deal eligibility",
-    "Provider-neutral CRM projection",
-    "Verified HubSpot owner resolution",
-    "Contact create/update",
-    "Approved deal creation",
-    "Contact–deal association",
-    "Provider readback",
-    "Idempotency and integration-action evidence",
+    "Inbound lead → canonical Business OS lead in PostgreSQL",
+    "Deterministic qualification and routing",
+    "Logical sales owner → verified HubSpot owner mapping",
+    "Provider-neutral CRM projection decision",
+    "HubSpot v3 contact upsert keyed by email",
+    "Provider response normalization and CRM record URL",
+    "Integration action log with provider object ID",
+    "Rep notification / CRM-first work context",
+    "Human deal-eligibility decision",
+    "Approved deal creation path only after human decision",
+    "Provider error → incident → dead letter → remediation → verified retry → resolved audit trail",
   ],
 
   workflow: [
-    "Qualify Lead",
-    "Resolve Logical Owner",
-    "Notify / Review",
-    "Approve Deal Eligibility",
-    "Project Contact to HubSpot",
-    "Create Approved Deal",
-    "Associate Contact & Deal",
-    "Read Back Provider State",
-    "Persist Integration Evidence",
-    "Reuse Prior Success on Replay",
+    "Normalize Canonical Lead State",
+    "Qualify and Route Lead",
+    "Resolve Verified HubSpot Owner",
+    "Check Integration and Write Gates",
+    "Check Idempotency Evidence",
+    "Upsert HubSpot Contact",
+    "Normalize Provider Result",
+    "Persist Integration Audit",
+    "Notify Assigned Rep",
+    "Hold Deal Progression for Human Approval",
+    "Recover Provider Failure Without Duplicating Canonical State",
   ],
 
   automation: [
-    { title: "Contact Projection", description: "Creates or updates the approved HubSpot contact representation from authoritative Business OS state.", icon: "crm" },
-    { title: "Owner Resolution", description: "Maps the logical sales owner to a verified HubSpot owner and fails closed when a required mapping is unavailable.", icon: "database" },
-    { title: "Human Deal Approval", description: "Keeps deal eligibility as a human-controlled commercial decision before the provider deal write.", icon: "workspace" },
-    { title: "Idempotent Provider Writes", description: "Reuses durable successful action evidence on replay instead of creating duplicate HubSpot side effects.", icon: "database" },
-    { title: "Provider Readback", description: "Verifies the downstream CRM result and records integration evidence for troubleshooting and auditability.", icon: "crm" },
+    {
+      title: "CRM-First Contact Projection",
+      description:
+        "Projects the approved canonical lead into HubSpot so the sales rep receives a usable CRM record without moving business authority into provider-specific workflow logic.",
+      icon: "crm",
+    },
+    {
+      title: "Verified Owner Resolution",
+      description:
+        "Maps the logical Business OS sales owner to a verified HubSpot owner ID before CRM assignment and fails closed when a required mapping is unavailable.",
+      icon: "database",
+    },
+    {
+      title: "Human Deal Approval",
+      description:
+        "Keeps commercial deal eligibility as a human-controlled decision; the current clean test intentionally stops at PENDING approval with no unauthorized deal creation.",
+      icon: "workspace",
+    },
+    {
+      title: "Replay-Safe Provider Writes",
+      description:
+        "Uses stable idempotency and durable integration evidence so recovery targets the same business action instead of creating duplicate provider records.",
+      icon: "database",
+    },
+    {
+      title: "Provider Readback & Audit",
+      description:
+        "Normalizes the HubSpot response, captures the provider object ID and record URL, and persists the success in PostgreSQL for traceability.",
+      icon: "crm",
+    },
+    {
+      title: "Incident & DLQ Recovery",
+      description:
+        "Routes provider failures into centralized incident and dead-letter handling, preserves the failure evidence, and closes the records only after the repaired action is verified.",
+      icon: "database",
+    },
   ],
 
   governance: [
-    { title: "Authoritative-State Boundary", description: "PostgreSQL remains authoritative; HubSpot is a governed downstream projection." },
-    { title: "Verified Owner Mapping", description: "Provider ownership is resolved through explicit verified mappings rather than display-name guessing." },
-    { title: "Human Commercial Control", description: "Deal creation remains subject to the Business OS approval policy." },
-    { title: "Replay Safety", description: "Stable idempotency and provider evidence prevent duplicate success replay." },
+    {
+      title: "Authoritative-State Boundary",
+      description:
+        "PostgreSQL remains authoritative for Business OS lead state; HubSpot is the governed sales-facing projection.",
+    },
+    {
+      title: "Verified Owner Mapping",
+      description:
+        "Provider ownership is resolved through explicit CRM owner mappings rather than display-name guessing or arbitrary assignment.",
+    },
+    {
+      title: "Human Commercial Control",
+      description:
+        "Contact visibility can be automated, but material deal creation remains subject to the Business OS approval policy.",
+    },
+    {
+      title: "CRM Field Governance",
+      description:
+        "Provider fields are treated as governed implementation details. When the existing HubSpot lead_score field proved unsafe because it enforced uniqueness, the integration stopped projecting that numeric field rather than corrupting CRM data.",
+    },
+    {
+      title: "Replay Safety & Evidence",
+      description:
+        "Stable idempotency keys, provider object IDs and integration logs make retries traceable and protect against duplicate business side effects.",
+    },
+    {
+      title: "Audit-Preserving Recovery",
+      description:
+        "Failed executions, incidents and dead-letter records are retained as evidence and moved to RESOLVED only after the remediation is verified.",
+    },
   ],
 
   heroImage: "/images/projects/ai-business-os/08-hubspot-adapter.webp",
+
   gallery: [
     {
       image: "/images/projects/ai-business-os/08-hubspot-adapter.webp",
       title: "Governed HubSpot CRM Adapter",
-      description: "Reusable HubSpot adapter with integration gating, owner resolution, idempotent execution, provider-result handling and centralized error routing.",
+      description:
+        "Reusable HubSpot adapter with integration gating, idempotency checks, CRM action routing, normalized provider results, durable success logging and centralized provider-error handling. Additional live CRM-first evidence will be added from the verified 2026-09-30 remediation run.",
     },
   ],
 
   results: [
-    "Validated controlled HubSpot contact create/update and provider readback.",
-    "Validated approved deal creation and contact–deal association.",
-    "Verified logical owner mapping before provider ownership assignment.",
-    "Validated qualification-property mapping for downstream CRM visibility.",
-    "Validated idempotent replay so prior provider success is reused rather than duplicated.",
-    "Kept the implementation provider-neutral and reusable for future client-specific HubSpot configuration.",
+    "Projected the current CRM-first qualified lead into HubSpot as contact 880647909565 and independently verified the record by email readback.",
+    "Verified HubSpot ownership, company, phone, qualification status/reason, budget context, primary need and lifecycle-stage data on the created contact.",
+    "Recorded the successful upsert in PostgreSQL integration_action_log with provider_object_id 880647909565 and audit action a44ae785-58bf-44cc-abcb-d11d7d42b0d3.",
+    "Kept the lead's numeric score of 75 authoritative in Business OS/PostgreSQL after identifying that the existing HubSpot lead_score field was incorrectly configured as unique; the qualification explanation still preserves the scoring rationale for sales context.",
+    "Captured the first failed retry as an incident when the HTTP Request node had not persisted POST, corrected the method, and preserved the failure record rather than deleting it.",
+    "Captured the second provider failure when HubSpot rejected the repeated lead_score value, diagnosed the CRM schema issue, removed the unsafe provider field from the projection and retried the same canonical lead successfully.",
+    "Moved both related error_events and dead_letter_queue records to RESOLVED with remediation notes and the successful provider action attached.",
+    "Maintained the protected commercial boundary: the current clean lead remains at human deal approval and no deal was created without authorization.",
+    "Earlier controlled implementation tests separately validated approved HubSpot deal creation and contact–deal association; the current CRM-first proof deliberately demonstrates the governed pre-deal operating path.",
+  ],
+
+  interviewTalkingPoints: [
+    {
+      question: "Give me the 30-second overview.",
+      answer:
+        "I implemented HubSpot as the sales-facing CRM layer of a governed Revenue Operations system. Leads are qualified and routed in the Business OS, mapped to a verified HubSpot owner, projected into HubSpot through a replay-safe adapter, and then worked by the rep in CRM. The system keeps deal creation behind human approval and preserves provider failures through incident and dead-letter handling instead of hiding them.",
+    },
+    {
+      question: "Why did you keep PostgreSQL authoritative instead of making HubSpot the source of truth?",
+      answer:
+        "The operating rules need to remain reusable across CRM providers. Qualification, routing, approvals, idempotency and recovery belong to the Business OS, while HubSpot represents the sales-facing CRM state. That separation lets the same operating model support a different client CRM without rebuilding the core process.",
+    },
+    {
+      question: "How did you handle CRM ownership?",
+      answer:
+        "The Business OS routes to a logical sales identity first. Before the HubSpot write, that identity is resolved to a verified HubSpot owner ID. If the mapping is missing, the integration can fail closed instead of assigning the record to the wrong user.",
+    },
+    {
+      question: "What went wrong during validation and how did you fix it?",
+      answer:
+        "The first provider retry failed because the HTTP Request node had not persisted POST. After fixing that, HubSpot rejected the contact because the existing lead_score property had been configured as unique, so another contact already owned the value 75. I removed that unsafe field from the provider projection, kept the score authoritative in PostgreSQL, retried the same canonical lead and verified the successful contact and audit record.",
+    },
+    {
+      question: "How did you avoid turning the retry into a duplicate-record problem?",
+      answer:
+        "The retry used the same canonical lead and stable idempotency key. The repaired operation was verified against the returned HubSpot object ID and logged in the integration action ledger, so the recovery story is tied to one business entity rather than a new test record for every failure.",
+    },
+    {
+      question: "Why didn't you create the deal during the final test?",
+      answer:
+        "Because the design intentionally separates contact visibility from a commercial decision. The qualified lead can be routed and made available to the rep, but deal eligibility remains a human approval. Preserving the pending approval demonstrates the control boundary more accurately than forcing a deal just to make the demo look successful.",
+    },
+    {
+      question: "What does this show for a HubSpot or RevOps role?",
+      answer:
+        "It shows CRM administration in context: owner mapping, field governance, lead qualification visibility, sales workflow design, provider integration, idempotency, human approvals, incident recovery and auditability. The focus is making the CRM reliable for the sales process, not simply connecting an automation tool to HubSpot.",
+    },
   ],
 
   documentation: [
     {
       title: "HubSpot Revenue Operations Implementation",
-      description: "Technical and business-facing implementation summary for the governed HubSpot projection layer.",
+      description:
+        "Business-facing and technical implementation summary covering the CRM-first operating model, provider controls, current proof and incident remediation.",
       href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/hubspot-business-os-implementation.md",
+      status: "Completed",
+    },
+    {
+      title: "AI Business OS Technical Case Study",
+      description:
+        "Parent architecture and governance documentation for the reusable Business OS that owns qualification, routing, approvals, provider controls and recovery.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/ai-business-os/README.md",
       status: "Completed",
     },
   ],
 
-  technologies: [technologies.hubspot, technologies.n8n, technologies.postgresql],
-  metrics: [
-    "Controlled contact + deal E2E validated",
-    "7 qualification/business fields verified",
-    "Verified owner mapping + idempotent replay",
+  technologies: [
+    technologies.hubspot,
+    technologies.n8n,
+    technologies.postgresql,
   ],
+
+  metrics: [
+    "CRM-first HubSpot contact projection + live provider readback verified",
+    "Verified owner mapping and governed qualification context",
+    "2 provider incidents captured, remediated and resolved",
+    "Human deal approval preserved with no unauthorized deal creation",
+  ],
+
   stats: [
-    { value: 2, suffix: " objects", label: "Contact + Deal E2E" },
-    { value: 7, suffix: " fields", label: "Qualification Context" },
+    { value: 1, suffix: " contact", label: "Current CRM-First Projection" },
+    { value: 2, suffix: " incidents", label: "Recovered & Resolved" },
     { value: 1, suffix: " gate", label: "Human Deal Approval" },
   ],
+
   before: [
-    "Provider-specific CRM logic could become tightly coupled to the operating process.",
-    "Owner assignment is risky when logical sales identities are not mapped to verified CRM users.",
-    "Blind retries can create duplicate contact or deal side effects.",
-    "Material deal creation should not be delegated to an unrestricted AI decision.",
+    "CRM provider logic risked becoming tightly coupled to qualification, routing and approval policy.",
+    "Owner assignment could be unsafe if logical sales identities were not mapped to verified CRM users.",
+    "A provider failure could be hidden by simply rerunning a workflow with a new test record.",
+    "A misconfigured CRM field could block otherwise valid sales records or corrupt downstream data.",
+    "Material deal creation should not be delegated to an unrestricted automation or AI decision.",
   ],
+
   after: [
-    "HubSpot operates as a downstream projection of authoritative Business OS state.",
-    "Verified owner mapping controls downstream CRM ownership.",
-    "Human deal approval remains part of the commercial control path.",
-    "Idempotency and provider evidence make successful CRM writes replay-safe.",
-    "Client-specific HubSpot fields, owners and stages can be configured without redesigning the Business OS core.",
+    "HubSpot operates as the sales-facing projection of authoritative Business OS lead state.",
+    "Verified owner mapping controls downstream CRM assignment.",
+    "The same canonical lead can be recovered through stable idempotency and provider evidence instead of creating throwaway duplicates.",
+    "CRM field-model defects are surfaced as governance issues and corrected at the integration boundary rather than silently forcing bad data.",
+    "Provider failures are retained as incidents and dead-letter evidence, then explicitly resolved after successful remediation.",
+    "Human deal approval remains part of the commercial control path while reps can work the qualified contact in HubSpot.",
   ],
+
   automationImage: "/images/projects/ai-business-os/08-hubspot-adapter.webp",
-  github: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/hubspot-business-os-implementation.md",
+  github:
+    "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/hubspot-business-os-implementation.md",
   demo: "",
 };

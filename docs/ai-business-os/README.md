@@ -1,4 +1,4 @@
-# AI Business OS — Production-Hardened RevOps & Business Systems Platform
+# AI Business OS — Governed Revenue Operations & Business Systems Platform
 
 ![AI Business OS Control Center](../../public/images/projects/ai-business-os/00-control-center-hero.webp)
 
@@ -6,7 +6,7 @@ A recruiter-facing technical case study for a reusable **AI-powered Revenue Oper
 
 The system coordinates **8 specialist AI agents** across CRM, client operations, project delivery, communications, customer success, finance and RevOps analytics, while keeping business-system changes behind deterministic controls, human approvals, idempotency and bounded recovery.
 
-> **Deployment status:** verified **local production core** only. The last fully verified core release passed **21/21 agent-access security**, **11/11 RBAC/tenant isolation**, and **22/22 production-readiness checks**. A new self-use Sales Ops monitoring layer is being wired locally; its database foundation is installed, but the n8n/UI wiring is not yet presented as complete. Public VPS, domain and TLS deployment are intentionally deferred.
+> **Deployment status:** verified **local production-style core**. The last fully verified core release passed **21/21 agent-access security**, **11/11 RBAC/tenant isolation**, and **22/22 production-readiness checks**. The CRM-first Sales Ops extension is now implemented locally and has been validated through a controlled lead-to-HubSpot path with rep notifications, human deal approval, provider audit evidence and incident remediation. Public VPS, domain and TLS deployment remain intentionally deferred.
 
 ## Why I Built It
 
@@ -38,7 +38,7 @@ I designed the AI Business OS as a governed operating layer rather than a collec
 | Agent-access security | **21/21** |
 | RBAC & tenant isolation | **11/11** |
 | Production-readiness gate | **22/22** |
-| Cutover incident state | **0 recovery jobs, 0 unresolved errors, 0 unresolved DLQ** |
+| Core cutover snapshot incident state | **0 recovery jobs, 0 unresolved errors, 0 unresolved DLQ** |
 
 ## Architecture
 
@@ -128,6 +128,46 @@ The Recovery Queue Worker claims due work, validates the registered recovery con
 
 ![Recovery Queue Worker](../../public/images/projects/ai-business-os/06-recovery-worker.webp)
 
+
+
+## CRM-First Sales Operations Validation
+
+The Business OS now includes a CRM-first sales operating path designed so a sales rep can work primarily in the configured CRM while the operating layer handles governance and exceptions behind the scenes.
+
+```text
+Google Form / inbound lead
+   ↓
+Canonical PostgreSQL lead
+   ↓
+Qualification + routing
+   ↓
+Verified CRM owner mapping
+   ↓
+CRM contact projection
+   ↓
+Rep notification + follow-up SLA
+   ↓
+Human deal-eligibility approval
+   ↓
+Approved deal action only when authorized
+```
+
+A controlled validation produced a **75/100 qualified lead**, routed it to the configured sales owner, assigned a **24-hour follow-up SLA**, delivered both lead-assignment and deal-approval notifications, and held the commercial decision in **PENDING** state instead of creating a deal without authorization.
+
+The repaired HubSpot projection created and read back contact **880647909565**. PostgreSQL recorded the same provider object ID as a successful integration action.
+
+### Production-style failure and recovery evidence
+
+The HubSpot validation exposed two real integration defects:
+
+1. the HTTP Request action had not persisted the required POST method
+2. the existing HubSpot `lead_score` custom property had been configured as unique, which is not appropriate for a repeatable lead score
+
+Both failures were captured by the canonical error path, escalated into dead-letter records and preserved for audit. After the root causes were corrected, the same canonical lead was retried successfully. The related error and dead-letter records were then marked **RESOLVED** with remediation notes pointing to the successful provider action.
+
+This is intentional recruiter/client evidence: the project demonstrates not only a happy path, but how I diagnose, recover and close production-style Revenue Systems incidents without deleting history or creating throwaway duplicate business records.
+
+
 ## Production-Readiness Evidence
 
 The canonical local validator confirms:
@@ -158,7 +198,7 @@ It shows:
 
 ## Sales Operations Self-Use Extension
 
-The current local extension is designed to make the Business OS useful for my own lead handling as well as client demonstrations. The database/configuration layer now includes rep activity tracking, deduplicated Sales Ops alerts, owner-mapping health, SLA monitoring, `NO_CAPACITY` detection and a config-driven `solo_operator` mode. The remaining n8n/API/Control Center wiring is intentionally documented as **in progress** until it is published and regression-tested.
+The local extension makes the Business OS usable for day-to-day lead handling as well as client demonstrations. It includes rep activity tracking, deduplicated Sales Ops alerts, owner-mapping health, SLA monitoring, `NO_CAPACITY` detection, a config-driven `solo_operator` mode, protected sales activity APIs and a Sales Ops Control Center view. The CRM-first validation confirms that the extension can work with HubSpot as the rep workspace while the Business OS remains responsible for policy, monitoring, approvals and recovery.
 
 ## Technology Stack
 
