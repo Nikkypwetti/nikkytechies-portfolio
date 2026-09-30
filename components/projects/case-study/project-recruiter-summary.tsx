@@ -17,7 +17,7 @@ export function ProjectRecruiterSummary({ summary }: Props) {
     <section className="space-y-8 rounded-3xl border bg-card p-7 md:p-10">
       <div className="space-y-3">
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-          Recruiter Summary
+          Why This Project Matters
         </p>
         <h2 className="max-w-4xl text-3xl font-bold">{summary.headline}</h2>
         <p className="max-w-4xl text-lg leading-8 text-muted-foreground">
