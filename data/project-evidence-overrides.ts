@@ -173,37 +173,79 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
 
   "ai-revenue-intelligence-reporting-agent": {
     heroImage:
-      "/images/projects/revenue-intelligence/revint-v2-01-control-center-healthy.webp",
+      "/images/projects/revenue-intelligence/v2/revint-v2-01-control-center-healthy.png",
     automationImage:
-      "/images/projects/revenue-intelligence/revint-v2-03-groq-intent-execution.webp",
+      "/images/projects/revenue-intelligence/v2/revint-v2-02-hubspot-live-sync.png",
     gallery: [
       {
         image:
-          "/images/projects/revenue-intelligence/revint-v2-01-control-center-healthy.webp",
-        title: "Agent V2 Control Center — Healthy Runtime",
+          "/images/projects/revenue-intelligence/v2/revint-v2-01-control-center-healthy.png",
+        title: "Live Agent V2 Control Center — Healthy Runtime",
         description:
-          "Live evidence from the rebuilt Agent V2 operations surface: HEALTHY overall status, 37 governed KPI contracts, 6 active managed components, 0 open dead letters, HubSpot and REST ingestion active, and Salesforce/Airtable intentionally safe-disabled.",
+          "Current rebuilt Agent V2 operational evidence showing HEALTHY overall status, 37 governed KPIs, 6 active managed components, zero open dead letters, zero recent failures, HubSpot and REST active, and Salesforce/Airtable intentionally safe-disabled.",
       },
       {
         image:
-          "/images/projects/revenue-intelligence/revint-v2-03-groq-intent-execution.webp",
-        title: "Agent V2 — Live Groq Intent Execution",
+          "/images/projects/revenue-intelligence/v2/revint-v2-03-live-api-governed-report.png",
+        title: "Live Governed Revenue Question",
         description:
-          "Live REVINT-V2-AI-01 execution from the rebuilt architecture. The green path shows governed AI policy loading, the intent-enabled gate, Groq Intent Model, schema-constrained reporting-intent parsing, and normalized intent before deterministic KPI authorization.",
+          "Authenticated Agent V2 API request for open pipeline this month returning the deterministic governed result of $1,200 USD together with the management summary and KPI-card presentation artifact.",
       },
       {
         image:
-          "/images/projects/revenue-intelligence/revint-v2-08-hubspot-live-sync.webp",
-        title: "Agent V2 — Live HubSpot Incremental Sync",
+          "/images/projects/revenue-intelligence/v2/revint-v2-04-email-delivery-response.png",
+        title: "Governed Gmail Delivery — API Confirmation",
         description:
-          "Live rebuilt HubSpot adapter showing the full successful path from manual trigger through governed sync context, bounded read-only HubSpot search, deterministic normalization, controlled canonical batch ingestion, and audited sync completion.",
+          "The same $1,200 governed open-pipeline fact routed through the Gmail delivery path, with Agent V2 confirming provider delivery after the report was authorized and generated.",
       },
       {
         image:
-          "/images/projects/revenue-intelligence/revint-v2-06-security-403.webp",
-        title: "Agent V2 Security — Unauthenticated Request Rejected",
+          "/images/projects/revenue-intelligence/v2/revint-v2-05-groq-intent-execution.png",
+        title: "Groq Structured Intent Execution",
         description:
-          "Live security evidence from the rebuilt report API. A request to the governed revenue endpoint without the required report credential is rejected with HTTP 403 before report execution.",
+          "Live REVINT-V2-AI-01 execution showing policy loading, AI routing, Groq reporting-intent parsing and normalized structured intent before deterministic KPI authorization and database execution.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/v2/revint-v2-06-groq-summary-execution.png",
+        title: "Groq Grounded Management Summary",
+        description:
+          "Live Agent V2 AI execution showing the management-summary path operating on already-governed report facts. AI can change wording, but it cannot change the authorized KPI value.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/v2/revint-v2-07-received-gmail-report.png",
+        title: "Manager Received the Governed Revenue Report",
+        description:
+          "Actual Gmail delivery received by the trusted manager destination, showing the approved open-pipeline report and key facts outside the n8n execution environment.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/v2/revint-v2-08-unauthenticated-403.png",
+        title: "Unauthenticated Revenue Question Rejected",
+        description:
+          "Live security evidence showing an unauthenticated request to the Agent V2 report endpoint returning HTTP 403 Forbidden before any governed report can execute.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/v2/revint-v2-09-server-bound-identity.png",
+        title: "Caller-Supplied Admin Identity Cannot Bypass Governance",
+        description:
+          "Audit evidence from an authenticated request that deliberately supplied a fake revenue-admin principal. Agent V2 overwrote the caller identity and recorded the server-bound service:report-api principal for the completed request.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/v2/revint-v2-02-hubspot-live-sync.png",
+        title: "Live HubSpot → Canonical Reporting Sync",
+        description:
+          "Current rebuilt HubSpot adapter execution showing the full governed path from manual trigger through sync context, bounded HubSpot read, normalization, canonical batch ingestion and audited sync completion.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/v2/revint-v2-10-hubspot-canonical-aggregate.png",
+        title: "HubSpot Data in the Canonical Reporting Layer",
+        description:
+          "Read-only database evidence showing hubspot_primary records in the canonical reporting layer and the persisted incremental sync state, demonstrating that the active CRM source actually feeds Agent V2 reporting.",
       },
     ],
   },
