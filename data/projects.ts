@@ -112,47 +112,37 @@ export const projects: Project[] = [
     {
       question: "Give me the 30-second overview.",
       answer:
-        "I built a production-style Revenue Intelligence and Revenue Systems platform for managers who need reliable answers from CRM data. A manager can ask a natural-language question such as open pipeline this month; Groq interprets the intent, but deterministic KPI policies, identity controls and approved PostgreSQL functions decide what can actually run. The result can be returned through API or Gmail, while HubSpot and other CRM adapters feed one canonical reporting model. I also built reliability, observability, audit and a live Control Center so the system can be operated and handed over, not just demonstrated.",
+        "I built a production-style Salesforce Revenue Operations system for a simulated B2B SaaS company. I translated sales and GTM requirements into governed lead routing, capacity controls, lifecycle automation, opportunity-stage rules, data-quality controls, reporting and UAT. The key design choice was to keep the core sales rules in Salesforce while using n8n only for external intake, so the CRM remained the system of record.",
     },
     {
       question: "What business problem were you solving?",
       answer:
-        "The core problem was that revenue reporting can become inconsistent when KPI definitions, CRM-specific fields, access permissions and ad-hoc AI queries are mixed together. I wanted managers to get fast answers without allowing an LLM to invent metrics or query the database freely. I therefore created a governed semantic layer, source-neutral CRM contract and explicit authorization path so the same business question is answered consistently and safely.",
+        "The problem was not simply capturing leads. The sales process needed consistent ownership, capacity-aware routing, qualification rules, clean conversion into opportunities, stage governance, manager escalation and trustworthy reporting. I designed the system so exceptions such as no eligible rep, duplicate records or missing commercial data stay visible instead of being silently ignored.",
     },
     {
       question: "What did you personally own?",
       answer:
-        "I owned the project end to end: requirements framing, system architecture, n8n workflow design, PostgreSQL governance and security, CRM adapter design, AI integration, delivery, reliability, observability, testing, incident investigation, GitHub CI, documentation and handover. I also validated the live HubSpot source, Gmail delivery, Groq execution, security rejection behavior and Control Center health.",
+        "I owned the requirements translation, process mapping, Salesforce configuration, routing and lifecycle logic, role and permission design, validation rules, n8n intake integration, data-quality controls, reports, dashboard, documentation and the UAT matrix. I also tested both normal paths and exception paths so the case study shows how the system behaves when conditions are not ideal.",
     },
     {
-      question: "Why did you not let the AI query the database directly?",
+      question: "How did the capacity-aware routing work?",
       answer:
-        "I treated AI as an interpretation and communication layer, not as business authority. The model can map a question into structured intent and summarize approved facts, but deterministic controls validate the KPI, period, filters, dimensions, role and data scope before a fixed governed query path executes. That design reduces hallucination risk, prevents arbitrary SQL and makes the output auditable.",
+        "A lead is evaluated against territory, availability, active workload, capacity and enterprise eligibility. The system selects the least-loaded eligible rep. If nobody qualifies, the lead is sent to the inbound queue so Sales Ops can see and resolve the exception instead of overloading a rep or losing the lead.",
     },
     {
-      question: "How did you make the system reusable across CRMs?",
+      question: "How did you handle CRM data quality?",
       answer:
-        "I separated source adapters from the reporting core. HubSpot, Salesforce, Airtable and REST ingestion map source-specific records into one canonical deal contract, while KPI logic stays source-neutral. That means a new client CRM should require credential, field, stage and business-policy configuration rather than rebuilding the Revenue Intelligence core.",
+        "I combined required-field controls, validation rules, exact-email duplicate detection, controlled duplicate review and merge, data-quality reporting and a documented field dictionary. I also tested imports and post-cleanup reporting so data governance was part of the operating process rather than a one-time cleanup task.",
     },
     {
-      question: "How did you prove security and access control?",
+      question: "How did you validate the system?",
       answer:
-        "I tested both authentication and identity binding. An unauthenticated request received HTTP 403. In another live request I deliberately supplied a fake revenue-admin principal, but the audit trail showed the request executed under the server-bound service:report-api identity instead. The database also separates Reporting Reader, Connector Writer and Audit Writer responsibilities so runtime workflows do not receive broad database authority.",
+        "I maintained a formal UAT register with 41 passed scenarios: 37 live tests and 4 scheduled-path validations using Salesforce Flow Debug. The tests covered routing, queue fallback, lifecycle changes, capacity recalculation, conversion, proposal follow-up, Closed Won and Closed Lost controls, security visibility and reporting reconciliation.",
     },
     {
-      question: "How did you handle failures and production operations?",
+      question: "Why is this relevant to a Revenue Operations or CRM role?",
       answer:
-        "I added bounded retries, circuit breakers, dead-letter persistence, audit events, runtime snapshots and alert-ready observability. During testing the Control Center surfaced three historical dead letters caused by an invalid JSON response-body error. I investigated the records, confirmed later successful executions, resolved the incidents without deleting the audit trail, corrected a safe-disabled Slack observability mismatch, and restored the runtime to HEALTHY with zero open dead letters.",
-    },
-    {
-      question: "What is live today, and what is intentionally not live?",
-      answer:
-        "The local Agent V2 core, governed reporting API, Groq intent/summary adapter, Gmail delivery, HubSpot read-only sync, REST ingestion, reliability, observability and Control Center are validated live. Salesforce and Airtable adapters are built but remain safe-disabled until their least-privilege and client-specific activation checks are complete. Slack report delivery is also safe-disabled. Public SSO/domain deployment is deliberately deferred until a real external client requires it.",
-    },
-    {
-      question: "What would you do next for a real client?",
-      answer:
-        "I would keep the same isolated-per-client architecture, configure the client's CRM mappings and read-only credentials, connect a real OIDC/SSO provider and trusted HTTPS domain, run source-to-canonical UAT against known business totals, validate role/data scopes with real users, complete backup/restore and load-test checks, document exceptions, then activate only the approved connectors and delivery channels.",
+        "The project demonstrates the work behind a reliable sales system: translating business rules into CRM configuration, designing ownership and lifecycle controls, improving data quality, supporting sales users, building management reporting and validating the process end to end. The automation is part of the solution, but the main focus is the operating model and CRM governance.",
     },
   ],
 
@@ -1758,125 +1748,190 @@ stats: [
 {
   slug: "growagency-crm-ai-pipeline",
 
-  title: "GrowAgency CRM + AI Pipeline",
+  title: "GrowAgency Lead-to-Client Revenue Operations System",
 
   year: "2026",
 
-  type: "Portfolio",
+  type: "Revenue Operations Case Study",
 
-  category: "CRM",
+  status: "Completed",
 
-  description:
-    "Built a two-workflow AI-powered lead operations system that captures leads from Google Sheets, qualifies them with Groq AI, stores structured CRM records in Airtable, and automatically routes follow-up actions through Slack, Gmail, Google Calendar, and task creation workflows using n8n.",
-
-  overview: [
-    "Built a two-workflow lead operations system for lead capture, AI qualification, CRM management and follow-up.",
-    "Workflow 1 captures new leads from Google Sheets and sends them to Groq AI for analysis.",
-    "Parses the AI response and creates structured lead records automatically in Airtable.",
-    "Workflow 2 searches CRM records and routes leads based on qualification status.",
-    "Automates Slack notifications, Gmail follow-ups, calendar events and follow-up tasks.",
-    "Keeps lead qualification, follow-up actions and CRM status synchronized in Airtable.",
-  ],
-
-  problem:
-    "Lead processing required manually reviewing submissions, deciding which leads needed attention, updating CRM records, creating follow-up activities and notifying the team across separate tools. This made lead handling repetitive and made it harder to maintain a consistent follow-up process.",
-
-  solution:
-    "Built two connected n8n workflows. The first workflow captures new lead submissions from Google Sheets, sends the lead information to Groq AI for qualification, parses the structured AI response and creates the lead record in Airtable. The second workflow runs on a schedule, searches Airtable for leads requiring action, loops through the records, routes each lead by qualification status and automatically triggers the appropriate Slack notification, Gmail follow-up, Google Calendar event, follow-up task and Airtable update.",
-
-  architecture: [
-    "Lead submits information through the lead intake process",
-    "Google Sheets stores the new lead submission",
-    "Workflow 1 starts from the Google Sheets trigger",
-    "Lead information is sent to Groq AI through an HTTP request",
-    "Groq AI analyzes the lead information",
-    "AI generates structured lead qualification insights",
-    "JavaScript parses and prepares the AI response",
-    "Airtable CRM record is created with the lead information and AI results",
-    "Workflow 2 runs on a scheduled trigger",
-    "Airtable records requiring follow-up are searched",
-    "Records are processed through a loop",
-    "Switch logic routes leads by qualification status",
-    "Hot Lead → Slack notification and follow-up actions",
-    "Qualified → Slack notification and follow-up actions",
-    "Needs Discovery → Slack notification and follow-up actions",
-    "Nurture → Gmail follow-up",
-    "Not Fit → Gmail follow-up",
-    "Google Calendar events are created where follow-up is required",
-    "Follow-up tasks are created for actionable leads",
-    "Airtable records are updated after each action",
-  ],
-
-  workflow: [
+  platforms: [
+    "Airtable",
+    "n8n",
+    "Google Forms",
     "Google Sheets",
-    "n8n Workflow 1",
     "Groq AI",
-    "JavaScript",
-    "Airtable CRM",
-    "Scheduled Processing",
-    "n8n Workflow 2",
-    "Lead Status Routing",
     "Slack",
     "Gmail",
     "Google Calendar",
-    "Google Tasks",
-    "Airtable Update",
+    "Make.com",
+    "Notion",
+  ],
+
+  category: "Revenue Operations",
+
+  description:
+    "Designed and built a production-style Lead-to-Client Revenue Operations system for an agency workflow, covering lead intake, AI-assisted qualification, human sales decisions, governed opportunity creation, stage-based sales operations, payment-controlled client handoff and automated onboarding across Airtable, n8n, Make.com, Notion, Slack and Gmail.",
+
+  recruiterSummary: {
+    headline:
+      "A full revenue lifecycle case study: from inbound lead to governed opportunity, sales execution, Closed Won handoff and client onboarding.",
+    valueProposition:
+      "This project shows how I translate business process requirements into CRM structure, sales controls, human decision points, operational automation and reliable handoffs. AI supports qualification, but commercial decisions and sensitive CRM changes remain governed by people and deterministic workflow rules.",
+    ownership: [
+      "Mapped the end-to-end lead, opportunity, sales-operations and client-handoff process.",
+      "Designed the Airtable CRM data model, qualification fields, Processing Log, opportunity governance and Client Operations handoff.",
+      "Built and hardened the n8n workflows for intake, qualification, sales notifications, opportunity conversion, CRM review, stage operations and Closed Won handoff.",
+      "Designed human decision gates for opportunity eligibility and sensitive CRM field changes.",
+      "Validated idempotency, batch approval handling, stage-entry behavior and payment-controlled handoff through controlled end-to-end tests.",
+      "Integrated the existing Make.com onboarding system rather than duplicating it in n8n.",
+    ],
+    liveProof: [
+      "Fresh Google Form submission successfully produced a qualified CRM lead with an AI score of 85 and structured sales context.",
+      "Sales Ops notifications were verified with populated lead details after correcting the Airtable record-shape issue.",
+      "Two sensitive CRM approvals were approved simultaneously and both applied in the same execution after batch-hardening the approval workflow.",
+      "Proposal Sent, Negotiation and Closed Won stage transitions were verified with the expected Sales Ops actions.",
+      "Closed Won without Payment Confirmed created no client records; after payment confirmation the handoff created exactly one client, one Client Operations client and one onboarding request.",
+      "A second handoff scan created no duplicates, proving the completed handoff path was idempotent.",
+      "The existing Make.com onboarding scenario was previously validated from approved Airtable request through project creation, four package tasks, Notion workspace, Gmail and Slack completion notification.",
+    ],
+    roleFit: [
+      "Revenue Operations",
+      "Sales Operations",
+      "CRM Administration",
+      "Business Systems",
+      "GTM Operations",
+      "Operations Coordination",
+    ],
+  },
+
+  overview: [
+    "Built the revenue process as a connected operating system rather than a collection of isolated automations.",
+    "Captured inbound enquiries through Google Forms and Google Sheets, then normalized and qualified them with Groq AI before writing structured records to Airtable.",
+    "Separated AI recommendations from human commercial decisions: the system can score and recommend, but a human chooses Create Opportunity, Nurture or Not Fit.",
+    "Governed eight Opportunity fields through a CRM Change Review layer, with sensitive qualification changes requiring human approval.",
+    "Hardened simultaneous approval handling so multiple approved changes are processed independently instead of collapsing a batch into one item.",
+    "Automated stage-aware Sales Operations for New Lead, Discovery, Proposal Sent, Negotiation, Closed Won and Closed Lost.",
+    "Protected the client handoff with a Payment Confirmed gate and idempotent searches so the same Closed Won opportunity cannot create duplicate client or onboarding records.",
+    "Kept professional onboarding in the existing Make.com system: approved Airtable requests create the project, package-specific tasks, Notion workspace, Gmail welcome message, Slack notification and final onboarding status.",
+  ],
+
+  problem:
+    "The original process could qualify leads and trigger follow-up actions, but a real Revenue Operations workflow needs much more than lead scoring. Sales teams need clear ownership of commercial decisions, controlled opportunity creation, governed CRM changes, stage-specific actions, protection against duplicate processing, reliable Closed Won handoff and a structured transition into client delivery. The goal was to turn the early lead automation into a complete, auditable lead-to-client operating process.",
+
+  solution:
+    "I evolved GrowAgency into an end-to-end Revenue Operations system. Lead intake and AI qualification feed a structured Airtable CRM, while human Sales Decision controls whether an opportunity is created. Opportunity conversion generates a governed review set for important CRM fields; safe fields can progress automatically while Qualification Status and AI Qualified require human approval. Stage-aware n8n workflows create the appropriate Sales Ops actions and notifications as the opportunity moves through the pipeline. Closed Won is not treated as permission to onboard: Payment Confirmed must also be true before the system creates the client and onboarding request, and idempotent searches prevent duplicate handoffs. Once the onboarding request is approved, the existing Make.com scenario handles project creation, package tasks, Notion workspace creation, Gmail and Slack notifications.",
+
+  architecture: [
+    "Google Form → Google Sheets lead intake",
+    "n8n Lead Intake → validation, normalization and Groq AI qualification",
+    "Airtable Lead + Processing Log → structured source of operational context",
+    "Sales Operations → Slack / Gmail / Calendar / task actions",
+    "Human Sales Decision → Create Opportunity / Nurture / Not Fit",
+    "Opportunity Conversion → Airtable Opportunity + CRM governance review set",
+    "CRM Change Review → safe auto-apply fields + human approval for sensitive qualification changes",
+    "Opportunity Sales Operations → stage-aware actions across six pipeline stages",
+    "Closed Won + Payment Confirmed → idempotent Client Operations handoff",
+    "Pending Onboarding Request → human approval",
+    "Make.com → Airtable Project + package tasks + Notion workspace + Gmail + Slack",
+    "Completed onboarding → active client delivery workspace",
+  ],
+
+  workflow: [
+    "Capture Inbound Lead",
+    "Validate & Normalize Lead Data",
+    "AI-Assisted Qualification",
+    "Create CRM Lead & Processing Record",
+    "Notify Sales Operations",
+    "Human Sales Decision",
+    "Create Governed Opportunity",
+    "Review Sensitive CRM Changes",
+    "Execute Stage-Based Sales Operations",
+    "Confirm Closed Won",
+    "Verify Payment Confirmed",
+    "Create Client & Onboarding Request",
+    "Human Onboarding Approval",
+    "Create Project & Package Tasks in Make.com",
+    "Create Notion Workspace",
+    "Send Client & Team Notifications",
+    "Activate Client Delivery",
+  ],
+
+  governance: [
+    {
+      title: "Human Commercial Decision",
+      description:
+        "AI can recommend qualification and next action, but a human Sales Decision controls whether the lead becomes an opportunity, is nurtured or is marked not fit.",
+    },
+    {
+      title: "Sensitive CRM Change Approval",
+      description:
+        "Eight governed Opportunity fields are reviewed. Qualification Status and AI Qualified require human approval while lower-risk enrichment fields can follow the safe automation path.",
+    },
+    {
+      title: "Batch-Safe Approval Processing",
+      description:
+        "The approval workflow was hardened so simultaneous CRM review decisions are processed per item; a two-approval regression test confirmed both changes applied in one execution.",
+    },
+    {
+      title: "Stage-Aware Sales Operations",
+      description:
+        "Sales activity is tied to actual pipeline stage changes, with dedupe fields preventing repeated stage actions and delayed follow-ups separated from immediate stage-entry work.",
+    },
+    {
+      title: "Payment-Controlled Client Handoff",
+      description:
+        "Closed Won alone cannot create a client. The handoff requires Payment Confirmed and reuses existing client/onboarding records when present.",
+    },
+    {
+      title: "Human Onboarding Approval",
+      description:
+        "Client delivery automation begins only after the Airtable onboarding request is explicitly approved, preserving a clear handoff between sales and delivery.",
+    },
+    {
+      title: "Separation of Automation Responsibilities",
+      description:
+        "n8n owns revenue and CRM workflow orchestration while the already-built Make.com scenario owns the client onboarding implementation, avoiding duplicate automation paths.",
+    },
   ],
 
   automation: [
     {
-      title: "Lead Intake",
+      title: "Lead Intake & Qualification",
       description:
-        "Google Sheets detects a new lead submission and starts the first workflow.",
-      icon: "sheet",
-    },
-    {
-      title: "AI Qualification",
-      description:
-        "Groq AI analyzes the lead and generates structured qualification insights.",
-      icon: "bot",
-    },
-    {
-      title: "CRM Creation",
-      description:
-        "JavaScript prepares the AI output and creates the structured lead record in Airtable.",
-      icon: "database",
-    },
-    {
-      title: "Scheduled Processing",
-      description:
-        "The second workflow runs on a schedule and searches Airtable for leads requiring follow-up.",
-      icon: "bot",
-    },
-    {
-      title: "Lead Routing",
-      description:
-        "Switch logic routes Hot Lead, Qualified, Needs Discovery, Nurture and Not Fit leads into different actions.",
+        "Inbound form data is validated, normalized, AI-qualified and stored as structured CRM context.",
       icon: "form",
     },
     {
-      title: "Slack Alerts",
+      title: "Sales Decision Gate",
       description:
-        "Hot, qualified and discovery leads trigger structured internal Slack notifications.",
+        "A human decides whether the qualified lead should become an opportunity, enter nurture or be marked not fit.",
+      icon: "workspace",
+    },
+    {
+      title: "CRM Governance",
+      description:
+        "Opportunity fields are evaluated through a controlled review layer with human approval for sensitive qualification changes.",
+      icon: "crm",
+    },
+    {
+      title: "Stage-Based Sales Operations",
+      description:
+        "Pipeline stage changes drive Slack notifications, calendar events, follow-up tasks and stage-specific sales actions.",
       icon: "slack",
     },
     {
-      title: "Follow-up Actions",
+      title: "Payment-Gated Handoff",
       description:
-        "Google Calendar events and follow-up tasks are created when the lead requires action.",
-      icon: "form",
-    },
-    {
-      title: "Email Follow-up",
-      description:
-        "Gmail handles email-based follow-up for nurture and not-fit lead routes.",
-      icon: "email",
-    },
-    {
-      title: "CRM Update",
-      description:
-        "Airtable is updated after the follow-up action so the CRM reflects the latest lead status.",
+        "Closed Won opportunities enter Client Operations only after Payment Confirmed, with idempotent client and onboarding creation.",
       icon: "database",
+    },
+    {
+      title: "Professional Client Onboarding",
+      description:
+        "Approved onboarding requests flow through Make.com to create the project, package tasks, Notion workspace, welcome email and internal Slack completion alert.",
+      icon: "workspace",
     },
   ],
 
@@ -1887,99 +1942,154 @@ stats: [
     "/images/projects/growagency/workflow-2.png",
 
   gallery: [
-  {
-    image: "/images/projects/growagency/dashboard.png",
-    title: "Airtable CRM Dashboard",
-    description:
-      "Centralized CRM dashboard showing lead records, AI qualification results, lead status, follow-up information and sales pipeline visibility.",
-  },
-  {
-    image: "/images/projects/growagency/workflow-1.png",
-    title: "Workflow 1 — Lead Intake & AI Qualification",
-    description:
-      "New Google Sheets submissions are sent to Groq AI for qualification, processed with JavaScript and converted into structured Airtable CRM records.",
-  },
-  {
-    image: "/images/projects/growagency/workflow-2.png",
-    title: "Workflow 2 — Lead Routing & Follow-up",
-    description:
-      "A scheduled n8n workflow searches Airtable, processes leads through qualification-based routing and triggers Slack, Gmail, calendar, task and CRM update actions.",
-  },
-  {
-    image: "/images/projects/growagency/slack-alert.png",
-    title: "Slack Lead Notification",
-    description:
-      "Automatic Slack notifications provide the team with lead qualification and follow-up information when a lead requires attention.",
-  },
-],
+    {
+      image: "/images/projects/growagency/dashboard.png",
+      title: "Airtable Revenue Operations CRM",
+      description:
+        "Centralized operational CRM for lead context, AI qualification, sales decisions, opportunity state, follow-up information and pipeline visibility.",
+    },
+    {
+      image: "/images/projects/growagency/workflow-1.png",
+      title: "Lead Intake & AI Qualification",
+      description:
+        "n8n intake flow that turns inbound Google Sheets records into validated, AI-assisted qualification context and structured Airtable CRM records.",
+    },
+    {
+      image: "/images/projects/growagency/workflow-2.png",
+      title: "Sales Operations Routing & Follow-Up",
+      description:
+        "Revenue Operations workflow that searches actionable CRM records, evaluates status and routes notifications, follow-up activity and CRM updates.",
+    },
+    {
+      image: "/images/projects/growagency/slack-alert.png",
+      title: "Sales Operations Notification",
+      description:
+        "Structured Slack evidence showing actionable lead context delivered to the sales workflow instead of relying on manual monitoring.",
+    },
+  ],
 
   results: [
-    "Automated lead intake from Google Sheets into Airtable CRM",
-    "Standardized AI-assisted lead qualification using Groq AI",
-    "Created rule-based routing for five lead qualification outcomes",
-    "Automated Slack notifications for actionable leads",
-    "Created calendar events and follow-up tasks automatically",
-    "Automated email follow-up for selected lead outcomes",
-    "Kept CRM records synchronized with follow-up actions",
-    "Reduced repetitive lead-processing and administrative steps",
+    "Validated an end-to-end lead intake test that created a qualified CRM lead with structured AI score, qualification, package, priority, pain point, reason and next action.",
+    "Verified populated Sales Ops Slack messages after diagnosing and fixing the flat Airtable record-shape mapping issue.",
+    "Governed eight Opportunity fields with separate safe-change and human-approval paths.",
+    "Fixed and regression-tested simultaneous CRM approvals so both sensitive changes applied in one execution.",
+    "Validated stage-entry behavior through Proposal Sent, Negotiation and Closed Won with the expected Sales Operations actions.",
+    "Proved the payment safeguard by confirming Closed Won with Payment Confirmed false created zero client/onboarding records.",
+    "After payment confirmation, created exactly one GrowAgency Client, one Client Operations Client and one Onboarding Request.",
+    "Verified a subsequent handoff scan created no duplicate client or onboarding records.",
+    "Validated the existing Make.com onboarding flow through completed request, Airtable project creation, four tasks, Notion workspace and Slack completion notification.",
+    "Preserved human control at both opportunity eligibility and onboarding approval instead of allowing AI or automation to make unchecked commercial decisions.",
   ],
 
   technologies: [
+    technologies.googleForms,
     technologies.googleSheets,
     technologies.n8n,
     technologies.groq,
     technologies.airtable,
     technologies.slack,
     technologies.gmail,
+    technologies.make,
+    technologies.notion,
   ],
 
   metrics: [
-    "2 connected n8n workflows",
-    "5 qualification routes",
-    "AI-powered lead qualification",
+    "8 governed Opportunity fields",
+    "6 stage-aware Sales Operations routes",
+    "2 explicit human decision gates",
+    "Payment-gated, idempotent client handoff",
+    "Lead-to-client lifecycle validated end to end",
   ],
 
   stats: [
     {
-      value: 2,
-      suffix: " workflows",
-      label: "Connected Automations",
-    },
-    {
-      value: 5,
-      suffix: " routes",
-      label: "Lead Outcomes",
-    },
-    {
       value: 8,
-      suffix: " tools",
-      label: "Systems Used",
+      suffix: " fields",
+      label: "Governed CRM Changes",
+    },
+    {
+      value: 6,
+      suffix: " stages",
+      label: "Sales Operations Lifecycle",
+    },
+    {
+      value: 2,
+      suffix: " gates",
+      label: "Human Decisions",
     },
   ],
 
   before: [
-    "Lead submissions reviewed manually",
-    "Manual lead qualification",
-    "CRM records created manually",
-    "Follow-up decisions handled individually",
-    "Calendar follow-ups created manually",
-    "Team notifications sent manually",
-    "Lead status updates spread across separate tools",
+    "Lead qualification and follow-up were the main automated focus.",
+    "Commercial eligibility could be separated from qualification more clearly.",
+    "Opportunity field changes needed stronger governance.",
+    "Pipeline-stage actions needed consistent operating rules.",
+    "Closed Won needed a payment safeguard before client creation.",
+    "Sales-to-delivery handoff needed duplicate protection and a clear approval boundary.",
   ],
 
   after: [
-    "Automatic lead intake",
-    "AI-assisted lead qualification",
-    "Automatic Airtable CRM record creation",
-    "Five rule-based qualification routes",
-    "Automatic Slack notifications",
-    "Automatic Gmail follow-up",
-    "Automatic calendar events and follow-up tasks",
-    "CRM records updated after follow-up actions",
+    "Structured inbound lead intake with AI-assisted qualification.",
+    "Human-controlled opportunity eligibility and onboarding approval.",
+    "Governed Opportunity changes with sensitive-field approval.",
+    "Stage-aware Sales Operations across the full pipeline.",
+    "Payment-confirmed Closed Won handoff.",
+    "Idempotent client and onboarding creation.",
+    "Existing Make.com onboarding integrated as the delivery automation layer.",
+    "Airtable, Notion, Gmail and Slack synchronized across client onboarding.",
+  ],
+
+  interviewTalkingPoints: [
+    {
+      question: "Give me the 30-second overview.",
+      answer:
+        "GrowAgency started as a lead qualification automation, and I evolved it into a full lead-to-client Revenue Operations system. An inbound lead is validated and AI-qualified, but a human still decides whether the lead becomes an opportunity. Important CRM changes are governed, opportunity stages trigger the right Sales Ops actions, and Closed Won cannot create a client until payment is confirmed. The handoff is idempotent, and once onboarding is approved my existing Make.com workflow creates the project, package tasks, Notion workspace and notifications.",
+    },
+    {
+      question: "What business problem were you solving?",
+      answer:
+        "The problem was the operational gap between capturing a lead and actually running a controlled sales-to-delivery process. A business needs consistent qualification, human commercial judgment, clean opportunity data, reliable stage actions, protection against duplicate processing and a controlled handoff after revenue is actually confirmed. I designed the workflows around those operating requirements rather than simply automating every step.",
+    },
+    {
+      question: "What did you personally own?",
+      answer:
+        "I owned the process design, Airtable CRM structure, n8n architecture, AI qualification contract, sales decision flow, opportunity governance, Sales Ops stage automations, client-handoff logic, testing and debugging. I also designed the boundary with the existing Make.com onboarding system so I did not rebuild functionality that was already working.",
+    },
+    {
+      question: "Where did you use AI, and where did you deliberately not use it?",
+      answer:
+        "I use AI to structure qualification context such as score, pain point, suggested package, reason and next action. I do not let AI make the final commercial decision to create an opportunity, approve sensitive qualification changes or approve onboarding. Those remain human-controlled because they have business consequences.",
+    },
+    {
+      question: "How did you make the CRM changes safer?",
+      answer:
+        "Opportunity creation generates a review set for eight governed fields. Lower-risk enrichment fields can follow the safe path, while Qualification Status and AI Qualified require explicit human approval. I also found a batch-processing defect where simultaneous approvals could collapse into one item, changed the affected code nodes to process each item independently and proved both approvals applied in one regression execution.",
+    },
+    {
+      question: "How did you prevent duplicate client handoffs?",
+      answer:
+        "The Closed Won handoff searches for existing GrowAgency and Client Operations records before creating anything, and the opportunity stores handoff status plus downstream IDs. I tested the same completed opportunity on a later scan and the record counts stayed at one, which showed the workflow reused completed state instead of creating duplicates.",
+    },
+    {
+      question: "Why are both n8n and Make.com used?",
+      answer:
+        "They have different responsibilities. n8n handles the Revenue Operations and CRM orchestration: qualification, human decisions, governance, stage operations and Closed Won handoff. My existing Make.com scenario already handled professional client onboarding well, including project and task creation, Notion, Gmail and Slack. I kept that working system instead of duplicating the same onboarding logic in n8n.",
+    },
+    {
+      question: "Tell me about a problem you found during testing.",
+      answer:
+        "I found two useful production-style defects. One was an Airtable response-shape issue that caused Slack fields to be blank even though the workflow succeeded. I traced the runtime JSON and corrected the expressions. The other was the simultaneous approval batch issue, where a code node processed all items but returned only one. I changed the execution mode and regression-tested two approvals arriving together. Those tests reinforced that workflow success is not enough; I verify the downstream business state.",
+    },
+    {
+      question: "What does this project demonstrate for a RevOps or CRM role?",
+      answer:
+        "It demonstrates process design, CRM administration, data governance, sales-stage operations, human approval design, cross-system integration, debugging, idempotency and handoff design. The automation tools are supporting technology; the main work is building a sales and client-operations process that people can trust and operate.",
+    },
   ],
 
   github: "",
 
   demo: "",
 },
+
 ];
