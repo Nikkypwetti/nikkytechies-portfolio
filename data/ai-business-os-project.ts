@@ -3,7 +3,7 @@ import { technologies } from "./technologies";
 
 export const aiBusinessOsProject: Project = {
   slug: "ai-business-os-multi-agent-operations",
-  title: "AI Business OS — Production-Hardened RevOps & Business Systems Platform",
+  title: "AI Business OS — Governed Revenue Operations & Business Systems Platform",
   year: "2026",
   type: "Portfolio",
   status: "Completed",
@@ -21,7 +21,40 @@ export const aiBusinessOsProject: Project = {
   category: "Business Systems",
 
   description:
-    "Designed and built a reusable AI-powered Revenue Operations and Business Systems platform in n8n + PostgreSQL, coordinating 8 specialist agents across CRM, client operations, project delivery, communications, customer success, finance and RevOps analytics. The last fully verified core release contained 54 governed production workflows / 646 documented nodes and passed 21/21 agent-access security, 11/11 RBAC & tenant-isolation checks, and 22/22 local production-readiness checks.",
+    "Designed and implemented a reusable, production-style Revenue Operations and Business Systems platform that coordinates 8 specialist agents while keeping CRM changes, communications, approvals and recovery behind deterministic controls. The platform now includes a CRM-first sales operating path where inbound leads are qualified, routed, projected to the configured CRM, assigned to verified owners, surfaced to reps through notifications and held for human deal approval before commercial progression.",
+
+  recruiterSummary: {
+    headline:
+      "End-to-end Revenue Systems ownership: governed lead-to-CRM operations, multi-agent orchestration, human approvals, provider integrations, security and incident recovery.",
+    valueProposition:
+      "This project demonstrates how I approach Revenue Operations and Business Systems work as an operating-model problem, not just an automation task. I designed the process, data contracts, CRM ownership model, approval controls, provider integrations, monitoring, security and recovery architecture, then validated the system with controlled live CRM and notification paths. Sales reps can work primarily in the CRM while the Business OS handles orchestration, governance, SLA monitoring, exception handling and auditability behind the scenes.",
+    ownership: [
+      "Defined the operating model across lead intake, qualification, routing, CRM projection, human deal approval, onboarding, projects, communications, customer success, finance and RevOps analytics.",
+      "Designed and built the n8n orchestration layer, PostgreSQL system-of-record model, provider-neutral gateways, specialist-agent boundaries and local Control Center.",
+      "Implemented deterministic permissions, approval rules, idempotency, tenant isolation, owner mapping, monitoring and fail-closed recovery instead of allowing AI to mutate business systems directly.",
+      "Connected and validated HubSpot, Salesforce, Gmail and Google Calendar through governed provider adapters, with CRM-specific configuration kept separate from the reusable Business OS core.",
+      "Built the CRM-first Sales Ops path so lead ownership, CRM records, rep notifications, SLA state and deal-approval exceptions can be managed as one operating process.",
+      "Ran controlled production-style tests, diagnosed real integration failures, preserved incident/DLQ evidence, remediated root causes and verified successful recovery without deleting the audit trail.",
+    ],
+    liveProof: [
+      "A controlled Google Form lead intake was normalized into the canonical PostgreSQL lead model, scored 75/100, classified qualified, routed to the configured sales owner and assigned a 24-hour follow-up SLA.",
+      "Lead-assignment and deal-approval notifications were delivered while the material deal action remained behind a human approval gate; no deal was created without approval.",
+      "The repaired HubSpot CRM projection created and read back contact 880647909565 with the verified owner and qualification context, then logged the same provider ID in PostgreSQL integration evidence.",
+      "Two real HubSpot provider failures were caught by the centralized error path, escalated into incident/dead-letter records, remediated at the root cause and later marked RESOLVED with the successful provider action attached.",
+      "The last fully verified core release passed 21/21 agent-access security checks, 11/11 RBAC and tenant-isolation checks, and 22/22 local production-readiness checks.",
+      "The architecture keeps PostgreSQL authoritative and CRM providers replaceable, allowing the same operating model to support HubSpot, Salesforce or another client CRM through configuration and adapters.",
+    ],
+    roleFit: [
+      "Revenue Operations",
+      "Revenue Systems",
+      "CRM Operations",
+      "Business Systems",
+      "Sales Operations",
+      "GTM Operations",
+      "Operations Coordination",
+      "Workflow Automation",
+    ],
+  },
 
   overview: [
     "Owned the system architecture end to end — from event routing and specialist-agent responsibilities to CRM controls, approval policies, integration contracts, error handling, recovery and production-readiness validation.",
@@ -31,7 +64,9 @@ export const aiBusinessOsProject: Project = {
     "Implemented replay-safe automation using idempotency keys, durable action evidence and deterministic post-action evaluation so retries and repeated events do not silently create duplicate business side effects.",
     "Validated Groq as the primary reasoning provider with Google Gemini as an independent fallback across all eight reasoning workflows, reducing dependence on a single AI provider.",
     "Built and validated provider adapters for HubSpot, Salesforce, Gmail and Google Calendar; kept CRM routing provider-neutral so the system can change providers without rebuilding the entire operating model.",
-    "Completed a controlled local core cutover with PRODUCTION_READY=true, 21/21 agent-access security, 11/11 RBAC & tenant-isolation checks and 22/22 readiness checks while keeping public VPS/domain/TLS deployment explicitly separate until hosting is available. A self-use Sales Ops monitoring extension is currently being wired and is not represented as complete until its n8n/UI regression tests pass.",
+    "Completed a controlled local core cutover with PRODUCTION_READY=true, 21/21 agent-access security, 11/11 RBAC & tenant-isolation checks and 22/22 readiness checks while keeping public VPS/domain/TLS deployment explicitly separate until hosting is available.",
+    "Extended the platform into a CRM-first Sales Ops operating model so sales reps can work primarily in the configured CRM while the Business OS handles qualification, routing, owner verification, SLA monitoring, notifications, approvals and exception handling.",
+    "Validated a controlled intake-to-CRM path through Google Form → canonical PostgreSQL lead → qualification → routing → HubSpot contact projection → rep notification → protected deal-approval state, with provider failures recovered through the same incident and DLQ architecture.",
   ],
 
   problem:
@@ -45,6 +80,7 @@ export const aiBusinessOsProject: Project = {
     "Supervisor → classifies intent and routes work to the correct domain specialist",
     "Domain specialist → produces a bounded operational decision instead of direct unrestricted mutation",
     "Provider-neutral tool gateway → converts the decision into an approved business action contract",
+    "CRM-first sales execution → resolves the logical owner, projects the record to the configured CRM, creates the CRM work context and notifies the assigned rep",
     "Guardrail engine → checks permissions, required inputs, risk, approvals and business rules",
     "Human approval → pauses high-risk actions and resumes only the exact stored request",
     "Idempotent action layer → executes business or provider action without duplicate replay",
@@ -217,10 +253,75 @@ export const aiBusinessOsProject: Project = {
     "Validated all 8 reasoning agents with Groq primary and Google Gemini cross-provider fallback.",
     "Validated 4 external providers — HubSpot, Salesforce, Gmail and Google Calendar — through controlled staging-write evidence and replay/idempotency checks.",
     "Validated 8 exact-match recovery registrations for bounded retry/repair behavior instead of generic state-changing replay.",
-    "Completed the local cutover with 0 open recovery jobs, 0 unresolved errors and 0 unresolved DLQ items.",
+    "At the verified core cutover snapshot, the system had 0 open recovery jobs, 0 unresolved errors and 0 unresolved DLQ items.",
     "Verified that the cutover/readiness validation itself created 0 new provider deliveries and 0 new integration actions.",
     "Kept CRM architecture provider-neutral: required local HubSpot controls are enabled while the main CRM gateway remains on postgres_dev and optional Salesforce writes remain disabled.",
     "Maintained pre-cutover and post-cutover rollback backups, plus an isolated PostgreSQL restore proof covering 41 Business OS tables.",
+    "Validated the CRM-first sales path with a canonical qualified lead, verified owner routing, a 24-hour SLA, delivered rep/approval notifications and a protected pending deal decision.",
+    "Recovered a failed HubSpot projection without creating a duplicate canonical lead: the same lead was successfully projected as HubSpot contact 880647909565 and logged as SUCCESS in the integration action ledger.",
+    "Preserved two failed HubSpot executions as audit evidence, remediated the HTTP-method and CRM-field-model root causes, and moved both incident and dead-letter records to RESOLVED after the successful retry.",
+  ],
+
+  documentation: [
+    {
+      title: "AI Business OS Technical Case Study",
+      description:
+        "Architecture, governance, integration, recovery, local production validation and recruiter-facing implementation evidence.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/ai-business-os/README.md",
+      status: "Completed",
+    },
+    {
+      title: "Client Implementation Checklist",
+      description:
+        "Reusable checklist for adapting owners, providers, policies, credentials, approval rules and operational controls to a real client environment.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/ai-business-os/CLIENT-IMPLEMENTATION-CHECKLIST.md",
+      status: "Completed",
+    },
+    {
+      title: "UAT Checklist",
+      description:
+        "Structured validation checklist for core business paths, governance, integration behavior, recovery and handover readiness.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/ai-business-os/UAT-CHECKLIST.md",
+      status: "Completed",
+    },
+  ],
+
+  interviewTalkingPoints: [
+    {
+      question: "Give me the 30-second overview.",
+      answer:
+        "I designed and built a governed Revenue Operations and Business Systems platform in n8n and PostgreSQL. It coordinates specialist AI agents, but AI is not allowed to directly control business systems. Deterministic permissions, human approvals, idempotency, CRM owner mapping, provider adapters, monitoring and recovery control the actual operations. I also implemented a CRM-first sales path so reps can work in HubSpot or another CRM while the Business OS handles routing, SLA, notifications, approvals and auditability behind the scenes.",
+    },
+    {
+      question: "What business problem were you solving?",
+      answer:
+        "The problem was fragmented revenue and operations workflows. Lead intake, CRM ownership, follow-up, approvals, communications, onboarding and reporting often become separate automations with inconsistent rules and weak failure handling. I designed one reusable operating layer so those processes share the same state, governance, audit trail and exception model.",
+    },
+    {
+      question: "What did you personally own?",
+      answer:
+        "I owned the architecture, workflow design, PostgreSQL data model, specialist-agent boundaries, CRM integration strategy, approval model, owner mapping, security controls, monitoring, recovery design, controlled testing and handover documentation. I treated the automation as part of a broader Revenue Systems implementation rather than the final product by itself.",
+    },
+    {
+      question: "How does the CRM-first sales workflow work?",
+      answer:
+        "An inbound lead is normalized into the canonical lead model, qualified, routed to a logical sales owner, projected to the configured CRM with a verified provider owner, and surfaced to the rep through a notification and CRM work context. The Business OS tracks SLA and exceptions in the background. If the lead is commercially eligible, deal creation still pauses for a human decision before any material CRM deal write.",
+    },
+    {
+      question: "How do you stop AI from becoming a security or data-governance risk?",
+      answer:
+        "AI can interpret and recommend, but it does not receive unrestricted provider or database authority. State-changing actions use bounded tool contracts, deterministic permission and business-rule checks, tenant-aware identity, approval gates and idempotency. Unsupported or ambiguous recovery fails closed and escalates instead of letting the model improvise.",
+    },
+    {
+      question: "Tell me about a real failure you handled.",
+      answer:
+        "During the HubSpot CRM-first validation, the provider write failed first because the HTTP action was not explicitly stored as POST, then because an existing custom lead-score field had been configured as unique even though scores can repeat. Both failures entered the incident and dead-letter path. I corrected the adapter and field mapping, retried the same canonical lead idempotently, verified the HubSpot contact and PostgreSQL action log, then marked the original incidents resolved without deleting their history.",
+    },
+    {
+      question: "Why is this relevant to Revenue Operations or Business Systems?",
+      answer:
+        "The project demonstrates the work behind a reliable revenue operating system: process design, CRM ownership, lead routing, approvals, data governance, integration architecture, rep workflow, SLA monitoring, exception handling, auditability and handover. AI and automation support the process, but the core value is designing a business system that people can actually operate and trust.",
+    },
   ],
 
   technologies: [
@@ -269,4 +370,6 @@ export const aiBusinessOsProject: Project = {
   ],
 
   automationImage: "/images/projects/ai-business-os/04-crm-gateway.webp",
+  github: "https://github.com/Nikkypwetti/nikkytechies-portfolio/tree/main/docs/ai-business-os",
+  demo: "",
 };
