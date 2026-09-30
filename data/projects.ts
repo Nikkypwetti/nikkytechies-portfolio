@@ -714,7 +714,7 @@ export const projects: Project[] = [
     "Implemented guarded Salesforce and Airtable Opportunity adapters with dedicated credential boundaries and fail-closed activation",
     "Passed the full local regression chain covering runtime isolation, database security, semantic governance, RBAC, REST ingestion, scheduled intelligence, reliability and observability",
     "Preserved protected legacy n8n on port 5678 while Agent V2 runs in an isolated Docker deployment on port 5681",
-    "Added a read-only local Control Center for KPI coverage, connector state, component health, circuit status, dead letters and observability alerts",
+    "Validated the live read-only Control Center in HEALTHY state with 37 governed KPIs, 6 active managed components, 0 open dead letters, 0 recent failures, HubSpot/REST active, and Salesforce/Airtable safely disabled",
     "Added GitHub Actions static verification for connector contracts, deployment guards, JSON validity, shell syntax and secret-like committed files",
     "Documented reusable implementation, security, CRM rollout, handover and local production-hardening procedures for future client deployments",
   ],
@@ -777,7 +777,7 @@ export const projects: Project[] = [
     "Live read-only HubSpot source validated",
     "3 reusable CRM adapter paths",
     "2 governed AI functions: intent + summary",
-    "Local read-only operations Control Center",
+    "Live Control Center: HEALTHY · 6 managed components · 0 dead letters",
   ],
 
   stats: [
