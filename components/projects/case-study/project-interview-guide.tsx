@@ -14,7 +14,7 @@ export function ProjectInterviewGuide({ talkingPoints }: Props) {
     <section className="space-y-8">
       <div>
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-          Interview Ready
+          Interview Talking Points
         </p>
         <h2 className="mt-2 text-3xl font-bold">How I Explain This Project</h2>
         <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">
