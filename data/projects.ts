@@ -1794,7 +1794,7 @@ stats: [
       "Proposal Sent, Negotiation and Closed Won stage transitions were verified with the expected Sales Ops actions.",
       "Closed Won without Payment Confirmed created no client records; after payment confirmation the handoff created exactly one client, one Client Operations client and one onboarding request.",
       "A second handoff scan created no duplicates, proving the completed handoff path was idempotent.",
-      "The existing Make.com onboarding scenario was previously validated from approved Airtable request through project creation, four package tasks, Notion workspace, Gmail and Slack completion notification.",
+      "The existing Make.com onboarding scenario was previously validated from approved Airtable request through project creation, four package tasks and a Notion workspace. Gmail/Slack onboarding delivery should be treated as unverified until fresh evidence is captured.",
     ],
     roleFit: [
       "Revenue Operations",
@@ -1821,7 +1821,7 @@ stats: [
     "The original process could qualify leads and trigger follow-up actions, but a real Revenue Operations workflow needs much more than lead scoring. Sales teams need clear ownership of commercial decisions, controlled opportunity creation, governed CRM changes, stage-specific actions, protection against duplicate processing, reliable Closed Won handoff and a structured transition into client delivery. The goal was to turn the early lead automation into a complete, auditable lead-to-client operating process.",
 
   solution:
-    "I evolved GrowAgency into an end-to-end Revenue Operations system. Lead intake and AI qualification feed a structured Airtable CRM, while human Sales Decision controls whether an opportunity is created. Opportunity conversion generates a governed review set for important CRM fields; safe fields can progress automatically while Qualification Status and AI Qualified require human approval. Stage-aware n8n workflows create the appropriate Sales Ops actions and notifications as the opportunity moves through the pipeline. Closed Won is not treated as permission to onboard: Payment Confirmed must also be true before the system creates the client and onboarding request, and idempotent searches prevent duplicate handoffs. Once the onboarding request is approved, the existing Make.com scenario handles project creation, package tasks, Notion workspace creation, Gmail and Slack notifications.",
+    "I evolved GrowAgency into an end-to-end Revenue Operations system. Lead intake and AI qualification feed a structured Airtable CRM, while human Sales Decision controls whether an opportunity is created. Opportunity conversion generates a governed review set for important CRM fields; safe fields can progress automatically while Qualification Status and AI Qualified require human approval. Stage-aware n8n workflows create the appropriate Sales Ops actions and notifications as the opportunity moves through the pipeline. Closed Won is not treated as permission to onboard: Payment Confirmed must also be true before the system creates the client and onboarding request, and idempotent searches prevent duplicate handoffs. Once the onboarding request is approved, the existing Make.com scenario handles project creation, package tasks and Notion workspace creation. Onboarding-channel notifications are not claimed here until separately verified.",
 
   architecture: [
     "Google Form → Google Sheets lead intake",
@@ -1834,7 +1834,7 @@ stats: [
     "Opportunity Sales Operations → stage-aware actions across six pipeline stages",
     "Closed Won + Payment Confirmed → idempotent Client Operations handoff",
     "Pending Onboarding Request → human approval",
-    "Make.com → Airtable Project + package tasks + Notion workspace + Gmail + Slack",
+    "Make.com → Airtable Project + package tasks + Notion workspace",
     "Completed onboarding → active client delivery workspace",
   ],
 
@@ -1854,7 +1854,7 @@ stats: [
     "Human Onboarding Approval",
     "Create Project & Package Tasks in Make.com",
     "Create Notion Workspace",
-    "Send Client & Team Notifications",
+    "Update Onboarding & Delivery State",
     "Activate Client Delivery",
   ],
 
@@ -1930,7 +1930,7 @@ stats: [
     {
       title: "Professional Client Onboarding",
       description:
-        "Approved onboarding requests flow through Make.com to create the project, package tasks, Notion workspace, welcome email and internal Slack completion alert.",
+        "Approved onboarding requests flow through Make.com to create the project, package tasks and Notion workspace, with Airtable retaining the onboarding/delivery state.",
       icon: "workspace",
     },
   ],
@@ -1977,7 +1977,7 @@ stats: [
     "Proved the payment safeguard by confirming Closed Won with Payment Confirmed false created zero client/onboarding records.",
     "After payment confirmation, created exactly one GrowAgency Client, one Client Operations Client and one Onboarding Request.",
     "Verified a subsequent handoff scan created no duplicate client or onboarding records.",
-    "Validated the existing Make.com onboarding flow through completed request, Airtable project creation, four tasks, Notion workspace and Slack completion notification.",
+    "Validated the existing Make.com onboarding flow through completed request, Airtable project creation, four tasks and a Notion workspace.",
     "Preserved human control at both opportunity eligibility and onboarding approval instead of allowing AI or automation to make unchecked commercial decisions.",
   ],
 
@@ -2036,14 +2036,14 @@ stats: [
     "Payment-confirmed Closed Won handoff.",
     "Idempotent client and onboarding creation.",
     "Existing Make.com onboarding integrated as the delivery automation layer.",
-    "Airtable, Notion, Gmail and Slack synchronized across client onboarding.",
+    "Airtable and Notion synchronized across the validated client-onboarding path.",
   ],
 
   interviewTalkingPoints: [
     {
       question: "Give me the 30-second overview.",
       answer:
-        "GrowAgency started as a lead qualification automation, and I evolved it into a full lead-to-client Revenue Operations system. An inbound lead is validated and AI-qualified, but a human still decides whether the lead becomes an opportunity. Important CRM changes are governed, opportunity stages trigger the right Sales Ops actions, and Closed Won cannot create a client until payment is confirmed. The handoff is idempotent, and once onboarding is approved my existing Make.com workflow creates the project, package tasks, Notion workspace and notifications.",
+        "GrowAgency started as a lead qualification automation, and I evolved it into a full lead-to-client Revenue Operations system. An inbound lead is validated and AI-qualified, but a human still decides whether the lead becomes an opportunity. Important CRM changes are governed, opportunity stages trigger the right Sales Ops actions, and Closed Won cannot create a client until payment is confirmed. The handoff is idempotent, and once onboarding is approved my existing Make.com workflow creates the project, package tasks and Notion workspace.",
     },
     {
       question: "What business problem were you solving?",
@@ -2073,7 +2073,7 @@ stats: [
     {
       question: "Why are both n8n and Make.com used?",
       answer:
-        "They have different responsibilities. n8n handles the Revenue Operations and CRM orchestration: qualification, human decisions, governance, stage operations and Closed Won handoff. My existing Make.com scenario already handled professional client onboarding well, including project and task creation, Notion, Gmail and Slack. I kept that working system instead of duplicating the same onboarding logic in n8n.",
+        "They have different responsibilities. n8n handles the Revenue Operations and CRM orchestration: qualification, human decisions, governance, stage operations and Closed Won handoff. My existing Make.com scenario already handled the validated onboarding core: project and task creation plus the Notion workspace. I keep notification-channel claims separate until they are verified. I kept that working system instead of duplicating the same onboarding logic in n8n.",
     },
     {
       question: "Tell me about a problem you found during testing.",
