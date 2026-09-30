@@ -5,9 +5,6 @@ type ProjectEvidenceOverride = Pick<
   "heroImage" | "automationImage" | "gallery"
 >;
 
-const REVINT_EVIDENCE_BASE =
-  "https://raw.githubusercontent.com/Nikkypwetti/ai-revenue-intelligence-agent/main/docs/images";
-
 const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
   "asternova-salesforce-revops-system": {
     heroImage: "/images/projects/asternova/01-dashboard-overview.webp",
@@ -176,124 +173,37 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
 
   "ai-revenue-intelligence-reporting-agent": {
     heroImage:
-      "/images/projects/revenue-intelligence/revint-system-architecture.png",
+      "/images/projects/revenue-intelligence/revint-v2-01-control-center-healthy.webp",
     automationImage:
-      "/images/projects/revenue-intelligence/revint-01-main-orchestrator-overview.webp",
+      "/images/projects/revenue-intelligence/revint-v2-03-groq-intent-execution.webp",
     gallery: [
       {
         image:
-          "/images/projects/revenue-intelligence/revint-01-main-orchestrator-overview.webp",
-        title: "Main n8n Revenue Intelligence Workflow",
+          "/images/projects/revenue-intelligence/revint-v2-01-control-center-healthy.webp",
+        title: "Agent V2 Control Center — Healthy Runtime",
         description:
-          "Full-canvas view of the original REVINT-01 n8n workflow, showing the complete governed request path from manager intake through request context, AI intent interpretation, deterministic KPI and query controls, read-only PostgreSQL execution, result validation, multi-channel delivery, and lifecycle auditing.",
+          "Live evidence from the rebuilt Agent V2 operations surface: HEALTHY overall status, 37 governed KPI contracts, 6 active managed components, 0 open dead letters, HubSpot and REST ingestion active, and Salesforce/Airtable intentionally safe-disabled.",
       },
       {
         image:
-          "/images/projects/revenue-intelligence/revint-14-intake-intent-governed-query.png",
-        title: "Request Intake, Intent & Governed Query Resolution",
+          "/images/projects/revenue-intelligence/revint-v2-03-groq-intent-execution.webp",
+        title: "Agent V2 — Live Groq Intent Execution",
         description:
-          "Detailed n8n workflow evidence showing manager request intake across supported channels, request normalization and validation, AI-assisted intent parsing, KPI catalogue resolution, governance checks, and approved query execution paths.",
+          "Live REVINT-V2-AI-01 execution from the rebuilt architecture. The green path shows governed AI policy loading, the intent-enabled gate, Groq Intent Model, schema-constrained reporting-intent parsing, and normalized intent before deterministic KPI authorization.",
       },
       {
         image:
-          "/images/projects/revenue-intelligence/revint-15-analysis-summary-presentation.png",
-        title: "Analysis, Management Summary & Presentation Routing",
+          "/images/projects/revenue-intelligence/revint-v2-08-hubspot-live-sync.webp",
+        title: "Agent V2 — Live HubSpot Incremental Sync",
         description:
-          "Detailed n8n workflow evidence showing business-analysis validation, management-summary generation, report-presentation resolution, and governed routing into KPI card, chart, and table presentation paths.",
+          "Live rebuilt HubSpot adapter showing the full successful path from manual trigger through governed sync context, bounded read-only HubSpot search, deterministic normalization, controlled canonical batch ingestion, and audited sync completion.",
       },
       {
         image:
-          "/images/projects/revenue-intelligence/revint-16-artifact-delivery-routing.png",
-        title: "Report Artifact Assembly & Delivery Routing",
+          "/images/projects/revenue-intelligence/revint-v2-06-security-403.webp",
+        title: "Agent V2 Security — Unauthenticated Request Rejected",
         description:
-          "Detailed n8n workflow evidence showing approved report-artifact assembly, Power BI and chart context validation, delivery-route resolution, and controlled Slack, API, form, and manual-preview delivery paths.",
-      },
-      {
-        image:
-          "/images/projects/revenue-intelligence/revint-17-multichannel-delivery-audit.png",
-        title: "Multi-Channel Delivery & Audit",
-        description:
-          "Detailed n8n workflow evidence showing validated Slack, API, and form delivery branches with destination checks, payload validation, success and rejection handling, and delivery audit logging.",
-      },
-      {
-        image:
-          "/images/projects/revenue-intelligence/revint-02-approved-api-report.png",
-        title: "Approved API Revenue Report",
-        description:
-          "Successful governed API request returning closed-won revenue of 20,500 across two closed-won deals after passing reporting authorization and query controls.",
-      },
-      {
-        image:
-          "/images/projects/revenue-intelligence/revint-03-safe-rejection.png",
-        title: "Safe Unsupported-Request Rejection",
-        description:
-          "Unsupported reporting intent is rejected safely rather than being converted into unrestricted SQL or an unauthorized database operation.",
-      },
-      {
-        image: `${REVINT_EVIDENCE_BASE}/revint-04-postgres-security.png`,
-        title: "PostgreSQL Security Boundary",
-        description:
-          "Verified least-privilege PostgreSQL controls separating reporting, control, and privileged database responsibilities so approved reporting executes through the intended read-only boundary.",
-      },
-      {
-        image:
-          "/images/projects/revenue-intelligence/revint-11-postgres-schema.png",
-        title: "PostgreSQL Reporting & Governance Schema",
-        description:
-          "Verified database structure separating control, reporting, and audit responsibilities. The reporting layer uses a fact-and-dimension model for deals, accounts, sales representatives, and lead sources, while dedicated control and audit tables support governed query execution, request tracking, error handling, and traceability.",
-      },
-      {
-        image: `${REVINT_EVIDENCE_BASE}/revint-05-kpi-catalogue.png`,
-        title: "Governed KPI Catalogue",
-        description:
-          "Evidence of the governed KPI catalogue used to resolve approved metrics and prevent unsupported reporting requests from becoming arbitrary database queries.",
-      },
-      {
-        image:
-          "/images/projects/revenue-intelligence/revint-12-approved-query-template.png",
-        title: "Governed Approved Query Template",
-        description:
-          "Verified approved-query execution design using a fixed, parameterized SQL template for Closed Won Revenue. Only approved parameters are accepted, the query reads from the reporting layer, and the template is versioned, bounded, and governed instead of AI-generated at runtime.",
-      },
-      {
-        image:
-          "/images/projects/revenue-intelligence/revint-13-retry-fallback.png",
-        title: "Controlled Retry, Dead-Letter & Escalation",
-        description:
-          "Verified controlled reliability behavior for retryable failures. The system logs the error, retries with backoff, exhausts the retry budget after three attempts, records a dead-letter event, sends an alert, and escalates the incident for follow-up instead of silently failing.",
-      },
-      {
-        image: `${REVINT_EVIDENCE_BASE}/revint-06-slack-report.png`,
-        title: "Slack Manager Report",
-        description:
-          "Manager-facing Slack delivery showing an approved Revenue Intelligence request returned through the governed reporting workflow.",
-      },
-      {
-        image: `${REVINT_EVIDENCE_BASE}/revint-07-form-report.png`,
-        title: "Manager Form Report",
-        description:
-          "Authenticated manager-form result demonstrating a second request channel using the same governed Revenue Intelligence orchestration and bounded reporting contract.",
-      },
-      {
-        image:
-          "/images/projects/revenue-intelligence/revint-08-powerbi-dashboard.png",
-        title: "Revenue Intelligence Power BI Dashboard",
-        description:
-          "Management dashboard presenting closed-won revenue, open pipeline, closed-won deals, win rate, sales-rep pipeline, lead-source revenue, deal stages, and open opportunities.",
-      },
-      {
-        image:
-          "/images/projects/revenue-intelligence/revint-09-audit-traceability.png",
-        title: "Request Audit Traceability",
-        description:
-          "A single manager request traced across request received, intent parsed, governance approved, and delivery succeeded events using consistent request and correlation identifiers.",
-      },
-      {
-        image:
-          "/images/projects/revenue-intelligence/revint-10-error-handler.png",
-        title: "Centralized Error Handler",
-        description:
-          "Dedicated n8n reliability workflow handling error normalization, incident identification, classification, recovery decisions, escalation, alerting, dead-letter persistence, and final auditing.",
+          "Live security evidence from the rebuilt report API. A request to the governed revenue endpoint without the required report credential is rejected with HTTP 403 before report execution.",
       },
     ],
   },
