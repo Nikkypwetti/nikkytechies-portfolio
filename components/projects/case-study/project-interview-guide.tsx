@@ -14,13 +14,13 @@ export function ProjectInterviewGuide({ talkingPoints }: Props) {
     <section className="space-y-8">
       <div>
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-          Interview Talking Points
+          Project Deep Dive
         </p>
-        <h2 className="mt-2 text-3xl font-bold">How I Explain This Project</h2>
+        <h2 className="mt-2 text-3xl font-bold">Design Decisions & Implementation Reasoning</h2>
         <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">
-          Concise talking points that connect the technical implementation to
-          Revenue Operations, CRM governance, business systems and operational
-          reliability.
+          Key decisions, trade-offs and validation details that show how the
+          system was designed as a Revenue Operations and business process
+          solution — not just a collection of automation steps.
         </p>
       </div>
 
