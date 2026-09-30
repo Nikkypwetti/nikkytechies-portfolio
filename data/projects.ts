@@ -108,6 +108,54 @@ export const projects: Project[] = [
     },
   ],
 
+  interviewTalkingPoints: [
+    {
+      question: "Give me the 30-second overview.",
+      answer:
+        "I built a production-style Revenue Intelligence and Revenue Systems platform for managers who need reliable answers from CRM data. A manager can ask a natural-language question such as open pipeline this month; Groq interprets the intent, but deterministic KPI policies, identity controls and approved PostgreSQL functions decide what can actually run. The result can be returned through API or Gmail, while HubSpot and other CRM adapters feed one canonical reporting model. I also built reliability, observability, audit and a live Control Center so the system can be operated and handed over, not just demonstrated.",
+    },
+    {
+      question: "What business problem were you solving?",
+      answer:
+        "The core problem was that revenue reporting can become inconsistent when KPI definitions, CRM-specific fields, access permissions and ad-hoc AI queries are mixed together. I wanted managers to get fast answers without allowing an LLM to invent metrics or query the database freely. I therefore created a governed semantic layer, source-neutral CRM contract and explicit authorization path so the same business question is answered consistently and safely.",
+    },
+    {
+      question: "What did you personally own?",
+      answer:
+        "I owned the project end to end: requirements framing, system architecture, n8n workflow design, PostgreSQL governance and security, CRM adapter design, AI integration, delivery, reliability, observability, testing, incident investigation, GitHub CI, documentation and handover. I also validated the live HubSpot source, Gmail delivery, Groq execution, security rejection behavior and Control Center health.",
+    },
+    {
+      question: "Why did you not let the AI query the database directly?",
+      answer:
+        "I treated AI as an interpretation and communication layer, not as business authority. The model can map a question into structured intent and summarize approved facts, but deterministic controls validate the KPI, period, filters, dimensions, role and data scope before a fixed governed query path executes. That design reduces hallucination risk, prevents arbitrary SQL and makes the output auditable.",
+    },
+    {
+      question: "How did you make the system reusable across CRMs?",
+      answer:
+        "I separated source adapters from the reporting core. HubSpot, Salesforce, Airtable and REST ingestion map source-specific records into one canonical deal contract, while KPI logic stays source-neutral. That means a new client CRM should require credential, field, stage and business-policy configuration rather than rebuilding the Revenue Intelligence core.",
+    },
+    {
+      question: "How did you prove security and access control?",
+      answer:
+        "I tested both authentication and identity binding. An unauthenticated request received HTTP 403. In another live request I deliberately supplied a fake revenue-admin principal, but the audit trail showed the request executed under the server-bound service:report-api identity instead. The database also separates Reporting Reader, Connector Writer and Audit Writer responsibilities so runtime workflows do not receive broad database authority.",
+    },
+    {
+      question: "How did you handle failures and production operations?",
+      answer:
+        "I added bounded retries, circuit breakers, dead-letter persistence, audit events, runtime snapshots and alert-ready observability. During testing the Control Center surfaced three historical dead letters caused by an invalid JSON response-body error. I investigated the records, confirmed later successful executions, resolved the incidents without deleting the audit trail, corrected a safe-disabled Slack observability mismatch, and restored the runtime to HEALTHY with zero open dead letters.",
+    },
+    {
+      question: "What is live today, and what is intentionally not live?",
+      answer:
+        "The local Agent V2 core, governed reporting API, Groq intent/summary adapter, Gmail delivery, HubSpot read-only sync, REST ingestion, reliability, observability and Control Center are validated live. Salesforce and Airtable adapters are built but remain safe-disabled until their least-privilege and client-specific activation checks are complete. Slack report delivery is also safe-disabled. Public SSO/domain deployment is deliberately deferred until a real external client requires it.",
+    },
+    {
+      question: "What would you do next for a real client?",
+      answer:
+        "I would keep the same isolated-per-client architecture, configure the client's CRM mappings and read-only credentials, connect a real OIDC/SSO provider and trusted HTTPS domain, run source-to-canonical UAT against known business totals, validate role/data scopes with real users, complete backup/restore and load-test checks, document exceptions, then activate only the approved connectors and delivery channels.",
+    },
+  ],
+
   automation: [
     {
       title: "Capacity-Aware Lead Routing",
@@ -502,7 +550,7 @@ export const projects: Project[] = [
 
 {
   slug: "ai-revenue-intelligence-reporting-agent",
-  title: "AI Revenue Intelligence & Reporting Agent V2",
+  title: "AI Revenue Intelligence & Revenue Systems Agent V2",
   year: "2026",
   type: "Portfolio",
   status: "In Progress",
@@ -521,7 +569,39 @@ export const projects: Project[] = [
   ],
 
   description:
-    "Built and locally validated a governed AI Revenue Intelligence platform that turns manager questions into authorized KPI analysis, uses deterministic security and query controls, synchronizes CRM data through reusable adapters, delivers reports through governed channels, and exposes a read-only operations Control Center for runtime health and connector status.",
+    "Designed and implemented a production-style Revenue Intelligence and Revenue Systems platform that turns manager questions into governed KPI answers, unifies CRM data through reusable adapters, enforces identity and least-privilege controls, delivers reports through trusted channels, and exposes live reliability and connector health through a read-only Control Center.",
+
+  recruiterSummary: {
+    headline:
+      "End-to-end Revenue Systems ownership: CRM integration, KPI governance, AI-assisted reporting, security, reliability and operational handover.",
+    valueProposition:
+      "This project demonstrates how I approach Revenue Operations and Business Systems work beyond basic automation. I translated management reporting needs into a reusable operating architecture, separated AI interpretation from business authority, normalized CRM data into a controlled reporting model, added access controls and failure handling, validated the system with live integrations, and documented it for handover. The result is a working local production-style platform rather than a standalone chatbot or one-off n8n workflow.",
+    ownership: [
+      "Defined the business problem, reporting requirements, KPI governance model and reusable per-client architecture.",
+      "Designed and built the Agent V2 workflows in n8n, the PostgreSQL governance/reporting layer, Docker deployment and operational Control Center.",
+      "Implemented identity binding, role/data-scope authorization, approved KPI/query controls and least-privilege database boundaries.",
+      "Integrated and validated Groq, HubSpot, Gmail and authenticated REST ingestion; built guarded Salesforce and Airtable adapters for controlled activation.",
+      "Implemented retries, circuit breakers, dead letters, observability, audit traceability, deployment guards and CI verification.",
+      "Ran live tests, investigated incidents, recovered degraded runtime state, documented handover procedures and preserved evidence for recruiter/client review.",
+    ],
+    liveProof: [
+      "Live Control Center reached HEALTHY with 37 governed KPI contracts, 6 active managed components, 0 open dead letters and 0 recent failures.",
+      "A live authenticated manager question returned governed open pipeline of $1,200 USD; the same fact was delivered successfully through Gmail.",
+      "Groq executed both structured reporting-intent interpretation and grounded management-summary generation without controlling SQL or authorization.",
+      "Unauthenticated report requests return HTTP 403, and a caller-supplied fake admin identity was overwritten by the server-bound service:report-api principal.",
+      "The active read-only HubSpot adapter feeds canonical reporting data; current evidence shows 3 HubSpot deal rows in the governed reporting layer.",
+      "Salesforce, Airtable and Slack remain intentionally safe-disabled until their least-privilege/client activation conditions are satisfied.",
+    ],
+    roleFit: [
+      "Revenue Operations",
+      "Revenue Systems",
+      "CRM Operations",
+      "Business Systems",
+      "Sales Operations",
+      "GTM Operations",
+      "Workflow Automation",
+    ],
+  },
 
   overview: [
     "Re-architected the original Revenue Intelligence workflow into a reusable Agent V2 with isolated local deployment, modular sub-workflows, PostgreSQL governance and explicit security boundaries.",
@@ -753,6 +833,13 @@ export const projects: Project[] = [
       description:
         "Covers PostgreSQL upgrade rehearsal, bounded load testing, encrypted off-device backup strategy and local production-readiness criteria.",
       href: "https://github.com/Nikkypwetti/ai-revenue-intelligence-agent/blob/main/docs/local-production-hardening.md",
+      status: "Completed",
+    },
+    {
+      title: "Recruiter & Interview Guide",
+      description:
+        "A recruiter-facing explanation of the business problem, architecture, personal ownership, live proof, interview story, design trade-offs and next-step client implementation plan.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/ai-revenue-intelligence-agent-v2/recruiter-interview-guide.md",
       status: "Completed",
     },
   ],

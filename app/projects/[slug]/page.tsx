@@ -22,6 +22,8 @@ import { ProjectAutomation } from "@/components/projects/case-study/project-auto
 import { ProjectScrollToTop } from "@/components/projects/project-scroll-to-top";
 import { ProjectGovernance } from "@/components/projects/case-study/project-governance";
 import { ProjectDocumentation } from "@/components/projects/case-study/project-documentation";
+import { ProjectRecruiterSummary } from "@/components/projects/case-study/project-recruiter-summary";
+import { ProjectInterviewGuide } from "@/components/projects/case-study/project-interview-guide";
 
 type Props = {
   params: Promise<{
@@ -48,6 +50,10 @@ export default async function ProjectPage({ params }: Props) {
 
       <FadeIn delay={0.02}>
         <ProjectPlatforms platforms={project.platforms} status={project.status} />
+      </FadeIn>
+
+      <FadeIn delay={0.04}>
+        <ProjectRecruiterSummary summary={project.recruiterSummary} />
       </FadeIn>
 
       <FadeIn>
@@ -96,6 +102,10 @@ export default async function ProjectPage({ params }: Props) {
 
       <FadeIn delay={0.40}>
         <ProjectResults results={project.results} />
+      </FadeIn>
+
+      <FadeIn delay={0.42}>
+        <ProjectInterviewGuide talkingPoints={project.interviewTalkingPoints} />
       </FadeIn>
 
       <ProjectGallery gallery={project.gallery} />

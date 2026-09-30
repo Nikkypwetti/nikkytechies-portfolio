@@ -63,6 +63,19 @@ export interface Project {
     description: string;
   }[];
 
+  recruiterSummary?: {
+    headline: string;
+    valueProposition: string;
+    ownership: string[];
+    liveProof: string[];
+    roleFit?: string[];
+  };
+
+  interviewTalkingPoints?: {
+    question: string;
+    answer: string;
+  }[];
+
   documentation?: {
     title: string;
     description: string;
