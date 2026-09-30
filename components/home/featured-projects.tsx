@@ -9,7 +9,7 @@ const featuredSlugs = [
   "ai-business-os-multi-agent-operations",
   "ai-revenue-intelligence-reporting-agent",
   "asternova-salesforce-revops-system",
-  "flowbridge-revops-crm-audit-agent",
+  "growagency-crm-ai-pipeline",
 ];
 
 export function FeaturedProjects() {
