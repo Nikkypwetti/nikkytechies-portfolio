@@ -1,8 +1,12 @@
 const operationsSkills = [
   "Revenue Operations",
+  "Revenue Systems",
   "Sales Operations",
   "CRM Administration",
-  "Pipeline Management",
+  "Salesforce Data Governance",
+  "GTM Rules of Engagement",
+  "Lead Routing & Lifecycle Management",
+  "Pipeline & Forecast Management",
   "Account Management",
   "Customer Operations",
   "Project Coordination",
@@ -15,8 +19,9 @@ const operationsSkills = [
   "Forecast vs Target",
   "Pipeline Coverage & Sales Velocity",
   "CRM Data Quality",
+  "User Acceptance Testing",
+  "System Adoption",
   "Lead Scoring & Qualification",
-  "Agent Skills",
   "SOP Documentation",
   "Process Improvement",
   "Workflow Automation",
@@ -30,7 +35,7 @@ export function OperationsSkills() {
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">Business & Revenue Operations Skills</p>
           <h2 className="text-3xl font-bold tracking-tight md:text-5xl">Supporting the full path from customer data to project delivery</h2>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            I can support the operational work behind sales, CRM, customers, projects and delivery — from clean records and follow-up to reporting, documentation, task coordination, agent workflows and automation.
+            I can support the operational work behind sales, CRM, customers, projects and delivery — from clean records and follow-up to reporting, governance, documentation, human approvals and workflow automation.
           </p>
         </div>
         <div className="mt-10 flex flex-wrap gap-3">
