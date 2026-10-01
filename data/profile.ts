@@ -3,13 +3,14 @@ export const profile = {
 
   brand: "NikkyTechies",
 
-  role: "Operations, RevOps & Business Systems | Salesforce & HubSpot CRM | Power BI Reporting | Workflow Automation",
+  role:
+    "Operations, RevOps & Business Systems | Salesforce & HubSpot CRM | Revenue Systems | Power BI | AI & Workflow Automation",
 
   tagline:
-    "Connecting customer operations, CRM governance, revenue systems, project delivery, data and automation",
+    "Connecting CRM governance, revenue systems, reporting, project operations and governed automation",
 
   summary:
-    "Operations, Revenue Operations and Business Systems professional with 7+ years of experience spanning sales account management and executive administration, supported by hands-on experience in CRM operations, project coordination, client onboarding, reporting, data quality and workflow automation. Built practical Salesforce Revenue Systems and HubSpot systems covering business-requirements translation, process mapping, GTM Rules of Engagement, capacity-based lead routing, lifecycle management, Salesforce Data Governance, validation rules, permissions, forecasting, reporting, User Acceptance Testing and system-adoption documentation, plus Power BI revenue reporting with DAX measures for weighted pipeline, forecast vs target, pipeline coverage, sales velocity and stage conversion. Experienced in maintaining customer relationships, coordinating executive and operational activities, documenting SOPs, tracking projects and building connected business systems. Technical toolkit includes Salesforce, HubSpot, Power BI, PostgreSQL, Airtable, Notion, ClickUp, Google Workspace, Google Sheets, Microsoft Excel, Slack, n8n, Make.com, Zapier, AI integrations, APIs, Git and Linux.",
+    "Operations, Revenue Operations and Business Systems professional with 7+ years of experience spanning sales account management and executive administration, supported by hands-on Salesforce Revenue Systems, HubSpot CRM, Power BI reporting, project coordination, CRM governance, data quality, User Acceptance Testing and AI-enabled workflow automation. Built practical systems covering business-requirements translation, process mapping, GTM Rules of Engagement, capacity-aware lead routing, lifecycle management, permissions, forecasting, reporting, human approvals, provider integrations, incident recovery and cross-system handoffs. Experienced in maintaining customer relationships, coordinating executive and operational activities, documenting SOPs, tracking projects and building connected business systems.",
 
   location: "Lagos, Nigeria",
 
