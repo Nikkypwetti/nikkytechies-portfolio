@@ -18,8 +18,8 @@ export function About() {
         <FadeIn>
           <SectionHeading
             eyebrow="Professional Snapshot"
-            title="Operations experience backed by hands-on CRM, RevOps, Business Systems and Power BI work."
-            description="My background combines customer-facing sales, executive administration and hands-on work across CRM, Revenue Operations, Business Systems, Power BI reporting, sales forecasting and workflow automation."
+            title="Operations experience combined with CRM, Revenue Systems, Business Systems and Power BI work."
+            description="My background combines customer-facing sales, executive administration and hands-on work across CRM, Revenue Operations, Business Systems, Power BI reporting, sales forecasting, CRM governance and workflow automation."
           />
         </FadeIn>
 
@@ -35,17 +35,18 @@ export function About() {
               </p>
 
               <p className="text-lg leading-8 text-muted-foreground">
-                I now combine that operational experience with hands-on work in
-                Salesforce Sales Cloud, HubSpot, Airtable, Notion, ClickUp,
-                Power BI, PostgreSQL, Google Sheets, n8n, Make.com and related
-                systems to structure pipelines, CRM governance, projects, client
-                onboarding, forecasting, reporting and business workflows.
+                I now combine that operating experience with hands-on work in
+                Salesforce Sales Cloud, HubSpot, Power BI, PostgreSQL, Airtable,
+                Notion, ClickUp, Google Sheets, n8n and Make.com to structure
+                revenue processes, CRM governance, projects, client onboarding,
+                forecasting, reporting and cross-system workflows.
               </p>
 
               <p className="text-lg leading-8 text-muted-foreground">
-                My portfolio case studies are self-directed projects designed
-                around realistic business problems, with clear workflow logic,
-                measurable scope, documentation and implementation evidence.
+                My portfolio case studies are self-directed projects built
+                around realistic business problems, with documented decision
+                rules, implementation evidence, testing, measurable scope and
+                clear boundaries between verified results and planned work.
               </p>
             </div>
           </FadeIn>
