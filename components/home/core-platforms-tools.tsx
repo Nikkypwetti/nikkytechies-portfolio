@@ -11,7 +11,7 @@ const platformGroups = [
   },
   {
     title: "Operations & Project Delivery",
-    tools: ["ClickUp", "Airtable", "Notion", "Asana", "Trello"],
+    tools: ["ClickUp", "Airtable", "Notion", "Google Workspace"],
     note: "Work execution, client delivery, task ownership, documentation and operating systems.",
   },
   {
@@ -21,7 +21,7 @@ const platformGroups = [
   },
   {
     title: "Reporting & Data",
-    tools: ["Power BI", "DAX", "Salesforce Reports", "PostgreSQL", "Google Sheets", "Sales Forecasting", "GTM Metrics", "Data quality controls"],
+    tools: ["Power BI", "DAX", "Salesforce Reports", "PostgreSQL", "Advanced Google Sheets", "Sales Forecasting", "GTM Metrics", "Data quality controls"],
     note: "Management reporting, weighted pipeline, forecast vs target, pipeline coverage, sales velocity, stage conversion, governed datasets and decision support.",
   },
   {
