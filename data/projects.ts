@@ -1979,6 +1979,93 @@ export const projects: Project[] = [
   automationImage:
     "/images/projects/growagency/workflow-2.png",
 
+  evidenceInventory: [
+    {
+      title: "Lead Intake & AI Qualification",
+      description:
+        "The supplied n8n workflow evidence shows the inbound lead intake, validation/normalization and AI qualification path that feeds the CRM process.",
+      status: "Verified",
+    },
+    {
+      title: "Airtable Processing Log",
+      description:
+        "The supplied Airtable evidence shows qualified lead context, Sales Decision state, notification status and conversion state.",
+      status: "Verified",
+    },
+    {
+      title: "Qualified Intake — Slack",
+      description:
+        "The supplied Slack evidence shows the qualification notification with lead details, score, package, pain point and recommended next action.",
+      status: "Verified",
+    },
+    {
+      title: "CRM Change Review — Proposed & Applied",
+      description:
+        "The supplied Airtable evidence shows the governed Opportunity change set, including eight fields, proposed values, evidence and the resulting Applied state.",
+      status: "Verified",
+    },
+    {
+      title: "Closed Won Opportunity",
+      description:
+        "The supplied Opportunity evidence shows the Qualified state, AI score of 85, Standard package and Closed Won progression.",
+      status: "Verified",
+    },
+    {
+      title: "Payment Confirmed + CRM Relationships",
+      description:
+        "The supplied Airtable evidence shows Payment Confirmed together with the linked Processing Log and CRM Change Review records.",
+      status: "Verified",
+    },
+    {
+      title: "Closed Won → Client Operations Handoff",
+      description:
+        "The supplied n8n evidence shows the successful handoff workflow and its transition from Sales into Client Operations.",
+      status: "Verified",
+    },
+    {
+      title: "Completed Client Operations Handoff",
+      description:
+        "The supplied Airtable evidence shows a completed handoff with the linked GrowAgency Client, Client Operations Client and Onboarding Request.",
+      status: "Verified",
+    },
+    {
+      title: "Onboarding Request Approval Boundary",
+      description:
+        "The supplied Airtable evidence shows the downstream onboarding request remaining under human approval control, including Pending Approval state.",
+      status: "Verified",
+    },
+    {
+      title: "Project & Package Task Provisioning",
+      description:
+        "The supplied Client Operations evidence shows the generated project and four package-specific onboarding tasks.",
+      status: "Verified",
+    },
+    {
+      title: "Notion Client Workspace",
+      description:
+        "The supplied evidence shows the generated client delivery workspace created by the validated onboarding path.",
+      status: "Verified",
+    },
+    {
+      title: "Professional Client Onboarding — Make.com",
+      description:
+        "The supplied Make.com evidence shows the existing onboarding automation architecture connecting Airtable, Notion, Gmail and Slack.",
+      status: "Verified",
+    },
+    {
+      title: "CRM Approval Batch Regression — Execution 3321",
+      description:
+        "The development test result verified that two simultaneous CRM approvals were successfully processed after batch hardening. The execution screenshot could not be resent because the later n8n publish warning and file-upload limit prevented it.",
+      status: "Verified — screenshot unavailable",
+    },
+    {
+      title: "NEW CLIENT ONBOARDING COMPLETED Slack Message",
+      description:
+        "This specific delivery message was not captured and is deliberately not presented as verified evidence.",
+      status: "Not claimed",
+    },
+  ],
+
   gallery: [
     {
       image: "/images/projects/growagency/dashboard.png",
