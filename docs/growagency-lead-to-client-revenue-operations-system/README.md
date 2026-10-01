@@ -179,14 +179,29 @@ I owned the process design, Airtable CRM structure, n8n architecture, AI qualifi
 
 ## Evidence Gallery
 
-The portfolio currently uses these recruiter-facing visuals:
+The GrowAgency evidence set already captured during development covers the full revenue-to-client story. The screenshots were supplied during the project review and are the source evidence for this case study:
 
-- Airtable Revenue Operations CRM — public/images/projects/growagency/dashboard.png
-- Lead Intake & AI Qualification — public/images/projects/growagency/workflow-1.png
-- Sales Operations Routing & Follow-Up — public/images/projects/growagency/workflow-2.png
-- Sales Operations Notification — public/images/projects/growagency/slack-alert.png
+1. **Lead Intake & AI Qualification — n8n** — intake, normalization and AI qualification workflow.
+2. **Airtable Processing Log** — qualified lead records, Sales Decision and notification/conversion state.
+3. **Qualified Intake — Slack** — qualification notification containing lead details, score, package, pain point and next action.
+4. **CRM Change Review — Airtable** — eight governed Opportunity fields with proposed values, evidence and applied results.
+5. **Opportunity — Airtable** — Qualified / AI Score 85 / Standard package / Closed Won state.
+6. **Payment Confirmed + CRM links — Airtable** — payment confirmation and links between Opportunity, CRM Change Review and Processing Log.
+7. **Closed Won → Client Operations Handoff — n8n** — successful handoff execution history.
+8. **Client Operations Handoff — Airtable** — Completed handoff with linked GrowAgency Client, Client Operations Client and Onboarding Request.
+9. **Onboarding Requests — Airtable** — Pending Approval state plus previously completed onboarding examples.
+10. **Projects — Airtable** — client project created from the onboarding process.
+11. **Tasks — Airtable** — four generated package-specific onboarding tasks.
+12. **Client Workspace — Notion** — generated client delivery workspace.
+13. **Professional Client Onboarding — Make.com** — full onboarding automation canvas showing Airtable, Notion, Gmail and Slack orchestration.
 
-Additional screenshots from the CRM Change Review, approval regression and Closed Won/payment/handoff tests should be added as evidence assets when the corresponding image files are available in the repository.
+### One unavailable visual
+
+The only execution screenshot that could not be resent is the **successful CRM Change Approval Handler batch execution (execution 3321)**. The workflow later showed an n8n "The service is receiving too many requests from you" activation warning after a node was only repositioned, and the screenshot/file-upload limit was reached.
+
+The underlying regression result is already recorded from the development test: two simultaneous CRM approvals were successfully processed after batch hardening. The case study therefore describes the test result but does not pretend that a screenshot of execution 3321 is currently available in the repository.
+
+The separate **"NEW CLIENT ONBOARDING COMPLETED"** Slack message is not claimed as evidence because that specific message was not captured. It is not required to establish the verified client-handoff and onboarding evidence shown above.
 
 ## Project Stack
 
