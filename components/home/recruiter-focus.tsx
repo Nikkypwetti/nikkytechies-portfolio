@@ -7,26 +7,26 @@ const capabilities = [
   {
     title: "CRM & Revenue Operations",
     description:
-      "Structure lifecycle stages, pipelines, ownership, lead routing, duplicate controls and CRM data so revenue teams can see what needs action.",
-    proof: "Salesforce • HubSpot • CRM governance • Sales operations",
+      "Design and support lifecycle stages, pipelines, ownership, lead routing, duplicate controls and CRM data governance so revenue teams can see what needs action.",
+    proof: "Salesforce • HubSpot • Revenue Systems • Sales operations",
   },
   {
     title: "Business Systems & Operations",
     description:
-      "Turn scattered tasks, client work and operating procedures into connected systems with clear ownership and delivery visibility.",
-    proof: "Notion • Airtable • ClickUp • SOPs",
+      "Turn scattered tasks, client work and operating procedures into connected systems with clear ownership, delivery visibility and documented handoffs.",
+    proof: "Notion • Airtable • ClickUp • SOPs • Process documentation",
   },
   {
     title: "Reporting & Data Quality",
     description:
-      "Create reliable KPI definitions, Power BI dashboards, pipeline-aging views, weighted pipeline, forecast vs target, pipeline coverage, sales velocity, stage conversion and data-quality controls.",
-    proof: "Power BI • DAX • Salesforce Reports • PostgreSQL • Data quality",
+      "Define governed KPIs and build reporting views for pipeline aging, weighted pipeline, forecast vs target, pipeline coverage, sales velocity, stage conversion and data quality.",
+    proof: "Power BI • DAX • Salesforce Reports • PostgreSQL",
   },
   {
-    title: "Workflow Automation",
+    title: "Workflow & AI Automation",
     description:
-      "Automate repeatable handoffs, notifications and integrations while keeping validation, failure handling and human accountability visible.",
-    proof: "n8n • Make.com • Zapier • APIs",
+      "Build repeatable handoffs and integrations while keeping validation, human approval, idempotency, failure handling and operational accountability visible.",
+    proof: "n8n • Make.com • Zapier • APIs • AI workflows",
   },
 ];
 
@@ -38,7 +38,7 @@ export function RecruiterFocus() {
           <SectionHeading
             eyebrow="Business Value"
             title="What I help teams improve"
-            description="My portfolio focuses on the operational systems behind clean customer data, predictable follow-up, reliable reporting and consistent delivery."
+            description="My portfolio focuses on the operating systems behind clean customer data, predictable follow-up, reliable reporting, governed handoffs and consistent delivery."
           />
         </FadeIn>
 
