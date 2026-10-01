@@ -182,7 +182,7 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
           "/images/projects/revenue-intelligence/revint-v2-00-agent-core-overview.webp",
         title: "Agent V2 — Governed Report Agent Core",
         description:
-          "Full rebuilt Agent V2 orchestration showing authenticated API and SSO-ready intake, server-bound identity, governed AI intent, deterministic report execution, clarification handling, management-summary generation, presentation, audit logging, and controlled API/Slack/Gmail delivery routing.",
+          "Full rebuilt Agent V2 orchestration showing authenticated API and SSO-ready intake, server-bound identity, governed AI intent, deterministic report execution, clarification handling, management-summary generation, presentation, audit logging, and controlled delivery routing.",
       },
       {
         image:
@@ -207,38 +207,10 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
       },
       {
         image:
-          "/images/projects/revenue-intelligence/revint-v2-04-groq-summary-execution.webp",
-        title: "Groq Grounded Management Summary",
-        description:
-          "Live Agent V2 AI execution showing the management-summary path operating on already-governed report facts. AI can change wording, but it cannot change the authorized KPI value.",
-      },
-      {
-        image:
-          "/images/projects/revenue-intelligence/revint-v2-05-email-delivery-response.webp",
-        title: "Governed Gmail Delivery — API Confirmation",
-        description:
-          "The same $1,200 governed open-pipeline fact routed through the Gmail delivery path, with Agent V2 confirming provider delivery after the report was authorized and generated.",
-      },
-      {
-        image:
-          "/images/projects/revenue-intelligence/revint-v2-07-received-gmail-report.webp",
-        title: "Manager Received the Governed Revenue Report",
-        description:
-          "Actual Gmail delivery received by the trusted manager destination, showing the approved open-pipeline report and key facts outside the n8n execution environment.",
-      },
-      {
-        image:
           "/images/projects/revenue-intelligence/revint-v2-08-hubspot-live-sync.webp",
         title: "Live HubSpot → Canonical Reporting Sync",
         description:
-          "Current rebuilt HubSpot adapter execution showing the full governed path from manual trigger through sync context, bounded HubSpot read, normalization, canonical batch ingestion and audited sync completion.",
-      },
-      {
-        image:
-          "/images/projects/revenue-intelligence/revint-v2-10-hubspot-canonical-aggregate.webp",
-        title: "HubSpot Data in the Canonical Reporting Layer",
-        description:
-          "Read-only database evidence showing hubspot_primary records in the canonical reporting layer and persisted incremental sync state, demonstrating that the active CRM source actually feeds Agent V2 reporting.",
+          "Current rebuilt HubSpot adapter execution showing the successful path from sync context through bounded HubSpot read, normalization, canonical batch ingestion and audited sync completion.",
       },
       {
         image:
