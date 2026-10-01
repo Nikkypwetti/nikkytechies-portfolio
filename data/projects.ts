@@ -2053,6 +2053,54 @@ export const projects: Project[] = [
       status: "Verified",
     },
     {
+      title: "AI Business OS Control Center",
+      description:
+        "The supplied control-center evidence shows the reusable revenue-operations operating layer, readiness controls, integration state, human approval boundary and local production monitoring surface.",
+      status: "Verified",
+    },
+    {
+      title: "Sales Operations Monitor",
+      description:
+        "The supplied Sales Operations monitor shows assigned leads, routed volume, SLA/alert state, CRM sync health, owner mapping health and the sales-rep inbox.",
+      status: "Verified",
+    },
+    {
+      title: "Reusable Sales Rep Router — ROUTE-01",
+      description:
+        "The supplied n8n evidence shows the reusable sales-rep routing workflow with routing context, capacity-aware assignment, assignment audit and notification handoff.",
+      status: "Verified",
+    },
+    {
+      title: "Reusable Lead Intake — ING-01",
+      description:
+        "The supplied n8n evidence shows the reusable intake path from external form submission through validation, qualification, CRM projection, sales routing and CRM-aware notification preparation.",
+      status: "Verified",
+    },
+    {
+      title: "Human Approval Decision & Resume — SYS-05B",
+      description:
+        "The supplied n8n evidence shows the governed approval-decision workflow that validates authority, applies approved actions and handles rejected paths.",
+      status: "Verified",
+    },
+    {
+      title: "CRM Change Review Evidence",
+      description:
+        "The supplied CRM evidence shows governed change records with proposed values, evidence and review state across the Opportunity governance layer.",
+      status: "Verified",
+    },
+    {
+      title: "HubSpot Live Contact Projection",
+      description:
+        "The supplied HubSpot evidence shows the reusable CRM adapter successfully projecting Business OS test contacts into a live HubSpot Contacts view.",
+      status: "Verified",
+    },
+    {
+      title: "Sales Rep Notification — Slack",
+      description:
+        "The supplied Slack evidence shows lead-assignment and deal-approval notifications delivered to the sales workflow with owner, qualification, need and follow-up context.",
+      status: "Verified",
+    },
+    {
       title: "CRM Approval Batch Regression — Execution 3321",
       description:
         "The development test result verified that two simultaneous CRM approvals were successfully processed after batch hardening. The execution screenshot could not be resent because the later n8n publish warning and file-upload limit prevented it.",
@@ -2090,6 +2138,54 @@ export const projects: Project[] = [
       title: "Sales Operations Notification",
       description:
         "Structured Slack evidence showing actionable lead context delivered to the sales workflow instead of relying on manual monitoring.",
+    },
+    {
+      image: "/images/projects/growagency/evidence/business-os-control-center.svg",
+      title: "AI Business OS Control Center",
+      description:
+        "Reusable revenue-operations control surface showing production-readiness state, integration health, human approval controls and governed operating boundaries.",
+    },
+    {
+      image: "/images/projects/growagency/evidence/sales-operations-monitor.svg",
+      title: "Sales Operations Monitor",
+      description:
+        "Operational monitoring view showing routed leads, SLA breaches, alerts, CRM sync health, owner mappings and the sales-rep inbox.",
+    },
+    {
+      image: "/images/projects/growagency/evidence/lead-intake-reusable.svg",
+      title: "Reusable Lead Intake — ING-01",
+      description:
+        "Reusable intake orchestration connecting external lead capture, qualification, CRM projection, sales routing and CRM-aware notification preparation.",
+    },
+    {
+      image: "/images/projects/growagency/evidence/sales-rep-routing.svg",
+      title: "Reusable Sales Rep Router — ROUTE-01",
+      description:
+        "Capacity-aware sales assignment workflow with routing context, assignment application, audit evidence and notification handoff.",
+    },
+    {
+      image: "/images/projects/growagency/evidence/sales-rep-slack-notification.svg",
+      title: "Sales Rep Notification — Slack",
+      description:
+        "Internal notification evidence showing assigned-lead and deal-approval messages with owner, qualification, need and follow-up context.",
+    },
+    {
+      image: "/images/projects/growagency/evidence/crm-change-review.svg",
+      title: "CRM Change Review",
+      description:
+        "Governed CRM evidence showing proposed values, supporting evidence and review state for controlled Opportunity changes.",
+    },
+    {
+      image: "/images/projects/growagency/evidence/approval-decision-resume.svg",
+      title: "Human Approval Decision & Resume — SYS-05B",
+      description:
+        "Governed approval workflow evidence showing authority validation, approved-action execution and rejected-path handling.",
+    },
+    {
+      image: "/images/projects/growagency/evidence/hubspot-live-contact-sync.svg",
+      title: "HubSpot Live Contact Projection",
+      description:
+        "Live HubSpot Contacts evidence showing reusable CRM adapter output from the Business OS integration layer.",
     },
   ],
 
