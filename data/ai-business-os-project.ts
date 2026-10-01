@@ -39,8 +39,8 @@ export const aiBusinessOsProject: Project = {
     liveProof: [
       "A controlled Google Form lead intake was normalized into the canonical PostgreSQL lead model, scored 75/100, classified qualified, routed to the configured sales owner and assigned a 24-hour follow-up SLA.",
       "Lead-assignment and deal-approval notifications were delivered while the material deal action remained behind a human approval gate; no deal was created without approval.",
-      "The repaired HubSpot CRM projection created and read back contact 880647909565 with the verified owner and qualification context, then logged the same provider ID in PostgreSQL integration evidence.",
-      "Two real HubSpot provider failures were caught by the centralized error path, escalated into incident/dead-letter records, remediated at the root cause and later marked RESOLVED with the successful provider action attached.",
+      "The repaired HubSpot CRM projection created and independently read back contact 880647909565 with verified owner and qualification context; the same provider ID was then recorded in PostgreSQL integration evidence, completing the provider → CRM readback → audit chain.",
+      "Two real HubSpot provider failures were caught by the centralized error path, escalated into incident/dead-letter records, remediated at the root cause and later marked RESOLVED with the successful provider action attached. The original failures were preserved as operational evidence rather than hidden by deleting executions.",
       "The last fully verified core release passed 21/21 agent-access security checks, 11/11 RBAC and tenant-isolation checks, and 22/22 local production-readiness checks.",
       "The architecture keeps PostgreSQL authoritative and CRM providers replaceable, allowing the same operating model to support HubSpot, Salesforce or another client CRM through configuration and adapters.",
     ],
@@ -66,7 +66,7 @@ export const aiBusinessOsProject: Project = {
     "Built and validated provider adapters for HubSpot, Salesforce, Gmail and Google Calendar; kept CRM routing provider-neutral so the system can change providers without rebuilding the entire operating model.",
     "Completed a controlled local core cutover with PRODUCTION_READY=true, 21/21 agent-access security, 11/11 RBAC & tenant-isolation checks and 22/22 readiness checks while keeping public VPS/domain/TLS deployment explicitly separate until hosting is available.",
     "Extended the platform into a CRM-first Sales Ops operating model so sales reps can work primarily in the configured CRM while the Business OS handles qualification, routing, owner verification, SLA monitoring, notifications, approvals and exception handling.",
-    "Validated a controlled intake-to-CRM path through Google Form → canonical PostgreSQL lead → qualification → routing → HubSpot contact projection → rep notification → protected deal-approval state, with provider failures recovered through the same incident and DLQ architecture.",
+    "Validated a controlled intake-to-CRM path through Google Form → canonical PostgreSQL lead → qualification → routing → HubSpot contact projection → independent provider readback → rep notification → protected deal-approval state, with provider failures recovered through the same incident and DLQ architecture.",
   ],
 
   problem:
@@ -231,7 +231,7 @@ export const aiBusinessOsProject: Project = {
       image: "/images/projects/ai-business-os/08-hubspot-adapter.webp",
       title: "Governed HubSpot CRM Adapter",
       description:
-        "HubSpot adapter with request normalization, integration gating, idempotency reuse, allowed and blocked branches, routed contact/deal operations, durable success logging and centralized provider-error handling.",
+        "HubSpot CRM v3 adapter with request normalization, integration gating, idempotency reuse, routed contact/deal operations, durable success logging and centralized provider-error handling. The latest verified CRM-first run also proved provider readback, integration-audit persistence and incident/DLQ remediation.",
     },
     {
       image: "/images/projects/ai-business-os/09-calendar-adapter.webp",
@@ -258,7 +258,7 @@ export const aiBusinessOsProject: Project = {
     "Kept CRM architecture provider-neutral: required local HubSpot controls are enabled while the main CRM gateway remains on postgres_dev and optional Salesforce writes remain disabled.",
     "Maintained pre-cutover and post-cutover rollback backups, plus an isolated PostgreSQL restore proof covering 41 Business OS tables.",
     "Validated the CRM-first sales path with a canonical qualified lead, verified owner routing, a 24-hour SLA, delivered rep/approval notifications and a protected pending deal decision.",
-    "Recovered a failed HubSpot projection without creating a duplicate canonical lead: the same lead was successfully projected as HubSpot contact 880647909565 and logged as SUCCESS in the integration action ledger.",
+    "Recovered a failed HubSpot projection without creating a duplicate canonical lead: the same lead was successfully projected as HubSpot contact 880647909565, independently read back from HubSpot and logged as SUCCESS in the integration action ledger.",
     "Preserved two failed HubSpot executions as audit evidence, remediated the HTTP-method and CRM-field-model root causes, and moved both incident and dead-letter records to RESOLVED after the successful retry.",
   ],
 
