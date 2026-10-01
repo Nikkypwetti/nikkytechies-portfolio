@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { projects } from "@/data/projects";
+import { allProjects } from "@/data/all-projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://nikkytechies-portfolio.vercel.app";
@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/contact`, priority: 0.8 },
   ];
 
-  const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
+  const projectPages: MetadataRoute.Sitemap = allProjects.map((project) => ({
     url: `${baseUrl}/projects/${project.slug}`,
     priority: 0.8,
   }));
