@@ -15,7 +15,7 @@ export function Contact() {
           <SectionHeading
             eyebrow="Contact"
             title="Open to Remote Worldwide Opportunities"
-            description="I am interested in Operations, RevOps, Sales Operations, CRM, Business Systems, Project Coordination, Customer Operations and AI-enabled workflow roles."
+            description="I am interested in Operations, Revenue Operations, Sales Operations, Salesforce/HubSpot CRM, Business Systems, Project Coordination, Customer Operations and AI-enabled workflow improvement."
           />
         </FadeIn>
 
@@ -52,9 +52,10 @@ export function Contact() {
               </h3>
               <p className="mt-4 leading-7 text-muted-foreground">
                 My experience spans customer accounts, executive administration,
-                CRM operations, project coordination, reporting, documentation
-                and workflow automation. I am especially interested in roles
-                where business process understanding and technical systems overlap.
+                CRM and Revenue Systems, project coordination, reporting,
+                documentation, governance and workflow automation. I am
+                especially interested in roles where business process
+                understanding and technical systems overlap.
               </p>
               <Link href="/contact">
                 <Button size="lg" className="mt-8 w-full">
