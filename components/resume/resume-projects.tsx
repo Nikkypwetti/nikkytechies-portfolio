@@ -21,7 +21,7 @@ export function ResumeProjects() {
             </h2>
 
             <p className="mt-4 leading-7 text-muted-foreground">
-              The five projects selected in my current master resume, with links
+              The six projects selected in my current master resume, with links
               to the fuller portfolio evidence.
             </p>
           </div>
