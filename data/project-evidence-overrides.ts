@@ -175,35 +175,56 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
     heroImage:
       "/images/projects/revenue-intelligence/revint-v2-01-control-center-healthy.webp",
     automationImage:
-      "/images/projects/revenue-intelligence/revint-v2-03-groq-intent-execution.webp",
+      "/images/projects/revenue-intelligence/revint-v2-00-agent-core-overview.webp",
     gallery: [
       {
         image:
-          "/images/projects/revenue-intelligence/revint-v2-01-control-center-healthy.webp",
-        title: "Agent V2 Control Center — Healthy Runtime",
+          "/images/projects/revenue-intelligence/revint-v2-00-agent-core-overview.webp",
+        title: "Agent V2 — Governed Report Agent Core",
         description:
-          "Live evidence from the rebuilt Agent V2 operations surface: HEALTHY overall status, 37 governed KPI contracts, 6 active managed components, 0 open dead letters, HubSpot and REST ingestion active, and Salesforce/Airtable intentionally safe-disabled.",
+          "Full rebuilt Agent V2 orchestration showing authenticated API and SSO-ready intake, server-bound identity, governed AI intent, deterministic report execution, clarification handling, management-summary generation, presentation, audit logging, and controlled delivery routing.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/revint-v2-01-control-center-healthy.webp",
+        title: "Live Agent V2 Control Center — Healthy Runtime",
+        description:
+          "Current operational evidence showing HEALTHY overall status, 37 governed KPIs, 6 active managed components, zero open dead letters, zero recent failures, HubSpot and REST active, and Salesforce/Airtable intentionally safe-disabled.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/revint-v2-02-live-api-governed-report.webp",
+        title: "Live Governed Revenue Question",
+        description:
+          "Authenticated Agent V2 API request for open pipeline this month returning the deterministic governed result of $1,200 USD together with the management summary and KPI-card presentation artifact.",
       },
       {
         image:
           "/images/projects/revenue-intelligence/revint-v2-03-groq-intent-execution.webp",
-        title: "Agent V2 — Live Groq Intent Execution",
+        title: "Groq Structured Intent Execution",
         description:
-          "Live REVINT-V2-AI-01 execution from the rebuilt architecture. The green path shows governed AI policy loading, the intent-enabled gate, Groq Intent Model, schema-constrained reporting-intent parsing, and normalized intent before deterministic KPI authorization.",
+          "Live REVINT-V2-AI-01 execution showing policy loading, AI routing, Groq reporting-intent parsing and normalized structured intent before deterministic KPI authorization and database execution.",
       },
       {
         image:
           "/images/projects/revenue-intelligence/revint-v2-08-hubspot-live-sync.webp",
-        title: "Agent V2 — Live HubSpot Incremental Sync",
+        title: "Live HubSpot → Canonical Reporting Sync",
         description:
-          "Live rebuilt HubSpot adapter showing the full successful path from manual trigger through governed sync context, bounded read-only HubSpot search, deterministic normalization, controlled canonical batch ingestion, and audited sync completion.",
+          "Current rebuilt HubSpot adapter execution showing the successful path from sync context through bounded HubSpot read, normalization, canonical batch ingestion and audited sync completion.",
       },
       {
         image:
           "/images/projects/revenue-intelligence/revint-v2-06-security-403.webp",
-        title: "Agent V2 Security — Unauthenticated Request Rejected",
+        title: "Unauthenticated Revenue Question Rejected",
         description:
-          "Live security evidence from the rebuilt report API. A request to the governed revenue endpoint without the required report credential is rejected with HTTP 403 before report execution.",
+          "Live security evidence showing an unauthenticated request to the Agent V2 report endpoint returning HTTP 403 Forbidden before any governed report can execute.",
+      },
+      {
+        image:
+          "/images/projects/revenue-intelligence/revint-v2-09-server-bound-identity.webp",
+        title: "Caller-Supplied Admin Identity Cannot Bypass Governance",
+        description:
+          "Audit evidence from an authenticated request that deliberately supplied a fake revenue-admin principal. Agent V2 overwrote the caller identity and recorded the server-bound service:report-api principal for the completed request.",
       },
     ],
   },
