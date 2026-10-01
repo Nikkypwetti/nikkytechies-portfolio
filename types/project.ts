@@ -56,6 +56,12 @@ export interface Project {
     description: string;
   }[];
 
+  evidenceInventory?: {
+    title: string;
+    description: string;
+    status: "Verified" | "Verified — screenshot unavailable" | "Not claimed";
+  }[];
+
   results: string[];
 
   governance?: {
