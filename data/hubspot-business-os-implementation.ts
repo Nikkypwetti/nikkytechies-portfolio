@@ -22,13 +22,13 @@ export const hubspotBusinessOsImplementation: Project = {
 
   recruiterSummary: {
     headline:
-      "HubSpot implementation with CRM ownership, lead routing, data governance, human deal control, idempotency and production-style incident recovery.",
+      "HubSpot Revenue Operations implementation with CRM ownership, lead routing, data governance, human deal control, idempotency, provider verification and production-style incident recovery.",
     valueProposition:
       "This case study shows that I can work beyond HubSpot configuration alone. I connected CRM administration to the wider Revenue Operations process: authoritative lead state, qualification, routing, owner mapping, rep notification, CRM projection, deal-approval governance, provider verification and failure recovery. The result is a reusable HubSpot operating pattern that keeps reps working in CRM while business rules and audit controls remain governed outside the provider.",
     ownership: [
       "Designed the HubSpot projection contract and kept PostgreSQL as the authoritative Business OS state rather than duplicating business policy inside provider-specific workflows.",
       "Mapped logical sales ownership to a verified HubSpot owner before assigning records and built the CRM-first path around the rep's actual CRM workspace.",
-      "Implemented the v3 contact upsert path, qualification-property mapping, provider readback and integration action logging.",
+      "Implemented the CRM v3 contact batch-upsert path keyed by email, qualification-property mapping, provider readback and integration action logging.",
       "Kept material deal creation behind a human approval boundary and preserved the current clean lead in PENDING approval rather than forcing a happy-path deal.",
       "Diagnosed and remediated two real provider failures: an HTTP-method configuration defect and a CRM schema problem caused by an incorrectly unique lead-score field.",
       "Preserved incident and dead-letter evidence, verified the repaired contact in HubSpot and PostgreSQL, and closed the failures as RESOLVED only after successful remediation.",
@@ -39,6 +39,7 @@ export const hubspotBusinessOsImplementation: Project = {
       "PostgreSQL integration_action_log recorded the same contact ID with SUCCESS and audit action a44ae785-58bf-44cc-abcb-d11d7d42b0d3.",
       "The numeric score of 75 remained authoritative in Business OS/PostgreSQL and in the qualification explanation after the existing HubSpot lead_score property was found to be incorrectly constrained as unique.",
       "Executions 17060 and 17143 were captured as provider incidents, escalated into the DLQ, remediated and marked RESOLVED with the successful provider action attached.",
+      "The final retry used the same canonical lead and idempotency key, proving recovery against the intended business operation rather than creating a new local lead.",
       "The current clean CRM-first path intentionally stops at human deal approval; no deal was created without a sales decision.",
     ],
     roleFit: [
@@ -60,6 +61,7 @@ export const hubspotBusinessOsImplementation: Project = {
     "Protected successful provider writes with stable idempotency evidence so a retry can reuse or reconcile the same business operation rather than creating duplicate CRM state.",
     "Kept material deal creation behind the Business OS human-approval boundary; the current clean lead remains a protected pending commercial decision.",
     "Validated production-style failure handling by preserving provider errors in incident and dead-letter records, correcting the root causes, verifying the repaired CRM write and closing the incidents without deleting history.",
+    "Completed a three-layer verification chain: HubSpot provider SUCCESS, independent HubSpot readback, and PostgreSQL integration audit with the matching provider object ID.",
   ],
 
   problem:
@@ -73,7 +75,7 @@ export const hubspotBusinessOsImplementation: Project = {
     "Deterministic qualification and routing",
     "Logical sales owner → verified HubSpot owner mapping",
     "Provider-neutral CRM projection decision",
-    "HubSpot v3 contact upsert keyed by email",
+    "HubSpot CRM v3 batch upsert keyed by email",
     "Provider response normalization and CRM record URL",
     "Integration action log with provider object ID",
     "Rep notification / CRM-first work context",
@@ -175,7 +177,25 @@ export const hubspotBusinessOsImplementation: Project = {
       image: "/images/projects/ai-business-os/08-hubspot-adapter.webp",
       title: "Governed HubSpot CRM Adapter",
       description:
-        "Reusable HubSpot adapter with integration gating, idempotency checks, CRM action routing, normalized provider results, durable success logging and centralized provider-error handling. Additional live CRM-first evidence will be added from the verified 2026-09-30 remediation run.",
+        "HubSpot CRM v3 adapter with request normalization, integration gating, idempotency checks, provider action routing, normalized results, durable success logging and centralized provider-error handling. The final verified path created the CRM contact, returned the provider record ID and passed independent HubSpot readback.",
+    },
+    {
+      image: "/images/projects/ai-business-os/07-idempotent-retry.webp",
+      title: "Replay-Safe Recovery Pattern",
+      description:
+        "The same Business OS recovery pattern used during the HubSpot remediation: preserve the original operation, repair the root cause, replay the intended canonical action and verify the provider result instead of creating a replacement test record.",
+    },
+    {
+      image: "/images/projects/ai-business-os/05-human-approval-gateway.webp",
+      title: "Human Commercial Approval Boundary",
+      description:
+        "Protected approval architecture used to keep material deal creation separate from contact projection. The final CRM-first validation intentionally stopped at pending human deal approval.",
+    },
+    {
+      image: "/images/projects/ai-business-os/04-crm-gateway.webp",
+      title: "Provider-Neutral CRM Gateway",
+      description:
+        "Business OS CRM gateway separating canonical lead state and governance from provider-specific HubSpot execution, allowing the same operating model to support multiple CRM providers.",
     },
   ],
 
