@@ -1,10 +1,10 @@
 export const masterResume = {
   title: "Operations, RevOps & Business Systems",
   subtitle:
-    "Salesforce & HubSpot CRM | Revenue Systems | Sales Operations | Power BI Forecasting",
+    "Revenue Systems | Salesforce & HubSpot CRM | Sales Operations | Power BI | AI & Workflow Automation",
 
   summary:
-    "Operations, Revenue Operations and Business Systems professional with 7+ years of professional experience across sales account management and executive/administrative operations, supported by hands-on CRM, reporting and automation project work. Built Salesforce Revenue Systems and HubSpot systems translating business requirements into process maps, simulated GTM Policy and Rules of Engagement, capacity-based lead routing, lifecycle controls, Salesforce Data Governance, forecasting, reporting, User Acceptance Testing and system-adoption documentation. Built Power BI revenue dashboards with DAX for weighted pipeline, forecast vs target, pipeline coverage, sales velocity and stage conversion. Toolkit includes Salesforce, HubSpot, Power BI, SQL/PostgreSQL, advanced Google Sheets, Excel, Airtable, ClickUp, Notion, n8n, Make.com, Zapier, APIs and AI agent workflows.",
+    "Operations, Revenue Operations and Business Systems professional with 7+ years of professional experience across sales account management and executive/administrative operations, supported by hands-on CRM, reporting, data and automation project work. Built governed Salesforce, HubSpot and AI-assisted Revenue Systems covering lead routing, lifecycle controls, human approvals, CRM data governance, forecasting, reporting, multi-agent orchestration, provider integrations, idempotency, incident recovery and User Acceptance Testing. Experienced in translating business requirements into practical operating processes, dashboards, workflows, documentation and reliable cross-system execution.",
 
   coreCompetencies: [
     "Revenue & Sales Operations",
@@ -12,10 +12,11 @@ export const masterResume = {
     "Salesforce & HubSpot CRM Administration",
     "GTM Rules of Engagement",
     "Requirements Translation & Process Mapping",
-    "Salesforce Data Governance",
     "Lead Routing & Lifecycle Management",
     "Pipeline & Forecast Management",
     "Sales Forecasting & GTM Metrics",
+    "Salesforce Data Governance",
+    "Human-in-the-Loop Controls",
     "Power BI & DAX",
     "SQL & Data Analysis",
     "User Acceptance Testing",
@@ -54,40 +55,52 @@ export const masterResume = {
 
   selectedProjects: [
     {
+      slug: "ai-business-os-multi-agent-operations",
+      title: "AI Business OS — Governed Revenue Operations & Business Systems Platform",
+      stack:
+        "n8n | PostgreSQL | HubSpot | Salesforce | Groq | Gemini | Docker",
+      bullets: [
+        "Built a reusable, production-style operating layer coordinating 8 specialist agents across CRM, client operations, projects, communications, customer success, finance and RevOps analytics, with state-changing actions behind deterministic permissions, human approvals and bounded tool contracts.",
+        "Latest fully verified core bundle: 54 governed workflows / 646 documented nodes; 22/22 local production-readiness, 21/21 agent-access security and 11/11 RBAC/tenant-isolation checks passed, with Groq primary reasoning and Gemini fallback across 8 reasoning agents.",
+      ],
+    },
+    {
       slug: "asternova-salesforce-revops-system",
       title: "AsterNova Salesforce Revenue Operations System",
       stack:
         "Salesforce Sales Cloud | n8n | Google Forms | Google Sheets",
       bullets: [
-        "Built a Salesforce Revenue Systems and CRM governance environment translating simulated business requirements into process maps, GTM Policy and Rules of Engagement, capacity-based routing, lifecycle automation, exception handling, escalation paths and opportunity controls.",
-        "Implemented Salesforce Data Governance, user documentation and requirements-to-UAT traceability; completed 41 documented UAT scenarios (37 live + 4 Flow Debug), built 11 reports and reconciled $65K simulated open pipeline with $23K probability-weighted expected revenue.",
+        "Translated simulated business requirements into process maps, GTM Rules of Engagement, capacity-aware Lead routing, lifecycle automation, opportunity governance, exception handling, escalation paths and role-based controls in Salesforce Sales Cloud.",
+        "Implemented Salesforce Data Governance and requirements-to-UAT traceability; completed 41 documented UAT scenarios (37 live + 4 Flow Debug), built 11 reports and reconciled $65K simulated open pipeline with $23K probability-weighted expected revenue.",
       ],
     },
     {
       slug: "revenue-intelligence-production-simulation",
-      title: "Lumora Cloud - Revenue Intelligence Production Simulation",
+      title: "Lumora Cloud — Revenue Intelligence Production Simulation",
       stack: "PostgreSQL | n8n | Power BI | DAX | APIs",
       bullets: [
-        "Built a production-style revenue intelligence simulation synchronizing 10 CRM, marketing, billing and planning entities into governed PostgreSQL reporting with checkpoint-based recovery, idempotent processing and least-privilege access controls.",
-        "Built 4 Power BI pages for executive revenue, pipeline performance, RevOps health and Sales Forecasting & GTM Metrics, including weighted pipeline, forecast vs target, pipeline coverage, sales velocity and stage conversion analysis.",
+        "Built a production-style RevOps intelligence environment synchronizing 10 CRM, marketing, billing and planning entities into governed PostgreSQL reporting with composite checkpoints, idempotent processing, failure recovery and least-privilege access controls.",
+        "Built 4 Power BI pages for executive revenue, pipeline performance, RevOps health and Sales Forecasting & GTM Metrics, including weighted pipeline, forecast vs target, pipeline coverage, sales velocity and stage conversion.",
       ],
     },
     {
-      slug: "hubspot-clientflow-crm",
-      title: "HubSpot ClientFlow CRM",
-      stack: "HubSpot Sales Hub | Deals | Workflows | Tasks | Reporting",
+      slug: "growagency-crm-ai-pipeline",
+      title: "GrowAgency Lead-to-Client Revenue Operations System",
+      stack:
+        "Airtable | n8n | Make.com | Groq AI | Slack | Notion",
       bullets: [
-        "Configured 2 HubSpot workflows for lead status, ownership, deal/task creation and follow-up; built 8 reports covering pipeline, forecasting, deal stages, ownership, outcomes, tasks and revenue visibility.",
-        "Resolved CRM record-association and workflow issues and structured contact, company, deal, task and follow-up visibility to support more consistent sales operations.",
+        "Built a governed lead-to-client Revenue Operations system with AI-assisted qualification, human commercial decisions, controlled opportunity creation, stage-aware Sales Operations, payment-gated client handoff and idempotent onboarding.",
+        "Validated 8 governed Opportunity fields, 6 stage-aware Sales Operations routes and 2 explicit human decision gates, with the approved handoff creating the downstream client/onboarding state without duplicate records.",
       ],
     },
     {
-      slug: "clickup-operations-growops-agency",
-      title: "ClickUp Operations Build - GrowOps Agency",
-      stack: "ClickUp | n8n | HubSpot | SOPs",
+      slug: "hubspot-revenue-operations-business-os",
+      title: "HubSpot Revenue Operations & CRM Systems Implementation — Business OS",
+      stack:
+        "HubSpot | n8n | PostgreSQL | CRM Operations | Incident Recovery",
       bullets: [
-        "Designed a ClickUp operating model for a simulated 12-person B2B agency with 4-space architecture, 8 n8n automations, 3 dashboard designs, 4 team templates, a 5-week rollout plan and an 8-document adoption toolkit.",
-        "Designed HubSpot-to-ClickUp handoffs in n8n and documented status definitions, rollout guidance, adoption tracking, training materials and risk controls for implementation and handoff.",
+        "Designed and validated a CRM-first HubSpot operating layer with verified owner mapping, qualification context, replay-safe contact projection, provider readback and PostgreSQL integration evidence.",
+        "Diagnosed and remediated provider failures involving HTTP-method configuration and CRM field-model constraints, then replayed the same canonical lead idempotently and verified the recovered provider and audit state without duplicate canonical lead creation.",
       ],
     },
     {
@@ -108,10 +121,14 @@ export const masterResume = {
         "Salesforce Sales Cloud",
         "HubSpot",
         "Airtable",
+        "CRM Administration",
         "Revenue Systems",
         "GTM Rules of Engagement",
-        "Requirements Translation",
+        "Requirements Translation / Definition",
         "Process Mapping",
+        "Custom Objects & Fields",
+        "Record Types & Page Layouts",
+        "Basic Formula Fields",
         "Salesforce Flow Builder",
         "Web-to-Lead",
         "Lead Routing",
@@ -136,7 +153,7 @@ export const masterResume = {
         "Microsoft Excel",
         "XLOOKUP",
         "PivotTables",
-        "Formulas",
+        "Spreadsheet Formulas",
         "Data Cleaning",
         "Data Validation",
         "KPI Dashboards",
@@ -145,6 +162,30 @@ export const masterResume = {
         "Pipeline Coverage",
         "Sales Velocity",
         "Stage Conversion",
+      ],
+    },
+    {
+      category: "Automation & AI",
+      items: [
+        "n8n",
+        "Make.com",
+        "Zapier",
+        "Groq AI",
+        "Gemini",
+        "ChatGPT",
+        "Manus Agent Skills",
+        "Multi-Agent Orchestration",
+        "Human Approval Gates",
+        "REST APIs",
+        "Webhooks",
+        "JSON",
+        "JavaScript Workflow Logic",
+        "Idempotency",
+        "Retries & Failure Handling",
+        "Incident / DLQ Recovery",
+        "Audit Logging",
+        "RBAC / Tenant Isolation",
+        "Provider Integrations",
       ],
     },
     {
@@ -162,20 +203,6 @@ export const masterResume = {
         "Process Documentation",
         "User Guides",
         "Adoption Documentation",
-      ],
-    },
-    {
-      category: "Automation & AI",
-      items: [
-        "n8n",
-        "Make.com",
-        "Zapier",
-        "Manus Agent Skills",
-        "Groq AI",
-        "ChatGPT",
-        "REST APIs",
-        "Webhooks",
-        "JavaScript-based Workflow Logic",
       ],
     },
     {
@@ -215,14 +242,14 @@ export const masterResume = {
       description: "Sales account management and executive/administrative operations",
     },
     {
+      value: "54",
+      label: "Governed Workflows",
+      description: "Latest fully verified AI Business OS core bundle: 54 workflows / 646 documented nodes",
+    },
+    {
       value: "41",
       label: "Salesforce UAT Scenarios",
       description: "41 passed: 37 live validations + 4 Flow Debug validations",
-    },
-    {
-      value: "11",
-      label: "Salesforce Reports",
-      description: "Pipeline, forecast, data quality, conversion and rep performance",
     },
     {
       value: "4",
