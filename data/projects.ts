@@ -910,11 +910,11 @@ export const projects: Project[] = [
 {
   slug: "client-onboarding-automation",
 
-  title: "Professional Client Onboarding & Delivery Operations System",
+  title: "Client Onboarding Automation System",
 
   year: "2026",
 
-  type: "Client Operations Case Study",
+  type: "Portfolio",
 
   status: "Completed",
 
@@ -927,168 +927,111 @@ export const projects: Project[] = [
     "Slack",
   ],
 
-  category: "Business Systems",
+  category: "Automation",
 
   description:
-    "Designed and built a controlled client-onboarding and delivery-setup system that turns approved Airtable onboarding requests into traceable projects, package-specific task plans and personalized Notion workspaces. Human approval remains the release gate, while Make.com orchestrates the downstream project setup and keeps operational records linked across systems.",
-
-  recruiterSummary: {
-    headline:
-      "A controlled client-operations workflow that converts an approved onboarding request into an actionable delivery workspace — not just a notification automation.",
-    valueProposition:
-      "This project demonstrates how I structure the handoff from onboarding approval into project operations: preserving client/package context, creating the delivery record, generating reusable task plans, producing the client workspace, maintaining source-to-project traceability and stopping unapproved requests from entering delivery.",
-    ownership: [
-      "Designed the Airtable Client Operations data model across onboarding requests, projects, tasks, packages, templates and project phases.",
-      "Built the Make.com orchestration for approved-request processing, client/package lookups, project creation, template-driven task generation, AI workspace content and Notion workspace creation.",
-      "Designed the human approval boundary so a newly handed-off client remains Pending Approval / Not started until onboarding is explicitly released.",
-      "Mapped downstream IDs and links back into Airtable so project and workspace records remain traceable to the originating onboarding request.",
-      "Built reusable package/task-template logic rather than hard-coding one onboarding checklist.",
-      "Validated the core onboarding path with a completed test that created the project, four delivery tasks and an active Notion client workspace.",
-    ],
-    liveProof: [
-      "A completed onboarding request shows Status = Completed, Automation Status = Completed and Onboarding Status = Active for the validated Lead Intake Test.",
-      "A separate newly created request remains Pending Approval, Automation Status = Not started and Onboarding Status = Pending, proving the human release gate.",
-      "The validated project record carries the Standard CRM package, source-request link, onboarding-request relationship and generated Notion workspace link.",
-      "Four project tasks were created from reusable templates and linked to the same project/client with High priority, Discovery phase and calculated due dates.",
-      "The generated Notion workspace preserves Airtable Client ID, Airtable Project ID, client email, package, start date, deadline and In progress status.",
-      "The Make.com scenario visibly separates Airtable data operations, task generation, AI/JSON preparation, Notion workspace creation and downstream notification branches. Notification delivery is not presented as verified without separate provider evidence.",
-    ],
-    roleFit: [
-      "Client Operations",
-      "Project Operations",
-      "Business Systems",
-      "Revenue Operations",
-      "CRM Administration",
-      "Operations Coordination",
-    ],
-  },
+    "Built a professional client onboarding system that turns approved Airtable onboarding requests into linked projects, package-specific delivery tasks, and dedicated Notion client workspaces through a structured Make.com workflow.",
 
   overview: [
-    "Built a reusable onboarding operating model around approval, project setup, delivery planning and workspace creation.",
-    "Uses Airtable as the structured operational layer for Clients, Onboarding Requests, Projects, Packages, Task Templates, Tasks and Project Phases.",
-    "Keeps new onboarding requests in a Pending Approval state until a human explicitly releases them into delivery automation.",
-    "Creates the project from the approved request while preserving package and source-request relationships for traceability.",
-    "Generates delivery work from reusable package-specific task templates rather than manually creating project tasks each time.",
-    "Uses Make AI Toolkit and structured JSON preparation to generate personalized project-workspace content.",
-    "Creates a dedicated Notion client workspace and writes the resulting workspace link back to the Airtable project.",
-    "Validated the core path with a completed Standard CRM onboarding that created one project, four Discovery-phase tasks and an active Notion workspace.",
+    "Built a complete client onboarding operating system for agencies.",
+    "Processes approved onboarding requests from Airtable automatically.",
+    "Creates projects linked to the correct client and service package.",
+    "Generates project tasks dynamically from reusable task templates.",
+    "Uses AI to prepare personalized workspace content.",
+    "Creates and populates dedicated Notion client workspaces.",
+    "Keeps the Airtable project and Notion workspace linked through shared project context.",
   ],
 
   problem:
-    "Client onboarding often fails at the handoff between a signed/approved customer and the team responsible for delivery. Project records, checklists, deadlines and workspaces may be created manually, package requirements can be inconsistent, and there may be no reliable control preventing an unapproved request from starting delivery. The goal was to build a repeatable onboarding operating process that preserves context from the source request while turning approval into an actionable project setup.",
+    "Client onboarding was handled manually using emails, spreadsheets, and separate project tools, leading to inconsistent processes, duplicated work, manually created tasks, scattered documentation, and delayed project kickoff.",
 
   solution:
-    "I designed Airtable as the structured Client Operations layer and Make.com as the orchestration layer. A newly created onboarding request can remain Pending Approval with automation Not started. Once approved and ready for onboarding, the scenario retrieves the linked client and package, creates the Airtable project, searches the package's active task templates, creates the delivery tasks with phase/priority/due-date context, prepares structured workspace content, creates the Notion client workspace and synchronizes the workspace link and onboarding state back into Airtable. Notification branches exist in the Make.com design, but the portfolio only claims delivery outcomes that are supported by captured evidence.",
+    "Built a scalable onboarding pipeline using Airtable, Make.com, Make AI Toolkit and Notion. The workflow watches approved onboarding requests, retrieves the linked client and package, creates the project, generates package-specific tasks, prepares structured workspace content, creates the Notion workspace, and synchronizes the workspace URL back to Airtable.",
 
   architecture: [
-    "Sales / client handoff → Airtable Onboarding Request",
-    "Human approval boundary → Pending Approval remains outside delivery automation",
-    "Approved request → Make.com onboarding orchestration",
-    "Airtable Client lookup → preserve client identity and context",
-    "Package lookup → determine the delivery configuration",
-    "Project creation → link project back to source request and onboarding request",
-    "Task Template search → retrieve reusable package-specific delivery work",
-    "Dynamic task creation → project + client + phase + priority + calculated due dates",
-    "Task aggregation → prepare downstream project context",
-    "Make AI Toolkit + JSON preparation → structured workspace content",
-    "Notion workspace creation → client-facing project environment",
-    "Airtable project update → persist Notion link and delivery state",
-    "Onboarding completion → Completed / Completed / Active operational state",
-    "Gmail / Slack branches → configured downstream communication paths; delivery evidence tracked separately",
+    "Approve the onboarding request in Airtable",
+    "Watch the Ready for Onboarding view",
+    "Mark the request as Processing",
+    "Retrieve the linked client record",
+    "Retrieve the selected package record",
+    "Create and link the Airtable project",
+    "Link the project back to the onboarding request",
+    "Search active task templates for the selected package",
+    "Create project tasks with calculated due dates",
+    "Aggregate the created task records",
+    "Generate structured workspace content with AI",
+    "Parse the AI response into JSON fields",
+    "Create the Notion client workspace",
+    "Append the generated workspace content",
+    "Update the Airtable project with the Notion URL",
+    "Mark the onboarding request as Completed",
   ],
 
   workflow: [
-    "Create Onboarding Request",
-    "Wait for Human Approval",
-    "Release Ready-for-Onboarding Request",
-    "Load Client & Package Context",
-    "Create Linked Project",
-    "Link Project to Source Request",
-    "Load Package Task Templates",
-    "Create Delivery Tasks",
-    "Assign Phase, Priority & Due Dates",
-    "Aggregate Project Task Context",
-    "Generate Structured Workspace Content",
-    "Create Notion Client Workspace",
-    "Write Workspace Link Back to Airtable",
-    "Finalize Onboarding State",
-  ],
-
-  governance: [
-    {
-      title: "Human Release Gate",
-      description:
-        "A downstream onboarding request can exist without starting delivery. Pending Approval, Not started and Pending states provide an explicit control between handoff and automation.",
-    },
-    {
-      title: "Source-to-Delivery Traceability",
-      description:
-        "The project keeps relationships back to the originating request and onboarding record so delivery setup can be traced to the approved source context.",
-    },
-    {
-      title: "Package-Driven Configuration",
-      description:
-        "The selected service package drives reusable task-template selection, supporting consistent onboarding without hard-coding a one-off checklist.",
-    },
-    {
-      title: "Template-Driven Project Work",
-      description:
-        "Tasks retain project, client, phase, priority and due-date context, turning onboarding into an executable delivery plan rather than a project shell.",
-    },
-    {
-      title: "Cross-System Identity",
-      description:
-        "The generated Notion workspace stores the Airtable client and project identifiers so the client-facing workspace remains linked to the operational system of record.",
-    },
-    {
-      title: "Evidence-Based Completion",
-      description:
-        "The case study distinguishes configured notification branches from verified outcomes; completion claims are limited to the Airtable, project/task and Notion states captured in evidence.",
-    },
+    "Approved Request",
+    "Airtable Trigger",
+    "Request Processing",
+    "Client Lookup",
+    "Package Lookup",
+    "Project Creation",
+    "Task Template Search",
+    "Dynamic Task Creation",
+    "Task Aggregation",
+    "AI Content Generator",
+    "JSON Parser",
+    "Notion Workspace",
+    "Airtable Sync",
+    "Completed",
   ],
 
   automation: [
     {
-      title: "Approval-Controlled Intake",
+      title: "Approved Request",
       description:
-        "Only onboarding requests released from the human approval state enter the delivery-setup scenario.",
+        "Airtable detects an approved request in the Ready for Onboarding view.",
       icon: "form",
     },
     {
-      title: "Client & Package Context",
+      title: "Client & Package",
       description:
-        "Make.com retrieves the linked client and package before downstream project work is created.",
+        "The workflow retrieves the linked client and selected package records.",
       icon: "database",
     },
     {
-      title: "Linked Project Creation",
+      title: "Project Creation",
       description:
-        "The Airtable project is created with package and source-request relationships preserved.",
+        "A new Airtable project is created and linked to the original onboarding request.",
       icon: "database",
     },
     {
-      title: "Template-Driven Tasks",
+      title: "Dynamic Tasks",
       description:
-        "Reusable package templates generate the project tasks with delivery context, priority, phase and due dates.",
+        "Package-specific task templates are converted into project delivery tasks.",
       icon: "database",
     },
     {
-      title: "AI Workspace Preparation",
+      title: "AI Generator",
       description:
-        "Make AI Toolkit and structured JSON preparation generate client-specific workspace content from the operational context.",
+        "Make AI Toolkit prepares structured, personalized workspace content.",
       icon: "bot",
     },
     {
-      title: "Notion Client Workspace",
+      title: "Notion Workspace",
       description:
-        "A dedicated workspace is created with client, package, timeline and project information and linked back to Airtable.",
+        "A dedicated workspace is created and populated with the project context.",
       icon: "workspace",
     },
     {
-      title: "Operational State Sync",
+      title: "Airtable Sync",
       description:
-        "Airtable records completion and active-onboarding state after the validated project setup path succeeds.",
+        "The generated workspace URL is saved back to the Airtable project.",
       icon: "database",
+    },
+    {
+      title: "Completed",
+      description:
+        "The onboarding request is marked Completed after the validated setup path succeeds.",
+      icon: "form",
     },
   ],
 
@@ -1103,20 +1046,10 @@ export const projects: Project[] = [
       image:
         "/images/projects/client-portal/airtable-dashboard.png",
 
-      title: "Client Operations Control Layer",
+      title: "Client Operations Hub",
 
       description:
-        "Airtable provides the structured operating layer for onboarding requests, projects, tasks, packages, templates, phases and automation state. The validated flow distinguishes pending approval from completed active onboarding.",
-    },
-
-    {
-      image:
-        "/images/projects/client-portal/make-workflow.png",
-
-      title: "Professional Client Onboarding Orchestration",
-
-      description:
-        "Make.com scenario coordinating Airtable lookups and updates, project creation, template-driven tasks, AI/JSON preparation, Notion workspace creation and configured communication branches.",
+        "Airtable Client Operations Hub showing onboarding requests, linked projects, task planning, packages, project phases and delivery-state tracking.",
     },
 
     {
@@ -1126,29 +1059,37 @@ export const projects: Project[] = [
       title: "Generated Notion Client Workspace",
 
       description:
-        "The client workspace carries project identity, package, start date, deadline, status and operational context into a dedicated delivery environment.",
+        "Automatically created client workspace carrying the project name, client, package, start date, deadline, status and Airtable project identifiers into the delivery environment.",
+    },
+
+    {
+      image:
+        "/images/projects/client-portal/make-workflow.png",
+
+      title: "Professional Client Onboarding Workflow",
+
+      description:
+        "Full Make.com scenario coordinating Airtable onboarding data, project creation, template-driven task generation, AI/JSON preparation, Notion workspace creation and Airtable synchronization.",
     },
 
     {
       image:
         "/images/projects/client-portal/client-portal.png",
 
-      title: "Client Delivery Workspace",
+      title: "Client Project Workspace",
 
       description:
-        "Client-facing workspace centralizing the project overview and onboarding context after the approved request has been converted into active delivery.",
+        "Client-facing Notion workspace centralizing the project overview, onboarding context and delivery information after the approved request has been processed.",
     },
   ],
 
   results: [
-    "Validated a completed Standard CRM onboarding with Status = Completed, Automation Status = Completed and Onboarding Status = Active.",
-    "Verified that a separate downstream request remains Pending Approval / Not started / Pending until human release.",
-    "Created a linked Airtable project from the approved onboarding request while preserving package and source-request relationships.",
-    "Created four reusable-template-driven project tasks linked to the same project and client with High priority, Discovery phase and calculated due dates.",
-    "Created a Notion client workspace linked to the Airtable client and project IDs with project timeline, package and In progress status.",
-    "Synchronized the generated Notion workspace link back into the Airtable project record.",
-    "Demonstrated reusable onboarding configuration through package and task-template records instead of one-off manual checklists.",
-    "Kept configured Gmail/Slack branches separate from verified-delivery claims until provider-level evidence is available.",
+    "Created projects automatically from approved onboarding requests",
+    "Generated package-specific project tasks from reusable templates",
+    "Centralized client and project documentation",
+    "Created dedicated Notion client workspaces automatically",
+    "Synchronized project and workspace information back to Airtable",
+    "Preserved linked client, package and onboarding-request context through the delivery setup",
   ],
 
   technologies: [
@@ -1160,87 +1101,90 @@ export const projects: Project[] = [
   ],
 
   metrics: [
-    "1 approved request → 1 linked project → 4 delivery tasks → 1 Notion workspace",
-    "Human approval gate before delivery automation",
-    "Reusable package + task-template operating model",
+    "Approved onboarding request → linked project → delivery tasks → Notion workspace",
+    "Package-based task generation",
+    "Airtable + Make.com + Notion delivery workflow",
   ],
 
   stats: [
     {
-      value: 4,
-      suffix: " tasks",
-      label: "Validated Delivery Plan",
+      value: 1,
+      suffix: " workflow",
+      label: "Client Onboarding System",
     },
     {
-      value: 1,
-      suffix: " gate",
-      label: "Human Onboarding Approval",
+      value: 4,
+      suffix: " tasks",
+      label: "Validated Standard CRM Plan",
     },
     {
       value: 3,
-      suffix: " layers",
-      label: "Airtable • Make • Notion",
+      suffix: " systems",
+      label: "Core Delivery Stack",
     },
   ],
 
   before: [
-    "Onboarding approval and delivery start could be treated as the same event.",
-    "Projects and delivery tasks could require repetitive manual setup.",
-    "Package requirements could be translated into tasks inconsistently.",
-    "Client workspaces could be prepared manually and disconnected from operational records.",
-    "Source-request context could be lost after project creation.",
+    "Manual client onboarding",
+    "Project information stored across separate tools",
+    "Tasks created individually for every project",
+    "Workspaces prepared manually",
+    "Onboarding context difficult to carry into delivery consistently",
   ],
 
   after: [
-    "Human approval explicitly controls release into delivery automation.",
-    "Approved requests create traceable linked project records.",
-    "Reusable package templates generate an actionable delivery task plan.",
-    "Project tasks carry priority, phase and due-date context.",
-    "Notion client workspaces are created from structured onboarding context.",
-    "Airtable and Notion remain linked through client/project identifiers and workspace URLs.",
-    "Completed onboarding is represented by explicit Completed / Completed / Active operational states.",
+    "Approved requests processed into linked projects",
+    "Tasks generated dynamically from reusable templates",
+    "Project and onboarding relationships preserved in Airtable",
+    "Dedicated Notion client workspaces created automatically",
+    "Workspace links synchronized back to project records",
+    "Client delivery setup standardized across the onboarding workflow",
   ],
+
+  recruiterSummary: {
+    headline:
+      "A separate Client Operations system that turns an approved onboarding request into a structured delivery setup.",
+    valueProposition:
+      "This case study focuses specifically on client onboarding and delivery operations. It is downstream from revenue/sales systems such as GrowAgency, but it remains a separate operating system with its own data model, automation and evidence.",
+    ownership: [
+      "Designed the Airtable Client Operations structure for onboarding requests, projects, tasks, packages, templates and phases.",
+      "Built the Make.com onboarding scenario that creates the project and delivery tasks from approved request context.",
+      "Built the Notion workspace creation path and Airtable-to-Notion project linkage.",
+      "Used reusable package/task-template logic instead of hard-coding one checklist.",
+    ],
+    liveProof: [
+      "Client Workspaces evidence shows the generated Standard CRM project with client, package, start date, deadline and In progress status.",
+      "The generated Notion workspace carries the Airtable Client ID, Airtable Project ID, client email, package, start date, deadline and project status.",
+      "The Make.com scenario shows the complete onboarding orchestration from Airtable records through task generation, AI/JSON preparation, Notion creation and synchronization.",
+    ],
+    roleFit: [
+      "Client Operations",
+      "Project Operations",
+      "Business Systems",
+      "Operations Coordination",
+    ],
+  },
 
   interviewTalkingPoints: [
     {
-      question: "Give me the 30-second overview.",
+      question: "How is this project different from GrowAgency?",
       answer:
-        "I built a controlled client-onboarding system that takes an approved Airtable request and turns it into an actionable delivery setup. Make.com retrieves the client and package, creates the linked project, generates tasks from reusable templates, prepares the workspace content, creates the Notion client workspace and writes the operational links and status back to Airtable. The important control is that a handoff can remain Pending Approval and does not start delivery until a human releases it.",
+        "GrowAgency is the Revenue Operations system that manages the lead-to-Closed-Won and client-handoff process. This project is the separate Client Operations Hub that takes an approved onboarding request and prepares delivery by creating the project, task plan and Notion workspace. They are connected through the handoff, but they are intentionally separate systems.",
     },
     {
-      question: "What business problem were you solving?",
+      question: "What does the Make.com workflow do?",
       answer:
-        "I was solving the gap between winning or accepting a client and actually starting organized delivery. Without a controlled onboarding process, teams can create projects inconsistently, miss package-specific work, lose the source-request context or begin delivery before approval. I designed the system so approval, project setup, task generation and workspace creation are separate but traceable stages.",
+        "It takes the approved onboarding context from Airtable, loads the client and package, creates the linked project, generates tasks from reusable templates, prepares structured workspace content, creates the Notion workspace and writes the workspace link back to the Airtable project.",
     },
     {
-      question: "Why did you use Airtable, Make.com and Notion together?",
+      question: "What did you personally build?",
       answer:
-        "Each system has a clear responsibility. Airtable is the structured operations layer and source of onboarding/project state. Make.com orchestrates the handoff and cross-system actions. Notion is the client-facing workspace. Keeping those roles separate makes the workflow easier to understand, maintain and replace than putting all business state inside the automation tool.",
+        "I designed the Client Operations data structure, built the Make.com orchestration, created the reusable package/task-template logic and built the Notion workspace generation and Airtable synchronization path.",
     },
     {
-      question: "How are the project tasks generated?",
+      question: "What proves the workflow worked?",
       answer:
-        "The workflow looks up active task templates for the selected package and converts them into real project tasks. In the validated Standard CRM test it created four tasks linked to the same client and project, with High priority, Discovery phase and different calculated due dates. That makes the onboarding reusable across packages rather than relying on a manually copied checklist.",
-    },
-    {
-      question: "How did you keep the handoff traceable?",
-      answer:
-        "The Airtable project retains the source request and onboarding relationship, while the generated Notion workspace stores the Airtable Client ID and Project ID. The Notion link is then written back to the Airtable project. That creates a two-way operational reference between the internal system and the delivery workspace.",
-    },
-    {
-      question: "What proves the automation actually worked?",
-      answer:
-        "The validated test has a completed onboarding record, a linked Standard CRM project, four generated project tasks and a live Notion workspace carrying the correct client, project, package and timeline context. I also keep a pending request in its unapproved state, which proves the system does not treat every handoff as permission to start delivery.",
-    },
-    {
-      question: "What about the Gmail and Slack modules visible in Make.com?",
-      answer:
-        "Those branches are configured in the scenario, but I separate implementation evidence from delivery evidence. I do not present an external notification as successfully delivered unless I have provider-level proof for that message. The verified case-study outcomes are the Airtable onboarding/project/task state and the generated Notion workspace.",
-    },
-    {
-      question: "What does this demonstrate for an Operations or Business Systems role?",
-      answer:
-        "It demonstrates process design, approval controls, relational data modeling, reusable templates, cross-system orchestration, project-operations setup, traceability and evidence-based validation. The value is not simply that Make.com moves data; it is that the onboarding process becomes consistent, controlled and operationally usable.",
+        "The evidence shows the generated client workspace record, the actual Notion project workspace with the matching client/package/timeline context, and the full Make.com scenario that performs the onboarding orchestration.",
     },
   ],
 
