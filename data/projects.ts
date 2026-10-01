@@ -2125,7 +2125,7 @@ export const projects: Project[] = [
     },
   ],
 
-  github: "",
+  github: "https://github.com/Nikkypwetti/nikkytechies-portfolio/tree/main/docs/growagency-lead-to-client-revenue-operations-system",
 
   demo: "",
 },
