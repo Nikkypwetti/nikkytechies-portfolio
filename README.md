@@ -66,10 +66,14 @@ A recruiter-focused portfolio for **Ganiyu Basirat Olanike**, combining 7+ years
 - 4 business systems synchronized
 - Automated CRM logging, project updates, follow-up tasks and team summaries
 
-### GrowAgency CRM + AI Pipeline
-- 2 connected n8n workflows
-- 5 lead qualification routes
-- AI-assisted qualification, CRM creation, routing and follow-up
+### GrowAgency Lead-to-Client Revenue Operations System
+- End-to-end lead → qualification → human Sales Decision → governed Opportunity → Closed Won → payment-controlled client handoff
+- 8 governed Opportunity fields with human approval for sensitive qualification changes
+- 6 stage-aware Sales Operations routes across New Lead, Discovery, Proposal Sent, Negotiation, Closed Won and Closed Lost
+- Batch-safe approval regression proved two simultaneous CRM approvals could both apply successfully
+- Payment-gated, idempotent client handoff created exactly one GrowAgency Client, one Client Operations Client and one onboarding request after payment confirmation
+- Existing Make.com onboarding validated from approved request through project creation, four package tasks and a Notion workspace
+- Detailed GitHub case study: [docs/growagency-lead-to-client-revenue-operations-system/README.md](docs/growagency-lead-to-client-revenue-operations-system/README.md)
 
 ### Business Operations & Client Delivery System
 - 6 operational areas centralized
