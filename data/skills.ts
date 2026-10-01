@@ -13,13 +13,13 @@ export const skills = [
   {
     title: "Revenue & Sales Operations",
     description:
-      "Supporting Revenue Systems, lead management, GTM Rules of Engagement, ownership, lifecycle stages, opportunity pipelines, forecasting, account follow-up and governed revenue operations workflows.",
+      "Designing and supporting Revenue Systems, lead management, GTM Rules of Engagement, ownership, lifecycle stages, opportunity pipelines, forecasting, account follow-up and governed revenue operations workflows.",
     icon: TrendingUp,
   },
   {
     title: "CRM & Data Operations",
     description:
-      "Managing Salesforce and HubSpot CRM records, Salesforce Data Governance, lifecycle stages, permissions, duplicate controls, data quality, system adoption, pipeline information and reporting.",
+      "Working across Salesforce and HubSpot CRM records, data governance, lifecycle stages, permissions, duplicate controls, data quality, system adoption, pipeline information and reporting.",
     icon: Database,
   },
   {
@@ -49,13 +49,13 @@ export const skills = [
   {
     title: "Workflow & AI Automation",
     description:
-      "Building connected workflows with n8n, Make.com, Zapier, AI services, APIs and webhooks for routing, follow-up, synchronization and repetitive work.",
+      "Building governed workflows with n8n, Make.com, Zapier, AI services, APIs and webhooks, with validation, human approval gates, idempotency and failure handling where required.",
     icon: Workflow,
   },
   {
     title: "Technical Systems",
     description:
-      "Working across Git/GitHub, Linux, cloud infrastructure, web development and technical integrations to support business and automation systems.",
+      "Working across Git/GitHub, Linux, Docker, cloud infrastructure, web development and technical integrations to support business and automation systems.",
     icon: Terminal,
   },
 ];
