@@ -2133,54 +2133,6 @@ export const projects: Project[] = [
       description:
         "Structured Slack evidence showing actionable lead context delivered to the sales workflow instead of relying on manual monitoring.",
     },
-    {
-      image: "/images/projects/growagency/evidence/business-os-control-center.svg",
-      title: "AI Business OS Control Center",
-      description:
-        "Reusable revenue-operations control surface showing production-readiness state, integration health, human approval controls and governed operating boundaries.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/sales-operations-monitor.svg",
-      title: "Sales Operations Monitor",
-      description:
-        "Operational monitoring view showing routed leads, SLA breaches, alerts, CRM sync health, owner mappings and the sales-rep inbox.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/lead-intake-reusable.svg",
-      title: "Reusable Lead Intake — ING-01",
-      description:
-        "Reusable intake orchestration connecting external lead capture, qualification, CRM projection, sales routing and CRM-aware notification preparation.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/sales-rep-routing.svg",
-      title: "Reusable Sales Rep Router — ROUTE-01",
-      description:
-        "Capacity-aware sales assignment workflow with routing context, assignment application, audit evidence and notification handoff.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/sales-rep-slack-notification.svg",
-      title: "Sales Rep Notification — Slack",
-      description:
-        "Internal notification evidence showing assigned-lead and deal-approval messages with owner, qualification, need and follow-up context.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/crm-change-review.svg",
-      title: "CRM Change Review",
-      description:
-        "Governed CRM evidence showing proposed values, supporting evidence and review state for controlled Opportunity changes.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/approval-decision-resume.svg",
-      title: "Human Approval Decision & Resume — SYS-05B",
-      description:
-        "Governed approval workflow evidence showing authority validation, approved-action execution and rejected-path handling.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/hubspot-live-contact-sync.svg",
-      title: "HubSpot Live Contact Projection",
-      description:
-        "Live HubSpot Contacts evidence showing reusable CRM adapter output from the Business OS integration layer.",
-    },
   ],
 
   results: [
