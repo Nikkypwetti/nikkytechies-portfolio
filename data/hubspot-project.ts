@@ -13,6 +13,76 @@ export const hubspotProject: Project = {
   description:
     "Configured a HubSpot Sales Hub CRM and connected lead-processing workflow for contact, company and deal management, sales follow-up, pipeline visibility, notifications and revenue reporting.",
 
+  recruiterSummary: {
+    headline:
+      "Hands-on HubSpot CRM administration: pipeline structure, workflows, follow-up controls, reporting and connected lead processing.",
+    valueProposition:
+      "This case study demonstrates practical HubSpot Sales Hub administration in a sales-operations context. I configured the CRM structure, deal pipeline, workflow automation, follow-up controls, reporting and the Make.com lead-processing path, then used screenshots as implementation evidence. The project is a portfolio test environment, so its figures are configuration/test outputs rather than client revenue results.",
+    ownership: [
+      "Configured contact, company and deal structures and organized associations so sales activity could be managed through a connected CRM model.",
+      "Configured 3 HubSpot workflows covering lead status/ownership, proposal follow-up and overdue-deal follow-up.",
+      "Built 8 HubSpot reports covering pipeline, forecast, stages, ownership, tasks, outcomes and revenue visibility.",
+      "Designed the Make.com integration path across Google Sheets → HubSpot → Gmail → HubSpot Tasks → Slack → Google Sheets.",
+      "Resolved CRM record-association and workflow configuration issues during implementation and testing.",
+      "Documented the CRM operating flow so a recruiter can see the relationship between administration, sales process, automation and reporting.",
+    ],
+    liveProof: [
+      "HubSpot dashboard evidence shows deal creation/closure visibility, closed-deal value by owner, deal status, funnel progression and average time to close for the test dataset.",
+      "Deal-pipeline evidence shows New Lead, Discovery Call Scheduled, Proposal Sent, Negotiating, Deal Won and Deal Lost stages.",
+      "Proposal follow-up evidence shows a 3-business-day delay, Proposal Sent branch logic and creation of a scheduled call task.",
+      "Overdue-deal evidence excludes Closed Won/Closed Lost and creates an owner follow-up task for open deals past the close date.",
+      "Contact and company screenshots show structured CRM records and associations.",
+      "Make.com evidence shows the connected lead-processing scenario, while Slack evidence shows the internal processing handoff.",
+    ],
+    roleFit: [
+      "HubSpot Administration",
+      "CRM Administration",
+      "Sales Operations",
+      "Revenue Operations",
+      "GTM Operations",
+      "Business Systems",
+    ],
+  },
+
+  evidenceInventory: [
+    {
+      title: "Sales & Revenue Dashboard",
+      description:
+        "Screenshot evidence of HubSpot deal counts, closed-deal value by owner, status mix, funnel progression and average time to close.",
+      status: "Verified",
+    },
+    {
+      title: "Deal Pipeline Board",
+      description:
+        "Screenshot evidence of the configured six-stage sales pipeline and deal-level ownership/value context.",
+      status: "Verified",
+    },
+    {
+      title: "Proposal Follow-Up Workflow",
+      description:
+        "Screenshot evidence of delay, stage branch and follow-up task creation logic.",
+      status: "Verified",
+    },
+    {
+      title: "Overdue Deal Alert Workflow",
+      description:
+        "Screenshot evidence of close-date logic, Won/Lost exclusions and owner follow-up task creation.",
+      status: "Verified",
+    },
+    {
+      title: "CRM Records & Associations",
+      description:
+        "Screenshot evidence of contact, company and deal relationships plus structured contact/company views.",
+      status: "Verified",
+    },
+    {
+      title: "Make.com Lead-Processing Integration",
+      description:
+        "Screenshot evidence of the connected Google Sheets, HubSpot, Gmail, HubSpot Task and Slack automation path.",
+      status: "Verified",
+    },
+  ],
+
   overview: [
     "Configured 3 HubSpot workflows covering lead status, ownership, deal creation, proposal follow-up and overdue-deal follow-up.",
     "Built 8 reports covering pipeline, forecasting, deal stages, ownership, outcomes, tasks and revenue visibility.",
