@@ -62,6 +62,12 @@ export interface Project {
     status: "Verified" | "Verified — screenshot unavailable" | "Not claimed";
   }[];
 
+  pictureEvidence?: {
+    image: string;
+    title: string;
+    description: string;
+  }[];
+
   results: string[];
 
   governance?: {
