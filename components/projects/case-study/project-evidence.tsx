@@ -63,7 +63,7 @@ export function ProjectEvidence({ evidence, github }: Props) {
             rel="noreferrer"
             className="mt-3 inline-flex font-semibold underline underline-offset-4"
           >
-            View the GrowAgency GitHub case study
+            View detailed GitHub case study
           </a>
         </div>
       )}
