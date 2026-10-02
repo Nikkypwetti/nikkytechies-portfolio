@@ -24,8 +24,7 @@ import { ProjectGovernance } from "@/components/projects/case-study/project-gove
 import { ProjectDocumentation } from "@/components/projects/case-study/project-documentation";
 import { ProjectRecruiterSummary } from "@/components/projects/case-study/project-recruiter-summary";
 import { ProjectInterviewGuide } from "@/components/projects/case-study/project-interview-guide";
-import { ProjectEvidence } from "@/components/projects/case-study/project-evidence";
-import { ProjectPictureEvidence } from "@/components/projects/case-study/project-picture-evidence";
+
 
 type Props = {
   params: Promise<{
@@ -62,11 +61,7 @@ export default async function ProjectPage({ params }: Props) {
         <ProjectGallery gallery={project.gallery} />
       </FadeIn>
 
-      <FadeIn delay={0.08}>
-        <ProjectPictureEvidence evidence={project.pictureEvidence} />
-      </FadeIn>
-
-      <FadeIn>
+     <FadeIn>
         <ProjectOverview overview={project.overview} />
       </FadeIn>
 
@@ -116,10 +111,6 @@ export default async function ProjectPage({ params }: Props) {
 
       <FadeIn delay={0.42}>
         <ProjectInterviewGuide talkingPoints={project.interviewTalkingPoints} />
-      </FadeIn>
-
-      <FadeIn delay={0.43}>
-        <ProjectEvidence evidence={project.evidenceInventory} github={project.github} />
       </FadeIn>
 
       <FadeIn delay={0.45}>
