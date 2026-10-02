@@ -61,7 +61,11 @@ export default async function ProjectPage({ params }: Props) {
         <ProjectGallery gallery={project.gallery} />
       </FadeIn>
 
-     <FadeIn>
+      <FadeIn delay={0.07}>
+        <ProjectEvidence evidence={project.evidenceInventory} github={project.github} />
+      </FadeIn>
+
+      <FadeIn>
         <ProjectOverview overview={project.overview} />
       </FadeIn>
 
