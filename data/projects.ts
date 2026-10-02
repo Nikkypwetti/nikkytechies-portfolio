@@ -21,6 +21,37 @@ export const projects: Project[] = [
   description:
     "Built a Salesforce Revenue Systems, Sales Operations and CRM governance environment for a simulated B2B SaaS company, translating business requirements and GTM policy controls into capacity-aware Lead routing, lifecycle automation, opportunity governance, exception handling, escalation paths, reporting and structured User Acceptance Testing.",
 
+  recruiterSummary: {
+    headline:
+      "Salesforce Revenue Systems ownership: routing, lifecycle automation, CRM governance, forecasting and UAT.",
+    valueProposition:
+      "This case study shows Salesforce administration in a Revenue Operations context. I translated simulated business requirements and GTM rules into capacity-aware lead routing, lifecycle controls, opportunity governance, CRM data-quality controls, permissions, reporting and formal UAT. The emphasis is on operating the sales process reliably, not simply configuring isolated automations.",
+    ownership: [
+      "Translated simulated business requirements into process maps, GTM Rules of Engagement and Salesforce decision rules.",
+      "Configured Lead routing, lifecycle automation, opportunity-stage controls, validation rules, permissions and exception paths in Salesforce Sales Cloud.",
+      "Designed Salesforce Data Governance using duplicate detection, controlled cleanup, data-quality reporting, a CRM data dictionary and user documentation.",
+      "Built the external intake path through Google Forms, Google Sheets and n8n while keeping Salesforce as the system of record for core sales logic.",
+      "Built 11 Salesforce reports covering pipeline, conversion, aging, forecast, rep performance and data quality.",
+      "Maintained requirements-to-UAT traceability and expanded the test register to 41 documented passed scenarios.",
+    ],
+    liveProof: [
+      "41 documented UAT scenarios passed: 37 live validations and 4 Salesforce Flow Debug validations.",
+      "Both eligible-rep assignment and inbound-queue fallback were validated for capacity-aware routing.",
+      "Two inbound Lead capture paths were validated: direct Web-to-Lead and Google Forms → Sheets → n8n.",
+      "$65K simulated open pipeline was reconciled and $23K simulated probability-weighted Expected Revenue was verified.",
+      "Lead duplicate warning, controlled cleanup, Lead conversion, Nurture follow-up, Closed Won handoff and Closed Lost governance were validated.",
+      "11 Salesforce reports were built to support pipeline, forecast, data quality and rep-performance visibility.",
+    ],
+    roleFit: [
+      "Revenue Operations",
+      "Sales Operations",
+      "Salesforce Administration",
+      "CRM Administration",
+      "Business Systems",
+      "GTM Operations",
+    ],
+  },
+
   overview: [
     "Built in Salesforce Developer Edition using live configuration, test users and test data.",
     "Connected two inbound channels: a production-style HTML Web-to-Lead form and a Google Form → Google Sheets → n8n → Salesforce workflow.",
@@ -334,6 +365,37 @@ export const projects: Project[] = [
   description:
     "Built a production-style Revenue Operations intelligence simulation for the fictional B2B SaaS company Lumora Cloud, connecting CRM, marketing, billing and planning data to governed reporting, resilient n8n orchestration and Power BI executive dashboards.",
 
+  recruiterSummary: {
+    headline:
+      "Production-style Revenue Intelligence simulation: CRM data integration, governed reporting, Power BI and recovery controls.",
+    valueProposition:
+      "This fictional Lumora Cloud environment demonstrates how I connect Revenue Operations data engineering with management reporting. The architecture separates source access, ingestion, transformation and reporting permissions, uses replay-safe incremental synchronization, and turns governed data into Power BI and manager-request views. All business figures are explicitly simulation outputs, not client results.",
+    ownership: [
+      "Designed the multi-system RevOps architecture across CRM, marketing, billing and planning source domains.",
+      "Built reusable n8n synchronization around composite checkpoints, idempotent persistence and checkpoint recovery.",
+      "Separated source-read, ingestion-write, transformation and reporting-read responsibilities with PostgreSQL roles.",
+      "Connected governed reporting to Slack, authenticated Form and REST manager-request channels.",
+      "Built and verified four Power BI pages covering executive revenue, pipeline performance, RevOps health and Sales Forecasting & GTM Metrics.",
+      "Documented the simulation boundary so verified figures are not presented as real client performance.",
+    ],
+    liveProof: [
+      "10 source entities were synchronized through the reusable production-callable entity worker.",
+      "Full multi-entity orchestration completed with checkpoints released and no active runs remaining.",
+      "Four Power BI pages were verified from the governed reporting snapshot.",
+      "The simulation contains 600 deals with $3.31M simulated closed-won revenue and $2.90M simulated open pipeline.",
+      "The August 2026 simulation snapshot shows 96.1% forecast attainment and 1.83x pipeline coverage.",
+      "45 stale deals, 114 overdue follow-ups and 72 SLA breaches were surfaced as simulated RevOps health signals.",
+    ],
+    roleFit: [
+      "Revenue Operations",
+      "Revenue Systems",
+      "Sales Operations",
+      "Business Systems",
+      "Reporting & Analytics",
+      "Power BI / Data Operations",
+    ],
+  },
+
   overview: [
     "Designed a production-style Revenue Operations and Business Systems environment for a fictional B2B SaaS company.",
     "Synchronized 10 CRM, marketing, billing and planning entities through reusable incremental n8n workflows.",
@@ -543,7 +605,7 @@ export const projects: Project[] = [
   title: "AI Revenue Intelligence & Revenue Systems Agent V2",
   year: "2026",
   type: "Portfolio",
-  status: "In Progress",
+  status: "Completed",
   category: "Revenue Operations",
 
   platforms: [
@@ -1205,6 +1267,35 @@ export const projects: Project[] = [
   description:
     "In-progress operations-system simulation for a 12-person B2B services agency, designing ClickUp as the source of truth for work execution while HubSpot remains the CRM source of truth. The integration layer is being built with n8n.",
 
+  recruiterSummary: {
+    headline:
+      "Operations-system design: ClickUp work execution architecture with CRM handoffs, dashboards, SOPs and adoption controls.",
+    valueProposition:
+      "This is an in-progress operations-system simulation for a fictional 12-person B2B services agency. It demonstrates how I separate CRM ownership in HubSpot from work-execution ownership in ClickUp, define operational structures before automation, and design adoption and reporting controls. Target counts are clearly labeled as build scope rather than completed outcomes.",
+    ownership: [
+      "Designed the ClickUp operating architecture for Sales, Delivery, Account Management and Operations.",
+      "Separated customer/revenue records in HubSpot from execution records and task ownership in ClickUp.",
+      "Defined the target 4-Space / 12-List workspace structure with team-specific statuses, fields and views.",
+      "Designed n8n handoffs between CRM, delivery and internal notifications.",
+      "Documented SOPs, rollout sequencing, adoption guidance and management dashboard requirements.",
+    ],
+    liveProof: [
+      "Current status is In Progress; no outcome-reduction metrics are claimed as completed results.",
+      "Target architecture is 4 ClickUp Spaces and 12 operational Lists for the simulated 12-person agency.",
+      "Target automation scope is 8 n8n handoffs across CRM, delivery and notifications.",
+      "Target reporting scope is 3 management dashboards for pipeline, delivery and operational visibility.",
+      "The case study explicitly separates planned build scope from verified runtime outcomes.",
+    ],
+    roleFit: [
+      "Operations",
+      "Project Operations",
+      "Business Systems",
+      "CRM Operations",
+      "Process Design",
+      "Operations Coordination",
+    ],
+  },
+
   overview: [
     "Designing a full ClickUp workspace for the fictional GrowOps Agency, a 12-person B2B services team.",
     "Separating revenue/customer relationship data in HubSpot from delivery execution in ClickUp.",
@@ -1358,6 +1449,35 @@ export const projects: Project[] = [
 
   description:
     "Designed a centralized operations system for managing clients, projects, tasks, deadlines, SOPs, documentation and client delivery across Notion and Airtable, with structured dashboards and dedicated client workspaces.",
+
+  recruiterSummary: {
+    headline:
+      "Centralized client-delivery operations system for projects, tasks, deadlines, SOPs and client workspaces.",
+    valueProposition:
+      "This case study demonstrates the operational foundation behind reliable client delivery: a structured source of truth for clients and projects, visible task and deadline management, reusable project structures, documentation and dedicated client workspaces.",
+    ownership: [
+      "Designed the centralized client and project operating structure across Notion and Airtable.",
+      "Organized projects, tasks, deadlines, priorities and status so active work can be reviewed consistently.",
+      "Created dashboards for active and completed work and structured views for operational visibility.",
+      "Designed dedicated client workspaces for communication, deliverables, meeting notes and project updates.",
+      "Documented repeatable kickoff, onboarding, delivery and handoff processes.",
+      "Created reusable project structures to support consistent execution across client work.",
+    ],
+    liveProof: [
+      "Client and project information was centralized into a structured operating model.",
+      "Task, priority and deadline tracking was standardized for delivery work.",
+      "Dedicated client workspaces were created for project communication and deliverables.",
+      "Repeatable project processes and handoff documentation were established.",
+      "The system provides a reusable foundation for project and client operations rather than one-off task tracking.",
+    ],
+    roleFit: [
+      "Operations",
+      "Project Operations",
+      "Client Operations",
+      "Business Systems",
+      "Project Coordination",
+    ],
+  },
 
   overview: [
     "Designed a centralized business operating system for managing client delivery.",
@@ -1558,6 +1678,37 @@ export const projects: Project[] = [
 
   description:
     "Built an AI-powered meeting intelligence workflow that analyzes client meeting notes from Notion, generates structured insights with Groq AI, logs meeting history in HubSpot, updates active Airtable projects, creates follow-up tasks, and notifies the internal team through Slack.",
+
+  recruiterSummary: {
+    headline:
+      "AI meeting intelligence connected to CRM and client-delivery operations.",
+    valueProposition:
+      "This workflow shows how I use AI as a structured operations layer rather than a standalone summarizer. Meeting notes are transformed into reusable business fields, then synchronized into CRM, project delivery, follow-up and internal communication systems with processing and failure tracking.",
+    ownership: [
+      "Designed the Notion meeting-note intake and retrieval of the linked Airtable project and client context.",
+      "Configured Groq AI to return structured meeting intelligence including summary, sentiment, next action, topics, buying signals, concerns and follow-up timing.",
+      "Mapped meeting intelligence into HubSpot against the existing contact and Closed Won deal.",
+      "Updated the active Airtable project and resolved the appropriate project phase for follow-up work.",
+      "Created follow-up tasks from AI-generated next actions and delivered structured internal summaries through Slack.",
+      "Added processing, synchronization, completion and failure tracking to make the workflow operationally observable.",
+    ],
+    liveProof: [
+      "The workflow contains 14 documented automation steps.",
+      "Seven structured AI meeting insights are extracted from the meeting-note input.",
+      "Four business systems are synchronized across the workflow.",
+      "Meeting history is logged in HubSpot while active Airtable projects are updated with the latest context.",
+      "Follow-up tasks are generated from AI next actions and linked to the relevant project phase.",
+      "Internal Slack summaries provide a structured handoff of meeting outcomes to the delivery team.",
+    ],
+    roleFit: [
+      "Customer Operations",
+      "CRM Operations",
+      "Business Systems",
+      "Project Operations",
+      "Workflow Automation",
+      "AI Operations",
+    ],
+  },
 
   overview: [
     "Monitors new client meeting notes created in Notion.",
