@@ -28,6 +28,20 @@ A recruiter-focused portfolio for **Ganiyu Basirat Olanike**, combining 7+ years
 - Recruiter/client evidence pack: UAT checklist, client implementation checklist, CRM owner-mapping template, monitoring dashboard specification and demo script under `docs/ai-business-os/`
 - Live case study: https://nikkytechies-portfolio.vercel.app/projects/ai-business-os-multi-agent-operations
 
+### AI Revenue Intelligence & Revenue Systems Agent V2 — Completed
+- 37 governed KPI contracts with deterministic authorization and reporting execution
+- Full chained local regression completed across runtime isolation, semantic governance, identity/RBAC, REST ingestion, scheduled intelligence, reliability, observability and deployment health
+- Governed Gmail delivery and live read-only HubSpot synchronization validated
+- Server-bound identity, least-privilege controls, dead-letter handling and read-only Control Center
+- Detailed project repository: https://github.com/Nikkypwetti/ai-revenue-intelligence-agent
+- Live case study: https://nikkytechies-portfolio.vercel.app/projects/ai-revenue-intelligence-reporting-agent
+
+### AsterNova Salesforce Revenue Operations System
+- Salesforce Sales Cloud implementation covering capacity-aware Lead routing, lifecycle automation, opportunity governance, CRM data quality, permissions, reporting and UAT
+- 41 documented UAT scenarios passed: 37 live + 4 Flow Debug
+- 11 Salesforce reports; $65K simulated open pipeline reconciled with $23K simulated probability-weighted Expected Revenue
+- Detailed portfolio case study: https://nikkytechies-portfolio.vercel.app/projects/asternova-salesforce-revops-system
+
 ### HubSpot Revenue Operations Implementation — Business OS
 - Implemented HubSpot as a governed downstream CRM projection rather than duplicating core operating logic inside the CRM
 - Validated contact create/update, approved deal creation, contact–deal association, readback and idempotent replay
@@ -65,6 +79,11 @@ A recruiter-focused portfolio for **Ganiyu Basirat Olanike**, combining 7+ years
 - 7 structured insights extracted
 - 4 business systems synchronized
 - Automated CRM logging, project updates, follow-up tasks and team summaries
+
+### HubSpot ClientFlow CRM
+- 3 HubSpot workflows and 8 sales/revenue reports
+- Contact, company and deal association, proposal follow-up, overdue-deal controls and Make.com lead-processing integration
+- Visual evidence covers dashboard, deal pipeline, workflows, CRM records, Slack notification and Make.com orchestration
 
 ### GrowAgency Lead-to-Client Revenue Operations System
 - End-to-end lead → qualification → human Sales Decision → governed Opportunity → Closed Won → payment-controlled client handoff
