@@ -1,6 +1,8 @@
 import type { Project } from "@/types/project";
 import { technologies } from "./technologies";
 
+const growagencyEvidence = "/images/projects/growagency/evidence/growagency-picture-evidence";
+
 export const projects: Project[] = [
 
 {
@@ -2130,204 +2132,8 @@ export const projects: Project[] = [
   automationImage:
     "/images/projects/growagency/workflow-2.png",
 
-  evidenceInventory: [
-    {
-      title: "Lead Intake & AI Qualification",
-      description:
-        "The supplied n8n workflow evidence shows the inbound lead intake, validation/normalization and AI qualification path that feeds the CRM process.",
-      status: "Verified",
-    },
-    {
-      title: "Airtable Processing Log",
-      description:
-        "The supplied Airtable evidence shows qualified lead context, Sales Decision state, notification status and conversion state.",
-      status: "Verified",
-    },
-    {
-      title: "Qualified Intake — Slack",
-      description:
-        "The supplied Slack evidence shows the qualification notification with lead details, score, package, pain point and recommended next action.",
-      status: "Verified",
-    },
-    {
-      title: "CRM Change Review — Proposed & Applied",
-      description:
-        "The supplied Airtable evidence shows the governed Opportunity change set, including eight fields, proposed values, evidence and the resulting Applied state.",
-      status: "Verified",
-    },
-    {
-      title: "Closed Won Opportunity",
-      description:
-        "The supplied Opportunity evidence shows the Qualified state, AI score of 85, Standard package and Closed Won progression.",
-      status: "Verified",
-    },
-    {
-      title: "Payment Confirmed + CRM Relationships",
-      description:
-        "The supplied Airtable evidence shows Payment Confirmed together with the linked Processing Log and CRM Change Review records.",
-      status: "Verified",
-    },
-    {
-      title: "Closed Won → Client Operations Handoff",
-      description:
-        "The supplied n8n evidence shows the successful handoff workflow and its transition from Sales into Client Operations.",
-      status: "Verified",
-    },
-    {
-      title: "Completed Client Operations Handoff",
-      description:
-        "The supplied Airtable evidence shows a completed handoff with the linked GrowAgency Client, Client Operations Client and Onboarding Request.",
-      status: "Verified",
-    },
-    {
-      title: "Onboarding Request Approval Boundary",
-      description:
-        "The supplied Airtable evidence shows the downstream onboarding request remaining under human approval control, including Pending Approval state.",
-      status: "Verified",
-    },
-    {
-      title: "Project & Package Task Provisioning",
-      description:
-        "The supplied Client Operations evidence shows the generated project and four package-specific onboarding tasks.",
-      status: "Verified",
-    },
-    {
-      title: "Notion Client Workspace",
-      description:
-        "The supplied evidence shows the generated client delivery workspace created by the validated onboarding path.",
-      status: "Verified",
-    },
-    {
-      title: "AI Business OS Control Center",
-      description:
-        "The supplied control-center evidence shows the reusable revenue-operations operating layer, readiness controls, integration state, human approval boundary and local production monitoring surface.",
-      status: "Verified",
-    },
-    {
-      title: "Sales Operations Monitor",
-      description:
-        "The supplied Sales Operations monitor shows assigned leads, routed volume, SLA/alert state, CRM sync health, owner mapping health and the sales-rep inbox.",
-      status: "Verified",
-    },
-    {
-      title: "Reusable Sales Rep Router — ROUTE-01",
-      description:
-        "The supplied n8n evidence shows the reusable sales-rep routing workflow with routing context, capacity-aware assignment, assignment audit and notification handoff.",
-      status: "Verified",
-    },
-    {
-      title: "Reusable Lead Intake — ING-01",
-      description:
-        "The supplied n8n evidence shows the reusable intake path from external form submission through validation, qualification, CRM projection, sales routing and CRM-aware notification preparation.",
-      status: "Verified",
-    },
-    {
-      title: "Human Approval Decision & Resume — SYS-05B",
-      description:
-        "The supplied n8n evidence shows the governed approval-decision workflow that validates authority, applies approved actions and handles rejected paths.",
-      status: "Verified",
-    },
-    {
-      title: "CRM Change Review Evidence",
-      description:
-        "The supplied CRM evidence shows governed change records with proposed values, evidence and review state across the Opportunity governance layer.",
-      status: "Verified",
-    },
-    {
-      title: "HubSpot Live Contact Projection",
-      description:
-        "The supplied HubSpot evidence shows the reusable CRM adapter successfully projecting Business OS test contacts into a live HubSpot Contacts view.",
-      status: "Verified",
-    },
-    {
-      title: "Sales Rep Notification — Slack",
-      description:
-        "The supplied Slack evidence shows lead-assignment and deal-approval notifications delivered to the sales workflow with owner, qualification, need and follow-up context.",
-      status: "Verified",
-    },
-    {
-      title: "CRM Approval Batch Regression — Execution 3321",
-      description:
-        "The development test result verified that two simultaneous CRM approvals were successfully processed after batch hardening. The execution screenshot could not be resent because the later n8n publish warning and file-upload limit prevented it.",
-      status: "Verified — screenshot unavailable",
-    },
-    {
-      title: "NEW CLIENT ONBOARDING COMPLETED Slack Message",
-      description:
-        "This specific delivery message was not captured and is deliberately not presented as verified evidence.",
-      status: "Not claimed",
-    },
-  ],
-
-  pictureEvidence: [
-    {
-      image: "/images/projects/growagency/evidence/growagency-picture-evidence/01-crm-change-review-proposed.png",
-      title: "CRM Change Review — Proposed Values",
-      description: "Airtable evidence showing the governed Opportunity change request with proposed values, qualification context and supporting evidence before application.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/growagency-picture-evidence/02-crm-change-review-applied.png",
-      title: "CRM Change Review — Applied Values",
-      description: "Airtable evidence showing the reviewed change set after approval and application.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/growagency-picture-evidence/03-closed-won-handoff-executions.png",
-      title: "Closed Won → Client Operations Handoff Executions",
-      description: "n8n execution evidence showing successful Closed Won to Client Operations handoff runs.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/growagency-picture-evidence/04-crm-change-approval-handler.png",
-      title: "CRM Change Approval Handler",
-      description: "Workflow evidence for the governed CRM change approval handler used to control Opportunity updates.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/growagency-picture-evidence/05-opportunity-closed-won.png",
-      title: "Opportunity — Closed Won",
-      description: "Airtable Opportunity evidence showing Qualified state, AI score 85, Standard package and Closed Won progression.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/growagency-picture-evidence/06-payment-confirmed-crm-relationship.png",
-      title: "Payment Confirmed + CRM Relationships",
-      description: "Airtable evidence showing payment confirmation together with linked Processing Log and CRM Change Review records.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/growagency-picture-evidence/07-client-operations-handoff-completed.png",
-      title: "Client Operations Handoff — Completed",
-      description: "Airtable evidence showing the completed handoff, linked GrowAgency Client, Client Operations Client and Onboarding Request.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/growagency-picture-evidence/08-onboarding-request-pending-approval.png",
-      title: "Onboarding Request — Pending Approval",
-      description: "Airtable evidence showing the human approval boundary before downstream onboarding automation proceeds.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/growagency-picture-evidence/09-onboarding-requests-completed.png",
-      title: "Onboarding Requests — Completed",
-      description: "Airtable evidence showing completed downstream onboarding requests after the approval boundary.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/growagency-picture-evidence/10-generated-client-project.png",
-      title: "Generated Client Project",
-      description: "Client Operations evidence showing the project created from the approved onboarding path.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/growagency-picture-evidence/11-generated-onboarding-tasks.png",
-      title: "Generated Onboarding Tasks",
-      description: "Client Operations evidence showing the package-specific onboarding tasks generated for delivery.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/growagency-picture-evidence/12-client-workspace-airtable.png",
-      title: "Client Workspace — Airtable",
-      description: "Airtable evidence showing the client workspace record with project, package and delivery context.",
-    },
-    {
-      image: "/images/projects/growagency/evidence/growagency-picture-evidence/13-notion-client-workspace.png",
-      title: "Generated Notion Client Workspace",
-      description: "Notion evidence showing the generated client delivery workspace created by the validated onboarding path.",
-    },
-  ],
-
-  gallery: [
+  
+   gallery: [
     {
       image: "/images/projects/growagency/dashboard.png",
       title: "Airtable Revenue Operations CRM",
@@ -2351,6 +2157,94 @@ export const projects: Project[] = [
       title: "Sales Operations Notification",
       description:
         "Structured Slack evidence showing actionable lead context delivered to the sales workflow instead of relying on manual monitoring.",
+    },
+    {
+      image: `${growagencyEvidence}/01-crm-change-review-proposed.png`,
+      title: "CRM Change Review — Proposed Values",
+      description:
+        "Airtable evidence showing the governed Opportunity change request with proposed values, qualification context and supporting evidence before application.",
+    },
+    {
+      image: `${growagencyEvidence}/02-crm-change-review-applied.png`,
+      title: "CRM Change Review — Applied Values",
+      description:
+        "Airtable evidence showing the reviewed change set after approval and application.",
+    },
+    {
+      image: `${growagencyEvidence}/04-crm-change-approval-handler.png`,
+      title: "CRM Change Approval Handler",
+      description:
+        "Workflow evidence for the governed CRM change approval handler used to control Opportunity updates.",
+    },
+    {
+      image: `${growagencyEvidence}/05-opportunity-closed-won.png`,
+      title: "Opportunity — Closed Won",
+      description:
+        "Airtable Opportunity evidence showing Qualified state, AI score 85, Standard package and Closed Won progression.",
+    },
+    {
+      image: `${growagencyEvidence}/06-payment-confirmed-crm-relationship.png`,
+      title: "Payment Confirmed + CRM Relationships",
+      description:
+        "Airtable evidence showing payment confirmation together with linked Processing Log and CRM Change Review records.",
+    },
+    {
+      image: `${growagencyEvidence}/03-closed-won-handoff-executions.png`,
+      title: "Closed Won → Client Operations Handoff Executions",
+      description:
+        "n8n execution evidence showing successful Closed Won to Client Operations handoff runs.",
+    },
+    {
+      image: `${growagencyEvidence}/07-client-operations-handoff-completed.png`,
+      title: "Client Operations Handoff — Completed",
+      description:
+        "Airtable evidence showing the completed handoff, linked GrowAgency Client, Client Operations Client and Onboarding Request.",
+    },
+    {
+      image: `${growagencyEvidence}/08-onboarding-request-pending-approval.png`,
+      title: "Onboarding Request — Pending Approval",
+      description:
+        "Airtable evidence showing the human approval boundary before downstream onboarding automation proceeds.",
+    },
+    {
+      image: `${growagencyEvidence}/09-onboarding-requests-completed.png`,
+      title: "Onboarding Requests — Completed",
+      description:
+        "Airtable evidence showing completed downstream onboarding requests after the approval boundary.",
+    },
+    {
+      image: `${growagencyEvidence}/10-generated-client-project.png`,
+      title: "Generated Client Project",
+      description:
+        "Client Operations evidence showing the project created from the approved onboarding path.",
+    },
+    {
+      image: `${growagencyEvidence}/11-generated-onboarding-tasks.png`,
+      title: "Generated Onboarding Tasks",
+      description:
+        "Client Operations evidence showing the package-specific onboarding tasks generated for delivery.",
+    },
+    {
+      image: `${growagencyEvidence}/12-client-workspace-airtable.png`,
+      title: "Client Workspace — Airtable",
+      description:
+        "Airtable evidence showing the client workspace record with project, package and delivery context.",
+    },
+    {
+      image: `${growagencyEvidence}/13-notion-client-workspace.png`,
+      title: "Generated Notion Client Workspace",
+      description:
+        "Notion evidence showing the generated client delivery workspace created by the validated onboarding path.",
+    },
+  ],
+
+  documentation: [
+    {
+      title: "GrowAgency Technical Case Study",
+      description:
+        "Detailed implementation narrative and evidence matrix for the lead-to-client Revenue Operations system, kept with the project source documentation.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/tree/main/docs/growagency-lead-to-client-revenue-operations-system",
+      status: "Completed",
     },
   ],
 
