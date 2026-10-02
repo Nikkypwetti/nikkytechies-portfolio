@@ -2047,12 +2047,6 @@ export const projects: Project[] = [
       status: "Verified",
     },
     {
-      title: "Professional Client Onboarding — Make.com",
-      description:
-        "The supplied Make.com evidence shows the existing onboarding automation architecture connecting Airtable, Notion, Gmail and Slack.",
-      status: "Verified",
-    },
-    {
       title: "AI Business OS Control Center",
       description:
         "The supplied control-center evidence shows the reusable revenue-operations operating layer, readiness controls, integration state, human approval boundary and local production monitoring surface.",
