@@ -11,6 +11,36 @@ export const flowbridgeRevopsProject: Project = {
   category: "Revenue Operations",
   description:
     "Translated fictional company requirements into a lifecycle-aware RevOps Agent Skill, then blind-tested the finished rules against 16 synthetic CRM records and validated 24 rule-defined CRM issues.",
+  recruiterSummary: {
+    headline:
+      "RevOps audit and lead-qualification design: deterministic scoring, lifecycle controls and CRM data-quality validation.",
+    valueProposition:
+      "This case study shows how I translate business qualification requirements into repeatable RevOps rules instead of relying on opaque AI judgment. I designed the scoring model, override precedence, lifecycle-aware CRM checks and structured output, then blind-tested the finished Skill against synthetic CRM records.",
+    ownership: [
+      "Translated fictional business requirements into explicit qualification stages, scoring factors, budget/timeline rules and CRM data-quality controls.",
+      "Designed the deterministic 100-point scoring model and explicit override precedence.",
+      "Separated lead qualification from CRM/process health so a qualified prospect can still surface execution risks.",
+      "Added lifecycle-aware validation for ownership, overdue follow-up, stale opportunities and conditional deal-stage requirements.",
+      "Blind-tested the finished Skill against 16 synthetic CRM records without an embedded answer key.",
+      "Validated 24 rule-defined CRM issues and documented the resulting qualification distribution.",
+    ],
+    liveProof: [
+      "16 synthetic CRM records were blind-tested without an expected-status or answer-key column.",
+      "24 rule-defined CRM issues were validated across the dataset.",
+      "The model uses documented Budget, Need, Authority and Timeline weighting with explicit business-rule overrides.",
+      "Lifecycle-aware controls reduce false positives by applying stage-specific requirements.",
+      "Outputs separate qualification, CRM hygiene, pipeline controls and priority actions.",
+    ],
+    roleFit: [
+      "Revenue Operations",
+      "CRM Operations",
+      "Sales Operations",
+      "Business Systems",
+      "CRM Data Quality",
+      "AI Operations",
+    ],
+  },
+
   overview: [
     "Started with business requirements discovery rather than prompting first: qualification stages, budget thresholds, authority rules, timeline rules, lifecycle controls and CRM data-quality requirements.",
     "Designed a deterministic 100-point model weighted across Budget 30, Need 20, Authority 30 and Timeline 20, with explicit override precedence.",
