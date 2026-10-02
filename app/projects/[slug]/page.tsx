@@ -25,6 +25,7 @@ import { ProjectDocumentation } from "@/components/projects/case-study/project-d
 import { ProjectRecruiterSummary } from "@/components/projects/case-study/project-recruiter-summary";
 import { ProjectInterviewGuide } from "@/components/projects/case-study/project-interview-guide";
 import { ProjectEvidence } from "@/components/projects/case-study/project-evidence";
+import { ProjectPictureEvidence } from "@/components/projects/case-study/project-picture-evidence";
 
 type Props = {
   params: Promise<{
@@ -115,6 +116,10 @@ export default async function ProjectPage({ params }: Props) {
 
       <FadeIn delay={0.43}>
         <ProjectEvidence evidence={project.evidenceInventory} github={project.github} />
+      </FadeIn>
+
+      <FadeIn delay={0.44}>
+        <ProjectPictureEvidence evidence={project.pictureEvidence} />
       </FadeIn>
 
       <FadeIn delay={0.45}>
