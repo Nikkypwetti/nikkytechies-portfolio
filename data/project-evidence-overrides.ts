@@ -228,6 +228,91 @@ const projectEvidenceOverrides: Record<string, ProjectEvidenceOverride> = {
       },
     ],
   },
+  "growagency-crm-ai-pipeline": {
+    heroImage: "/images/projects/growagency/hero.png",
+    automationImage: "/images/projects/growagency/hero.png",
+    gallery: [
+      {
+        image: "/images/projects/growagency/evidence/growagency-picture-evidence/01-crm-change-review-proposed.png",
+        title: "CRM Change Review — Proposed Values",
+        description:
+          "Airtable CRM governance evidence showing the proposed Opportunity changes, qualification context and supporting evidence before approval.",
+      },
+      {
+        image: "/images/projects/growagency/evidence/growagency-picture-evidence/02-crm-change-review-applied.png",
+        title: "CRM Change Review — Applied Values",
+        description:
+          "Airtable CRM governance evidence showing the reviewed change set after approval and application.",
+      },
+      {
+        image: "/images/projects/growagency/evidence/growagency-picture-evidence/03-closed-won-handoff-executions.png",
+        title: "Closed Won → Client Operations Handoff",
+        description:
+          "n8n execution evidence showing successful Closed Won to Client Operations handoff runs.",
+      },
+      {
+        image: "/images/projects/growagency/evidence/growagency-picture-evidence/04-crm-change-approval-handler.png",
+        title: "CRM Change Approval Handler",
+        description:
+          "Workflow evidence for the governed CRM change approval handler used to control Opportunity updates.",
+      },
+      {
+        image: "/images/projects/growagency/evidence/growagency-picture-evidence/05-opportunity-closed-won.png",
+        title: "Opportunity — Closed Won",
+        description:
+          "Airtable Opportunity evidence showing Qualified state, AI score 85, Standard package and Closed Won progression.",
+      },
+      {
+        image: "/images/projects/growagency/evidence/growagency-picture-evidence/06-payment-confirmed-crm-relationship.png",
+        title: "Payment Confirmed + CRM Relationships",
+        description:
+          "Airtable evidence showing payment confirmation together with linked Processing Log and CRM Change Review records.",
+      },
+      {
+        image: "/images/projects/growagency/evidence/growagency-picture-evidence/07-client-operations-handoff-completed.png",
+        title: "Client Operations Handoff — Completed",
+        description:
+          "Airtable evidence showing the completed handoff, linked GrowAgency Client, Client Operations Client and Onboarding Request.",
+      },
+      {
+        image: "/images/projects/growagency/evidence/growagency-picture-evidence/08-onboarding-request-pending-approval.png",
+        title: "Onboarding Request — Pending Approval",
+        description:
+          "Airtable evidence showing the human approval boundary before downstream onboarding automation proceeds.",
+      },
+      {
+        image: "/images/projects/growagency/evidence/growagency-picture-evidence/09-onboarding-requests-completed.png",
+        title: "Onboarding Requests — Completed",
+        description:
+          "Airtable evidence showing completed downstream onboarding requests after the approval boundary.",
+      },
+      {
+        image: "/images/projects/growagency/evidence/growagency-picture-evidence/10-generated-client-project.png",
+        title: "Generated Client Project",
+        description:
+          "Client Operations evidence showing the project created from the approved onboarding path.",
+      },
+      {
+        image: "/images/projects/growagency/evidence/growagency-picture-evidence/11-generated-onboarding-tasks.png",
+        title: "Generated Onboarding Tasks",
+        description:
+          "Client Operations evidence showing the package-specific onboarding tasks generated for delivery.",
+      },
+      {
+        image: "/images/projects/growagency/evidence/growagency-picture-evidence/12-client-workspace-airtable.png",
+        title: "Client Workspace — Airtable",
+        description:
+          "Airtable evidence showing the client workspace record with project, package and delivery context.",
+      },
+      {
+        image: "/images/projects/growagency/evidence/growagency-picture-evidence/13-notion-client-workspace.png",
+        title: "Generated Notion Client Workspace",
+        description:
+          "Notion evidence showing the generated client delivery workspace created by the validated onboarding path.",
+      },
+    ],
+  },
+
 };
 
 export function applyProjectEvidenceOverride(project: Project): Project {
