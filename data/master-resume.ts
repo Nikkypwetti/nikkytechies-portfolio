@@ -104,12 +104,12 @@ export const masterResume = {
       ],
     },
     {
-      slug: "manus-revops-crm-audit-lead-qualification",
-      title: "RevOps CRM Audit & Lead Qualification Agent Skill",
-      stack: "Manus Agent Skills | CSV/XLSX | CRM Exports",
+      slug: "ai-revenue-intelligence-reporting-agent",
+      title: "AI Revenue Intelligence & Revenue Systems Agent V2",
+      stack: "n8n | PostgreSQL | Docker | Groq | HubSpot | Power BI",
       bullets: [
-        "Designed, packaged and validated a reusable RevOps Agent Skill using a deterministic 100-point lead-scoring model, 5 qualification states, business-rule overrides and CRM checks for ownership, overdue follow-up, qualification gaps and stale opportunities.",
-        "Validated 5 synthetic CRM records through the installed Skill, confirming missing-timeline and low-budget overrides while producing structured qualification, CRM data-quality, pipeline-audit and priority-action outputs.",
+        "Built a governed Revenue Intelligence and Revenue Systems platform separating AI intent interpretation from deterministic KPI authorization, reporting execution, CRM synchronization and trusted delivery.",
+        "Completed chained local regression and live integration validation across 37 governed KPIs, server-bound identity, RBAC/data scopes, HubSpot sync, governed Gmail delivery, reliability controls, dead-letter handling and a read-only operations Control Center.",
       ],
     },
   ],
