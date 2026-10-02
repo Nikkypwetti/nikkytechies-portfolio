@@ -11,6 +11,35 @@ export const manusRevopsProject: Project = {
   category: "AI",
   description:
     "Designed, packaged and validated a reusable Manus Agent Skill that applies deterministic lead scoring, business-rule overrides and CRM data-quality checks to CSV/XLSX exports.",
+  recruiterSummary: {
+    headline:
+      "Reusable CRM audit and lead-qualification agent: deterministic scoring, business overrides and structured RevOps output.",
+    valueProposition:
+      "This case study demonstrates a reusable operational Skill for CRM exports rather than a one-off prompt. I defined the scoring model, qualification states, override rules and CRM hygiene checks, packaged them into a repeatable workflow and validated the behavior against synthetic records.",
+    ownership: [
+      "Designed the deterministic 100-point lead-scoring model across budget, need, authority, timeline and data/engagement.",
+      "Defined five qualification states and business-rule overrides for missing timeline and confirmed-low-budget cases.",
+      "Built CRM checks for ownership, overdue follow-up, qualification gaps, stale opportunities and conditional deal-stage/deal-value requirements.",
+      "Packaged the workflow as a reusable Manus Agent Skill accepting CSV/XLSX CRM exports.",
+      "Validated the installed Skill against five synthetic CRM records and documented the observed outputs.",
+    ],
+    liveProof: [
+      "Five synthetic CRM records were validated through the installed Skill.",
+      "Two business-rule overrides were explicitly validated: missing timeline and low-budget classification.",
+      "John Ade and Sarah Bello scored 100 and were classified hot_lead in the synthetic test set.",
+      "Grace Mensah remained needs_discovery under the missing-timeline rule despite a 72 score.",
+      "Mary Okafor scored 85 but was capped at qualified under the low-budget rule.",
+      "The Skill also surfaced a missing owner and an overdue follow-up in the synthetic CRM data.",
+    ],
+    roleFit: [
+      "Revenue Operations",
+      "CRM Operations",
+      "Sales Operations",
+      "CRM Data Quality",
+      "AI Workflow Design",
+    ],
+  },
+
   overview: [
     "Built a reusable Agent Skill for Revenue Operations lead qualification and CRM audit workflows.",
     "Uses a deterministic 0–100 scoring model across budget, business need, authority, timeline and data/engagement instead of opaque AI-only scoring.",
