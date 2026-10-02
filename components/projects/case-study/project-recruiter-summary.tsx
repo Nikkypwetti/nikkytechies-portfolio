@@ -17,7 +17,7 @@ export function ProjectRecruiterSummary({ summary }: Props) {
     <section className="space-y-8 rounded-3xl border bg-card p-7 md:p-10">
       <div className="space-y-3">
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-          Project Walkthrough
+          Recruiter Walkthrough
         </p>
         <h2 className="max-w-4xl text-3xl font-bold">{summary.headline}</h2>
         <p className="max-w-4xl text-lg leading-8 text-muted-foreground">
@@ -52,7 +52,7 @@ export function ProjectRecruiterSummary({ summary }: Props) {
         </div>
 
         <div className="rounded-2xl border bg-background p-6">
-          <h3 className="text-xl font-semibold">Live Proof</h3>
+          <h3 className="text-xl font-semibold">Evidence & Current State</h3>
           <ul className="mt-4 space-y-3 text-muted-foreground">
             {summary.liveProof.map((item) => (
               <li key={item} className="flex gap-3 leading-7">
