@@ -26,6 +26,7 @@ import { ProjectRecruiterSummary } from "@/components/projects/case-study/projec
 import { ProjectInterviewGuide } from "@/components/projects/case-study/project-interview-guide";
 
 
+
 type Props = {
   params: Promise<{
     slug: string;
@@ -59,10 +60,6 @@ export default async function ProjectPage({ params }: Props) {
 
       <FadeIn delay={0.06}>
         <ProjectGallery gallery={project.gallery} />
-      </FadeIn>
-
-      <FadeIn delay={0.07}>
-        <ProjectEvidence evidence={project.evidenceInventory} github={project.github} />
       </FadeIn>
 
       <FadeIn>

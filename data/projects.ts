@@ -2130,34 +2130,11 @@ export const projects: Project[] = [
     "/images/projects/growagency/hero.png",
 
   automationImage:
-    "/images/projects/growagency/workflow-2.png",
+  `${growagencyEvidence}/04-crm-change-approval-handler.png`,
 
   
    gallery: [
-    {
-      image: "/images/projects/growagency/dashboard.png",
-      title: "Airtable Revenue Operations CRM",
-      description:
-        "Centralized operational CRM for lead context, AI qualification, sales decisions, opportunity state, follow-up information and pipeline visibility.",
-    },
-    {
-      image: "/images/projects/growagency/workflow-1.png",
-      title: "Lead Intake & AI Qualification",
-      description:
-        "n8n intake flow that turns inbound Google Sheets records into validated, AI-assisted qualification context and structured Airtable CRM records.",
-    },
-    {
-      image: "/images/projects/growagency/workflow-2.png",
-      title: "Sales Operations Routing & Follow-Up",
-      description:
-        "Revenue Operations workflow that searches actionable CRM records, evaluates status and routes notifications, follow-up activity and CRM updates.",
-    },
-    {
-      image: "/images/projects/growagency/slack-alert.png",
-      title: "Sales Operations Notification",
-      description:
-        "Structured Slack evidence showing actionable lead context delivered to the sales workflow instead of relying on manual monitoring.",
-    },
+
     {
       image: `${growagencyEvidence}/01-crm-change-review-proposed.png`,
       title: "CRM Change Review — Proposed Values",
@@ -2237,6 +2214,7 @@ export const projects: Project[] = [
         "Notion evidence showing the generated client delivery workspace created by the validated onboarding path.",
     },
   ],
+
 
   documentation: [
     {
