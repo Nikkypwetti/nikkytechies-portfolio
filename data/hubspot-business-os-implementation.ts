@@ -189,7 +189,7 @@ export const hubspotBusinessOsImplementation: Project = {
       image: "/images/projects/ai-business-os/05-human-approval-gateway.webp",
       title: "Human Commercial Approval Boundary",
       description:
-        "Protected approval architecture used to keep material deal creation separate from contact projection. The final CRM-first validation intentionally stopped at pending human deal approval.",
+        "Protected approval architecture keeps material deal creation separate from contact projection. The final CRM-first validation stopped before deal creation; approval-ledger PENDING rows had expired by the later review and are not presented as currently actionable.",
     },
     {
       image: "/images/projects/ai-business-os/04-crm-gateway.webp",
