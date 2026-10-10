@@ -40,7 +40,7 @@ export const aiBusinessOsProject: Project = {
       "A controlled Google Form lead intake was normalized into the canonical PostgreSQL lead model, scored 75/100, classified qualified, routed to the configured sales owner and assigned a 24-hour follow-up SLA.",
       "Lead-assignment and deal-approval notifications were delivered while the material deal action remained behind a human approval gate; no deal was created without approval.",
       "The repaired HubSpot CRM projection created and independently read back contact 880647909565 with verified owner and qualification context; the same provider ID was then recorded in PostgreSQL integration evidence, completing the provider → CRM readback → audit chain.",
-      "Two real HubSpot provider failures were caught by the centralized error path, escalated into incident/dead-letter records, remediated at the root cause and later marked RESOLVED with the successful provider action attached. The original failures were preserved as operational evidence rather than hidden by deleting executions.",
+      "Two named HubSpot incidents in the verified remediation chain (HTTP method and unique lead_score property configuration) were marked RESOLVED with remediation evidence preserved. Separate provider/MCP incidents remained OPEN or ESCALATED in the later database review, so this does not mean every incident is resolved.",
       "The last fully verified core release passed 21/21 agent-access security checks, 11/11 RBAC and tenant-isolation checks, and 22/22 local production-readiness checks.",
       "The architecture keeps PostgreSQL authoritative and CRM providers replaceable, allowing the same operating model to support HubSpot, Salesforce or another client CRM through configuration and adapters.",
     ],
@@ -253,13 +253,13 @@ export const aiBusinessOsProject: Project = {
     "Validated all 8 reasoning agents with Groq primary and Google Gemini cross-provider fallback.",
     "Validated 4 external providers — HubSpot, Salesforce, Gmail and Google Calendar — through controlled staging-write evidence and replay/idempotency checks.",
     "Validated 8 exact-match recovery registrations for bounded retry/repair behavior instead of generic state-changing replay.",
-    "At the verified core cutover snapshot, the system had 0 open recovery jobs, 0 unresolved errors and 0 unresolved DLQ items.",
+    "A historical core-cutover snapshot recorded 0 open recovery jobs, 0 unresolved errors and 0 unresolved DLQ items at that time; a later database review showed separate OPEN/ESCALATED provider and MCP exceptions, so the snapshot is not a claim of current all-clear health.",
     "Verified that the cutover/readiness validation itself created 0 new provider deliveries and 0 new integration actions.",
     "Kept CRM architecture provider-neutral: required local HubSpot controls are enabled while the main CRM gateway remains on postgres_dev and optional Salesforce writes remain disabled.",
     "Maintained pre-cutover and post-cutover rollback backups, plus an isolated PostgreSQL restore proof covering 41 Business OS tables.",
     "Validated the CRM-first sales path with a canonical qualified lead, verified owner routing, a 24-hour SLA, delivered rep/approval notifications and a protected pending deal decision.",
     "Recovered a failed HubSpot projection without creating a duplicate canonical lead: the same lead was successfully projected as HubSpot contact 880647909565, independently read back from HubSpot and logged as SUCCESS in the integration action ledger.",
-    "Preserved two failed HubSpot executions as audit evidence, remediated the HTTP-method and CRM-field-model root causes, and moved both incident and dead-letter records to RESOLVED after the successful retry.",
+    "Preserved the HTTP-method and unique-property HubSpot failures as audit evidence and resolved those two named incidents after successful remediation; separate provider/MCP incidents remained OPEN or ESCALATED in the later database review.",
   ],
 
   documentation: [
@@ -268,6 +268,13 @@ export const aiBusinessOsProject: Project = {
       description:
         "Architecture, governance, integration, recovery, local production validation and recruiter-facing implementation evidence.",
       href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/ai-business-os/README.md",
+      status: "Completed",
+    },
+    {
+      title: "Verified Evidence Matrix & Claim Boundaries",
+      description:
+        "Separates committed screenshots, persisted provider/audit evidence, historical readiness snapshots, recovery tests, and current incident-state limitations.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/ai-business-os/EVIDENCE-MATRIX.md",
       status: "Completed",
     },
     {
