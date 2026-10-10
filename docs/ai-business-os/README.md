@@ -38,7 +38,7 @@ I designed the AI Business OS as a governed operating layer rather than a collec
 | Agent-access security | **21/21** |
 | RBAC & tenant isolation | **11/11** |
 | Production-readiness gate | **22/22** |
-| Core cutover snapshot incident state | **0 recovery jobs, 0 unresolved errors, 0 unresolved DLQ** |
+| Historical core-cutover snapshot | **0 recovery jobs, 0 unresolved errors, 0 unresolved DLQ at that snapshot only**; a later database review found separate provider/MCP incidents OPEN or ESCALATED |
 
 ## Architecture
 
@@ -152,7 +152,7 @@ Human deal-eligibility approval
 Approved deal action only when authorized
 ```
 
-A controlled validation produced a **75/100 qualified lead**, routed it to the configured sales owner, assigned a **24-hour follow-up SLA**, delivered both lead-assignment and deal-approval notifications, and held the commercial decision in **PENDING** state instead of creating a deal without authorization.
+A controlled validation produced a **75/100 qualified lead**, routed it to the configured sales owner, assigned a **24-hour follow-up SLA**, and recorded lead-assignment/deal-approval notification delivery. The approval ledger contains PENDING requests with expiry dates of 2026-10-01; treat those as historical approval evidence, not as currently actionable requests.
 
 The repaired HubSpot projection created and read back contact **880647909565**. PostgreSQL recorded the same provider object ID as a successful integration action.
 
@@ -163,7 +163,7 @@ The HubSpot validation exposed two real integration defects:
 1. the HTTP Request action had not persisted the required POST method
 2. the existing HubSpot `lead_score` custom property had been configured as unique, which is not appropriate for a repeatable lead score
 
-Both failures were captured by the canonical error path, escalated into dead-letter records and preserved for audit. After the root causes were corrected, the same canonical lead was retried successfully. The related error and dead-letter records were then marked **RESOLVED** with remediation notes pointing to the successful provider action.
+Both named failures were captured by the canonical error path, escalated into dead-letter records and preserved for audit. After the root causes were corrected, the same canonical lead was retried successfully. The related records for these two incidents were marked **RESOLVED** with remediation notes pointing to the successful provider action. A later database review also showed separate provider/MCP incidents still **OPEN** or **ESCALATED**; this is not an all-incidents-resolved claim.
 
 This is intentional recruiter/client evidence: the project demonstrates not only a happy path, but how I diagnose, recover and close production-style Revenue Systems incidents without deleting history or creating throwaway duplicate business records.
 
@@ -223,6 +223,7 @@ This project is evidence of how I approach **Revenue Operations, CRM/Business Sy
 
 ## Recruiter & Client Evidence Pack
 
+- [Verified Evidence Matrix & Claim Boundaries](./EVIDENCE-MATRIX.md)
 - [UAT Checklist](./UAT-CHECKLIST.md)
 - [Client Implementation Checklist](./CLIENT-IMPLEMENTATION-CHECKLIST.md)
 - [CRM Owner Mapping Template](./CRM-OWNER-MAPPING-TEMPLATE.md)
