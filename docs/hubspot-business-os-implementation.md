@@ -75,7 +75,7 @@ A controlled inbound test produced one canonical lead and moved it through the R
 - Follow-up SLA: **24 hours**
 - Lead-assignment notification: **delivered**
 - Deal-approval notification: **delivered**
-- Deal decision: **PENDING**
+- Deal decision: a protected approval request was recorded in the test ledger; newer PENDING requests had expiry dates of 2026-10-01 and should not be described as currently actionable
 - Unauthorized deal creation: **none**
 
 ### HubSpot projection outcome
@@ -150,10 +150,12 @@ The same canonical lead was retried through the governed adapter and succeeded a
 
 After verifying both HubSpot and PostgreSQL evidence:
 
-- both related `error_events` rows were moved from **OPEN → RESOLVED**
-- both related `dead_letter_queue` rows were moved from **ESCALATED → RESOLVED**
+- the two named `error_events` rows were moved from **OPEN → RESOLVED**
+- the two related `dead_letter_queue` rows were moved from **ESCALATED → RESOLVED**
 - resolution notes reference the successful provider object and integration action
 - the failed executions remain preserved as audit history
+
+**Scope limitation:** separate provider/MCP incidents remained **OPEN** or **ESCALATED** in the later database review. Only the HTTP-method and unique-property incidents described above are claimed as resolved.
 
 This demonstrates recovery, not failure deletion.
 
@@ -168,12 +170,16 @@ Qualified lead
 → routed owner
 → HubSpot contact
 → rep notification
-→ pending deal approval
+→ protected human deal-approval boundary (approval records include expired requests)
 ```
 
 No deal was created without authorization.
 
 Earlier controlled implementation tests separately validated approved HubSpot deal creation and contact–deal association. The current evidence is stronger for governance because it demonstrates that contact visibility can be automated without bypassing the human commercial decision.
+
+## Evidence matrix and claim boundaries
+
+See the [HubSpot Evidence Matrix](./hubspot-business-os-implementation/EVIDENCE-MATRIX.md) for the exact provider action ID, readback proof, named incident IDs, approval expiry caveat, open/escalated exceptions, and claims that should not be overstated.
 
 ## Revenue Operations value
 
