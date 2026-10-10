@@ -29,16 +29,16 @@ export const hubspotBusinessOsImplementation: Project = {
       "Designed the HubSpot projection contract and kept PostgreSQL as the authoritative Business OS state rather than duplicating business policy inside provider-specific workflows.",
       "Mapped logical sales ownership to a verified HubSpot owner before assigning records and built the CRM-first path around the rep's actual CRM workspace.",
       "Implemented the CRM v3 contact batch-upsert path keyed by email, qualification-property mapping, provider readback and integration action logging.",
-      "Kept material deal creation behind a human approval boundary and preserved the current clean lead in PENDING approval rather than forcing a happy-path deal.",
+      "Kept material deal creation behind a human approval boundary. The latest CRM-first validation stopped before deal creation; approval-ledger PENDING requests had expiry dates and are historical evidence, not necessarily actionable now.",
       "Diagnosed and remediated two real provider failures: an HTTP-method configuration defect and a CRM schema problem caused by an incorrectly unique lead-score field.",
-      "Preserved incident and dead-letter evidence, verified the repaired contact in HubSpot and PostgreSQL, and closed the failures as RESOLVED only after successful remediation.",
+      "Preserved incident and dead-letter evidence and verified the repaired contact in HubSpot and PostgreSQL. The two named HubSpot incidents in this remediation chain were resolved; separate provider/MCP incidents remained OPEN or ESCALATED in the later database review.",
     ],
     liveProof: [
       "Controlled CRM-first validation projected the canonical qualified lead into HubSpot as contact 880647909565.",
       "HubSpot readback confirmed the expected company, owner, qualification status/reason, budget, primary need, phone and lifecycle context.",
       "PostgreSQL integration_action_log recorded the same contact ID with SUCCESS and audit action a44ae785-58bf-44cc-abcb-d11d7d42b0d3.",
       "The numeric score of 75 remained authoritative in Business OS/PostgreSQL and in the qualification explanation after the existing HubSpot lead_score property was found to be incorrectly constrained as unique.",
-      "Executions 17060 and 17143 were captured as provider incidents, escalated into the DLQ, remediated and marked RESOLVED with the successful provider action attached.",
+      "The HTTP-method incident (INC-17060-1790799416723) and unique-property incident (INC-17143-1790801414476) were marked RESOLVED with remediation evidence. Separate provider/MCP incidents remained OPEN or ESCALATED in the later review.",
       "The final retry used the same canonical lead and idempotency key, proving recovery against the intended business operation rather than creating a new local lead.",
       "The current clean CRM-first path intentionally stops at human deal approval; no deal was created without a sales decision.",
     ],
@@ -206,7 +206,7 @@ export const hubspotBusinessOsImplementation: Project = {
     "Kept the lead's numeric score of 75 authoritative in Business OS/PostgreSQL after identifying that the existing HubSpot lead_score field was incorrectly configured as unique; the qualification explanation still preserves the scoring rationale for sales context.",
     "Captured the first failed retry as an incident when the HTTP Request node had not persisted POST, corrected the method, and preserved the failure record rather than deleting it.",
     "Captured the second provider failure when HubSpot rejected the repeated lead_score value, diagnosed the CRM schema issue, removed the unsafe provider field from the projection and retried the same canonical lead successfully.",
-    "Moved both related error_events and dead_letter_queue records to RESOLVED with remediation notes and the successful provider action attached.",
+    "Moved the two related error_events and dead_letter_queue records for the HTTP-method and unique-property failures to RESOLVED with remediation notes; other provider/MCP incidents remained OPEN or ESCALATED in the later review.",
     "Maintained the protected commercial boundary: the current clean lead remains at human deal approval and no deal was created without authorization.",
     "Earlier controlled implementation tests separately validated approved HubSpot deal creation and contact–deal association; the current CRM-first proof deliberately demonstrates the governed pre-deal operating path.",
   ],
@@ -258,6 +258,13 @@ export const hubspotBusinessOsImplementation: Project = {
       status: "Completed",
     },
     {
+      title: "Verified HubSpot Evidence Matrix & Claim Boundaries",
+      description:
+        "Provider action/readback identifiers, the two resolved remediation incidents, remaining open/escalated exceptions, approval expiry caveats, and evidence that should not be overstated.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/hubspot-business-os-implementation/EVIDENCE-MATRIX.md",
+      status: "Completed",
+    },
+    {
       title: "AI Business OS Technical Case Study",
       description:
         "Parent architecture and governance documentation for the reusable Business OS that owns qualification, routing, approvals, provider controls and recovery.",
@@ -275,13 +282,13 @@ export const hubspotBusinessOsImplementation: Project = {
   metrics: [
     "CRM-first HubSpot contact projection + live provider readback verified",
     "Verified owner mapping and governed qualification context",
-    "2 provider incidents captured, remediated and resolved",
+    "2 named HubSpot incidents resolved; separate provider/MCP exceptions remain open/escalated",
     "Human deal approval preserved with no unauthorized deal creation",
   ],
 
   stats: [
     { value: 1, suffix: " contact", label: "Current CRM-First Projection" },
-    { value: 2, suffix: " incidents", label: "Recovered & Resolved" },
+    { value: 2, suffix: " incidents", label: "Named HubSpot Incidents Resolved" },
     { value: 1, suffix: " gate", label: "Human Deal Approval" },
   ],
 
@@ -298,7 +305,7 @@ export const hubspotBusinessOsImplementation: Project = {
     "Verified owner mapping controls downstream CRM assignment.",
     "The same canonical lead can be recovered through stable idempotency and provider evidence instead of creating throwaway duplicates.",
     "CRM field-model defects are surfaced as governance issues and corrected at the integration boundary rather than silently forcing bad data.",
-    "Provider failures are retained as incidents and dead-letter evidence, then explicitly resolved after successful remediation.",
+    "The two named HubSpot remediation incidents were retained and then resolved after verification; separate provider/MCP exceptions remained open or escalated in the later review.",
     "Human deal approval remains part of the commercial control path while reps can work the qualified contact in HubSpot.",
   ],
 
