@@ -257,7 +257,7 @@ export const aiBusinessOsProject: Project = {
     "Verified that the cutover/readiness validation itself created 0 new provider deliveries and 0 new integration actions.",
     "Kept CRM architecture provider-neutral: required local HubSpot controls are enabled while the main CRM gateway remains on postgres_dev and optional Salesforce writes remain disabled.",
     "Maintained pre-cutover and post-cutover rollback backups, plus an isolated PostgreSQL restore proof covering 41 Business OS tables.",
-    "Validated the CRM-first sales path with a canonical qualified lead, verified owner routing, a 24-hour SLA, delivered rep/approval notifications and a protected pending deal decision.",
+    "Validated the CRM-first sales path with a canonical qualified lead, verified owner routing, a 24-hour SLA, and recorded rep/approval notification delivery. The approval ledger captured protected deal requests, but newer PENDING rows had expired by the later review and are not presented as currently actionable.",
     "Recovered a failed HubSpot projection without creating a duplicate canonical lead: the same lead was successfully projected as HubSpot contact 880647909565, independently read back from HubSpot and logged as SUCCESS in the integration action ledger.",
     "Preserved the HTTP-method and unique-property HubSpot failures as audit evidence and resolved those two named incidents after successful remediation; separate provider/MCP incidents remained OPEN or ESCALATED in the later database review.",
   ],
