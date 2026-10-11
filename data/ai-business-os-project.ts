@@ -176,7 +176,7 @@ export const aiBusinessOsProject: Project = {
     },
   ],
 
-  heroImage: "/images/projects/ai-business-os/00-control-center-hero.webp",
+  heroImage: "/images/projects/ai-business-os/AI-Business-OS-Evidence/01-control-center-22of22.png",
 
   gallery: [
     {
