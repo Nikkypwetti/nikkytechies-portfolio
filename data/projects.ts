@@ -804,44 +804,29 @@ export const projects: Project[] = [
 
   gallery: [
     {
-      image: "/images/projects/ai-business-os/01-control-center.webp",
-      title: "AI Business OS Control Center",
-      description: "Read-only operations view for the governed Revenue Operations platform, showing its monitoring and connector-health surface.",
+      image: "/images/projects/revenue-intelligence/revint-system-architecture.png",
+      title: "Governed Revenue Intelligence Architecture",
+      description: "Architecture showing structured AI interpretation, KPI governance, approved execution, database security boundaries, delivery, observability and centralized reliability controls.",
     },
     {
-      image: "/images/projects/ai-business-os/03-supervisor.webp",
-      title: "Supervisor Agent",
-      description: "Evidence of the orchestration layer that routes requests across specialist agents under the platform's governed design.",
+      image: "/images/projects/revenue-intelligence/revint-02-approved-api-report.png",
+      title: "Approved API Revenue Report",
+      description: "Verified governed API request returning an approved KPI result after identity, semantic and query controls.",
     },
     {
-      image: "/images/projects/ai-business-os/04-crm-gateway.webp",
-      title: "Governed CRM Gateway",
-      description: "Shows the controlled boundary between agent decisions and CRM/provider operations.",
+      image: "/images/projects/revenue-intelligence/revint-03-safe-rejection.png",
+      title: "Safe Unsupported-Request Rejection",
+      description: "Unsupported reporting intent is rejected safely rather than becoming unrestricted SQL or an unauthorized database operation.",
     },
     {
-      image: "/images/projects/ai-business-os/05-human-approval-gateway.webp",
-      title: "Human Approval Boundary",
-      description: "Shows the approval gate for material CRM actions; approval remains a human decision rather than an AI-only action.",
+      image: "/images/projects/revenue-intelligence/revint-09-audit-traceability.png",
+      title: "Request Audit Traceability",
+      description: "A governed request traced through request, execution and delivery stages using consistent request and correlation identifiers.",
     },
     {
-      image: "/images/projects/ai-business-os/06-recovery-worker.webp",
-      title: "Recovery Worker",
-      description: "Shows the recovery workflow structure used to investigate and handle failed operations.",
-    },
-    {
-      image: "/images/projects/ai-business-os/07-idempotent-retry.webp",
-      title: "Replay-Safe Retry",
-      description: "Shows the idempotent retry design intended to reduce duplicate side effects during recovery.",
-    },
-    {
-      image: "/images/projects/ai-business-os/08-hubspot-adapter.webp",
-      title: "HubSpot Provider Adapter",
-      description: "Shows the reusable HubSpot integration boundary; specific provider success and readback are documented separately in the evidence matrix.",
-    },
-    {
-      image: "/images/projects/ai-business-os/10-revops-analytics.webp",
-      title: "Revenue Operations Analytics",
-      description: "Shows the analytics specialist boundary for governed reporting; reporting authority remains controlled by the platform's KPI and authorization rules.",
+      image: "/images/projects/revenue-intelligence/revint-10-error-handler.png",
+      title: "Centralized Error Handler",
+      description: "Reliability workflow for error normalization, retry policy, circuit handling, dead-letter persistence, escalation and final auditing.",
     },
   ],
 
@@ -975,6 +960,173 @@ export const projects: Project[] = [
 
 
 
+
+{
+  slug: "ai-business-os",
+  title: "AI Business OS — Governed Revenue Operations & Business Systems Platform",
+  year: "2026",
+  type: "Portfolio",
+  status: "In Progress",
+  category: "Business Systems",
+  platforms: ["n8n", "PostgreSQL", "Docker", "Groq", "Gemini", "HubSpot", "Slack", "Gmail"],
+  description: "A reusable, local production-style Business OS for governed Revenue Operations, specialist-agent coordination, CRM/provider integrations, human approval, operational monitoring and controlled recovery. This is a portfolio implementation, not a paid-client or public-hosted deployment.",
+  overview: [
+    "Designed a reusable Business OS architecture with a supervisor and specialist agents for sales/CRM, reporting and business operations.",
+    "Added a governed CRM gateway, server-side access controls and a human approval boundary for material CRM actions.",
+    "Implemented provider adapters, audit-oriented integration handling, recovery and replay-safe retry patterns.",
+    "Built a local read-only Control Center for operational visibility and documented evidence boundaries for technical handover.",
+    "Kept current runtime health distinct from historical release snapshots; current readiness must be described using the latest validation result rather than old screenshots.",
+  ],
+  problem: "A business operating system that combines AI agents with CRM and workflow tools needs more than successful workflow runs: it needs authorization boundaries, human approval for material actions, observable failures, safe recovery and evidence that separates historical tests from current runtime health.",
+  solution: "Built a modular local Business OS around a supervisor, specialist agents, a governed CRM gateway, provider adapters, approval controls, persistence/audit records, recovery patterns and a read-only operations dashboard. The implementation is documented as a hands-on portfolio build and is not represented as a paid-client deployment.",
+  architecture: [
+    "Business request and supervisor routing",
+    "Specialist agents for sales/CRM, analytics and operations",
+    "Identity and access-security boundary",
+    "Governed CRM gateway and provider adapters",
+    "Human approval before material CRM changes",
+    "PostgreSQL-backed records and integration audit",
+    "Bounded retries, error/DLQ handling and recovery worker",
+    "Local read-only Control Center and operational handover documentation",
+  ],
+  workflow: [
+    "Receive a business request",
+    "Route to the relevant specialist agent",
+    "Validate access and permitted action",
+    "Resolve governed CRM/provider operation",
+    "Request human approval for material changes",
+    "Execute only an authorized action",
+    "Persist integration outcome and audit context",
+    "Handle failure through bounded recovery and replay-safe retry",
+    "Review runtime state in the Control Center",
+  ],
+  automation: [
+    {
+      title: "Supervisor & Specialist Agents",
+      description: "Coordinates business requests across specialist agents while keeping tool access behind governed boundaries.",
+      icon: "bot",
+    },
+    {
+      title: "Governed CRM Gateway",
+      description: "Separates agent reasoning from provider operations and applies controlled action boundaries.",
+      icon: "crm",
+    },
+    {
+      title: "Human Approval",
+      description: "Keeps material CRM changes behind an authorized human decision instead of allowing AI to authorize its own actions.",
+      icon: "workspace",
+    },
+    {
+      title: "Recovery & Replay Safety",
+      description: "Uses bounded recovery and idempotent retry patterns while preserving operational error history.",
+      icon: "database",
+    },
+    {
+      title: "Read-Only Control Center",
+      description: "Surfaces operational state without exposing browser-side workflow mutation or credential access.",
+      icon: "workspace",
+    },
+  ],
+  heroImage: "/images/projects/ai-business-os/00-control-center-hero.webp",
+  automationImage: "/images/projects/ai-business-os/04-crm-gateway.webp",
+  gallery: [
+    {
+      image: "/images/projects/ai-business-os/01-control-center.webp",
+      title: "AI Business OS Control Center",
+      description: "Read-only operations view for the governed Business OS and its monitoring surface.",
+    },
+    {
+      image: "/images/projects/ai-business-os/03-supervisor.webp",
+      title: "Supervisor Agent",
+      description: "Orchestration layer that routes requests across specialist agents under the platform's governed design.",
+    },
+    {
+      image: "/images/projects/ai-business-os/04-crm-gateway.webp",
+      title: "Governed CRM Gateway",
+      description: "Controlled boundary between agent decisions and CRM/provider operations.",
+    },
+    {
+      image: "/images/projects/ai-business-os/05-human-approval-gateway.webp",
+      title: "Human Approval Boundary",
+      description: "Approval gate for material CRM actions; approval remains a human decision rather than an AI-only action.",
+    },
+    {
+      image: "/images/projects/ai-business-os/06-recovery-worker.webp",
+      title: "Recovery Worker",
+      description: "Recovery workflow structure used to investigate and handle failed operations.",
+    },
+    {
+      image: "/images/projects/ai-business-os/07-idempotent-retry.webp",
+      title: "Replay-Safe Retry",
+      description: "Idempotent retry design intended to reduce duplicate side effects during recovery.",
+    },
+    {
+      image: "/images/projects/ai-business-os/08-hubspot-adapter.webp",
+      title: "HubSpot Provider Adapter",
+      description: "Reusable HubSpot integration boundary; specific provider success and readback are documented separately in the evidence matrix.",
+    },
+    {
+      image: "/images/projects/ai-business-os/10-revops-analytics.webp",
+      title: "Revenue Operations Analytics",
+      description: "Analytics specialist boundary for governed reporting under KPI and authorization rules.",
+    },
+  ],
+  results: [
+    "Security validation recorded 21/21 agent-access checks and 11/11 RBAC/tenant-isolation checks in the verified release snapshot.",
+    "A prior core-release snapshot recorded 22/22 production-readiness checks; do not treat that historical screenshot as the current readiness result.",
+    "A controlled HubSpot contact projection was recorded as successful and independently read back, with a persisted integration audit record.",
+    "Recovery tests recorded repair, fallback and retry-success branches as RECOVERED, alongside a deliberately failed retry-exhaustion test.",
+    "Current operational exceptions must remain visible; this case study does not claim all incidents or dead-letter items are cleared.",
+  ],
+  documentation: [
+    {
+      title: "AI Business OS Evidence Matrix",
+      description: "Selected screenshots, persisted provider evidence, recovery test records and safe claim boundaries.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/ai-business-os/EVIDENCE-MATRIX.md",
+      status: "Completed",
+    },
+    {
+      title: "AI Business OS Demo Script",
+      description: "Recruiter-facing walkthrough of the platform, its authorization boundaries, approval design and recovery behavior.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/ai-business-os/DEMO-SCRIPT.md",
+      status: "Completed",
+    },
+  ],
+  technologies: [
+    technologies.n8n,
+    technologies.postgresql,
+    technologies.docker,
+    technologies.groq,
+    technologies.hubspot,
+    technologies.gmail,
+    technologies.slack,
+  ],
+  metrics: [
+    "Reusable supervisor and specialist-agent architecture",
+    "21/21 agent-access security checks in the verified release snapshot",
+    "11/11 RBAC and tenant-isolation checks in the verified release snapshot",
+    "Historical 22/22 readiness snapshot, distinct from current readiness",
+    "Human approval, audit, recovery and replay-safe retry controls",
+  ],
+  stats: [
+    { value: 21, suffix: "/21", label: "Agent Access Checks (Verified Snapshot)" },
+    { value: 11, suffix: "/11", label: "RBAC / Tenant Checks (Verified Snapshot)" },
+    { value: 8, suffix: " images", label: "Selected Project Evidence" },
+  ],
+  before: [
+    "Agent workflows can become unsafe if reasoning, authorization and CRM writes share the same authority boundary",
+    "Failures can be difficult to diagnose when retry, audit and dead-letter state are not visible together",
+    "Historical screenshots can be mistaken for current production health",
+  ],
+  after: [
+    "Specialist agents operate behind a governed CRM/provider boundary",
+    "Material CRM changes retain a human approval boundary",
+    "Recovery and replay-safety patterns are documented alongside their actual test outcomes",
+    "Current readiness and historical validation snapshots are kept distinct",
+  ],
+  github: "https://github.com/Nikkypwetti/nikkytechies-portfolio/tree/main/docs/ai-business-os",
+  demo: "",
+},
 
 {
   slug: "hubspot-revenue-operations-business-os",
