@@ -2178,8 +2178,10 @@ export const projects: Project[] = [
     },
   ],
 
-  heroImage:
-    "/images/projects/growagency/hero.png",
+  // heroImage:
+  //   "/images/projects/growagency/hero.png",
+    heroImage:
+    "/images/projects/growagency/dashboard-upgraded.png",
 
   automationImage:
   `${growagencyEvidence}/04-crm-change-approval-handler.png`,
@@ -2192,6 +2194,18 @@ export const projects: Project[] = [
       title: "CRM Change Review — Proposed Values",
       description:
         "Airtable evidence showing the governed Opportunity change request with proposed values, qualification context and supporting evidence before application.",
+    },
+    {
+      image: `${growagencyEvidence}/15-slack-verification-lead-detail.png`,
+      title: "AI-Qualified Lead — Slack Verification Context",
+      description:
+        "Groq AI qualification output for the Slack Verification Lead: Intake Score 85/100, status qualified, priority medium, suggested package Standard. The AI reason field documents decision criteria so the human sales rep has full qualification context without manual triage.",
+    },
+    {
+      image: `${growagencyEvidence}/14-slack-qualified-intake-notification.png`,
+      title: "AI Qualification — Slack Notification",
+      description:
+        "Inbound lead qualified by Groq AI (Intake Score 85/100, budget $600–$1,000, suggested package: Standard). The Slack notification surfaces structured qualification context to Sales Ops before any human commercial decision, keeping AI in an advisory role.",
     },
     {
       image: `${growagencyEvidence}/02-crm-change-review-applied.png`,
