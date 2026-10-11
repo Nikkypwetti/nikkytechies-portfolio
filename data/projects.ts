@@ -1031,44 +1031,64 @@ export const projects: Project[] = [
   automationImage: "/images/projects/ai-business-os/04-crm-gateway.webp",
   gallery: [
     {
+      image: "/images/projects/ai-business-os/00-control-center-hero.webp",
+      title: "AI Business OS — Control Center Overview",
+      description: "Overview screenshot for the local Business OS operations control center.",
+    },
+    {
       image: "/images/projects/ai-business-os/01-control-center.webp",
-      title: "AI Business OS Control Center",
-      description: "Read-only operations view for the governed Business OS and its monitoring surface.",
+      title: "Control Center & Runtime Monitoring",
+      description: "Read-only operational view of the Business OS and its monitored components.",
+    },
+    {
+      image: "/images/projects/ai-business-os/02-production-readiness.webp",
+      title: "Production Readiness Validation",
+      description: "Saved readiness-check evidence from a specific validation run; it should not be interpreted as the current runtime status.",
     },
     {
       image: "/images/projects/ai-business-os/03-supervisor.webp",
       title: "Supervisor Agent",
-      description: "Orchestration layer that routes requests across specialist agents under the platform's governed design.",
+      description: "Orchestration layer for routing requests to specialist agents.",
     },
     {
       image: "/images/projects/ai-business-os/04-crm-gateway.webp",
       title: "Governed CRM Gateway",
-      description: "Controlled boundary between agent decisions and CRM/provider operations.",
+      description: "Controlled boundary between agent workflows and CRM/provider operations.",
     },
     {
       image: "/images/projects/ai-business-os/05-human-approval-gateway.webp",
-      title: "Human Approval Boundary",
-      description: "Approval gate for material CRM actions; approval remains a human decision rather than an AI-only action.",
+      title: "Human Approval Gateway",
+      description: "Approval boundary for material CRM actions before execution.",
     },
     {
       image: "/images/projects/ai-business-os/06-recovery-worker.webp",
       title: "Recovery Worker",
-      description: "Recovery workflow structure used to investigate and handle failed operations.",
+      description: "Recovery workflow evidence for investigating and handling failed operations.",
     },
     {
       image: "/images/projects/ai-business-os/07-idempotent-retry.webp",
-      title: "Replay-Safe Retry",
-      description: "Idempotent retry design intended to reduce duplicate side effects during recovery.",
+      title: "Idempotent Retry",
+      description: "Replay-safe retry path designed to reduce duplicate side effects during recovery.",
     },
     {
       image: "/images/projects/ai-business-os/08-hubspot-adapter.webp",
-      title: "HubSpot Provider Adapter",
-      description: "Reusable HubSpot integration boundary; specific provider success and readback are documented separately in the evidence matrix.",
+      title: "HubSpot CRM Adapter",
+      description: "Provider adapter boundary for controlled HubSpot contact operations.",
+    },
+    {
+      image: "/images/projects/ai-business-os/09-calendar-adapter.webp",
+      title: "Calendar Adapter",
+      description: "Calendar-provider adapter within the Business OS integration architecture.",
     },
     {
       image: "/images/projects/ai-business-os/10-revops-analytics.webp",
       title: "Revenue Operations Analytics",
-      description: "Analytics specialist boundary for governed reporting under KPI and authorization rules.",
+      description: "Specialist analytics path for governed reporting and Revenue Operations insights.",
+    },
+    {
+      image: "/images/projects/ai-business-os/11-approval-decision-resume.webp",
+      title: "Approval Decision & Workflow Resume",
+      description: "Evidence of the workflow resuming from an approval decision.",
     },
   ],
   results: [
@@ -1079,12 +1099,6 @@ export const projects: Project[] = [
     "Current operational exceptions must remain visible; this case study does not claim all incidents or dead-letter items are cleared.",
   ],
   documentation: [
-    {
-      title: "AI Business OS Evidence Matrix",
-      description: "Selected screenshots, persisted provider evidence, recovery test records and safe claim boundaries.",
-      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/ai-business-os/EVIDENCE-MATRIX.md",
-      status: "Completed",
-    },
     {
       title: "AI Business OS Demo Script",
       description: "Recruiter-facing walkthrough of the platform, its authorization boundaries, approval design and recovery behavior.",
@@ -1191,14 +1205,19 @@ export const projects: Project[] = [
   automationImage: "/images/projects/HubSpot-RevOps-Evidence/14-lead-intake-workflow.png",
   gallery: [
     {
-      image: "/images/projects/HubSpot-RevOps-Evidence/13-hubspot-pipeline.png",
-      title: "HubSpot Pipeline",
-      description: "HubSpot pipeline view used to demonstrate CRM opportunity visibility and the sales-stage context.",
+      image: "/images/projects/HubSpot-RevOps-Evidence/11-hubspot-readback-sql.png",
+      title: "HubSpot Readback & Integration Audit",
+      description: "SQL evidence for inspecting the persisted provider action and independent readback context.",
     },
     {
       image: "/images/projects/HubSpot-RevOps-Evidence/12-hubspot-contact.png",
       title: "HubSpot Contact Record",
-      description: "CRM-side contact evidence associated with the controlled contact projection.",
+      description: "Contact record evidence from the HubSpot CRM interface.",
+    },
+    {
+      image: "/images/projects/HubSpot-RevOps-Evidence/13-hubspot-pipeline.png",
+      title: "HubSpot Sales Pipeline",
+      description: "Pipeline view showing CRM opportunity and sales-stage context.",
     },
     {
       image: "/images/projects/HubSpot-RevOps-Evidence/14-lead-intake-workflow.png",
@@ -1207,28 +1226,23 @@ export const projects: Project[] = [
     },
     {
       image: "/images/projects/HubSpot-RevOps-Evidence/15-qualification-workflow.png",
-      title: "Qualification Workflow",
+      title: "Lead Qualification Workflow",
       description: "Workflow evidence for qualification and owner context before CRM projection.",
     },
     {
       image: "/images/projects/HubSpot-RevOps-Evidence/16-hubspot-integration-success.png",
       title: "HubSpot Integration Success",
-      description: "Recorded success evidence for the controlled HubSpot integration path; see the evidence matrix for the matching audit/readback details.",
-    },
-    {
-      image: "/images/projects/HubSpot-RevOps-Evidence/11-hubspot-readback-sql.png",
-      title: "Independent Readback & Audit",
-      description: "SQL evidence used to inspect the recorded provider integration result and readback context.",
+      description: "Recorded success evidence for the controlled HubSpot integration path.",
     },
     {
       image: "/images/projects/HubSpot-RevOps-Evidence/17-slack-sales-notification.png",
-      title: "Sales Notification",
+      title: "Sales Notification in Slack",
       description: "Slack notification evidence associated with the sales operations workflow.",
     },
     {
       image: "/images/projects/HubSpot-RevOps-Evidence/18-approval-state.png",
       title: "Human Approval State",
-      description: "Approval-state evidence; historical PENDING records with expiry dates must not be represented as currently actionable.",
+      description: "Approval-state evidence for the governed commercial action boundary.",
     },
   ],
   results: [
@@ -1239,12 +1253,6 @@ export const projects: Project[] = [
     "Kept material deal creation behind human approval; the latest CRM-first validation path stopped before deal creation.",
   ],
   documentation: [
-    {
-      title: "HubSpot Business OS Evidence Matrix",
-      description: "Lists the selected screenshots, verified provider action, independent readback, audit identifiers, incident status and safe claim boundaries.",
-      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/hubspot-business-os-implementation/EVIDENCE-MATRIX.md",
-      status: "Completed",
-    },
     {
       title: "HubSpot Business OS Implementation Notes",
       description: "Implementation narrative and integration context for the HubSpot Business OS project.",
