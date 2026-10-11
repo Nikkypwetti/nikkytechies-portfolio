@@ -180,7 +180,8 @@ export const aiBusinessOsProject: Project = {
 
   gallery: [
     {
-      image: "/images/projects/ai-business-os/01-control-center.webp",
+      // image: "/images/projects/ai-business-os/01-control-center.webp", 
+      image: "/images/projects/ai-business-os/AI-Business-OS-Evidence/01-control-center-22of22.png",
       title: "AI Business OS — Local Production Control Center",
       description:
         "Recruiter-facing control center evidence from the earlier verified release; the current documented core has since advanced to 54 governed workflows / 646 nodes, 22/22 readiness, 21/21 agent-access security and 11/11 RBAC/tenant isolation.",
