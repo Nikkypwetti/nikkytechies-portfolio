@@ -1,0 +1,23 @@
+PASS | dedicated_internal_auth_credential | credential present with dedicated ID/type
+PASS | runtime_key_file | mode=0o600; key_present=True
+PASS | BOSMCPCRMSERVER001_header_auth | active=True; auth=headerAuth; credential_id=BOSINTERNALAUTH001
+PASS | BOSMCPCLIENTSERVER001_header_auth | active=True; auth=headerAuth; credential_id=BOSINTERNALAUTH001
+PASS | BOSMCPPROJECTSERVER001_header_auth | active=True; auth=headerAuth; credential_id=BOSINTERNALAUTH001
+PASS | BOSMCPCOMMSERVER001_header_auth | active=True; auth=headerAuth; credential_id=BOSINTERNALAUTH001
+PASS | BOSMCPCRMADAPTER001_header_auth | active=True; auth=headerAuth; credential_id=BOSINTERNALAUTH001
+PASS | BOSMCPCLIENTADAPTER001_header_auth | active=True; auth=headerAuth; credential_id=BOSINTERNALAUTH001
+PASS | BOSMCPPROJECTADAPTER001_header_auth | active=True; auth=headerAuth; credential_id=BOSINTERNALAUTH001
+PASS | BOSMCPCOMMADAPTER001_header_auth | active=True; auth=headerAuth; credential_id=BOSINTERNALAUTH001
+PASS | BOSOPSSTATUS001_header_auth | active=True; auth=headerAuth; credential_id=BOSINTERNALAUTH001
+PASS | BOSSALESINBOXAPI001_header_auth | active=True; auth=headerAuth; credential_id=BOSINTERNALAUTH001
+PASS | BOSSALESAPPROVALAPI001_header_auth | active=True; auth=headerAuth; credential_id=BOSINTERNALAUTH001
+PASS | authenticated_mcp_client | active=True; transport=credential_backed_http_mcp_helper
+PASS | BOSSALESCRM001_uses_authenticated_mcp_client | active=True; target=BOSMCPAUTHCLIENT001
+PASS | BOSCLIENTOPS001_uses_authenticated_mcp_client | active=True; target=BOSMCPAUTHCLIENT001
+PASS | BOSPROJECTOPS001_uses_authenticated_mcp_client | active=True; target=BOSMCPAUTHCLIENT001
+PASS | BOSCOMMUNICATIONS001_uses_authenticated_mcp_client | active=True; target=BOSMCPAUTHCLIENT001
+PASS | no_active_unauthenticated_network_triggers | none
+PASS | control_center_server_side_auth | Control Center keeps service key server-side
+PASS | production_bundle_no_literal_secret | literal runtime key absent from production bundle
+AGENT_ACCESS_SECURITY_READY=true
+checks=21/21

@@ -1,0 +1,23 @@
+=== model policy provider isolation ===
+client_operations: primary=groq/openai/gpt-oss-120b fallback=gemini/models/gemini-3.8-flash
+communications: primary=groq/openai/gpt-oss-120b fallback=gemini/models/gemini-3.8-flash
+customer_success: primary=groq/openai/gpt-oss-120b fallback=gemini/models/gemini-3.8-flash
+finance_billing: primary=groq/openai/gpt-oss-120b fallback=gemini/models/gemini-3.8-flash
+project_operations: primary=groq/openai/gpt-oss-120b fallback=gemini/models/gemini-3.8-flash
+revops_analytics: primary=groq/openai/gpt-oss-120b fallback=gemini/models/gemini-3.8-flash
+sales_crm: primary=groq/openai/gpt-oss-120b fallback=gemini/models/gemini-3.8-flash
+supervisor_routing: primary=groq/openai/gpt-oss-120b fallback=gemini/models/gemini-3.8-flash
+
+=== live agent model connections ===
+BOSSUPERVISOR001 (supervisor_routing): primary=groq [LLM | Primary Supervisor] fallback=gemini [LLM | Fallback Supervisor]
+BOSSALESCRM001 (sales_crm): primary=groq [LLM | Primary Sales CRM] fallback=gemini [LLM | Fallback Sales CRM]
+BOSCLIENTOPS001 (client_operations): primary=groq [LLM | Primary Client Ops] fallback=gemini [LLM | Fallback Client Ops]
+BOSPROJECTOPS001 (project_operations): primary=groq [LLM | Primary Project Ops] fallback=gemini [LLM | Fallback Project Ops]
+BOSCOMMUNICATIONS001 (communications): primary=groq [LLM | Primary Communications] fallback=gemini [LLM | Fallback Communications]
+BOSFINANCE001 (finance_billing): primary=groq [LLM | Primary Finance & Billing] fallback=gemini [LLM | Fallback Finance & Billing]
+BOSCUSTOMERSUCCESS001 (customer_success): primary=groq [LLM | Primary Customer Success] fallback=gemini [LLM | Fallback Customer Success]
+BOSREVOPSANALYTICS001 (revops_analytics): primary=groq [LLM | Primary RevOps Analytics] fallback=gemini [LLM | Fallback RevOps Analytics]
+
+=== result ===
+PROVIDER_FALLBACK_READY=true
+All eight enabled model policies and live agent connections use a distinct fallback provider.

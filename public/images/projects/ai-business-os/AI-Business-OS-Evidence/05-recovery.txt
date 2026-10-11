@@ -1,0 +1,12 @@
+=== Autonomous recovery readiness ===
+PASS | sys06_active | active=1
+PASS | sys06_published_current | version_match=True
+PASS | schedule_currently_disabled | disabled=True
+PASS | eight_real_handlers | total=8, enabled=8
+PASS | handler_policy_split | repair=4, retry=4
+PASS | clean_operational_state | pending=0, errors=0, dlq=0
+PASS | provider_fallback_ready | provider validator passed
+PASS | production_environment_enabled | enabled=True
+RECOVERY_IMPLEMENTATION_READY=true
+AUTONOMOUS_SCHEDULE_ENABLEMENT_ALLOWED=true
+SCHEDULE_REMAINS_DISABLED=true

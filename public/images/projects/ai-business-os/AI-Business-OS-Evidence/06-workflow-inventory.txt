@@ -1,0 +1,56 @@
+PRODUCTION WORKFLOW INVENTORY
+Workflow count: 54
+SYS-00 | Global Error Workflow | nodes=7 | id=DY8fprerubnpmrV5
+SYS-01 | Node Error Handler | nodes=10 | id=BOSNODEERRHNDL01
+SYS-03 | Config Loader | nodes=2 | id=BOSCONFIGLOADR01
+AGENT-00 | Supervisor | nodes=10 | id=BOSSUPERVISOR001
+SYS-02 | Guardrail Engine | nodes=8 | id=BOSGUARDRAIL001
+SYS-03 | Evaluation Engine | nodes=6 | id=BOSEVALUATION001
+SYS-04 | Recovery Orchestrator | nodes=4 | id=BOSRECOVERY001
+TOOL-01 | CRM Gateway | nodes=14 | id=BOSCRMGATEWAY001
+AGENT-01 | Sales CRM | nodes=30 | id=BOSSALESCRM001
+MCP-01 | CRM Server | nodes=7 | id=BOSMCPCRMSERVER001
+MCP-01A | CRM Internal Adapter | nodes=5 | id=BOSMCPCRMADAPTER001
+SYS-05 | Human Approval Gateway | nodes=6 | id=BOSAPPROVAL001
+SYS-05B | Approval Decision & Resume | nodes=28 | id=BOSAPPROVALDEC001
+TOOL-02 | Client Ops Gateway | nodes=14 | id=BOSCLIENTGATEWAY001
+MCP-02A | Client Ops Internal Adapter | nodes=5 | id=BOSMCPCLIENTADAPTER001
+MCP-02 | Client Ops Server | nodes=6 | id=BOSMCPCLIENTSERVER001
+AGENT-02 | Client Operations | nodes=30 | id=BOSCLIENTOPS001
+TOOL-03 | Project Ops Gateway | nodes=14 | id=BOSPROJECTGATEWAY001
+MCP-03A | Project Ops Internal Adapter | nodes=5 | id=BOSMCPPROJECTADAPTER001
+MCP-03 | Project Ops Server | nodes=8 | id=BOSMCPPROJECTSERVER001
+AGENT-03 | Project Operations | nodes=30 | id=BOSPROJECTOPS001
+TOOL-04 | Communications Gateway | nodes=14 | id=BOSCOMMSGATEWAY001
+MCP-04A | Communications Internal Adapter | nodes=5 | id=BOSMCPCOMMADAPTER001
+MCP-04 | Communications Server | nodes=7 | id=BOSMCPCOMMSERVER001
+AGENT-04 | Communications | nodes=30 | id=BOSCOMMUNICATIONS001
+SYS-06 | Recovery Queue Worker | nodes=19 | id=BOSRECOVERYWORKER001
+RECOVERY-H01 | Agent Execution Finalization | nodes=4 | id=BOSRECOVERYFINALIZE001
+RECOVERY-H02 | Idempotent Tool Adapter Retry | nodes=4 | id=BOSRECOVERYRETRY001
+INT-01 | HubSpot CRM Adapter | nodes=19 | id=BOSHUBSPOTADAPTER001
+INT-02 | Gmail Delivery Adapter | nodes=10 | id=BOSGMAILADAPTER001
+INT-03 | Google Calendar Adapter | nodes=12 | id=BOSCALENDARADAPTER001
+SYS-07 | Operations Status API | nodes=7 | id=BOSOPSSTATUS001
+TOOL-05 | Customer Success Gateway | nodes=14 | id=BOSCSGATEWAY001
+AGENT-06 | Customer Success | nodes=12 | id=BOSCUSTOMERSUCCESS001
+TOOL-06 | RevOps Analytics Gateway | nodes=14 | id=BOSANALYTICSGATEWAY001
+AGENT-07 | RevOps Analytics | nodes=12 | id=BOSREVOPSANALYTICS001
+TOOL-07 | Finance Gateway | nodes=14 | id=BOSFINANCEGATEWAY001
+AGENT-05 | Finance & Billing | nodes=12 | id=BOSFINANCE001
+INT-04 | Airtable CRM Adapter | nodes=16 | id=BOSAIRTABLEADAPTER001
+INT-05 | Salesforce CRM Adapter | nodes=19 | id=BOSSALESFORCEADAPTER001
+ING-01 | Google Forms Lead Intake | nodes=17 | id=BOSGOOGLEFORMINGRESS001
+QUAL-01 | Reusable Lead Qualification | nodes=8 | id=BOSLEADQUALIFY001
+ROUTE-01 | Reusable Sales Rep Router | nodes=11 | id=BOSSALESROUTER001
+POSTQ-01 | Reusable Post-Qualification Sales Actions | nodes=18 | id=BOSPOSTQUALSALES001
+NOTIFY-01 | Reusable Sales Rep Notifications | nodes=9 | id=BOSSALESNOTIFY001
+SYS-08 | Sales Rep Inbox API | nodes=7 | id=BOSSALESINBOXAPI001
+SYS-09 | Sales Approval Decision API | nodes=12 | id=BOSSALESAPPROVALAPI001
+OWNER-01 | Reusable CRM Owner Resolver | nodes=5 | id=BOSCRMOWNERRESOLVE001
+SYNC-01 | Reusable HubSpot Sales Sync | nodes=16 | id=BOSHUBSPOTSYNC001
+SYNC-03 | Reusable Airtable Sales Sync | nodes=9 | id=BOSAIRTABLESYNC001
+SYNC-00 | Reusable CRM Projection Orchestrator | nodes=7 | id=BOSCRMPROJECTION001
+SYNC-02 | Reusable Salesforce Sales Sync | nodes=11 | id=BOSSALESFORCESYNC001
+SYS-10 | Authenticated MCP Client | nodes=7 | id=BOSMCPAUTHCLIENT001
+INT-03 | Sales Rep Push Delivery | nodes=16 | id=BOSSLACKREPDELIV01

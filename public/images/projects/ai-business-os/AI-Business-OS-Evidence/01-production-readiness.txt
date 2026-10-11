@@ -1,0 +1,25 @@
+=== Business OS production readiness ===
+PASS | disk_free_2gb | 2.78 GiB free
+PASS | no_active_test_workflows | 0
+PASS | recovery_schedule_disabled | disabled=True
+PASS | advisory_specialist_mcp_staged | BOSMCPCSSERVER001:inactive, BOSMCPCSADAPTER001:inactive, BOSMCPANALYTICSSERVER001:inactive, BOSMCPANALYTICSADAPTER001:inactive, BOSMCPFINANCESERVER001:inactive, BOSMCPFINANCEADAPTER001:inactive
+PASS | advisory_mutation_permissions_locked | total=11, enabled=0
+PASS | nginx_auth_boundary_configured | Basic Auth configured for exposed admin/MCP surfaces
+PASS | internal_adapter_reverse_proxy_denial | internal adapter routes denied externally
+PASS | nginx_htpasswd_present | /home/nikky-techies/business-os/deploy/nginx/.htpasswd
+PASS | production_workflow_bundle_ready | workflows=54
+PASS | external_worker_runner_configured | worker runner sidecar matches n8n 2.8.4
+PASS | private_data_network_configured | Postgres/Redis data network is private; app network provides service/egress path
+PASS | production_environment_enabled | true|true
+PASS | production_external_writes_enabled | true|true
+PASS | live_integrations_enabled | airtable|false|true|false; gmail|true|true|true; google_calendar|true|true|true; hubspot|true|true|true; salesforce|true|true|false
+PASS | no_open_recovery_errors_dlq | recovery=0, errors=0, dlq=0
+PASS | compact_backup_present | /home/nikky-techies/business-os/backups/20260927-post-hardening-compact/business_os.dump
+PASS | cross_provider_fallback_ready | PROVIDER_FALLBACK_READY=true
+PASS | agent_access_security_ready | AGENT_ACCESS_SECURITY_READY=true
+PASS | rbac_tenant_security_ready | RBAC_TENANT_SECURITY_READY=true
+PASS | production_n8n_postgres_config | production example uses PostgreSQL
+PASS | production_queue_config | production example uses Redis queue mode with manual executions offloaded
+PASS | external_runner_env_config | external task runners enabled
+PRODUCTION_READY=true
+checks=22/22

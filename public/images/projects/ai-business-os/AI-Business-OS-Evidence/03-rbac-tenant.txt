@@ -1,0 +1,13 @@
+PASS | rbac_schema_and_function | true|true|true|true|true
+PASS | baseline_role_permissions | allowed_permissions=8
+PASS | authorization_scope_unit_tests | {'admin_ops': ['true', 'BUSINESS', 'authorized'], 'rep_inbox': ['true', 'OWN', 'authorized'], 'rep_wrong_owner': ['false', 'OWN', 'owner_scope_mismatch'], 'bad_tenant': ['false', 'NONE', 'principal_not_found_or_inactive']}
+PASS | protected_workflows_active_published | BOSSALESINBOXAPI001:True,BOSSALESAPPROVALAPI001:True,BOSOPSSTATUS001:True,BOSAPPROVALDEC001:True
+PASS | protected_workflows_use_shared_authorizer | BOSSALESINBOXAPI001,BOSSALESAPPROVALAPI001,BOSOPSSTATUS001,BOSAPPROVALDEC001
+PASS | invalid_tenant_audit_is_fk_safe | BOSSALESINBOXAPI001,BOSSALESAPPROVALAPI001,BOSOPSSTATUS001
+PASS | approval_identity_server_derived | browser decided_by ignored; caller principal propagated
+PASS | control_center_server_identity_headers | principal and business headers injected server-side
+PASS | browser_cannot_set_trusted_identity | trusted identity headers absent from browser code
+PASS | runtime_identity_mapping_protected | mode=0o600; principal_present=True; business_present=True
+PASS | production_bundle_contains_rbac_boundary | four protected workflows retain shared authorization
+RBAC_TENANT_SECURITY_READY=true
+checks=11/11
