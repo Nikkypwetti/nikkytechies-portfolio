@@ -804,39 +804,44 @@ export const projects: Project[] = [
 
   gallery: [
     {
-      image:
-        "/images/projects/revenue-intelligence/revint-system-architecture.png",
-      title: "Governed Revenue Intelligence Architecture",
-      description:
-        "Architecture showing structured AI interpretation, KPI governance, approved execution, database security boundaries, delivery, observability and centralized reliability controls.",
+      image: "/images/projects/ai-business-os/01-control-center.webp",
+      title: "AI Business OS Control Center",
+      description: "Read-only operations view for the governed Revenue Operations platform, showing its monitoring and connector-health surface.",
     },
     {
-      image:
-        "/images/projects/revenue-intelligence/revint-02-approved-api-report.png",
-      title: "Approved API Revenue Report",
-      description:
-        "Verified governed API request returning an approved KPI result after identity, semantic and query controls.",
+      image: "/images/projects/ai-business-os/03-supervisor.webp",
+      title: "Supervisor Agent",
+      description: "Evidence of the orchestration layer that routes requests across specialist agents under the platform's governed design.",
     },
     {
-      image:
-        "/images/projects/revenue-intelligence/revint-03-safe-rejection.png",
-      title: "Safe Unsupported-Request Rejection",
-      description:
-        "Unsupported reporting intent is rejected safely rather than becoming unrestricted SQL or an unauthorized database operation.",
+      image: "/images/projects/ai-business-os/04-crm-gateway.webp",
+      title: "Governed CRM Gateway",
+      description: "Shows the controlled boundary between agent decisions and CRM/provider operations.",
     },
     {
-      image:
-        "/images/projects/revenue-intelligence/revint-09-audit-traceability.png",
-      title: "Request Audit Traceability",
-      description:
-        "A governed request traced through request, execution and delivery stages using consistent request and correlation identifiers.",
+      image: "/images/projects/ai-business-os/05-human-approval-gateway.webp",
+      title: "Human Approval Boundary",
+      description: "Shows the approval gate for material CRM actions; approval remains a human decision rather than an AI-only action.",
     },
     {
-      image:
-        "/images/projects/revenue-intelligence/revint-10-error-handler.png",
-      title: "Centralized Error Handler",
-      description:
-        "Reliability workflow for error normalization, retry policy, circuit handling, dead-letter persistence, escalation and final auditing.",
+      image: "/images/projects/ai-business-os/06-recovery-worker.webp",
+      title: "Recovery Worker",
+      description: "Shows the recovery workflow structure used to investigate and handle failed operations.",
+    },
+    {
+      image: "/images/projects/ai-business-os/07-idempotent-retry.webp",
+      title: "Replay-Safe Retry",
+      description: "Shows the idempotent retry design intended to reduce duplicate side effects during recovery.",
+    },
+    {
+      image: "/images/projects/ai-business-os/08-hubspot-adapter.webp",
+      title: "HubSpot Provider Adapter",
+      description: "Shows the reusable HubSpot integration boundary; specific provider success and readback are documented separately in the evidence matrix.",
+    },
+    {
+      image: "/images/projects/ai-business-os/10-revops-analytics.webp",
+      title: "Revenue Operations Analytics",
+      description: "Shows the analytics specialist boundary for governed reporting; reporting authority remains controlled by the platform's KPI and authorization rules.",
     },
   ],
 
@@ -970,6 +975,162 @@ export const projects: Project[] = [
 
 
 
+
+{
+  slug: "hubspot-revenue-operations-business-os",
+  title: "HubSpot Revenue Operations & CRM Systems Implementation — Business OS",
+  year: "2026",
+  type: "Portfolio",
+  status: "Completed",
+  category: "Revenue Operations",
+  platforms: ["HubSpot", "n8n", "PostgreSQL", "Slack"],
+  description: "Implemented a governed HubSpot CRM projection within a reusable Business OS, covering controlled contact upsert, qualification context, CRM data mapping, independent provider readback, audit traceability, exception handling and a human approval boundary before material deal creation.",
+  overview: [
+    "Connected a provider-neutral Business OS CRM gateway to HubSpot CRM v3 using an idempotent email-based contact upsert.",
+    "Verified a specific controlled contact projection with a successful provider response, independent HubSpot readback and a persisted PostgreSQL integration audit record.",
+    "Kept the numeric qualification score authoritative in Business OS/PostgreSQL rather than forcing it into a HubSpot property configured as unique.",
+    "Preserved a human approval boundary for material deal creation; lead qualification alone does not authorize a deal.",
+    "Documented the two specifically resolved HubSpot incidents while retaining visibility of separate OPEN/ESCALATED exceptions.",
+  ],
+  problem: "CRM integrations can fail when provider field constraints, duplicate handling, qualification data and action permissions are not governed consistently. The implementation needed traceable provider writes, safe field mapping, reliable readback and human control over material commercial actions.",
+  solution: "Used a provider-neutral CRM gateway and HubSpot adapter with email-based idempotency, controlled field projection, persisted integration audit, independent provider readback and an approval boundary before deal creation. Preserved error and dead-letter history for diagnosis instead of claiming every incident was cleared.",
+  architecture: [
+    "Controlled lead intake and qualification context",
+    "Provider-neutral CRM gateway",
+    "HubSpot CRM v3 contact batch upsert keyed by email",
+    "Independent HubSpot readback",
+    "PostgreSQL integration-action audit",
+    "Error/dead-letter incident review and documented remediation",
+    "Human approval before material deal creation",
+  ],
+  workflow: [
+    "Receive controlled lead scenario",
+    "Validate qualification and owner context",
+    "Resolve CRM field mapping and authorization",
+    "Upsert HubSpot contact idempotently by email",
+    "Read back provider record independently",
+    "Persist provider action and audit identifiers",
+    "Route failures to governed error/DLQ handling",
+    "Require human approval before deal creation",
+  ],
+  automation: [
+    {
+      title: "HubSpot Contact Projection",
+      description: "Upserts the approved contact fields using email as the idempotent identifier and records the provider result.",
+      icon: "crm",
+    },
+    {
+      title: "CRM Gateway & Field Governance",
+      description: "Keeps provider-specific constraints behind a controlled mapping boundary and avoids unsafe projection of the numeric score into a unique property.",
+      icon: "database",
+    },
+    {
+      title: "Human Commercial Approval",
+      description: "Requires an authorized human decision before material deal creation; qualification alone is not sufficient authorization.",
+      icon: "workspace",
+    },
+    {
+      title: "Incident & Recovery Traceability",
+      description: "Preserves error/DLQ history and distinguishes the two named resolved HubSpot incidents from other open or escalated exceptions.",
+      icon: "slack",
+    },
+  ],
+  heroImage: "/images/projects/HubSpot-RevOps-Evidence/13-hubspot-pipeline.png",
+  automationImage: "/images/projects/HubSpot-RevOps-Evidence/14-lead-intake-workflow.png",
+  gallery: [
+    {
+      image: "/images/projects/HubSpot-RevOps-Evidence/13-hubspot-pipeline.png",
+      title: "HubSpot Pipeline",
+      description: "HubSpot pipeline view used to demonstrate CRM opportunity visibility and the sales-stage context.",
+    },
+    {
+      image: "/images/projects/HubSpot-RevOps-Evidence/12-hubspot-contact.png",
+      title: "HubSpot Contact Record",
+      description: "CRM-side contact evidence associated with the controlled contact projection.",
+    },
+    {
+      image: "/images/projects/HubSpot-RevOps-Evidence/14-lead-intake-workflow.png",
+      title: "Lead Intake Workflow",
+      description: "Workflow evidence for the lead intake path into the governed CRM process.",
+    },
+    {
+      image: "/images/projects/HubSpot-RevOps-Evidence/15-qualification-workflow.png",
+      title: "Qualification Workflow",
+      description: "Workflow evidence for qualification and owner context before CRM projection.",
+    },
+    {
+      image: "/images/projects/HubSpot-RevOps-Evidence/16-hubspot-integration-success.png",
+      title: "HubSpot Integration Success",
+      description: "Recorded success evidence for the controlled HubSpot integration path; see the evidence matrix for the matching audit/readback details.",
+    },
+    {
+      image: "/images/projects/HubSpot-RevOps-Evidence/11-hubspot-readback-sql.png",
+      title: "Independent Readback & Audit",
+      description: "SQL evidence used to inspect the recorded provider integration result and readback context.",
+    },
+    {
+      image: "/images/projects/HubSpot-RevOps-Evidence/17-slack-sales-notification.png",
+      title: "Sales Notification",
+      description: "Slack notification evidence associated with the sales operations workflow.",
+    },
+    {
+      image: "/images/projects/HubSpot-RevOps-Evidence/18-approval-state.png",
+      title: "Human Approval State",
+      description: "Approval-state evidence; historical PENDING records with expiry dates must not be represented as currently actionable.",
+    },
+  ],
+  results: [
+    "Verified one controlled HubSpot contact upsert with provider object ID 880647909565 and a persisted SUCCESS integration-action record.",
+    "Independently read back the provider-side contact and recorded the matching provider object ID in PostgreSQL audit evidence.",
+    "Recorded remediation of the HTTP-method incident INC-17060-1790799416723 and property-configuration incident INC-17143-1790801414476.",
+    "Preserved separate OPEN/ESCALATED exceptions rather than claiming all incidents or dead-letter items were cleared.",
+    "Kept material deal creation behind human approval; the latest CRM-first validation path stopped before deal creation.",
+  ],
+  documentation: [
+    {
+      title: "HubSpot Business OS Evidence Matrix",
+      description: "Lists the selected screenshots, verified provider action, independent readback, audit identifiers, incident status and safe claim boundaries.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/hubspot-business-os-implementation/EVIDENCE-MATRIX.md",
+      status: "Completed",
+    },
+    {
+      title: "HubSpot Business OS Implementation Notes",
+      description: "Implementation narrative and integration context for the HubSpot Business OS project.",
+      href: "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/hubspot-business-os-implementation.md",
+      status: "Completed",
+    },
+  ],
+  technologies: [
+    technologies.hubspot,
+    technologies.n8n,
+    technologies.postgresql,
+    technologies.slack,
+  ],
+  metrics: [
+    "1 verified controlled HubSpot contact projection",
+    "Independent provider readback and PostgreSQL audit record",
+    "Human approval boundary before material deal creation",
+    "Two named HubSpot incidents recorded RESOLVED; other exceptions remain visible",
+  ],
+  stats: [
+    { value: 1, suffix: " verified", label: "Controlled Contact Projection" },
+    { value: 2, suffix: " resolved", label: "Named HubSpot Incidents" },
+    { value: 1, suffix: " gate", label: "Human Approval Boundary" },
+  ],
+  before: [
+    "Provider field constraints could reject contact projections",
+    "A successful request needed independent provider readback and an audit trail",
+    "Material commercial actions needed an explicit human approval boundary",
+  ],
+  after: [
+    "A controlled contact upsert is linked to provider-side readback and persisted integration audit",
+    "Provider-specific field constraints are handled through a governed mapping decision",
+    "Deal creation remains behind authorized human approval",
+    "Open or escalated exceptions remain visible rather than being described as fully resolved",
+  ],
+  github: "https://github.com/Nikkypwetti/nikkytechies-portfolio/tree/main/docs/hubspot-business-os-implementation",
+  demo: "",
+},
 
 {
   slug: "client-onboarding-automation",
