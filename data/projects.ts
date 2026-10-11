@@ -800,34 +800,99 @@ export const projects: Project[] = [
     "/images/projects/revenue-intelligence/revint-system-architecture.png",
 
   automationImage:
-    "/images/projects/revenue-intelligence/revint-01-main-orchestrator-overview.webp",
+    "/images/projects/revenue-intelligence/revint-v2-00-agent-core-overview.png",
 
-  gallery: [
+      gallery: [
     {
       image: "/images/projects/revenue-intelligence/revint-system-architecture.png",
       title: "Governed Revenue Intelligence Architecture",
-      description: "Architecture showing structured AI interpretation, KPI governance, approved execution, database security boundaries, delivery, observability and centralized reliability controls.",
+      description:
+        "Architecture showing structured AI interpretation, 37-KPI governance, approved execution, database security boundaries, delivery, observability and centralized reliability controls.",
     },
     {
-      image: "/images/projects/revenue-intelligence/revint-02-approved-api-report.png",
-      title: "Approved API Revenue Report",
-      description: "Verified governed API request returning an approved KPI result after identity, semantic and query controls.",
+      image: "/images/projects/revenue-intelligence/revint-v2-01-control-center-healthy.png",
+      title: "Local Control Center — HEALTHY State",
+      description:
+        "Read-only operations dashboard in HEALTHY state: 37 governed KPIs, 6 active managed components, 0 open dead letters, 0 recent failures. HubSpot and REST adapters active; Salesforce and Airtable safely disabled.",
     },
     {
-      image: "/images/projects/revenue-intelligence/revint-03-safe-rejection.png",
-      title: "Safe Unsupported-Request Rejection",
-      description: "Unsupported reporting intent is rejected safely rather than becoming unrestricted SQL or an unauthorized database operation.",
+      image: "/images/projects/revenue-intelligence/revint-v2-02-hubspot-live-sync.png",
+      title: "Live HubSpot Connector — Canonical Reporting Data",
+      description:
+        "Read-only HubSpot adapter feeding the governed reporting layer. The connector is intentionally scoped to reporting-read only and cannot mutate provider records.",
     },
     {
-      image: "/images/projects/revenue-intelligence/revint-09-audit-traceability.png",
-      title: "Request Audit Traceability",
-      description: "A governed request traced through request, execution and delivery stages using consistent request and correlation identifiers.",
+      image: "/images/projects/revenue-intelligence/revint-v2-10-hubspot-canonical-aggregate.png",
+      title: "Canonical CRM Deal Aggregate",
+      description:
+        "Governed aggregation of HubSpot deal rows into the canonical CRM deal contract used by the KPI layer. Source field differences are normalized rather than leaking provider-specific logic into KPI definitions.",
     },
     {
-      image: "/images/projects/revenue-intelligence/revint-10-error-handler.png",
-      title: "Centralized Error Handler",
-      description: "Reliability workflow for error normalization, retry policy, circuit handling, dead-letter persistence, escalation and final auditing.",
+      image: "/images/projects/revenue-intelligence/revint-v2-03-live-api-governed-report.png",
+      title: "Live Governed API Report",
+      description:
+        "Authenticated API request returning an approved KPI result after identity binding, semantic validation, RBAC and deterministic query execution.",
     },
+    {
+      image: "/images/projects/revenue-intelligence/revint-v2-08-unauthenticated-403.png",
+      title: "Unauthenticated Request Rejected (HTTP 403)",
+      description:
+        "Calls without a valid principal are rejected at the security gateway. The AI layer never receives an unauthenticated request.",
+    },
+    {
+      image: "/images/projects/revenue-intelligence/revint-v2-09-server-bound-identity.png",
+      title: "Server-Bound Identity Overrides Caller Claim",
+      description:
+        "A caller-supplied fake admin identity is overwritten by the server-bound service:report-api principal. Authority comes from the runtime, not the request body.",
+    },
+    {
+      image: "/images/projects/revenue-intelligence/revint-v2-05-groq-intent-execution.png",
+      title: "Groq Structured Intent Interpretation",
+      description:
+        "Groq interprets the manager's natural-language question into a structured reporting intent. The model cannot choose SQL, tables, credentials or authorization outcomes.",
+    },
+    {
+      image: "/images/projects/revenue-intelligence/revint-v2-06-groq-summary-execution.png",
+      title: "Groq Grounded Management Summary",
+      description:
+        "Groq summarizes only the already-approved KPI facts returned from PostgreSQL. If the model is unavailable or returns invalid output, the system falls back deterministically.",
+    },
+    {
+      image: "/images/projects/revenue-intelligence/revint-v2-04-email-delivery-response.png",
+      title: "Governed Gmail Delivery Response",
+      description:
+        "Report delivery through Gmail with server-side recipient resolution, delivery-receipt traceability and audit logging. Destinations are never caller- or AI-controlled.",
+    },
+    {
+      image: "/images/projects/revenue-intelligence/revint-v2-07-received-gmail-report.png",
+      title: "Received Gmail Report",
+      description:
+        "The delivered report as received in Gmail, confirming the end-to-end path: authenticated request → governed KPI → grounded summary → trusted delivery.",
+    },
+     {
+  image: "/images/projects/revenue-intelligence/revint-13-retry-fallback.png",
+  title: "Retry & Fallback Handling (pre-V2 capture)",
+  description:
+    "Bounded retry policy and circuit-breaker behavior. Repeated failures open the circuit, write to the dead-letter queue and surface through observability alerts instead of retrying indefinitely. This reliability core is carried forward unchanged in Agent V2.",
+},
+{
+  image: "/images/projects/revenue-intelligence/revint-08-powerbi-dashboard.png",
+  title: "Power BI Management View (pre-V2 capture)",
+  description:
+    "Executive dashboard consuming the governed reporting snapshot. The Power BI integration was carried forward into Agent V2; the governed reporting layer now exposes 37 KPI contracts instead of the original 12.",
+},
+{
+  image: "/images/projects/revenue-intelligence/revint-09-audit-traceability.png",
+  title: "Request Audit Traceability (pre-V2 capture)",
+  description:
+    "A governed request traced through request, execution and delivery stages using consistent request and correlation identifiers. Traceability architecture is unchanged in Agent V2.",
+},
+{
+  image: "/images/projects/revenue-intelligence/revint-10-error-handler.png",
+  title: "Centralized Error Handler (pre-V2 capture)",
+  description:
+    "Reliability workflow for error normalization, retry policy, circuit handling, dead-letter persistence, escalation and final auditing. Preserved as the canonical error-handling pattern in Agent V2.",
+},
   ],
 
   results: [
