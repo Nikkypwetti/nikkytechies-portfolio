@@ -2190,6 +2190,12 @@ export const projects: Project[] = [
    gallery: [
 
     {
+      image: "/images/projects/growagency/dashboard-upgraded.png",
+      title: "GrowAgency CRM Dashboard",
+      description:
+        "Live CRM dashboard showing lead pipeline by AI status: 32 total leads, 6 hot, 6 qualified, 4 high priority. The qualified-leads table lists each lead with its Groq AI score, priority and suggested package so the sales rep has structured context without manual triage.",
+    },
+    {
       image: `${growagencyEvidence}/01-crm-change-review-proposed.png`,
       title: "CRM Change Review — Proposed Values",
       description:
