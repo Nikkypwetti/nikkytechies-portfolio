@@ -180,7 +180,6 @@ export const aiBusinessOsProject: Project = {
 
   gallery: [
     {
-      // image: "/images/projects/ai-business-os/01-control-center.webp", 
       image: "/images/projects/ai-business-os/AI-Business-OS-Evidence/01-control-center-22of22.png",
       title: "AI Business OS — Local Production Control Center",
       description:
@@ -197,6 +196,12 @@ export const aiBusinessOsProject: Project = {
       title: "Supervisor Orchestration with Cross-Provider AI Fallback",
       description:
         "AGENT-00 receives and validates a business event, loads authoritative configuration, routes through the Supervisor, validates the structured decision, persists the result and uses Groq as the primary model with Gemini as an independent fallback.",
+    },
+    {
+      image: "/images/projects/ai-business-os/12-provider-fallback.webp",
+      title: "Cross-Provider AI Fallback Verification",
+      description:
+        "Validator output confirming all eight reasoning agents run Groq as primary with Google Gemini as an independent fallback provider. Each agent pair uses a distinct provider so a single provider outage cannot stop the operating layer.",
     },
     {
       image: "/images/projects/ai-business-os/04-crm-gateway.webp",
@@ -220,13 +225,19 @@ export const aiBusinessOsProject: Project = {
       image: "/images/projects/ai-business-os/06-recovery-worker.webp",
       title: "Bounded Recovery Queue Worker",
       description:
-        "Recovery worker that claims due work, validates the registered recovery contract, executes only approved handlers, normalizes handler success or failure, finalizes the attempt and escalates unsupported or unresolved recovery work to human review.",
+        "SYS-06 Recovery Queue Worker canvas. Claims due recovery jobs from PostgreSQL, validates the registered handler contract, executes only approved exact-match handlers, normalizes success or failure, finalizes the attempt and escalates unsupported or unresolved recovery work to human review.",
     },
     {
       image: "/images/projects/ai-business-os/07-idempotent-retry.webp",
       title: "Idempotent Tool Adapter Retry",
       description:
-        "Exact-match retry handler that validates the technical retry contract, retries only a previously evidenced durable tool adapter operation and returns a bounded result instead of replaying arbitrary state-changing work.",
+        "RECOVERY-H02 Idempotent Tool Adapter Retry canvas. Validates the technical retry contract, retries only a previously evidenced durable tool adapter operation and returns a bounded result instead of replaying arbitrary state-changing work.",
+    },
+    {
+      image: "/images/projects/ai-business-os/AI-Business-OS-Evidence/05-recovery-terminal.png",
+      title: "Autonomous Recovery Validation",
+      description:
+        "Validator output confirming RECOVERY_IMPLEMENTATION_READY=true with 0 pending jobs, 0 open errors and 0 DLQ items. All 8 recovery handlers wired; operator enablement intentionally gated on explicit sign-off.",
     },
     {
       image: "/images/projects/ai-business-os/08-hubspot-adapter.webp",

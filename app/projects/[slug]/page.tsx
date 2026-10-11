@@ -60,22 +60,6 @@ export default async function ProjectPage({ params }: Props) {
         <ProjectRecruiterSummary summary={project.recruiterSummary} />
       </FadeIn>
 
-      {/* 4. Hero Image (Just 1 image) */}
-      {project.heroImage && (
-        <FadeIn delay={0.06}>
-          <div className="overflow-hidden rounded-3xl border bg-card">
-            <Image
-              src={project.heroImage}
-              alt={project.title}
-              width={1600}
-              height={900}
-              className="h-auto w-full object-cover"
-              priority // This ensures the hero image loads immediately
-            />
-          </div>
-        </FadeIn>
-      )}
-
       {/* 5. Overview */}
       <FadeIn delay={0.08}>
         <ProjectOverview overview={project.overview} />

@@ -170,34 +170,50 @@ export const hubspotBusinessOsImplementation: Project = {
     },
   ],
 
-  heroImage: "/images/projects/ai-business-os/08-hubspot-adapter.webp",
+  heroImage: "/images/projects/HubSpot-RevOps-Evidence/12-hubspot-contact.png",
 
-  gallery: [
-    {
-      image: "/images/projects/ai-business-os/08-hubspot-adapter.webp",
-      title: "Governed HubSpot CRM Adapter",
-      description:
-        "HubSpot CRM v3 adapter with request normalization, integration gating, idempotency checks, provider action routing, normalized results, durable success logging and centralized provider-error handling. The final verified path created the CRM contact, returned the provider record ID and passed independent HubSpot readback.",
-    },
-    {
-      image: "/images/projects/ai-business-os/07-idempotent-retry.webp",
-      title: "Replay-Safe Recovery Pattern",
-      description:
-        "The same Business OS recovery pattern used during the HubSpot remediation: preserve the original operation, repair the root cause, replay the intended canonical action and verify the provider result instead of creating a replacement test record.",
-    },
-    {
-      image: "/images/projects/ai-business-os/05-human-approval-gateway.webp",
-      title: "Human Commercial Approval Boundary",
-      description:
-        "Protected approval architecture keeps material deal creation separate from contact projection. The final CRM-first validation stopped before deal creation; approval-ledger PENDING rows had expired by the later review and are not presented as currently actionable.",
-    },
-    {
-      image: "/images/projects/ai-business-os/04-crm-gateway.webp",
-      title: "Provider-Neutral CRM Gateway",
-      description:
-        "Business OS CRM gateway separating canonical lead state and governance from provider-specific HubSpot execution, allowing the same operating model to support multiple CRM providers.",
-    },
-  ],
+gallery: [
+  {
+    image: "/images/projects/HubSpot-RevOps-Evidence/12-hubspot-contact.png",
+    title: "HubSpot Contact Record",
+    description: "Verified contact created by the governed CRM projection.",
+  },
+  {
+    image: "/images/projects/HubSpot-RevOps-Evidence/13-hubspot-pipeline.png",
+    title: "HubSpot Sales Pipeline",
+    description: "CRM pipeline showing stages and governed deal progression.",
+  },
+  {
+    image: "/images/projects/HubSpot-RevOps-Evidence/14-lead-intake-workflow.png",
+    title: "Lead Intake Workflow",
+    description: "n8n canvas for ING-01 lead intake.",
+  },
+  {
+    image: "/images/projects/HubSpot-RevOps-Evidence/15-qualification-workflow.png",
+    title: "Lead Qualification Workflow",
+    description: "n8n canvas for QUAL-01 qualification.",
+  },
+  {
+    image: "/images/projects/HubSpot-RevOps-Evidence/16-hubspot-integration-success.png",
+    title: "HubSpot Integration Success",
+    description: "Successful INT-01 execution.",
+  },
+  {
+    image: "/images/projects/HubSpot-RevOps-Evidence/11-hubspot-readback-sql.png",
+    title: "Readback & Audit",
+    description: "SQL evidence showing provider ID and integration action log entry.",
+  },
+  {
+    image: "/images/projects/HubSpot-RevOps-Evidence/17-slack-sales-notification.png",
+    title: "Sales Notification",
+    description: "Slack assignment and approval messages.",
+  },
+  {
+    image: "/images/projects/HubSpot-RevOps-Evidence/18-approval-state.png",
+    title: "Human Approval State",
+    description: "SYS-05 approval execution evidence.",
+  },
+],
 
   results: [
     "Projected the current CRM-first qualified lead into HubSpot as contact 880647909565 and independently verified the record by email readback.",
@@ -309,7 +325,7 @@ export const hubspotBusinessOsImplementation: Project = {
     "Human deal approval remains part of the commercial control path while reps can work the qualified contact in HubSpot.",
   ],
 
-  automationImage: "/images/projects/ai-business-os/08-hubspot-adapter.webp",
+  automationImage: "/images/projects/HubSpot-RevOps-Evidence/16-hubspot-integration-success.png",
   github:
     "https://github.com/Nikkypwetti/nikkytechies-portfolio/blob/main/docs/hubspot-business-os-implementation.md",
   demo: "",
